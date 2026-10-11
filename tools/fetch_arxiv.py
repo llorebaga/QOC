@@ -49,7 +49,8 @@ from qocsite.selection import CATEGORIES, NEIGHBOURS, TERMS, selected  # noqa: E
 
 def build_query(category: str, start: dt.date, end: dt.date) -> str:
     # Keep this exact shape: more deeply nested queries are mis-parsed by the API.
-    terms = " OR ".join(f'abs:"{t}"' for t in TERMS)
+    # title and abstract: a phrase may appear only in the title
+    terms = " OR ".join(f'abs:"{t}" OR ti:"{t}"' for t in TERMS)
     return f"cat:{category} AND ({terms}) AND submittedDate:[{start:%Y%m%d}0000 TO {end:%Y%m%d}2359]"
 
 
@@ -181,7 +182,21 @@ def main() -> None:
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--since", type=dt.date.fromisoformat, help="harvest from this date (YYYY-MM-DD) to today")
     g.add_argument("--days", type=int, help="fetch the last N days")
+    g.add_argument("--reselect", action="store_true",
+                   help="re-apply the selection rule to the stored archive (after tightening it; no API calls)")
     args = ap.parse_args()
+
+    if args.reselect:
+        removed = 0
+        for f in sorted(OUT.glob("*.json")):
+            year = int(f.stem)
+            store = load_year(year)
+            keep = {k: p for k, p in store.items() if selected(p)}
+            removed += len(store) - len(keep)
+            save_year(year, keep)
+            print(f"{year}: {len(store)} -> {len(keep)}")
+        print(f"removed {removed} papers that no longer satisfy the selection rule")
+        return
 
     today = dt.datetime.now(dt.timezone.utc).date()
     since = args.since or today - dt.timedelta(days=args.days)

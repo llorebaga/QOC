@@ -1,0 +1,141 @@
+arxiv_id,year,label,title
+2009.03950,2020,X,Unconventional Singularity in Anti-Parity-Time Symmetric Cavity Magnonics
+2006.11332,2020,R,Quantum Geometric Machine Learning for Quantum Circuits and Control
+2009.04358,2020,R,Controlling rotation in the molecular-frame with an optical centrifuge
+2006.10433,2020,X,Superconducting Quantum Computing: A Review
+2005.07819,2020,R,Controlled quantum state transfer in $XX$ spin chains at the Quantum Speed Limit
+2002.04627,2020,R,Robust dynamical exchange cooling with trapped ions
+2001.10871,2020,R,Efficient and robust chiral resolution by composite pulses
+2006.14523,2020,Q,Reverse Quantum Speed Limit: How Slow Quantum Battery can Discharge?
+2009.01167,2020,R,Control and readout of a superconducting qubit using a photonic link
+2001.10029,2020,R,Fast noise-resistant control of donor nuclear spin qubits in silicon
+2012.15427,2020,R,Curriculum-based Deep Reinforcement Learning for Quantum Control
+2001.03933,2020,X,Simulation of Higher-Order Topological Phases and Related Topological Phase Transitions in a Superconducting Qubit
+2012.13859,2020,Q,Quantum speed limit time in relativistic frame
+2006.11175,2020,X,Ultrafast Hole Spin Qubit with Gate-Tunable Spin-Orbit Switch
+2004.12810,2020,R,High-fidelity composite quantum gates for Raman qubits
+2012.10269,2020,R,Complete quantum coherent control of ultracold molecular collisions
+2011.11963,2020,R,Time-optimal quantum transformations with bounded bandwidth
+2010.03598,2020,R,K-GRAPE: A Krylov Subspace approach for the efficient control of quantum many-body dynamics
+2003.07850,2020,X,Forming a single molecule by magnetoassociation in an optical tweezer
+2009.00087,2020,R,Floquet engineering flat bands for bosonic fractional quantum Hall in small lattices
+2101.06888,2021,Q,Quantum speedup dynamics process in Schwarzschild space-time
+2101.02603,2021,R,Multilevel Laser Induced Continuum Structure
+2105.06037,2021,R,Heisenberg-Limited Waveform Estimation with Solid-State Spins in Diamond
+2105.07899,2021,R,Left-invariant optimal control problems on Lie groups
+2104.01119,2021,R,Hidden Inverses: Coherent Error Cancellation at the Circuit Level
+2104.12143,2021,R,Fast and stable charging via a shortcut to adiabaticity
+2107.09331,2021,X,Engineering the microwave to infrared noise photon flux for superconducting quantum systems
+2112.13344,2021,R,Atomic Interferometer Gates Realization via Quantum Optimal Control
+2109.04420,2021,R,Robustness of Enhanced Shortcuts to Adiabaticity in Lattice Transport
+2111.10972,2021,R,Optimal control of stimulated Raman adiabatic passage in a superconducting qudit
+2106.03883,2021,R,Cooling and state preparation in an optical lattice via Markovian feedback control
+2101.04267,2021,R,Quantum Control in Open and Periodically Driven Systems
+2103.13992,2021,X,Quantum Register of Fermion Pairs
+2105.09902,2021,R,Pulse-level noisy quantum circuits with QuTiP
+2108.05190,2021,R,Application of the Small Tip-Angle approximation in the Toggling Frame for the design of analytic robust pulses in Quantum Control
+2112.10417,2021,R,Protection of noisy multipartite entangled states of superconducting qubits via universally robust dynamical decoupling schemes
+2107.05441,2021,R,Constructive Quantum Interference in a Photo-Chemical Reaction of $^{87}$Rb Bose Einstein Condensate
+2104.13781,2021,R,Pulse shaping for on-demand emission of single Raman photons from a quantum-dot biexciton
+2106.05743,2021,R,Finite-Time Quantum Landauer Principle and Quantum Coherence
+2105.04516,2021,X,Quantum electrodynamics in photonic crystals and controllability of ionization energy of atoms
+2212.11651,2022,R,Approximate Autonomous Quantum Error Correction with Reinforcement Learning
+2205.13416,2022,R,Counterdiabatic driving for pseudo- and antipseudo- Hermitian systems
+2207.12385,2022,R,Applying classical control techniques to quantum systems: entanglement versus stability margin and other limitations
+2202.07229,2022,X,Saturable Purcell filter for circuit quantum electrodynamics
+2210.11490,2022,X,Classical simulation of short-time quantum dynamics
+2203.06044,2022,R,Stochastic optimization algorithms for quantum applications
+2207.00094,2022,R,Optimal Quantum Control of Charging Quantum Batteries
+2202.00745,2022,R,A shortcut to adiabaticity in a cavity with a moving mirror
+2212.13927,2022,R,State Carving in a Chirally-Coupled Atom-Nanophotonic Cavity
+2207.04617,2022,X,Experimental preparation of generalized cat states for itinerant microwave photons
+2205.11178,2022,X,Quantum simulations of interacting systems with broken time-reversal symmetry
+2205.10114,2022,R,Scalable quantum control and non-abelian anyon creation in the Kitaev honeycomb model
+2205.15044,2022,R,Quantum Optimal Control via Semi-Automatic Differentiation
+2205.00112,2022,R,Application of Pontryagin's Maximum Principle to Quantum Metrology in Dissipative Systems
+2205.04455,2022,R,Scalable all-optical cold damping of levitated nanoparticles
+2207.03553,2022,R,Rotated ansatz for approximate counterdiabatic driving
+2212.14287,2022,X,Temporal factorization of a non-stationary electromagnetic cavity field
+2204.00479,2022,R,Unified Collision Model of Coherent and Measurement-based Quantum Feedback
+2212.04588,2022,R,Small logical qubit architecture based on strong interactions and many-body dynamical decoupling
+2211.01383,2022,X,Pulse-efficient quantum machine learning
+2304.00863,2023,R,Optimal State Manipulation for a Two-Qubit System Driven by Coherent and Incoherent Controls
+2302.01553,2023,R,Efficient control pulses for continuous quantum gate families through coordinated re-optimization
+2303.02831,2023,X,Nanoscale feedback control of six degrees of freedom of a near-sphere
+2308.04098,2023,X,Molecular docking via quantum approximate optimization algorithm
+2304.02616,2023,R,Quantum Pontryagin Neural Networks in Gamkrelidze Form Subjected to the Purity of Quantum Channels
+2301.08656,2023,R,Quantum Control of Trapped Polyatomic Molecules for eEDM Searches
+2309.05604,2023,X,Room Temperature Dynamics of an Optically Addressable Single Spin in Hexagonal Boron Nitride
+2307.14599,2023,R,Two-step feedback preparation of entanglement for qubit systems with time delay
+2304.05420,2023,R,High-fidelity parallel entangling gates on a neutral atom quantum computer
+2306.13025,2023,X,A quantum coherent spin in a two-dimensional material at room temperature
+2312.09253,2023,R,Bayesian Optimization for Robust State Preparation in Quantum Many-Body Systems
+2303.12531,2023,R,Experimental Implementation of Short-Path Non-adiabatic Geometric Gates in a Superconducting Circuit
+2305.20032,2023,R,Spin squeezing in internal bosonic Josephson junctions via enhanced shortcuts to adiabaticity
+2312.08242,2023,R,Recycling of a quantum field and optimal states for single-qubit rotations
+2305.04303,2023,R,Superoscillating Quantum Control Induced By Sequential Selections
+2304.15000,2023,X,Quantum Control Machine: The Limits of Control Flow in Quantum Programming
+2304.09297,2023,R,Leakage in restless quantum gate calibration
+2308.08893,2023,R,Characterization and benchmarking of a phase-sensitive two-qubit gate using direct digital synthesis
+2305.09757,2023,R,Robust Hamiltonian Engineering for Interacting Qudit Systems
+2311.15686,2023,R,Quantum state engineering in a five-state chainwise system by coincident pulse technique
+2405.15707,2024,X,Digitized Counterdiabatic Quantum Algorithms for Logistics Scheduling
+2410.02520,2024,R,Fighting Exponentially Small Gaps by Counterdiabatic Driving
+2409.08627,2024,Q,Genuine quantum advantage in non-linear bosonic quantum batteries
+2410.11604,2024,Q,Improvement of Speed Limits: Quantum Effect on the Speed in Open Quantum Systems
+2406.18693,2024,R,Noise reduction via optimal control in a light-matter quantum system
+2403.05391,2024,R,Multi-qubit Dynamical Decoupling for Enhanced Crosstalk Suppression
+2402.13325,2024,R,Quantum control for the Zeno effect with noise
+2409.01601,2024,X,Single nuclear spin detection and control in a van der Waals material
+2411.17064,2024,R,"Fast, accurate, and error-resilient variational quantum noise spectroscopy"
+2402.14530,2024,R,Dynamical quantum maps for single-qubit gates under universal non-Markovian noise
+2405.14829,2024,R,Analog Counterdiabatic Quantum Computing
+2408.06782,2024,R,Robustness of optimal quantum annealing protocols
+2412.15816,2024,R,Optimization of Two-Qubit Gates in Tunable-Coupler Architectures Using Single Flux Quantum Control
+2412.14425,2024,R,Time-Reversal Symmetry-Protected Coherent Control of Ultracold Molecular Collisions
+2407.04893,2024,R,Qudit Dynamical Decoupling on a Superconducting Quantum Processor
+2405.01447,2024,R,Digital-Analog Counterdiabatic Quantum Optimization with Trapped Ions
+2411.05670,2024,R,Dynamically Enhanced Two-Photon Spectroscopy
+2403.02498,2024,X,Unifying uncertainties for rotor-like quantum systems
+2410.06755,2024,X,Magnetic field dependence of $V_B^-$ Defects in hexagonal boron nitride
+2408.16664,2024,X,Enhancing precision thermometry with nonlinear qubits
+2512.20357,2025,R,Lie algebra-assisted quantum simulation and quantum optimal control via high-order Magnus expansions
+2505.20844,2025,R,Engineering continuous-variable entanglement in mechanical oscillators with optimal control
+2511.09445,2025,X,Interferometric Braiding of Anyons in Chern Insulators
+2501.07254,2025,X,Selective band interaction and long-range hopping in a structured environment with giant atoms
+2509.04101,2025,X,Duality between polyhedral approximation of value functions and optimal quantization of measures
+2510.21428,2025,R,Exciton and biexciton preparation via coherent swing-up excitation in a GaAs quantum dot embedded in micropillar cavity
+2504.04986,2025,R,Quantum control of a random transverse Ising spin system
+2508.06612,2025,R,Learning to stabilize nonequilibrium phases of matter with active feedback using partial information
+2504.17303,2025,R,Enhancing the controllability of quantum systems via a static field
+2508.03169,2025,Q,Quantum Dynamics and Information Measures in PT and Anti-PT-Symmetric Systems
+2510.05851,2025,X,Hybrid Sequential Quantum Computing
+2508.18552,2025,R,Anisotropic Heisenberg Su-Schrieffer-Heeger spin chain as a quantum channel
+2501.10494,2025,R,Optimal control in phase space applied to minimal-time transfer of thermal atoms in optical traps
+2509.08890,2025,X,Machine learning the effects of many quantum measurements
+2505.20000,2025,R,Correcting noisy quantum gates with shortcuts to adiabaticity
+2510.01900,2025,R,Temporal Pulse Origins in Atom Interferometric Quantum Sensors
+2507.14085,2025,R,Machine Learning-aided Optimal Control of a noisy qubit
+2507.17076,2025,R,Dynamical and Emission Properties of Quantum Emitters driven by Ultra-Short Laser Pulses
+2511.04230,2025,R,Towards optimal control of ensembles of discrete-time systems
+2501.11049,2025,Q,Generalized Entropic Quantum Speed Limits
+2608.27478,2026,Q,Quantum speed limit time of a uniformly accelerated Unruh-DeWitt detector
+2609.24147,2026,R,Reconstructing the phonon distribution of trapped ions out of the Lamb-Dicke regime
+2601.18704,2026,R,Data-Driven Qubit Characterization and Optimal Control using Deep Learning
+2607.14884,2026,R,Evolution-Level Quantum Optimal Control of Single-Qubit Gates with Physics-Informed Neural Networks
+2607.23090,2026,R,Protocols of coherent motion control for an interaction-driven Rydberg gate
+2607.13580,2026,R,Filon Methods for Highly Oscillatory Controlled Quantum Systems
+2609.18911,2026,R,Hamiltonian engineering via pulses: beyond group averaging
+2608.02462,2026,X,Nanohertz Pendulum toward Macroscopic Entanglement under Structural Damping
+2608.05312,2026,X,Unidirectional Dark-to-Bright Rescue in Cavity-Coupled Quantum Transport
+2606.13005,2026,R,Experiment-compatible measurement--feedback quantum state preparation with reinforcement learning
+2604.13158,2026,X,Fast measurement of neutral atoms with a multi-atom gate
+2603.02507,2026,X,Measurement of a quantum system using spin-mechanical conversion
+2608.16702,2026,R,Time-optimal quantum gates with bang-bang control in multilevel systems
+2608.07185,2026,X,Ultrafast quantum gate operations in a Kramers-Henneberger atom Qubit
+2607.10550,2026,R,Coherent Quantum Schrodinger Bridge: Two-Boundary Optimal Control for Quantum Algorithm Design
+2605.28936,2026,R,Hardware-Tailored Resource Estimation for Magic-State Distillation on Silicon Spin Qubits
+2609.22821,2026,R,Overcoming the Quasi-Static Bottleneck: A Finite-Time Quantum Otto Information Engine Achieving Near-Unity Efficiency
+2605.04416,2026,R,SpinTune: Improving the Reliability of Quantum Sensor Networks for Practical Quantum-Classical Utility
+2602.03748,2026,Q,Quantum speed limit time for bipartite entanglement in neutrino oscillations in matter with non-standard interactions
+2609.26367,2026,X,An Operator-Theoretic Model of Entanglement Percolation in Series-Parallel Quantum Networks

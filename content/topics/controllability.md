@@ -1,5 +1,5 @@
 ---
-updated: 2026-10-12
+updated: 2026-10-11
 status: draft
 key_papers:
   - key: huang1983controllability

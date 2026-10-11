@@ -4069,3 +4069,803 @@ genois2025ocml:
   year: 2025
   doi: 10.1103/d9yg-d3qr
 
+koch2016open:
+  type: article
+  title: 'Controlling open quantum systems: tools, achievements, and limitations'
+  authors:
+  - Christiane P Koch
+  journal: 'J. Phys.: Condens. Matter'
+  volume: '28'
+  pages: '213001'
+  year: 2016
+  doi: 10.1088/0953-8984/28/21/213001
+
+lindblad1976generators:
+  type: article
+  title: On the generators of quantum dynamical semigroups
+  authors:
+  - G. Lindblad
+  journal: Commun.Math. Phys.
+  volume: '48'
+  pages: 119-130
+  year: 1976
+  doi: 10.1007/bf01608499
+
+gorini1976semigroups:
+  type: article
+  title: Completely positive dynamical semigroups of N -level systems
+  authors:
+  - Vittorio Gorini
+  - Andrzej Kossakowski
+  - E. C. G. Sudarshan
+  journal: Journal of Mathematical Physics
+  volume: '17'
+  pages: 821-825
+  year: 1976
+  doi: 10.1063/1.522979
+
+breuer2016nonmarkovian:
+  type: article
+  title: 'Colloquium : Non-Markovian dynamics in open quantum systems'
+  authors:
+  - Heinz-Peter Breuer
+  - Elsi-Mari Laine
+  - Jyrki Piilo
+  - Bassano Vacchini
+  journal: Rev. Mod. Phys.
+  volume: '88'
+  pages: '021002'
+  year: 2016
+  doi: 10.1103/revmodphys.88.021002
+
+schulteherbruggen2011dissipative:
+  type: article
+  title: Optimal control for generating quantum gates in open dissipative systems
+  authors:
+  - T Schulte-Herbrüggen
+  - A Spörl
+  - N Khaneja
+  - S J Glaser
+  journal: 'J. Phys. B: At. Mol. Opt. Phys.'
+  volume: '44'
+  pages: '154013'
+  year: 2011
+  doi: 10.1088/0953-4075/44/15/154013
+
+reich2015nonmarkovianity:
+  type: article
+  title: Exploiting Non-Markovianity for Quantum Control
+  authors:
+  - Daniel M. Reich
+  - Nadav Katz
+  - Christiane P. Koch
+  journal: Sci Rep
+  volume: '5'
+  pages: '12430'
+  year: 2015
+  doi: 10.1038/srep12430
+
+floether2012robust:
+  type: article
+  title: 'Robust quantum gates for open systems via optimal control: Markovian versus non-Markovian dynamics'
+  authors:
+  - Frederik F Floether
+  - Pierre de Fouquieres
+  - Sophie G Schirmer
+  journal: New J. Phys.
+  volume: '14'
+  pages: '073023'
+  year: 2012
+  doi: 10.1088/1367-2630/14/7/073023
+
+mukherjee2013relaxation:
+  type: article
+  title: Speeding up and slowing down the relaxation of a qubit by optimal control
+  authors:
+  - Victor Mukherjee
+  - Alberto Carlini
+  - Andrea Mari
+  - Tommaso Caneva
+  - Simone Montangero
+  - Tommaso Calarco
+  - Rosario Fazio
+  - Vittorio Giovannetti
+  journal: Phys. Rev. A
+  volume: '88'
+  pages: '062326'
+  year: 2013
+  doi: 10.1103/physreva.88.062326
+
+basilewitsch2017correlations:
+  type: article
+  title: Beating the limits with initial correlations
+  authors:
+  - Daniel Basilewitsch
+  - Rebecca Schmidt
+  - Dominique Sugny
+  - Sabrina Maniscalco
+  - Christiane P Koch
+  journal: New J. Phys.
+  volume: '19'
+  pages: '113042'
+  year: 2017
+  doi: 10.1088/1367-2630/aa96f8
+
+pechen2006environment:
+  type: article
+  title: Teaching the environment to control quantum systems
+  authors:
+  - Alexander Pechen
+  - Herschel Rabitz
+  journal: Phys. Rev. A
+  volume: '73'
+  pages: '062102'
+  year: 2006
+  doi: 10.1103/physreva.73.062102
+
+bartana1997cooling:
+  type: article
+  title: Laser cooling of internal degrees of freedom. II
+  authors:
+  - Allon Bartana
+  - Ronnie Kosloff
+  - David J. Tannor
+  journal: The Journal of Chemical Physics
+  volume: '106'
+  pages: 1435-1448
+  year: 1997
+  doi: 10.1063/1.473973
+
+gunther2021quandary:
+  type: proceedings
+  title: 'Quandary: An open-source C++ package for high-performance optimal control of open quantum systems'
+  authors:
+  - Stefanie Gunther
+  - N. Anders Petersson
+  - Jonathan L. DuBois
+  booktitle: 2021 IEEE/ACM Second International Workshop on Quantum Computing Software (QCS)
+  pages: 88-98
+  year: 2021
+  doi: 10.1109/qcs54837.2021.00014
+
+poyatos1996reservoir:
+  type: article
+  title: Quantum Reservoir Engineering with Laser Cooled Trapped Ions
+  authors:
+  - J. F. Poyatos
+  - J. I. Cirac
+  - P. Zoller
+  journal: Phys. Rev. Lett.
+  volume: '77'
+  pages: 4728-4731
+  year: 1996
+  doi: 10.1103/physrevlett.77.4728
+
+verstraete2009dissipation:
+  type: article
+  title: Quantum computation and quantum-state engineering driven by dissipation
+  authors:
+  - Frank Verstraete
+  - Michael M. Wolf
+  - J. Ignacio Cirac
+  journal: Nature Phys
+  volume: '5'
+  pages: 633-636
+  year: 2009
+  doi: 10.1038/nphys1342
+
+kraus2008markov:
+  type: article
+  title: Preparation of entangled states by quantum Markov processes
+  authors:
+  - B. Kraus
+  - H. P. Büchler
+  - S. Diehl
+  - A. Kantian
+  - A. Micheli
+  - P. Zoller
+  journal: Phys. Rev. A
+  volume: '78'
+  pages: '042307'
+  year: 2008
+  doi: 10.1103/physreva.78.042307
+
+diehl2008driven:
+  type: article
+  title: Quantum states and phases in driven open quantum systems with cold atoms
+  authors:
+  - S. Diehl
+  - A. Micheli
+  - A. Kantian
+  - B. Kraus
+  - H. P. Büchler
+  - P. Zoller
+  journal: Nature Phys
+  volume: '4'
+  pages: 878-883
+  year: 2008
+  doi: 10.1038/nphys1073
+
+krauter2011dissipation:
+  type: article
+  title: Entanglement Generated by Dissipation and Steady State Entanglement of Two Macroscopic Objects
+  authors:
+  - Hanna Krauter
+  - Christine A. Muschik
+  - Kasper Jensen
+  - Wojciech Wasilewski
+  - Jonas M. Petersen
+  - J. Ignacio Cirac
+  - Eugene S. Polzik
+  journal: Phys. Rev. Lett.
+  volume: '107'
+  pages: 080503
+  year: 2011
+  doi: 10.1103/physrevlett.107.080503
+
+barreiro2011opensim:
+  type: article
+  title: An open-system quantum simulator with trapped ions
+  authors:
+  - Julio T. Barreiro
+  - Markus Müller
+  - Philipp Schindler
+  - Daniel Nigg
+  - Thomas Monz
+  - Michael Chwalla
+  - Markus Hennrich
+  - Christian F. Roos
+  - Peter Zoller
+  - Rainer Blatt
+  journal: Nature
+  volume: '470'
+  pages: 486-491
+  year: 2011
+  doi: 10.1038/nature09801
+
+lin2013dissipative:
+  type: article
+  title: Dissipative production of a maximally entangled steady state of two quantum bits
+  authors:
+  - Y. Lin
+  - J. P. Gaebler
+  - F. Reiter
+  - T. R. Tan
+  - R. Bowler
+  - A. S. Sørensen
+  - D. Leibfried
+  - D. J. Wineland
+  journal: Nature
+  volume: '504'
+  pages: 415-418
+  year: 2013
+  doi: 10.1038/nature12801
+
+shankar2013autonomous:
+  type: article
+  title: Autonomously stabilized entanglement between two superconducting quantum bits
+  authors:
+  - S. Shankar
+  - M. Hatridge
+  - Z. Leghtas
+  - K. M. Sliwa
+  - A. Narla
+  - U. Vool
+  - S. M. Girvin
+  - L. Frunzio
+  - M. Mirrahimi
+  - M. H. Devoret
+  journal: Nature
+  volume: '504'
+  pages: 419-422
+  year: 2013
+  doi: 10.1038/nature12802
+
+leghtas2015twophoton:
+  type: article
+  title: Confining the state of light to a quantum manifold by engineered two-photon loss
+  authors:
+  - Z. Leghtas
+  - S. Touzard
+  - I. M. Pop
+  - A. Kou
+  - B. Vlastakis
+  - A. Petrenko
+  - K. M. Sliwa
+  - A. Narla
+  - S. Shankar
+  - M. J. Hatridge
+  - M. Reagor
+  - L. Frunzio
+  - R. J. Schoelkopf
+  - M. Mirrahimi
+  - M. H. Devoret
+  journal: Science
+  volume: '347'
+  pages: 853-857
+  year: 2015
+  doi: 10.1126/science.aaa2085
+
+murch2012bath:
+  type: article
+  title: Cavity-Assisted Quantum Bath Engineering
+  authors:
+  - K. W. Murch
+  - U. Vool
+  - D. Zhou
+  - S. J. Weber
+  - S. M. Girvin
+  - I. Siddiqi
+  journal: Phys. Rev. Lett.
+  volume: '109'
+  pages: '183602'
+  year: 2012
+  doi: 10.1103/physrevlett.109.183602
+
+ticozzi2008markovian:
+  type: article
+  title: 'Quantum Markovian Subsystems: Invariance, Attractivity, and Control'
+  authors:
+  - Francesco Ticozzi
+  - Lorenza Viola
+  journal: IEEE Trans. Automat. Contr.
+  volume: '53'
+  pages: 2048-2063
+  year: 2008
+  doi: 10.1109/tac.2008.929399
+
+ticozzi2010stabilizing:
+  type: article
+  title: Stabilizing Quantum States by Constructive Design of Open Quantum Dynamics
+  authors:
+  - Francesco Ticozzi
+  - Sophie G. Schirmer
+  - Xiaoting Wang
+  journal: IEEE Trans. Automat. Contr.
+  volume: '55'
+  pages: 2901-2905
+  year: 2010
+  doi: 10.1109/tac.2010.2079532
+
+harrington2022engineered:
+  type: article
+  title: Engineered dissipation for quantum information science
+  authors:
+  - Patrick M. Harrington
+  - Erich J. Mueller
+  - Kater W. Murch
+  journal: Nat Rev Phys
+  volume: '4'
+  pages: 660-671
+  year: 2022
+  doi: 10.1038/s42254-022-00494-8
+
+kapit2017upside:
+  type: article
+  title: 'The upside of noise: engineered dissipation as a resource in superconducting circuits'
+  authors:
+  - Eliot Kapit
+  journal: Quantum Sci. Technol.
+  volume: '2'
+  pages: '033002'
+  year: 2017
+  doi: 10.1088/2058-9565/aa7e5d
+
+mirrahimi2014cat:
+  type: article
+  title: 'Dynamically protected cat-qubits: a new paradigm for universal quantum computation'
+  authors:
+  - Mazyar Mirrahimi
+  - Zaki Leghtas
+  - Victor V Albert
+  - Steven Touzard
+  - Robert J Schoelkopf
+  - Liang Jiang
+  - Michel H Devoret
+  journal: New J. Phys.
+  volume: '16'
+  pages: '045014'
+  year: 2014
+  doi: 10.1088/1367-2630/16/4/045014
+
+wiseman1993homodyne:
+  type: article
+  title: Quantum theory of optical feedback via homodyne detection
+  authors:
+  - H. M. Wiseman
+  - G. J. Milburn
+  journal: Phys. Rev. Lett.
+  volume: '70'
+  pages: 548-551
+  year: 1993
+  doi: 10.1103/physrevlett.70.548
+
+wiseman2009book:
+  type: book
+  title: Quantum Measurement and Control
+  authors:
+  - Howard M. Wiseman
+  - Gerard J. Milburn
+  publisher: Cambridge University Press
+  year: 2009
+  doi: 10.1017/cbo9780511813948
+
+belavkin1992filtering:
+  type: article
+  title: Quantum stochastic calculus and quantum nonlinear filtering
+  authors:
+  - Viacheslav P Belavkin
+  journal: Journal of Multivariate Analysis
+  volume: '42'
+  pages: 171-201
+  year: 1992
+  doi: 10.1016/0047-259x(92)90042-e
+
+bouten2007filtering:
+  type: article
+  title: An Introduction to Quantum Filtering
+  authors:
+  - Luc Bouten
+  - Ramon Van Handel
+  - Matthew R. James
+  journal: SIAM J. Control Optim.
+  volume: '46'
+  pages: 2199-2241
+  year: 2007
+  doi: 10.1137/060651239
+
+doherty1999estimation:
+  type: article
+  title: Feedback control of quantum systems using continuous state estimation
+  authors:
+  - A. C. Doherty
+  - K. Jacobs
+  journal: Phys. Rev. A
+  volume: '60'
+  pages: 2700-2711
+  year: 1999
+  doi: 10.1103/physreva.60.2700
+
+sayrin2011photon:
+  type: article
+  title: Real-time quantum feedback prepares and stabilizes photon number states
+  authors:
+  - Clément Sayrin
+  - Igor Dotsenko
+  - Xingxing Zhou
+  - Bruno Peaudecerf
+  - Théo Rybarczyk
+  - Sébastien Gleyzes
+  - Pierre Rouchon
+  - Mazyar Mirrahimi
+  - Hadis Amini
+  - Michel Brune
+  - Jean-Michel Raimond
+  - Serge Haroche
+  journal: Nature
+  volume: '477'
+  pages: 73-77
+  year: 2011
+  doi: 10.1038/nature10376
+
+vijay2012rabi:
+  type: article
+  title: Stabilizing Rabi oscillations in a superconducting qubit using quantum feedback
+  authors:
+  - R. Vijay
+  - C. Macklin
+  - D. H. Slichter
+  - S. J. Weber
+  - K. W. Murch
+  - R. Naik
+  - A. N. Korotkov
+  - I. Siddiqi
+  journal: Nature
+  volume: '490'
+  pages: 77-80
+  year: 2012
+  doi: 10.1038/nature11505
+
+riste2013entanglement:
+  type: article
+  title: Deterministic entanglement of superconducting qubits by parity measurement and feedback
+  authors:
+  - D. Ristè
+  - M. Dukalski
+  - C. A. Watson
+  - G. de Lange
+  - M. J. Tiggelman
+  - Ya. M. Blanter
+  - K. W. Lehnert
+  - R. N. Schouten
+  - L. DiCarlo
+  journal: Nature
+  volume: '502'
+  pages: 350-354
+  year: 2013
+  doi: 10.1038/nature12513
+
+magrini2021mechanical:
+  type: article
+  title: Real-time optimal quantum control of mechanical motion at room temperature
+  authors:
+  - Lorenzo Magrini
+  - Philipp Rosenzweig
+  - Constanze Bach
+  - Andreas Deutschmann-Olek
+  - Sebastian G. Hofer
+  - Sungkun Hong
+  - Nikolai Kiesel
+  - Andreas Kugi
+  - Markus Aspelmeyer
+  journal: Nature
+  volume: '595'
+  pages: 373-377
+  year: 2021
+  doi: 10.1038/s41586-021-03602-3
+
+rossi2018mechanical:
+  type: article
+  title: Measurement-based quantum control of mechanical motion
+  authors:
+  - Massimiliano Rossi
+  - David Mason
+  - Junxin Chen
+  - Yeghishe Tsaturyan
+  - Albert Schliesser
+  journal: Nature
+  volume: '563'
+  pages: 53-58
+  year: 2018
+  doi: 10.1038/s41586-018-0643-8
+
+zhang2017feedback:
+  type: article
+  title: 'Quantum feedback: Theory, experiments, and applications'
+  authors:
+  - Jing Zhang
+  - Yu-xi Liu
+  - Re-Bing Wu
+  - Kurt Jacobs
+  - Franco Nori
+  journal: Physics Reports
+  volume: '679'
+  pages: 1-60
+  year: 2017
+  doi: 10.1016/j.physrep.2017.02.003
+
+ofek2016qec:
+  type: article
+  title: Extending the lifetime of a quantum bit with error correction in superconducting circuits
+  authors:
+  - Nissim Ofek
+  - Andrei Petrenko
+  - Reinier Heeres
+  - Philip Reinhold
+  - Zaki Leghtas
+  - Brian Vlastakis
+  - Yehan Liu
+  - Luigi Frunzio
+  - S. M. Girvin
+  - L. Jiang
+  - Mazyar Mirrahimi
+  - M. H. Devoret
+  - R. J. Schoelkopf
+  journal: Nature
+  volume: '536'
+  pages: 441-445
+  year: 2016
+  doi: 10.1038/nature18949
+
+lloyd2000coherent:
+  type: article
+  title: Coherent quantum feedback
+  authors:
+  - Seth Lloyd
+  journal: Phys. Rev. A
+  volume: '62'
+  pages: 022108
+  year: 2000
+  doi: 10.1103/physreva.62.022108
+
+hacohengourgy2018zeno:
+  type: article
+  title: Incoherent Qubit Control Using the Quantum Zeno Effect
+  authors:
+  - S. Hacohen-Gourgy
+  - L. P. García-Pintos
+  - L. S. Martin
+  - J. Dressel
+  - I. Siddiqi
+  journal: Phys. Rev. Lett.
+  volume: '120'
+  pages: '020505'
+  year: 2018
+  doi: 10.1103/physrevlett.120.020505
+
+lewalle2024zeno:
+  type: article
+  title: 'Optimal Zeno Dragging for Quantum Control: A Shortcut to Zeno with Action-Based Scheduling Optimization'
+  authors:
+  - Philippe Lewalle
+  - Yipei Zhang
+  - K. Birgitta Whaley
+  journal: PRX Quantum
+  volume: '5'
+  pages: '020366'
+  year: 2024
+  doi: 10.1103/prxquantum.5.020366
+
+gardiner1985inputoutput:
+  type: article
+  title: 'Input and output in damped quantum systems: Quantum stochastic differential equations and the
+    master equation'
+  authors:
+  - C. W. Gardiner
+  - M. J. Collett
+  journal: Phys. Rev. A
+  volume: '31'
+  pages: 3761-3774
+  year: 1985
+  doi: 10.1103/physreva.31.3761
+
+gough2009series:
+  type: article
+  title: The Series Product and Its Application to Quantum Feedforward and Feedback Networks
+  authors:
+  - J. Gough
+  - M.R. James
+  journal: IEEE Trans. Automat. Contr.
+  volume: '54'
+  pages: 2530-2544
+  year: 2009
+  doi: 10.1109/tac.2009.2031205
+
+combes2017slh:
+  type: article
+  title: The SLH framework for modeling quantum input-output networks
+  authors:
+  - Joshua Combes
+  - Joseph Kerckhoff
+  - Mohan Sarovar
+  journal: 'Advances in Physics: X'
+  volume: '2'
+  pages: 784-888
+  year: 2017
+  doi: 10.1080/23746149.2017.1343097
+
+james2008hinf:
+  type: article
+  title: $H^{\infty}$ Control of Linear Quantum Stochastic Systems
+  authors:
+  - M.R. James
+  - H.I. Nurdin
+  - I.R. Petersen
+  journal: IEEE Trans. Automat. Contr.
+  volume: '53'
+  pages: 1787-1803
+  year: 2008
+  doi: 10.1109/tac.2008.929378
+
+nurdin2009lqg:
+  type: article
+  title: Coherent quantum LQG control
+  authors:
+  - Hendra I. Nurdin
+  - Matthew R. James
+  - Ian R. Petersen
+  journal: Automatica
+  volume: '45'
+  pages: 1837-1846
+  year: 2009
+  doi: 10.1016/j.automatica.2009.04.018
+
+mabuchi2008compensator:
+  type: article
+  title: Coherent-feedback quantum control with a dynamic compensator
+  authors:
+  - Hideo Mabuchi
+  journal: Phys. Rev. A
+  volume: '78'
+  pages: '032323'
+  year: 2008
+  doi: 10.1103/physreva.78.032323
+
+hamerly2012cooling:
+  type: article
+  title: Advantages of Coherent Feedback for Cooling Quantum Oscillators
+  authors:
+  - Ryan Hamerly
+  - Hideo Mabuchi
+  journal: Phys. Rev. Lett.
+  volume: '109'
+  pages: '173602'
+  year: 2012
+  doi: 10.1103/physrevlett.109.173602
+
+kerckhoff2010memory:
+  type: article
+  title: 'Designing Quantum Memories with Embedded Control: Photonic Circuits for Autonomous Quantum Error
+    Correction'
+  authors:
+  - Joseph Kerckhoff
+  - Hendra I. Nurdin
+  - Dmitri S. Pavlichin
+  - Hideo Mabuchi
+  journal: Phys. Rev. Lett.
+  volume: '105'
+  pages: '040502'
+  year: 2010
+  doi: 10.1103/physrevlett.105.040502
+
+nurdin2017linear:
+  type: book
+  title: Linear Dynamical Quantum Systems
+  authors:
+  - Hendra I Nurdin
+  - Naoki Yamamoto
+  publisher: Springer International Publishing
+  year: 2017
+  doi: 10.1007/978-3-319-55201-9
+
+wiseman1994alloptical:
+  type: article
+  title: All-optical versus electro-optical quantum-limited feedback
+  authors:
+  - H. M. Wiseman
+  - G. J. Milburn
+  journal: Phys. Rev. A
+  volume: '49'
+  pages: 4110-4125
+  year: 1994
+  doi: 10.1103/physreva.49.4110
+
+yamamoto2014coherent:
+  type: article
+  title: 'Coherent versus Measurement Feedback: Linear Systems Theory for Quantum Information'
+  authors:
+  - Naoki Yamamoto
+  journal: Phys. Rev. X
+  volume: '4'
+  pages: 041029
+  year: 2014
+  doi: 10.1103/physrevx.4.041029
+
+hudson1984ito:
+  type: article
+  title: Quantum Ito's formula and stochastic evolutions
+  authors:
+  - R. L. Hudson
+  - K. R. Parthasarathy
+  journal: Commun.Math. Phys.
+  volume: '93'
+  pages: 301-323
+  year: 1984
+  doi: 10.1007/bf01258530
+
+petersen2016linear:
+  type: article
+  title: Quantum Linear Systems Theory
+  authors:
+  - Ian R. Petersen
+  journal: Open Autom. Control Syst. J.
+  volume: '8'
+  pages: 67-93
+  year: 2016
+  doi: 10.2174/1874444301608010067
+
+iida2012squeezing:
+  type: article
+  title: Experimental Demonstration of Coherent Feedback Control on Optical Field Squeezing
+  authors:
+  - S. Iida
+  - M. Yukawa
+  - H. Yonezawa
+  - N. Yamamoto
+  - A. Furusawa
+  journal: IEEE Trans. Automat. Contr.
+  volume: '57'
+  pages: 2045-2050
+  year: 2012
+  doi: 10.1109/tac.2012.2195831
+

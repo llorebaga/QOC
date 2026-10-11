@@ -38,9 +38,11 @@ understand any area; an expert can use it as a quick reference.
       DRAG, Floquet engineering, Lyapunov/tracking/MPC) — *awaiting review*
 - [x] **Learning & closed-loop family written** (3 articles: closed-loop & in-situ optimization,
       reinforcement & machine learning, system identification) — *awaiting review*
-- [ ] Review of the written articles (29 so far)
+- [x] **Open systems & feedback family written** (4 articles: open-system control, reservoir engineering,
+      measurement-based feedback, linear quantum systems & coherent feedback) — *awaiting review*
+- [ ] Review of the written articles (33 so far)
 - [ ] Remaining families, one at a time:
-      Open systems → Many-body → Tasks → Platforms
+      Many-body → Tasks → Platforms
 
 ## 🚧 Phase 3 — arXiv paper tracker (data pipeline running)
 
