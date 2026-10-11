@@ -141,8 +141,9 @@ def build_entry(doi: str | None, arxiv: str | None) -> dict:
         if ax:
             a, b = norm_title(ax["title"]), norm_title(entry["title"])
             if a[:40] != b[:40]:
-                print(f"  ! title mismatch between arXiv and DOI:\n    arXiv: {ax['title']}\n    DOI:   {entry['title']}",
-                      file=sys.stderr)
+                # never store an arXiv id that belongs to a different work
+                raise SystemExit(f"title mismatch between arXiv and DOI — not saved:\n"
+                                 f"  arXiv: {ax['title']}\n  DOI:   {entry['title']}")
             entry["arxiv"] = ax["arxiv"]
             # Crossref sometimes lacks authors for older items; arXiv list is complete.
             if not entry.get("authors"):

@@ -31,9 +31,10 @@ understand any area; an expert can use it as a quick reference.
 - [x] **Algorithms family written** (10 articles) — *awaiting expert review*
 - [x] **Foundations family written** (5 articles: controllability, problem formulation & figures of merit,
       Pontryagin's maximum principle, geometric & time-optimal control, control landscapes) — *awaiting review*
-- [ ] Review of the Algorithms and Foundations articles
+- [x] **Speed limits & complexity family written** (2 articles: quantum speed limits, control complexity) — *awaiting review*
+- [ ] Review of the Algorithms, Foundations and Speed-limits articles
 - [ ] Remaining families, one at a time:
-      Speed limits → Robust → Analytic → Learning → Open systems → Many-body → Tasks → Platforms
+      Robust → Analytic → Learning → Open systems → Many-body → Tasks → Platforms
 
 ## 🚧 Phase 3 — arXiv paper tracker (data pipeline running)
 

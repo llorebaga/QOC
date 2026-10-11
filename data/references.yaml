@@ -1591,3 +1591,259 @@ tannor1986coherent:
   year: 1986
   doi: 10.1063/1.451542
 
+mandelstam1991uncertainty:
+  type: chapter
+  title: The Uncertainty Relation Between Energy and Time in Non-relativistic Quantum Mechanics
+  authors:
+  - L. Mandelstam
+  - Ig. Tamm
+  booktitle: Selected Papers
+  publisher: Springer Berlin Heidelberg
+  pages: 115-123
+  year: 1991
+  doi: 10.1007/978-3-642-74626-0_8
+
+margolus1998maximum:
+  type: article
+  title: The maximum speed of dynamical evolution
+  authors:
+  - Norman Margolus
+  - Lev B. Levitin
+  journal: 'Physica D: Nonlinear Phenomena'
+  volume: '120'
+  pages: 188-195
+  year: 1998
+  doi: 10.1016/s0167-2789(98)00054-2
+
+deffner2017review:
+  type: article
+  title: 'Quantum speed limits: from Heisenberg’s uncertainty principle to optimal quantum control'
+  authors:
+  - Sebastian Deffner
+  - Steve Campbell
+  journal: 'J. Phys. A: Math. Theor.'
+  volume: '50'
+  pages: '453001'
+  year: 2017
+  doi: 10.1088/1751-8121/aa86c6
+
+anandan1990geometry:
+  type: article
+  title: Geometry of quantum evolution
+  authors:
+  - J. Anandan
+  - Y. Aharonov
+  journal: Phys. Rev. Lett.
+  volume: '65'
+  pages: 1697-1700
+  year: 1990
+  doi: 10.1103/physrevlett.65.1697
+
+levitin2009unified:
+  type: article
+  title: 'Fundamental Limit on the Rate of Quantum Dynamics: The Unified Bound Is Tight'
+  authors:
+  - Lev B. Levitin
+  - Tommaso Toffoli
+  journal: Phys. Rev. Lett.
+  volume: '103'
+  pages: '160502'
+  year: 2009
+  doi: 10.1103/physrevlett.103.160502
+
+deffner2013nonmarkovian:
+  type: article
+  title: Quantum Speed Limit for Non-Markovian Dynamics
+  authors:
+  - Sebastian Deffner
+  - Eric Lutz
+  journal: Phys. Rev. Lett.
+  volume: '111'
+  pages: '010402'
+  year: 2013
+  doi: 10.1103/physrevlett.111.010402
+
+delcampo2013open:
+  type: article
+  title: Quantum Speed Limits in Open System Dynamics
+  authors:
+  - A. del Campo
+  - I. L. Egusquiza
+  - M. B. Plenio
+  - S. F. Huelga
+  journal: Phys. Rev. Lett.
+  volume: '110'
+  pages: '050403'
+  year: 2013
+  doi: 10.1103/physrevlett.110.050403
+
+taddei2013physical:
+  type: article
+  title: Quantum Speed Limit for Physical Processes
+  authors:
+  - M. M. Taddei
+  - B. M. Escher
+  - L. Davidovich
+  - R. L. de Matos Filho
+  journal: Phys. Rev. Lett.
+  volume: '110'
+  pages: '050402'
+  year: 2013
+  doi: 10.1103/physrevlett.110.050402
+
+bukov2019geometric:
+  type: article
+  title: Geometric Speed Limit of Accessible Many-Body State Preparation
+  authors:
+  - Marin Bukov
+  - Dries Sels
+  - Anatoli Polkovnikov
+  journal: Phys. Rev. X
+  volume: '9'
+  pages: '011034'
+  year: 2019
+  doi: 10.1103/physrevx.9.011034
+
+poggi2019geometric:
+  type: article
+  title: Geometric quantum speed limits and short-time accessibility to unitary operations
+  authors:
+  - Pablo M. Poggi
+  journal: Phys. Rev. A
+  volume: '99'
+  pages: '042116'
+  year: 2019
+  doi: 10.1103/physreva.99.042116
+
+arenz2017drift:
+  type: article
+  title: The roles of drift and control field constraints upon quantum control speed limits
+  authors:
+  - Christian Arenz
+  - Benjamin Russell
+  - Daniel Burgarth
+  - Herschel Rabitz
+  journal: New J. Phys.
+  volume: '19'
+  pages: '103015'
+  year: 2017
+  doi: 10.1088/1367-2630/aa8242
+
+lieb1972finite:
+  type: article
+  title: The finite group velocity of quantum spin systems
+  authors:
+  - Elliott H. Lieb
+  - Derek W. Robinson
+  journal: Commun.Math. Phys.
+  volume: '28'
+  pages: 251-257
+  year: 1972
+  doi: 10.1007/bf01645779
+
+murphy2010chain:
+  type: article
+  title: Communication at the quantum speed limit along a spin chain
+  authors:
+  - Michael Murphy
+  - Simone Montangero
+  - Vittorio Giovannetti
+  - Tommaso Calarco
+  journal: Phys. Rev. A
+  volume: '82'
+  pages: 022318
+  year: 2010
+  doi: 10.1103/physreva.82.022318
+
+ness2021crossover:
+  type: article
+  title: Observing crossover between quantum speed limits
+  authors:
+  - Gal Ness
+  - Manolo R. Lam
+  - Wolfgang Alt
+  - Dieter Meschede
+  - Yoav Sagi
+  - Andrea Alberti
+  journal: Sci. Adv.
+  volume: '7'
+  pages: eabj9119
+  year: 2021
+  doi: 10.1126/sciadv.abj9119
+
+shanahan2018classical:
+  type: article
+  title: Quantum Speed Limits across the Quantum-to-Classical Transition
+  authors:
+  - B. Shanahan
+  - A. Chenu
+  - N. Margolus
+  - A. del Campo
+  journal: Phys. Rev. Lett.
+  volume: '120'
+  pages: '070401'
+  year: 2018
+  doi: 10.1103/physrevlett.120.070401
+
+pires2016generalized:
+  type: article
+  title: Generalized Geometric Quantum Speed Limits
+  authors:
+  - Diego Paiva Pires
+  - Marco Cianciaruso
+  - Lucas C. Céleri
+  - Gerardo Adesso
+  - Diogo O. Soares-Pinto
+  journal: Phys. Rev. X
+  volume: '6'
+  pages: '021031'
+  year: 2016
+  doi: 10.1103/physrevx.6.021031
+
+caneva2014complexity:
+  type: article
+  title: Complexity of controlling quantum many-body dynamics
+  authors:
+  - T. Caneva
+  - A. Silva
+  - R. Fazio
+  - S. Lloyd
+  - T. Calarco
+  - S. Montangero
+  journal: Phys. Rev. A
+  volume: '89'
+  pages: '042322'
+  year: 2014
+  doi: 10.1103/physreva.89.042322
+
+poulin2011illusion:
+  type: article
+  title: Quantum Simulation of Time-Dependent Hamiltonians and the Convenient Illusion of Hilbert Space
+  authors:
+  - David Poulin
+  - Angie Qarry
+  - Rolando Somma
+  - Frank Verstraete
+  journal: Phys. Rev. Lett.
+  volume: '106'
+  pages: '170501'
+  year: 2011
+  doi: 10.1103/physrevlett.106.170501
+
+muller2022noisybounds:
+  type: article
+  title: 'Information theoretical limits for quantum optimal control solutions: error scaling of noisy
+    control channels'
+  authors:
+  - Matthias M. Müller
+  - Stefano Gherardini
+  - Tommaso Calarco
+  - Simone Montangero
+  - Filippo Caruso
+  journal: Sci Rep
+  volume: '12'
+  pages: '21405'
+  year: 2022
+  doi: 10.1038/s41598-022-25770-6
+  arxiv: '2006.16113'
+
