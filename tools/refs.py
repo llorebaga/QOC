@@ -178,11 +178,11 @@ def add(key: str, doi: str | None, arxiv: str | None, note: str | None, force: b
     if key in refs:
         refs[key] = entry
         body = "".join(dump_entry(k, v) + "\n" for k, v in refs.items())
-        REFS.write_text(HEADER + "\n" + body, encoding="utf-8")
+        REFS.write_text(HEADER + "\n" + body, encoding="utf-8", newline="\n")
     else:
         if not REFS.exists():
-            REFS.write_text(HEADER + "\n", encoding="utf-8")
-        with REFS.open("a", encoding="utf-8") as fh:
+            REFS.write_text(HEADER + "\n", encoding="utf-8", newline="\n")
+        with REFS.open("a", encoding="utf-8", newline="\n") as fh:
             fh.write(dump_entry(key, entry) + "\n")
     print(f"{key}: {fmt(entry)}")
 

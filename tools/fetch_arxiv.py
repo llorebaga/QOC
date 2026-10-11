@@ -146,7 +146,7 @@ def load_year(year: int) -> dict[str, dict]:
 def save_year(year: int, papers: dict[str, dict]) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     rows = [json.dumps(papers[k], ensure_ascii=False, separators=(",", ":")) for k in sorted(papers)]
-    (OUT / f"{year}.json").write_text("[\n" + ",\n".join(rows) + "\n]\n", encoding="utf-8")
+    (OUT / f"{year}.json").write_text("[\n" + ",\n".join(rows) + "\n]\n", encoding="utf-8", newline="\n")
 
 
 def merge(papers: list[dict]) -> tuple[int, int]:
