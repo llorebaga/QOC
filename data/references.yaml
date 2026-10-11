@@ -3439,3 +3439,633 @@ wang2010lyapunov:
   year: 2010
   doi: 10.1109/tac.2010.2043292
 
+assion1998chemical:
+  type: article
+  title: Control of Chemical Reactions by Feedback-Optimized Phase-Shaped Femtosecond Laser Pulses
+  authors:
+  - A. Assion
+  - T. Baumert
+  - M. Bergt
+  - T. Brixner
+  - B. Kiefer
+  - V. Seyfried
+  - M. Strehle
+  - G. Gerber
+  journal: Science
+  volume: '282'
+  pages: 919-922
+  year: 1998
+  doi: 10.1126/science.282.5390.919
+
+ferrie2015insitu:
+  type: article
+  title: Robust and efficient in situ quantum control
+  authors:
+  - Christopher Ferrie
+  - Osama Moussa
+  journal: Phys. Rev. A
+  volume: '91'
+  pages: '052306'
+  year: 2015
+  doi: 10.1103/physreva.91.052306
+
+lu2017bootstrapping:
+  type: article
+  title: Enhancing quantum control by bootstrapping a quantum processor of 12 qubits
+  authors:
+  - Dawei Lu
+  - Keren Li
+  - Jun Li
+  - Hemant Katiyar
+  - Annie Jihyun Park
+  - Guanru Feng
+  - Tao Xin
+  - Hang Li
+  - Guilu Long
+  - Aharon Brodutch
+  - Jonathan Baugh
+  - Bei Zeng
+  - Raymond Laflamme
+  journal: npj Quantum Inf
+  volume: '3'
+  pages: '45'
+  year: 2017
+  doi: 10.1038/s41534-017-0045-z
+
+li2017hybrid:
+  type: article
+  title: Hybrid Quantum-Classical Approach to Quantum Optimal Control
+  authors:
+  - Jun Li
+  - Xiaodong Yang
+  - Xinhua Peng
+  - Chang-Pu Sun
+  journal: Phys. Rev. Lett.
+  volume: '118'
+  pages: '150503'
+  year: 2017
+  doi: 10.1103/physrevlett.118.150503
+
+rol2017restless:
+  type: article
+  title: Restless Tuneup of High-Fidelity Qubit Gates
+  authors:
+  - M. A. Rol
+  - C. C. Bultink
+  - T. E. O’Brien
+  - S. R. de Jong
+  - L. S. Theis
+  - X. Fu
+  - F. Luthi
+  - R. F. L. Vermeulen
+  - J. C. de Sterke
+  - A. Bruno
+  - D. Deurloo
+  - R. N. Schouten
+  - F. K. Wilhelm
+  - L. DiCarlo
+  journal: Phys. Rev. Applied
+  volume: '7'
+  pages: '041001'
+  year: 2017
+  doi: 10.1103/physrevapplied.7.041001
+
+frank2017autonomous:
+  type: article
+  title: Autonomous calibration of single spin qubit operations
+  authors:
+  - Florian Frank
+  - Thomas Unden
+  - Jonathan Zoller
+  - Ressa S. Said
+  - Tommaso Calarco
+  - Simone Montangero
+  - Boris Naydenov
+  - Fedor Jelezko
+  journal: npj Quantum Inf
+  volume: '3'
+  pages: '48'
+  year: 2017
+  doi: 10.1038/s41534-017-0049-8
+
+sauvage2020poor:
+  type: article
+  title: Optimal Quantum Control with Poor Statistics
+  authors:
+  - Frédéric Sauvage
+  - Florian Mintert
+  journal: PRX Quantum
+  volume: '1'
+  pages: '020322'
+  year: 2020
+  doi: 10.1103/prxquantum.1.020322
+
+feng2018closedloop:
+  type: article
+  title: Gradient-based closed-loop quantum optimal control in a solid-state two-qubit system
+  authors:
+  - Guanru Feng
+  - Franklin H. Cho
+  - Hemant Katiyar
+  - Jun Li
+  - Dawei Lu
+  - Jonathan Baugh
+  - Raymond Laflamme
+  journal: Phys. Rev. A
+  volume: '98'
+  pages: '052341'
+  year: 2018
+  doi: 10.1103/physreva.98.052341
+
+dive2018insitu:
+  type: article
+  title: In situ upgrade of quantum simulators to universal computers
+  authors:
+  - Benjamin Dive
+  - Alexander Pitchford
+  - Florian Mintert
+  - Daniel Burgarth
+  journal: Quantum
+  volume: '2'
+  pages: '80'
+  year: 2018
+  doi: 10.22331/q-2018-08-08-80
+
+niu2019universal:
+  type: article
+  title: Universal quantum control through deep reinforcement learning
+  authors:
+  - Murphy Yuezhen Niu
+  - Sergio Boixo
+  - Vadim N. Smelyanskiy
+  - Hartmut Neven
+  journal: npj Quantum Inf
+  volume: '5'
+  pages: '33'
+  year: 2019
+  doi: 10.1038/s41534-019-0141-3
+
+fosel2018feedback:
+  type: article
+  title: Reinforcement Learning with Neural Networks for Quantum Feedback
+  authors:
+  - Thomas Fösel
+  - Petru Tighineanu
+  - Talitha Weiss
+  - Florian Marquardt
+  journal: Phys. Rev. X
+  volume: '8'
+  pages: 031084
+  year: 2018
+  doi: 10.1103/physrevx.8.031084
+
+zhang2019whenrl:
+  type: article
+  title: When does reinforcement learning stand out in quantum control? A comparative study on state preparation
+  authors:
+  - Xiao-Ming Zhang
+  - Zezhu Wei
+  - Raza Asad
+  - Xu-Chen Yang
+  - Xin Wang
+  journal: npj Quantum Inf
+  volume: '5'
+  pages: '85'
+  year: 2019
+  doi: 10.1038/s41534-019-0201-8
+
+porotti2019transport:
+  type: article
+  title: Coherent transport of quantum states by deep reinforcement learning
+  authors:
+  - Riccardo Porotti
+  - Dario Tamascelli
+  - Marcello Restelli
+  - Enrico Prati
+  journal: Commun Phys
+  volume: '2'
+  pages: '61'
+  year: 2019
+  doi: 10.1038/s42005-019-0169-x
+
+sivak2022modelfree:
+  type: article
+  title: Model-Free Quantum Control with Reinforcement Learning
+  authors:
+  - V. V. Sivak
+  - A. Eickbusch
+  - H. Liu
+  - B. Royer
+  - I. Tsioutsios
+  - M. H. Devoret
+  journal: Phys. Rev. X
+  volume: '12'
+  pages: 011059
+  year: 2022
+  doi: 10.1103/physrevx.12.011059
+
+porotti2023grapefeedback:
+  type: article
+  title: Gradient-Ascent Pulse Engineering with Feedback
+  authors:
+  - Riccardo Porotti
+  - Vittorio Peano
+  - Florian Marquardt
+  journal: PRX Quantum
+  volume: '4'
+  pages: '030305'
+  year: 2023
+  doi: 10.1103/prxquantum.4.030305
+
+reuer2023realtime:
+  type: article
+  title: Realizing a deep reinforcement learning agent for real-time quantum feedback
+  authors:
+  - Kevin Reuer
+  - Jonas Landgraf
+  - Thomas Fösel
+  - James O’Sullivan
+  - Liberto Beltrán
+  - Abdulkadir Akin
+  - Graham J. Norris
+  - Ants Remm
+  - Michael Kerschbaum
+  - Jean-Claude Besse
+  - Florian Marquardt
+  - Andreas Wallraff
+  - Christopher Eichler
+  journal: Nat Commun
+  volume: '14'
+  pages: '7138'
+  year: 2023
+  doi: 10.1038/s41467-023-42901-3
+
+baum2021drl:
+  type: article
+  title: Experimental Deep Reinforcement Learning for Error-Robust Gate-Set Design on a Superconducting
+    Quantum Computer
+  authors:
+  - Yuval Baum
+  - Mirko Amico
+  - Sean Howell
+  - Michael Hush
+  - Maggie Liuzzi
+  - Pranav Mundada
+  - Thomas Merkh
+  - Andre R.R. Carvalho
+  - Michael J. Biercuk
+  journal: PRX Quantum
+  volume: '2'
+  pages: '040324'
+  year: 2021
+  doi: 10.1103/prxquantum.2.040324
+
+dalgaard2020alphazero:
+  type: article
+  title: Global optimization of quantum dynamics with AlphaZero deep exploration
+  authors:
+  - Mogens Dalgaard
+  - Felix Motzoi
+  - Jens Jakob Sørensen
+  - Jacob Sherson
+  journal: npj Quantum Inf
+  volume: '6'
+  pages: '6'
+  year: 2020
+  doi: 10.1038/s41534-019-0241-0
+
+mukherjee2020bayesian:
+  type: article
+  title: Bayesian Optimal Control of Greenberger-Horne-Zeilinger States in Rydberg Lattices
+  authors:
+  - Rick Mukherjee
+  - Harry Xie
+  - Florian Mintert
+  journal: Phys. Rev. Lett.
+  volume: '125'
+  pages: '203603'
+  year: 2020
+  doi: 10.1103/physrevlett.125.203603
+
+krenn2023ai:
+  type: article
+  title: Artificial intelligence and machine learning for quantum technologies
+  authors:
+  - Mario Krenn
+  - Jonas Landgraf
+  - Thomas Foesel
+  - Florian Marquardt
+  journal: Phys. Rev. A
+  volume: '107'
+  pages: '010101'
+  year: 2023
+  doi: 10.1103/physreva.107.010101
+
+zahedinejad2016threequbit:
+  type: article
+  title: 'Designing High-Fidelity Single-Shot Three-Qubit Gates: A Machine-Learning Approach'
+  authors:
+  - Ehsan Zahedinejad
+  - Joydip Ghosh
+  - Barry C. Sanders
+  journal: Phys. Rev. Applied
+  volume: '6'
+  pages: '054005'
+  year: 2016
+  doi: 10.1103/physrevapplied.6.054005
+
+an2019drlgate:
+  type: article
+  title: Deep reinforcement learning for quantum gate control
+  authors:
+  - Zheng An
+  - D. L. Zhou
+  journal: EPL
+  volume: '126'
+  pages: '60002'
+  year: 2019
+  doi: 10.1209/0295-5075/126/60002
+
+giannelli2022tutorial:
+  type: article
+  title: A tutorial on optimal control and reinforcement learning methods for quantum technologies
+  authors:
+  - Luigi Giannelli
+  - Sofia Sgroi
+  - Jonathon Brown
+  - Gheorghe Sorin Paraoanu
+  - Mauro Paternostro
+  - Elisabetta Paladino
+  - Giuseppe Falci
+  journal: Physics Letters A
+  volume: '434'
+  pages: '128054'
+  year: 2022
+  doi: 10.1016/j.physleta.2022.128054
+
+duncan2025taming:
+  type: article
+  title: 'Taming Quantum Systems: A Tutorial for Using Shortcuts-To-Adiabaticity, Quantum Optimal Control,
+    and Reinforcement Learning'
+  authors:
+  - Callum W. Duncan
+  - Pablo M. Poggi
+  - Marin Bukov
+  - Nikolaj Thomas Zinner
+  - Steve Campbell
+  journal: PRX Quantum
+  volume: '6'
+  pages: '040201'
+  year: 2025
+  doi: 10.1103/j8c7-v2hd
+
+wiebe2014hamiltonian:
+  type: article
+  title: Hamiltonian Learning and Certification Using Quantum Resources
+  authors:
+  - Nathan Wiebe
+  - Christopher Granade
+  - Christopher Ferrie
+  - D. G. Cory
+  journal: Phys. Rev. Lett.
+  volume: '112'
+  pages: '190501'
+  year: 2014
+  doi: 10.1103/physrevlett.112.190501
+
+granade2012robust:
+  type: article
+  title: Robust online Hamiltonian learning
+  authors:
+  - Christopher E Granade
+  - Christopher Ferrie
+  - Nathan Wiebe
+  - D G Cory
+  journal: New J. Phys.
+  volume: '14'
+  pages: '103013'
+  year: 2012
+  doi: 10.1088/1367-2630/14/10/103013
+
+wang2017experimental:
+  type: article
+  title: Experimental quantum Hamiltonian learning
+  authors:
+  - Jianwei Wang
+  - Stefano Paesani
+  - Raffaele Santagati
+  - Sebastian Knauer
+  - Antonio A. Gentile
+  - Nathan Wiebe
+  - Maurangelo Petruzzella
+  - Jeremy L. O’Brien
+  - John G. Rarity
+  - Anthony Laing
+  - Mark G. Thompson
+  journal: Nature Phys
+  volume: '13'
+  pages: 551-555
+  year: 2017
+  doi: 10.1038/nphys4074
+
+gentile2021learning:
+  type: article
+  title: Learning models of quantum systems from experiments
+  authors:
+  - Antonio A. Gentile
+  - Brian Flynn
+  - Sebastian Knauer
+  - Nathan Wiebe
+  - Stefano Paesani
+  - Christopher E. Granade
+  - John G. Rarity
+  - Raffaele Santagati
+  - Anthony Laing
+  journal: Nat. Phys.
+  volume: '17'
+  pages: 837-843
+  year: 2021
+  doi: 10.1038/s41567-021-01201-7
+
+burgarth2012identification:
+  type: article
+  title: Quantum System Identification
+  authors:
+  - Daniel Burgarth
+  - Kazuya Yuasa
+  journal: Phys. Rev. Lett.
+  volume: '108'
+  pages: 080502
+  year: 2012
+  doi: 10.1103/physrevlett.108.080502
+
+zhang2014timetraces:
+  type: article
+  title: Quantum Hamiltonian Identification from Measurement Time Traces
+  authors:
+  - Jun Zhang
+  - Mohan Sarovar
+  journal: Phys. Rev. Lett.
+  volume: '113'
+  pages: 080401
+  year: 2014
+  doi: 10.1103/physrevlett.113.080401
+
+anshu2021sample:
+  type: article
+  title: Sample-efficient learning of interacting quantum systems
+  authors:
+  - Anurag Anshu
+  - Srinivasan Arunachalam
+  - Tomotaka Kuwahara
+  - Mehdi Soleimanifar
+  journal: Nat. Phys.
+  volume: '17'
+  pages: 931-935
+  year: 2021
+  doi: 10.1038/s41567-021-01232-0
+
+bairey2019local:
+  type: article
+  title: Learning a Local Hamiltonian from Local Measurements
+  authors:
+  - Eyal Bairey
+  - Itai Arad
+  - Netanel H. Lindner
+  journal: Phys. Rev. Lett.
+  volume: '122'
+  pages: '020504'
+  year: 2019
+  doi: 10.1103/physrevlett.122.020504
+
+samach2022lindblad:
+  type: article
+  title: Lindblad Tomography of a Superconducting Quantum Processor
+  authors:
+  - Gabriel O. Samach
+  - Ami Greene
+  - Johannes Borregaard
+  - Matthias Christandl
+  - Joseph Barreto
+  - David K. Kim
+  - Christopher M. McNally
+  - Alexander Melville
+  - Bethany M. Niedzielski
+  - Youngkyu Sung
+  - Danna Rosenberg
+  - Mollie E. Schwartz
+  - Jonilyn L. Yoder
+  - Terry P. Orlando
+  - Joel I-Jan Wang
+  - Simon Gustavsson
+  - Morten Kjaergaard
+  - William D. Oliver
+  journal: Phys. Rev. Applied
+  volume: '18'
+  pages: '064056'
+  year: 2022
+  doi: 10.1103/physrevapplied.18.064056
+
+rol2020distortion:
+  type: article
+  title: Time-domain characterization and correction of on-chip distortion of control pulses in a quantum
+    processor
+  authors:
+  - M. A. Rol
+  - L. Ciorciaro
+  - F. K. Malinowski
+  - B. M. Tarasinski
+  - R. E. Sagastizabal
+  - C. C. Bultink
+  - Y. Salathe
+  - N. Haandbaek
+  - J. Sedivy
+  - L. DiCarlo
+  journal: Applied Physics Letters
+  volume: '116'
+  pages: '054001'
+  year: 2020
+  doi: 10.1063/1.5133894
+
+jerger2019vna:
+  type: article
+  title: 'In Situ Characterization of Qubit Control Lines: A Qubit as a Vector Network Analyzer'
+  authors:
+  - Markus Jerger
+  - Anatoly Kulikov
+  - Zénon Vasselin
+  - Arkady Fedorov
+  journal: Phys. Rev. Lett.
+  volume: '123'
+  pages: '150501'
+  year: 2019
+  doi: 10.1103/physrevlett.123.150501
+
+blumekohout2017gst:
+  type: article
+  title: Demonstration of qubit operations below a rigorous fault tolerance threshold with gate set tomography
+  authors:
+  - Robin Blume-Kohout
+  - John King Gamble
+  - Erik Nielsen
+  - Kenneth Rudinger
+  - Jonathan Mizrahi
+  - Kevin Fortier
+  - Peter Maunz
+  journal: Nat Commun
+  volume: '8'
+  pages: '14485'
+  year: 2017
+  doi: 10.1038/ncomms14485
+
+eisert2020certification:
+  type: article
+  title: Quantum certification and benchmarking
+  authors:
+  - Jens Eisert
+  - Dominik Hangleiter
+  - Nathan Walk
+  - Ingo Roth
+  - Damian Markham
+  - Rhea Parekh
+  - Ulysse Chabaud
+  - Elham Kashefi
+  journal: Nat Rev Phys
+  volume: '2'
+  pages: 382-390
+  year: 2020
+  doi: 10.1038/s42254-020-0186-4
+
+genois2021mlchar:
+  type: article
+  title: Quantum-Tailored Machine-Learning Characterization of a Superconducting Qubit
+  authors:
+  - Élie Genois
+  - Jonathan A. Gross
+  - Agustin Di Paolo
+  - Noah J. Stevenson
+  - Gerwin Koolstra
+  - Akel Hashim
+  - Irfan Siddiqi
+  - Alexandre Blais
+  journal: PRX Quantum
+  volume: '2'
+  pages: '040355'
+  year: 2021
+  doi: 10.1103/prxquantum.2.040355
+
+genois2025ocml:
+  type: article
+  title: Quantum optimal control of superconducting qubits based on machine-learning characterization
+  authors:
+  - Élie Genois
+  - Noah J. Stevenson
+  - Noah Goss
+  - Irfan Siddiqi
+  - Alexandre Blais
+  journal: Phys. Rev. Applied
+  volume: '24'
+  pages: '034073'
+  year: 2025
+  doi: 10.1103/d9yg-d3qr
+

@@ -70,6 +70,9 @@ MATH = re.compile(r"(\w)?(<mml:math\b.*?</mml:math>)(\w)?", re.S)
 def clean(s: str) -> str:
     # Crossref titles may contain MathML (e.g. spin-1/2) and JATS tags: keep simple fractions, pad inline math
     s = MFRAC.sub(r"\1/\2", s)
+    # some records glue italic/bold words to their neighbours ("efficient<i>in situ</i>quantum"); sub/sup stay glued
+    s = re.sub(r"(\w)<(i|b|em|strong)>", r"\1 <\2>", s)
+    s = re.sub(r"</(i|b|em|strong)>(\w)", r"</\1> \2", s)
     s = MATH.sub(lambda m: (m.group(1) + "-" if m.group(1) else "") + m.group(2) + (" " + m.group(3) if m.group(3) else ""), s)
     s = html.unescape(re.sub(r"<[^>]+>", "", s))
     return " ".join(s.split())

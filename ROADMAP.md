@@ -36,9 +36,11 @@ understand any area; an expert can use it as a quick reference.
       dynamical decoupling, filter functions) — *awaiting review*
 - [x] **Analytic & adiabatic design family written** (5 articles: shortcuts to adiabaticity, adiabatic passage,
       DRAG, Floquet engineering, Lyapunov/tracking/MPC) — *awaiting review*
-- [ ] Review of the written articles (26 so far)
+- [x] **Learning & closed-loop family written** (3 articles: closed-loop & in-situ optimization,
+      reinforcement & machine learning, system identification) — *awaiting review*
+- [ ] Review of the written articles (29 so far)
 - [ ] Remaining families, one at a time:
-      Learning → Open systems → Many-body → Tasks → Platforms
+      Open systems → Many-body → Tasks → Platforms
 
 ## 🚧 Phase 3 — arXiv paper tracker (data pipeline running)
 
