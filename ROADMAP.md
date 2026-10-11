@@ -14,33 +14,37 @@ The project is built in phases. Each phase is finished and reviewed before the n
 - [x] Draft taxonomy of the field (`data/taxonomy.yaml`) — **10 families, 42 topics** — shown on `/map/`
 - [x] CI: build check on every push
 
-## 🔜 Phase 2 — Field map & knowledge base
+## 🚧 Phase 2 — Field map & knowledge base (in progress)
 
 Goal: the reference part of the site. Someone new to the field can start at the map and
 understand any area; an expert can use it as a quick reference.
 
-- [ ] Review and freeze taxonomy v1 (families, topics, relations)
-- [ ] Topic article format (`content/topics/<id>.md` with front matter):
-      intuition → formal statement → key equations → variants → when to use it / limitations →
-      key papers (with DOI/arXiv) → software → related topics → open problems
-- [ ] Topic page template, with KaTeX math, references, "related topics" and family navigation
-- [ ] Interactive field map (force-directed graph, coloured by family, click a node → article)
-- [ ] Search across topics (client-side index)
-- [ ] Write the articles, family by family, starting with **Algorithms** (GRAPE, Krotov, CRAB/dCRAB,
-      GOAT, …), then **Speed limits**, **Robust control**, **Many-body** …
-- [ ] Bibliography system: `data/references.yaml` (one entry per paper, cited by key from articles)
+- [x] Taxonomy v1 — checked against ~2000 recent arXiv control papers; 8 topics added
+      (QCPOP, propagation methods, Floquet engineering, Lyapunov/MPC, linear quantum systems,
+      bosonic control, pulse-level compilation, control electronics) → **10 families, 50 topics**
+- [x] Bibliography system: `data/references.yaml`, entries generated from Crossref/arXiv by
+      `tools/refs.py` (never typed by hand); `refs.py check` validates
+- [x] Article format: `content/topics/<id>.md` — Markdown + LaTeX, `[@key]` citations,
+      `[[topic]]` cross-links, key papers, software; the build fails on unknown keys/topics
+- [x] Topic pages for all 50 topics (article or "not written yet" + related topics)
+- [x] Interactive field map (D3 force layout, family clusters, hover neighbours, search, zoom)
+- [x] **Algorithms family written** (10 articles) — *awaiting expert review*
+- [ ] Review of the Algorithms articles
+- [ ] Remaining families, one at a time, each reviewed before the next:
+      Foundations → Speed limits → Robust → Analytic → Learning → Open systems → Many-body → Tasks → Platforms
 
-## Phase 3 — arXiv paper tracker
+## 🚧 Phase 3 — arXiv paper tracker (data pipeline running)
 
-- [ ] `tools/fetch_arxiv.py`: query the arXiv API daily (quant-ph and related categories) with a
-      broad control-related query; store results in `data/papers/YYYY-MM.json`
-- [ ] Relevance filter + topic classifier (start with transparent keyword/alias rules from the
-      taxonomy; evaluate on a hand-labelled sample; consider embedding-based classification later)
-- [ ] GitHub Actions workflow (daily cron) that fetches, classifies, commits and rebuilds
+- [x] `tools/fetch_arxiv.py`: month-by-month harvest of arXiv, validated query strategy
+      (API used as a superset pre-filter; 0/75 misses against a full month of quant-ph)
+- [x] Transparent selection rule in `qocsite/selection.py`, documented on the About page
+- [x] Archive of every QOC paper since 2020 in `data/papers/<year>.json`
+- [x] Daily GitHub Action (`.github/workflows/papers.yml`) fetching the last 14 days and committing
+- [x] Papers-per-year chart on the home page, regenerated at every build
+- [ ] Topic classifier (taxonomy aliases → evaluated against a hand-labelled sample)
 - [ ] Papers page: latest first, filter by topic/date, full-text search
 - [ ] Author pages: click any author → all their tracked papers (with name normalization)
 - [ ] RSS/Atom feed per topic; weekly digest page
-- [ ] Back-fill: seed the archive with the key papers of the field
 
 ## Phase 4 — Research groups map
 

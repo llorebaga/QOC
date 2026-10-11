@@ -30,11 +30,11 @@ C_OPEN = 50              # half opening angle of the C, degrees
 
 # pulse: y(x) = CY - A * exp(-((x-x0)/sigma)^2) * cos(2 pi (x-x0)/lam)
 PULSE_X = (-6, W + 6)
-PULSE_A = 25
-PULSE_SIGMA = 84
-PULSE_LAMBDA = 44
+PULSE_A = 15
+PULSE_SIGMA = 120
+PULSE_LAMBDA = 28.8         # ring sides (offsets 36, 64, 136 from the centre) sit on zero crossings
 PULSE_W = 3.6            # pulse stroke width
-GAP = 3.2                # clearance cut into letters on each side of the pulse
+GAP = 2.6                # clearance cut into letters on each side of the pulse
 
 # brand colours (kept in sync with static/css/main.css)
 INK_LIGHT = "#0e1530"
@@ -123,7 +123,7 @@ def favicon() -> str:
     cx = cy = 32
     r = 19
     sw = 6
-    pulse = pulse_path(-2, 66, x0=32, amp=12, sigma=17, lam=12.5, cy=cy, step=0.5)
+    pulse = pulse_path(-2, 66, x0=32, amp=9, sigma=20, lam=10.4, cy=cy, step=0.5)
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {s} {s}">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="{s}" y2="0" gradientUnits="userSpaceOnUse">

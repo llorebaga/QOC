@@ -1,0 +1,1050 @@
+# QOC bibliography — one entry per work, cited from articles as [@key].
+#
+# Entries are generated with tools/refs.py from Crossref / arXiv metadata.
+# Do not hand-edit bibliographic fields; you may add or edit `note` (a short
+# description of why the work matters, shown in "Key papers" lists).
+
+bondar2025qcpop:
+  type: article
+  title: Globally optimal control of quantum dynamics
+  authors:
+  - Denys I. Bondar
+  - Llorenç Balada Gaggioli
+  - Georgios Korpas
+  - Jakub Marecek
+  - Jiri Vala
+  - Kurt Jacobs
+  journal: Phys. Rev. Research
+  volume: '7'
+  pages: '043202'
+  year: 2025
+  doi: 10.1103/g4fb-xm13
+  arxiv: '2209.05790'
+
+khaneja2005grape:
+  type: article
+  title: 'Optimal control of coupled spin dynamics: design of NMR pulse sequences by gradient ascent algorithms'
+  authors:
+  - Navin Khaneja
+  - Timo Reiss
+  - Cindie Kehlet
+  - Thomas Schulte-Herbrüggen
+  - Steffen J. Glaser
+  journal: Journal of Magnetic Resonance
+  volume: '172'
+  pages: 296-305
+  year: 2005
+  doi: 10.1016/j.jmr.2004.11.004
+
+defouquieres2011second:
+  type: article
+  title: Second order gradient ascent pulse engineering
+  authors:
+  - P. de Fouquieres
+  - S.G. Schirmer
+  - S.J. Glaser
+  - Ilya Kuprov
+  journal: Journal of Magnetic Resonance
+  volume: '212'
+  pages: 412-417
+  year: 2011
+  doi: 10.1016/j.jmr.2011.07.023
+
+machnes2011dynamo:
+  type: article
+  title: Comparing, optimizing, and benchmarking quantum-control algorithms in a unifying programming
+    framework
+  authors:
+  - S. Machnes
+  - U. Sander
+  - S. J. Glaser
+  - P. de Fouquières
+  - A. Gruslys
+  - S. Schirmer
+  - T. Schulte-Herbrüggen
+  journal: Phys. Rev. A
+  volume: '84'
+  pages: '022305'
+  year: 2011
+  doi: 10.1103/physreva.84.022305
+
+motzoi2011rapid:
+  type: article
+  title: Optimal control methods for rapidly time-varying Hamiltonians
+  authors:
+  - F. Motzoi
+  - J. M. Gambetta
+  - S. T. Merkel
+  - F. K. Wilhelm
+  journal: Phys. Rev. A
+  volume: '84'
+  pages: '022307'
+  year: 2011
+  doi: 10.1103/physreva.84.022307
+
+glaser2015training:
+  type: article
+  title: 'Training Schrödinger’s cat: quantum optimal control'
+  authors:
+  - Steffen J. Glaser
+  - Ugo Boscain
+  - Tommaso Calarco
+  - Christiane P. Koch
+  - Walter Köckenberger
+  - Ronnie Kosloff
+  - Ilya Kuprov
+  - Burkhard Luy
+  - Sophie Schirmer
+  - Thomas Schulte-Herbrüggen
+  - Dominique Sugny
+  - Frank K. Wilhelm
+  journal: Eur. Phys. J. D
+  volume: '69'
+  pages: '279'
+  year: 2015
+  doi: 10.1140/epjd/e2015-60464-1
+
+koch2022roadmap:
+  type: article
+  title: Quantum optimal control in quantum technologies. Strategic report on current status, visions
+    and goals for research in Europe
+  authors:
+  - Christiane P. Koch
+  - Ugo Boscain
+  - Tommaso Calarco
+  - Gunther Dirr
+  - Stefan Filipp
+  - Steffen J. Glaser
+  - Ronnie Kosloff
+  - Simone Montangero
+  - Thomas Schulte-Herbrüggen
+  - Dominique Sugny
+  - Frank K. Wilhelm
+  journal: EPJ Quantum Technol.
+  volume: '9'
+  pages: '19'
+  year: 2022
+  doi: 10.1140/epjqt/s40507-022-00138-x
+
+goodwin2015auxiliary:
+  type: article
+  title: Auxiliary matrix formalism for interaction representation transformations, optimal control, and
+    spin relaxation theories
+  authors:
+  - D. L. Goodwin
+  - Ilya Kuprov
+  journal: The Journal of Chemical Physics
+  volume: '143'
+  pages: 084113
+  year: 2015
+  doi: 10.1063/1.4928978
+
+schulteherbruggen2005synthesis:
+  type: article
+  title: 'Optimal control-based efficient synthesis of building blocks of quantum algorithms: A perspective
+    from network complexity towards time complexity'
+  authors:
+  - T. Schulte-Herbrüggen
+  - A. Spörl
+  - N. Khaneja
+  - S. J. Glaser
+  journal: Phys. Rev. A
+  volume: '72'
+  pages: '042331'
+  year: 2005
+  doi: 10.1103/physreva.72.042331
+
+somloi1993controlled:
+  type: article
+  title: Controlled dissociation of I2 via optical transitions between the X and B electronic states
+  authors:
+  - József Somlói
+  - Vladimir A. Kazakov
+  - David J. Tannor
+  journal: Chemical Physics
+  volume: '172'
+  pages: 85-98
+  year: 1993
+  doi: 10.1016/0301-0104(93)80108-l
+
+palao2003unitary:
+  type: article
+  title: Optimal control theory for unitary transformations
+  authors:
+  - José P. Palao
+  - Ronnie Kosloff
+  journal: Phys. Rev. A
+  volume: '68'
+  pages: 062308
+  year: 2003
+  doi: 10.1103/physreva.68.062308
+
+reich2012krotov:
+  type: article
+  title: Monotonically convergent optimization in quantum control using Krotov's method
+  authors:
+  - Daniel M. Reich
+  - Mamadou Ndong
+  - Christiane P. Koch
+  journal: The Journal of Chemical Physics
+  volume: '136'
+  pages: '104103'
+  year: 2012
+  doi: 10.1063/1.3691827
+
+goerz2019krotov:
+  type: article
+  title: 'Krotov: A Python implementation of Krotov''s method for quantum optimal control'
+  authors:
+  - Michael Goerz
+  - Daniel Basilewitsch
+  - Fernando Gago-Encinas
+  - Matthias G. Krauss
+  - Karl P. Horn
+  - Daniel M. Reich
+  - Christiane Koch
+  journal: SciPost Phys.
+  volume: '7'
+  pages: 080
+  year: 2019
+  doi: 10.21468/scipostphys.7.6.080
+
+zhu1998rapid:
+  type: article
+  title: A rapid monotonically convergent iteration algorithm for quantum optimal control over the expectation
+    value of a positive definite operator
+  authors:
+  - Wusheng Zhu
+  - Herschel Rabitz
+  journal: The Journal of Chemical Physics
+  volume: '109'
+  pages: 385-391
+  year: 1998
+  doi: 10.1063/1.476575
+
+maday2003monotonic:
+  type: article
+  title: New formulations of monotonically convergent quantum control algorithms
+  authors:
+  - Yvon Maday
+  - Gabriel Turinici
+  journal: The Journal of Chemical Physics
+  volume: '118'
+  pages: 8191-8196
+  year: 2003
+  doi: 10.1063/1.1564043
+
+eitan2011krotovbfgs:
+  type: article
+  title: 'Optimal control with accelerated convergence: Combining the Krotov and quasi-Newton methods'
+  authors:
+  - Reuven Eitan
+  - Michael Mundt
+  - David J. Tannor
+  journal: Phys. Rev. A
+  volume: '83'
+  pages: '053426'
+  year: 2011
+  doi: 10.1103/physreva.83.053426
+
+sklarz2002loading:
+  type: article
+  title: 'Loading a Bose-Einstein condensate onto an optical lattice: An application of optimal control
+    theory to the nonlinear Schrödinger equation'
+  authors:
+  - Shlomo E. Sklarz
+  - David J. Tannor
+  journal: Phys. Rev. A
+  volume: '66'
+  pages: 053619
+  year: 2002
+  doi: 10.1103/physreva.66.053619
+
+doria2011crab:
+  type: article
+  title: Optimal Control Technique for Many-Body Quantum Dynamics
+  authors:
+  - Patrick Doria
+  - Tommaso Calarco
+  - Simone Montangero
+  journal: Phys. Rev. Lett.
+  volume: '106'
+  pages: '190501'
+  year: 2011
+  doi: 10.1103/physrevlett.106.190501
+
+caneva2011crab:
+  type: article
+  title: Chopped random-basis quantum optimization
+  authors:
+  - Tommaso Caneva
+  - Tommaso Calarco
+  - Simone Montangero
+  journal: Phys. Rev. A
+  volume: '84'
+  pages: '022326'
+  year: 2011
+  doi: 10.1103/physreva.84.022326
+
+rach2015dcrab:
+  type: article
+  title: 'Dressing the chopped-random-basis optimization: A bandwidth-limited access to the trap-free
+    landscape'
+  authors:
+  - N. Rach
+  - M. M. Müller
+  - T. Calarco
+  - S. Montangero
+  journal: Phys. Rev. A
+  volume: '92'
+  pages: '062343'
+  year: 2015
+  doi: 10.1103/physreva.92.062343
+
+muller2022decade:
+  type: article
+  title: One decade of quantum optimal control in the chopped random basis
+  authors:
+  - Matthias M Müller
+  - Ressa S Said
+  - Fedor Jelezko
+  - Tommaso Calarco
+  - Simone Montangero
+  journal: Rep. Prog. Phys.
+  volume: '85'
+  pages: '076001'
+  year: 2022
+  doi: 10.1088/1361-6633/ac723c
+
+heck2018remote:
+  type: article
+  title: Remote optimization of an ultracold atoms experiment by experts and citizen scientists
+  authors:
+  - Robert Heck
+  - Oana Vuculescu
+  - Jens Jakob Sørensen
+  - Jonathan Zoller
+  - Morten G. Andreasen
+  - Mark G. Bason
+  - Poul Ejlertsen
+  - Ottó Elíasson
+  - Pinja Haikka
+  - Jens S. Laustsen
+  - Lærke L. Nielsen
+  - Andrew Mao
+  - Romain Müller
+  - Mario Napolitano
+  - Mads K. Pedersen
+  - Aske R. Thorsen
+  - Carsten Bergenholtz
+  - Tommaso Calarco
+  - Simone Montangero
+  - Jacob F. Sherson
+  journal: Proc. Natl. Acad. Sci. U.S.A.
+  volume: '115'
+  year: 2018
+  doi: 10.1073/pnas.1716869115
+
+lloyd2014information:
+  type: article
+  title: Information Theoretical Analysis of Quantum Optimal Control
+  authors:
+  - S. Lloyd
+  - S. Montangero
+  journal: Phys. Rev. Lett.
+  volume: '113'
+  pages: '010502'
+  year: 2014
+  doi: 10.1103/physrevlett.113.010502
+
+rossignolo2023quocs:
+  type: article
+  title: 'QuOCS: The quantum optimal control suite'
+  authors:
+  - Marco Rossignolo
+  - Thomas Reisser
+  - Alastair Marshall
+  - Phila Rembold
+  - Alice Pagano
+  - Philipp J. Vetter
+  - Ressa S. Said
+  - Matthias M. Müller
+  - Felix Motzoi
+  - Tommaso Calarco
+  - Fedor Jelezko
+  - Simone Montangero
+  journal: Computer Physics Communications
+  volume: '291'
+  pages: '108782'
+  year: 2023
+  doi: 10.1016/j.cpc.2023.108782
+
+machnes2018goat:
+  type: article
+  title: Tunable, Flexible, and Efficient Optimization of Control Pulses for Practical Qubits
+  authors:
+  - Shai Machnes
+  - Elie Assémat
+  - David Tannor
+  - Frank K. Wilhelm
+  journal: Phys. Rev. Lett.
+  volume: '120'
+  pages: '150401'
+  year: 2018
+  doi: 10.1103/physrevlett.120.150401
+
+lucarelli2018grafs:
+  type: article
+  title: Quantum optimal control via gradient ascent in function space and the time-bandwidth quantum
+    speed limit
+  authors:
+  - Dennis Lucarelli
+  journal: Phys. Rev. A
+  volume: '97'
+  pages: '062346'
+  year: 2018
+  doi: 10.1103/physreva.97.062346
+
+wittler2021c3:
+  type: article
+  title: Integrated Tool Set for Control, Calibration, and Characterization of Quantum Devices Applied
+    to Superconducting Qubits
+  authors:
+  - Nicolas Wittler
+  - Federico Roy
+  - Kevin Pack
+  - Max Werninghaus
+  - Anurag Saha Roy
+  - Daniel J. Egger
+  - Stefan Filipp
+  - Frank K. Wilhelm
+  - Shai Machnes
+  journal: Phys. Rev. Applied
+  volume: '15'
+  pages: 034080
+  year: 2021
+  doi: 10.1103/physrevapplied.15.034080
+
+goodwin2016newton:
+  type: article
+  title: Modified Newton-Raphson GRAPE methods for optimal control of spin systems
+  authors:
+  - D. L. Goodwin
+  - Ilya Kuprov
+  journal: The Journal of Chemical Physics
+  volume: '144'
+  pages: '204107'
+  year: 2016
+  doi: 10.1063/1.4949534
+
+dalgaard2020hessian:
+  type: article
+  title: Hessian-based optimization of constrained quantum control
+  authors:
+  - Mogens Dalgaard
+  - Felix Motzoi
+  - Jesper Hasseriis Mohr Jensen
+  - Jacob Sherson
+  journal: Phys. Rev. A
+  volume: '102'
+  pages: '042612'
+  year: 2020
+  doi: 10.1103/physreva.102.042612
+
+nocedal2006numerical:
+  type: book
+  title: Numerical Optimization
+  authors:
+  - Jorge Nocedal
+  - Stephen J. Wright
+  publisher: Springer New York
+  year: 2006
+  doi: 10.1007/978-0-387-40065-5
+
+leung2017gpu:
+  type: article
+  title: Speedup for quantum optimal control from automatic differentiation based on graphics processing
+    units
+  authors:
+  - Nelson Leung
+  - Mohamed Abdelhafez
+  - Jens Koch
+  - David Schuster
+  journal: Phys. Rev. A
+  volume: '95'
+  pages: 042318
+  year: 2017
+  doi: 10.1103/physreva.95.042318
+
+abdelhafez2019trajectories:
+  type: article
+  title: Gradient-based optimal control of open quantum systems using quantum trajectories and automatic
+    differentiation
+  authors:
+  - Mohamed Abdelhafez
+  - David I. Schuster
+  - Jens Koch
+  journal: Phys. Rev. A
+  volume: '99'
+  pages: '052327'
+  year: 2019
+  doi: 10.1103/physreva.99.052327
+
+schafer2020differentiable:
+  type: article
+  title: A differentiable programming method for quantum control
+  authors:
+  - Frank Schäfer
+  - Michal Kloc
+  - Christoph Bruder
+  - Niels Lörch
+  journal: 'Mach. Learn.: Sci. Technol.'
+  volume: '1'
+  pages: 035009
+  year: 2020
+  doi: 10.1088/2632-2153/ab9802
+
+goerz2022semiad:
+  type: article
+  title: Quantum Optimal Control via Semi-Automatic Differentiation
+  authors:
+  - Michael H. Goerz
+  - Sebastián C. Carrasco
+  - Vladimir S. Malinovsky
+  journal: Quantum
+  volume: '6'
+  pages: '871'
+  year: 2022
+  doi: 10.22331/q-2022-12-07-871
+
+nelder1965simplex:
+  type: article
+  title: A Simplex Method for Function Minimization
+  authors:
+  - J. A. Nelder
+  - R. Mead
+  journal: The Computer Journal
+  volume: '7'
+  pages: 308-313
+  year: 1965
+  doi: 10.1093/comjnl/7.4.308
+
+hansen2001cmaes:
+  type: article
+  title: Completely Derandomized Self-Adaptation in Evolution Strategies
+  authors:
+  - Nikolaus Hansen
+  - Andreas Ostermeier
+  journal: Evolutionary Computation
+  volume: '9'
+  pages: 159-195
+  year: 2001
+  doi: 10.1162/106365601750190398
+
+judson1992teaching:
+  type: article
+  title: Teaching lasers to control molecules
+  authors:
+  - Richard S. Judson
+  - Herschel Rabitz
+  journal: Phys. Rev. Lett.
+  volume: '68'
+  pages: 1500-1503
+  year: 1992
+  doi: 10.1103/physrevlett.68.1500
+
+zahedinejad2014evolutionary:
+  type: article
+  title: Evolutionary algorithms for hard quantum control
+  authors:
+  - Ehsan Zahedinejad
+  - Sophie Schirmer
+  - Barry C. Sanders
+  journal: Phys. Rev. A
+  volume: '90'
+  pages: '032310'
+  year: 2014
+  doi: 10.1103/physreva.90.032310
+
+kelly2014orbit:
+  type: article
+  title: Optimal Quantum Control Using Randomized Benchmarking
+  authors:
+  - J. Kelly
+  - R. Barends
+  - B. Campbell
+  - Y. Chen
+  - Z. Chen
+  - B. Chiaro
+  - A. Dunsworth
+  - A. G. Fowler
+  - I.-C. Hoi
+  - E. Jeffrey
+  - A. Megrant
+  - J. Mutus
+  - C. Neill
+  - P. J. J. O’Malley
+  - C. Quintana
+  - P. Roushan
+  - D. Sank
+  - A. Vainsencher
+  - J. Wenner
+  - T. C. White
+  - A. N. Cleland
+  - John M. Martinis
+  journal: Phys. Rev. Lett.
+  volume: '112'
+  pages: '240504'
+  year: 2014
+  doi: 10.1103/physrevlett.112.240504
+
+egger2014adhoc:
+  type: article
+  title: Adaptive Hybrid Optimal Quantum Control for Imprecisely Characterized Systems
+  authors:
+  - D. J. Egger
+  - F. K. Wilhelm
+  journal: Phys. Rev. Lett.
+  volume: '112'
+  pages: '240503'
+  year: 2014
+  doi: 10.1103/physrevlett.112.240503
+
+hincks2015nonlinear:
+  type: article
+  title: Controlling Quantum Devices with Nonlinear Hardware
+  authors:
+  - I. N. Hincks
+  - C. E. Granade
+  - T. W. Borneman
+  - D. G. Cory
+  journal: Phys. Rev. Applied
+  volume: '4'
+  pages: '024012'
+  year: 2015
+  doi: 10.1103/physrevapplied.4.024012
+
+skinner2010analytic:
+  type: article
+  title: Optimal control design of pulse shapes as analytic functions
+  authors:
+  - Thomas E. Skinner
+  - Naum I. Gershenzon
+  journal: Journal of Magnetic Resonance
+  volume: '204'
+  pages: 248-255
+  year: 2010
+  doi: 10.1016/j.jmr.2010.03.002
+
+taleezer1984chebyshev:
+  type: article
+  title: An accurate and efficient scheme for propagating the time dependent Schrödinger equation
+  authors:
+  - H. Tal-Ezer
+  - R. Kosloff
+  journal: The Journal of Chemical Physics
+  volume: '81'
+  pages: 3967-3971
+  year: 1984
+  doi: 10.1063/1.448136
+
+moler2003nineteen:
+  type: article
+  title: Nineteen Dubious Ways to Compute the Exponential of a Matrix, Twenty-Five Years Later
+  authors:
+  - Cleve Moler
+  - Charles Van Loan
+  journal: SIAM Rev.
+  volume: '45'
+  pages: 3-49
+  year: 2003
+  doi: 10.1137/s00361445024180
+
+blanes2009magnus:
+  type: article
+  title: The Magnus expansion and some of its applications
+  authors:
+  - S. Blanes
+  - F. Casas
+  - J.A. Oteo
+  - J. Ros
+  journal: Physics Reports
+  volume: '470'
+  pages: 151-238
+  year: 2009
+  doi: 10.1016/j.physrep.2008.11.001
+
+park1986lanczos:
+  type: article
+  title: Unitary quantum time evolution by iterative Lanczos reduction
+  authors:
+  - Tae Jun Park
+  - J. C. Light
+  journal: The Journal of Chemical Physics
+  volume: '85'
+  pages: 5870-5876
+  year: 1986
+  doi: 10.1063/1.451548
+
+feit1982spectral:
+  type: article
+  title: Solution of the Schrödinger equation by a spectral method
+  authors:
+  - M.D Feit
+  - J.A Fleck
+  - A Steiger
+  journal: Journal of Computational Physics
+  volume: '47'
+  pages: 412-433
+  year: 1982
+  doi: 10.1016/0021-9991(82)90091-2
+
+vanloan1978integrals:
+  type: article
+  title: Computing integrals involving the matrix exponential
+  authors:
+  - C. Van Loan
+  journal: IEEE Trans. Automat. Contr.
+  volume: '23'
+  pages: 395-404
+  year: 1978
+  doi: 10.1109/tac.1978.1101743
+
+almohy2009frechet:
+  type: article
+  title: Computing the Fréchet Derivative of the Matrix Exponential, with an Application to Condition
+    Number Estimation
+  authors:
+  - Awad H. Al-Mohy
+  - Nicholas J. Higham
+  journal: SIAM J. Matrix Anal. Appl.
+  volume: '30'
+  pages: 1639-1657
+  year: 2009
+  doi: 10.1137/080716426
+
+ndong2010chebychev:
+  type: article
+  title: A Chebychev propagator with iterative time ordering for explicitly time-dependent Hamiltonians
+  authors:
+  - Mamadou Ndong
+  - Hillel Tal-Ezer
+  - Ronnie Kosloff
+  - Christiane P. Koch
+  journal: The Journal of Chemical Physics
+  volume: '132'
+  pages: '064105'
+  year: 2010
+  doi: 10.1063/1.3312531
+
+lasserre2001global:
+  type: article
+  title: Global Optimization with Polynomials and the Problem of Moments
+  authors:
+  - Jean B. Lasserre
+  journal: SIAM J. Optim.
+  volume: '11'
+  pages: 796-817
+  year: 2001
+  doi: 10.1137/s1052623400366802
+
+parrilo2003semidefinite:
+  type: article
+  title: Semidefinite programming relaxations for semialgebraic problems
+  authors:
+  - Pablo A. Parrilo
+  journal: Mathematical Programming
+  volume: '96'
+  pages: 293-320
+  year: 2003
+  doi: 10.1007/s10107-003-0387-5
+
+wang2021tssos:
+  type: article
+  title: 'TSSOS: A Moment-SOS Hierarchy That Exploits Term Sparsity'
+  authors:
+  - Jie Wang
+  - Victor Magron
+  - Jean-Bernard Lasserre
+  journal: SIAM J. Optim.
+  volume: '31'
+  pages: 30-58
+  year: 2021
+  doi: 10.1137/19m1307871
+
+breiding2018homotopy:
+  type: chapter
+  title: 'HomotopyContinuation.jl: A Package for Homotopy Continuation in Julia'
+  authors:
+  - Paul Breiding
+  - Sascha Timme
+  booktitle: Lecture Notes in Computer Science
+  publisher: Springer International Publishing
+  pages: 458-465
+  year: 2018
+  doi: 10.1007/978-3-319-96418-8_54
+
+pechen2011traps:
+  type: article
+  title: Are there Traps in Quantum Control Landscapes?
+  authors:
+  - Alexander N. Pechen
+  - David J. Tannor
+  journal: Phys. Rev. Lett.
+  volume: '106'
+  pages: '120402'
+  year: 2011
+  doi: 10.1103/physrevlett.106.120402
+
+brif2010control:
+  type: article
+  title: 'Control of quantum phenomena: past, present and future'
+  authors:
+  - Constantin Brif
+  - Raj Chakrabarti
+  - Herschel Rabitz
+  journal: New J. Phys.
+  volume: '12'
+  pages: 075008
+  year: 2010
+  doi: 10.1088/1367-2630/12/7/075008
+
+werschnik2007quantum:
+  type: article
+  title: Quantum optimal control theory
+  authors:
+  - J Werschnik
+  - E K U Gross
+  journal: 'J. Phys. B: At. Mol. Opt. Phys.'
+  volume: '40'
+  pages: R175-R211
+  year: 2007
+  doi: 10.1088/0953-4075/40/18/r01
+
+peirce1988optimal:
+  type: article
+  title: 'Optimal control of quantum-mechanical systems: Existence, numerical approximation, and applications'
+  authors:
+  - Anthony P. Peirce
+  - Mohammed A. Dahleh
+  - Herschel Rabitz
+  journal: Phys. Rev. A
+  volume: '37'
+  pages: 4950-4964
+  year: 1988
+  doi: 10.1103/physreva.37.4950
+
+caneva2009qsl:
+  type: article
+  title: Optimal Control at the Quantum Speed Limit
+  authors:
+  - T. Caneva
+  - M. Murphy
+  - T. Calarco
+  - R. Fazio
+  - S. Montangero
+  - V. Giovannetti
+  - G. E. Santoro
+  journal: Phys. Rev. Lett.
+  volume: '103'
+  pages: '240501'
+  year: 2009
+  doi: 10.1103/physrevlett.103.240501
+
+rabitz2004landscape:
+  type: article
+  title: Quantum Optimally Controlled Transition Landscapes
+  authors:
+  - Herschel A. Rabitz
+  - Michael M. Hsieh
+  - Carey M. Rosenthal
+  journal: Science
+  volume: '303'
+  pages: 1998-2001
+  year: 2004
+  doi: 10.1126/science.1093649
+
+motzoi2009drag:
+  type: article
+  title: Simple Pulses for Elimination of Leakage in Weakly Nonlinear Qubits
+  authors:
+  - F. Motzoi
+  - J. M. Gambetta
+  - P. Rebentrost
+  - F. K. Wilhelm
+  journal: Phys. Rev. Lett.
+  volume: '103'
+  pages: '110501'
+  year: 2009
+  doi: 10.1103/physrevlett.103.110501
+
+petersson2022bsplines:
+  type: article
+  title: Optimal Control of Closed Quantum Systems via B-Splines with Carrier Waves
+  authors:
+  - N. Anders Petersson
+  - Fortino Garcia
+  journal: SIAM J. Sci. Comput.
+  volume: '44'
+  pages: A3592-A3616
+  year: 2022
+  doi: 10.1137/21m1429618
+
+wigley2016fast:
+  type: article
+  title: Fast machine-learning online optimization of ultra-cold-atom experiments
+  authors:
+  - P. B. Wigley
+  - P. J. Everitt
+  - A. van den Hengel
+  - J. W. Bastian
+  - M. A. Sooriyabandara
+  - G. D. McDonald
+  - K. S. Hardman
+  - C. D. Quinlivan
+  - P. Manju
+  - C. C. N. Kuhn
+  - I. R. Petersen
+  - A. N. Luiten
+  - J. J. Hope
+  - N. P. Robins
+  - M. R. Hush
+  journal: Sci Rep
+  volume: '6'
+  pages: '25890'
+  year: 2016
+  doi: 10.1038/srep25890
+
+kosloff1988methods:
+  type: article
+  title: Time-dependent quantum-mechanical methods for molecular dynamics
+  authors:
+  - Ronnie Kosloff
+  journal: J. Phys. Chem.
+  volume: '92'
+  pages: 2087-2100
+  year: 1988
+  doi: 10.1021/j100319a003
+
+ciaramella2015newton:
+  type: article
+  title: Newton Methods for the Optimal Control of Closed Quantum Spin Systems
+  authors:
+  - G. Ciaramella
+  - A. Borzì
+  - G. Dirr
+  - D. Wachsmuth
+  journal: SIAM J. Sci. Comput.
+  volume: '37'
+  pages: A319-A346
+  year: 2015
+  doi: 10.1137/140966988
+
+ball2021software:
+  type: article
+  title: 'Software tools for quantum control: improving quantum computer performance through noise and
+    error suppression'
+  authors:
+  - Harrison Ball
+  - Michael J Biercuk
+  - Andre R R Carvalho
+  - Jiayin Chen
+  - Michael Hush
+  - Leonardo A De Castro
+  - Li Li
+  - Per J Liebermann
+  - Harry J Slatyer
+  - Claire Edmunds
+  - Virginia Frey
+  - Cornelius Hempel
+  - Alistair Milne
+  journal: Quantum Sci. Technol.
+  volume: '6'
+  pages: '044011'
+  year: 2021
+  doi: 10.1088/2058-9565/abdca6
+
+conolly1986mri:
+  type: article
+  title: Optimal Control Solutions to the Magnetic Resonance Selective Excitation Problem
+  authors:
+  - Steven Conolly
+  - Dwight Nishimura
+  - Albert Macovski
+  journal: IEEE Trans. Med. Imaging
+  volume: '5'
+  pages: 106-115
+  year: 1986
+  doi: 10.1109/tmi.1986.4307754
+
+sorensen2016speedlimit:
+  type: article
+  title: Exploring the quantum speed limit with computer games
+  authors:
+  - Jens Jakob W. H. Sørensen
+  - Mads Kock Pedersen
+  - Michael Munch
+  - Pinja Haikka
+  - Jesper Halkjær Jensen
+  - Tilo Planke
+  - Morten Ginnerup Andreasen
+  - Miroslav Gajdacz
+  - Klaus Mølmer
+  - Andreas Lieberoth
+  - Jacob F. Sherson
+  journal: Nature
+  volume: '532'
+  pages: 210-213
+  year: 2016
+  doi: 10.1038/nature17620
+
+baladagaggioli2025gates:
+  type: preprint
+  title: Unitary Gate Synthesis via Polynomial Optimization
+  authors:
+  - Llorenç Balada Gaggioli
+  - Denys I. Bondar
+  - Jiri Vala
+  - Roman Ovsiannikov
+  - Jakub Mareček
+  year: 2025
+  arxiv: '2508.01356'
+
+popovych2022identification:
+  type: preprint
+  title: 'Quantum open system identification via global optimization: Optimally accurate Markovian models
+    of open systems from time-series data'
+  authors:
+  - Zakhar Popovych
+  - Kurt Jacobs
+  - Georgios Korpas
+  - Jakub Marecek
+  - Denys I. Bondar
+  year: 2022
+  arxiv: '2203.17164'
+
+trowbridge2023collocation:
+  type: preprint
+  title: Direct Collocation for Quantum Optimal Control
+  authors:
+  - Aaron Trowbridge
+  - Aditya Bhardwaj
+  - Kevin He
+  - David I. Schuster
+  - Zachary Manchester
+  year: 2023
+  arxiv: '2305.03261'
+
+bondar2020uncomputability:
+  type: article
+  title: Uncomputability and complexity of quantum control
+  authors:
+  - Denys I. Bondar
+  - Alexander N. Pechen
+  journal: Sci Rep
+  volume: '10'
+  pages: '1195'
+  year: 2020
+  doi: 10.1038/s41598-019-56804-1
+  arxiv: '1907.10082'
+

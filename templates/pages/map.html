@@ -5,50 +5,81 @@
 {% block description %}{{ section.summary }}{% endblock %}
 
 {% block main %}
-<section class="page-hero">
+<section class="page-hero page-hero-compact">
   <div class="wrap">
-    <span class="feature-icon feature-icon-lg">{{ icon(section.icon) }}</span>
-    <p class="eyebrow">Roadmap phase {{ section.phase }} {{ status_badge(section.status) }}</p>
+    <p class="eyebrow">{{ taxonomy.families|length }} families · {{ taxonomy.topics|length }} topics ·
+      {{ articles|length }} articles written {{ status_badge(section.status) }}</p>
     <h1>{{ section.title }}</h1>
-    <p class="lead">{{ section.summary }}</p>
+    <p class="lead">Every area of quantum optimal control and how the areas connect. Hover a topic to see its
+      neighbours, click it to read the article.</p>
   </div>
 </section>
 
 <div class="wrap">
-  <aside class="notice">
-    {{ icon('info') }}
-    <p><strong>Draft outline.</strong> This is the current structure of the field —
-      {{ taxonomy.families|length }} families and {{ taxonomy.topics|length }} topics. The interactive map and
-      the topic articles come next, and they will be built on this outline.</p>
-  </aside>
+  <div class="fm" data-fieldmap>
+    <div class="fm-toolbar">
+      <label class="fm-search">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        <span class="visually-hidden">Search topics</span>
+        <input type="search" placeholder="Search topics — e.g. GRAPE, Lindblad, Rydberg…" autocomplete="off" data-fm-search>
+      </label>
+      <div class="fm-zoom" role="group" aria-label="Zoom">
+        <button class="icon-btn" type="button" data-fm-zoom="in" aria-label="Zoom in">+</button>
+        <button class="icon-btn" type="button" data-fm-zoom="out" aria-label="Zoom out">−</button>
+        <button class="icon-btn fm-reset" type="button" data-fm-zoom="reset" aria-label="Reset view">⟲</button>
+      </div>
+    </div>
 
-  <nav class="family-index" aria-label="Families">
-    {% for f in taxonomy.families %}
-    <a href="#{{ f.id }}" style="--fam: var(--fam-{{ f.id }})"><span class="fam-dot"></span>{{ f.title }}</a>
-    {% endfor %}
-  </nav>
+    <div class="fm-legend" role="group" aria-label="Highlight a family">
+      {% for f in taxonomy.families %}
+      <button type="button" class="fm-fam" data-family="{{ f.id }}" style="--fam: var(--fam-{{ f.id }})" aria-pressed="false">
+        <span class="fam-dot"></span>{{ f.title }}
+      </button>
+      {% endfor %}
+    </div>
+
+    <div class="fm-stage">
+      <div class="fm-canvas" data-fm-canvas>
+        <noscript><p class="muted">The interactive map needs JavaScript. The full outline is below.</p></noscript>
+      </div>
+      <div class="fm-card" data-fm-card hidden></div>
+      <p class="fm-hint">
+        <span><span class="fm-key fm-key-solid"></span>article available</span>
+        <span><span class="fm-key fm-key-hollow"></span>coming soon</span>
+        <span class="fm-hint-zoom">Ctrl + scroll to zoom · drag to move</span>
+      </p>
+    </div>
+  </div>
+
+  <h2 class="outline-title" id="outline">Outline</h2>
+  <p class="muted outline-empty" data-fm-empty hidden>No topic matches your search.</p>
 
   {% for f in taxonomy.families %}
-  <section class="family-block" id="{{ f.id }}" style="--fam: var(--fam-{{ f.id }})">
+  <section class="family-block" id="{{ f.id }}" style="--fam: var(--fam-{{ f.id }})" data-fm-family="{{ f.id }}">
     <header class="family-head">
-      <h2><span class="fam-dot"></span>{{ f.title }}</h2>
+      <h3><span class="fam-dot"></span>{{ f.title }}</h3>
       <p>{{ f.blurb }}</p>
     </header>
     <div class="topic-grid">
       {% for t in f.topics %}
-      <article class="card topic-card" id="topic-{{ t.id }}">
-        <h3>{{ t.title }}</h3>
-        <p>{{ t.short }}</p>
-        {% if t.aliases %}<p class="aliases"><span>Also known as</span> {{ t.aliases|join(' · ') }}</p>{% endif %}
-        {% if t.neighbours %}
-        <p class="related"><span>Related</span>
-          {% for rid in t.neighbours %}{% set r = taxonomy.topics[rid] %}<a href="#topic-{{ rid }}" style="--fam: var(--fam-{{ r.family }})">{{ r.title }}</a>{% endfor %}
-        </p>
-        {% endif %}
-      </article>
+      <a class="card topic-card" id="topic-{{ t.id }}" href="{{ url('topics/' ~ t.id ~ '/') }}"
+         data-fm-topic="{{ t.id }}" data-search="{{ (t.title ~ ' ' ~ t.label ~ ' ' ~ t.aliases|join(' ') ~ ' ' ~ t.short)|lower }}">
+        <span class="topic-card-head">
+          <span class="topic-card-title">{{ t.title }}</span>
+          {% if t.id in articles %}<span class="badge-article">Article</span>{% endif %}
+        </span>
+        <span class="topic-card-short">{{ t.short }}</span>
+      </a>
       {% endfor %}
     </div>
   </section>
   {% endfor %}
 </div>
+
+<script type="application/json" id="fm-data">{{ graph_json }}</script>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" crossorigin="anonymous" defer></script>
+<script src="{{ asset('js/fieldmap.js') }}" defer></script>
 {% endblock %}

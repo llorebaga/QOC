@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% block title %}{{ topic.title }} — QOC{% endblock %}
+{% block description %}{{ topic.short }}{% endblock %}
+{% block head %}{% if article %}{% include "partials/katex.html" %}{% endif %}{% endblock %}
+
+{% block main %}
+<div class="topic" style="--fam: var(--fam-{{ family.id }})">
+  <header class="topic-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ url('map/') }}">Field map</a><span aria-hidden="true">/</span>
+        <a href="{{ url('map/#' ~ family.id) }}">{{ family.title }}</a>
+      </nav>
+      <h1>{{ topic.title }}</h1>
+      <p class="lead">{{ topic.short }}</p>
+      <div class="topic-meta">
+        <a class="fam-badge" href="{{ url('map/#' ~ family.id) }}"><span class="fam-dot"></span>{{ family.title }}</a>
+        {% if article %}
+        <span>Updated {{ article.meta.updated }}</span>
+        <span>{{ ((article.word_count / 200) | round(0, 'ceil') | int) }} min read</span>
+        {% if article.meta.status == 'draft' %}<span class="status status-building" title="Written carefully from the cited sources, but not yet reviewed by a domain expert">Draft · awaiting review</span>
+        {% else %}<span class="status status-live">Reviewed</span>{% endif %}
+        {% endif %}
+      </div>
+      {% if topic.aliases %}
+      <p class="topic-aliases"><span>Also known as</span> {{ topic.aliases | join(' · ') }}</p>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="wrap topic-layout">
+    <article class="topic-main">
+      {% if article %}
+      <div class="prose article-body">
+        {{ article.html | safe }}
+      </div>
+
+      {% if article.meta.key_papers %}
+      <section class="article-section" aria-labelledby="key-papers">
+        <h2 id="key-papers">Key papers</h2>
+        <ul class="key-papers">
+          {% for kp in article.meta.key_papers %}
+          <li>
+            <div class="ref">{{ fmt_ref(kp.key) }}</div>
+            {% if kp.note %}<p class="kp-note">{{ kp.note }}</p>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if article.meta.software %}
+      <section class="article-section" aria-labelledby="software">
+        <h2 id="software">Software</h2>
+        <ul class="software-list">
+          {% for s in article.meta.software %}
+          <li><a href="{{ s.url }}" rel="noopener">{{ s.name }}</a>{% if s.note %} — <span>{{ s.note }}</span>{% endif %}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if article.citations %}
+      <section class="article-section" aria-labelledby="references">
+        <h2 id="references">References</h2>
+        <ol class="ref-list">
+          {% for key in article.citations %}<li id="ref-{{ key }}">{{ fmt_ref(key) }}</li>{% endfor %}
+        </ol>
+      </section>
+      {% endif %}
+
+      {% else %}
+      <div class="card article-missing">
+        {{ icon('info') }}
+        <div>
+          <h2>This article has not been written yet</h2>
+          <p>The QOC knowledge base is being written one family at a time, with every statement sourced and
+            reviewed. Until then, the related topics below are a good place to continue.</p>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if topic.neighbours %}
+      <section class="article-section" aria-labelledby="related">
+        <h2 id="related">Related topics</h2>
+        <div class="related-grid">
+          {% for rid in topic.neighbours %}{% set r = taxonomy.topics[rid] %}
+          <a class="related-card" href="{{ url('topics/' ~ rid ~ '/') }}" style="--fam: var(--fam-{{ r.family }})">
+            <span class="related-title">{{ r.title }}</span>
+            <span class="related-short">{{ r.short }}</span>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      <nav class="topic-pager" aria-label="More in {{ family.title }}">
+        {% if prev_topic %}<a class="pager-prev" href="{{ url('topics/' ~ prev_topic.id ~ '/') }}"><span>Previous in {{ family.title }}</span>{{ prev_topic.title }}</a>{% else %}<span></span>{% endif %}
+        {% if next_topic %}<a class="pager-next" href="{{ url('topics/' ~ next_topic.id ~ '/') }}"><span>Next in {{ family.title }}</span>{{ next_topic.title }}</a>{% endif %}
+      </nav>
+    </article>
+
+    <aside class="topic-aside">
+      <div class="aside-sticky">
+        {% if article and article.toc %}
+        <nav class="aside-block toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol>
+            {% for h in article.toc %}<li><a href="#{{ h.id }}">{{ h.name }}</a></li>{% endfor %}
+            {% if article.meta.key_papers %}<li><a href="#key-papers">Key papers</a></li>{% endif %}
+            {% if article.meta.software %}<li><a href="#software">Software</a></li>{% endif %}
+            {% if article.citations %}<li><a href="#references">References</a></li>{% endif %}
+          </ol>
+        </nav>
+        {% endif %}
+        <nav class="aside-block family-nav" aria-label="{{ family.title }}">
+          <h2><span class="fam-dot"></span>{{ family.title }}</h2>
+          <ol>
+            {% for t in family.topics %}
+            <li><a href="{{ url('topics/' ~ t.id ~ '/') }}"{% if t.id == topic.id %} aria-current="page"{% endif %}>{{ t.title }}{% if t.id not in articles %}<span class="soon" title="Article not written yet">·</span>{% endif %}</a></li>
+            {% endfor %}
+          </ol>
+        </nav>
+      </div>
+    </aside>
+  </div>
+</div>
+{% endblock %}

@@ -29,7 +29,7 @@ sections:
     title: Field map
     icon: map
     phase: 2
-    status: next
+    status: building
     page: map
     summary: >-
       An interactive map of the field: every area and method, how they connect,
@@ -43,13 +43,13 @@ sections:
     title: Paper tracker
     icon: papers
     phase: 3
-    status: planned
+    status: building
     page: placeholder
     summary: >-
       New quantum control papers from arXiv, collected automatically every day
       and classified into the topics of the field map.
     features:
-      - Daily automatic fetch from arXiv, filtered for relevance
+      - Daily automatic fetch from arXiv, filtered for relevance (running — every paper since 2020 is archived)
       - Classification into field-map topics, with filters and search
       - Author pages — click any author to see all their tracked papers
       - RSS feed and weekly digest

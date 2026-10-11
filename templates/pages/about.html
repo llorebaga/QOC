@@ -34,6 +34,26 @@
       Python script — no server, no tracking.</li>
   </ul>
 
+  <h2 id="paper-counting">How papers are counted</h2>
+  <p>The paper tracker and the papers-per-year chart on the home page use one explicit definition. Every day, an
+    automated job asks the arXiv API for new submissions and keeps a paper if:</p>
+  <ul>
+    <li>it is listed in <strong>{{ selection.CATEGORIES | join(', ') }}</strong> — or in
+      {{ selection.NEIGHBOURS | join(', ') }} and its title or abstract contains the word “quantum”;</li>
+    <li>its title or abstract contains at least one of these phrases (whole-phrase, case-insensitive):
+      <span class="term-list">{% for t in selection.TERMS %}<code>{{ t }}</code>{% endfor %}</span></li>
+    <li>it is not a known false positive — papers where “quantum control” means a quantum-controlled
+      operation or indefinite causal order (e.g. the quantum switch) are excluded unless they also discuss
+      optimal control or pulses.</li>
+  </ul>
+  <p>Papers are counted by the date of their <em>first</em> arXiv submission; later versions do not count again.
+    The current year is incomplete and is shown as “to date”, compared with the same calendar period of the
+    previous year.</p>
+  <p class="muted">This is a transparent proxy, not a perfect census. It includes neighbouring topics that use the
+    same vocabulary (dynamical decoupling, speed limits, feedback control) and misses papers that never use these
+    words. Because the definition is fixed, trends over time are comparable. Changes to the term list are made in
+    the open and the whole archive is then re-harvested.</p>
+
   <h2 id="roadmap">Roadmap</h2>
   <ol class="roadmap">
     <li class="is-done">

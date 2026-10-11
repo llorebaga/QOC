@@ -1,0 +1,84 @@
+{#- Papers-per-year section for the home page. Data: paper_stats (qocsite/papers.py). -#}
+{% set s = paper_stats %}
+{% set c = s.chart %}
+{% set complete = s.rows | rejectattr('partial') | list %}
+{% set last = complete[-1] if complete else none %}
+{% set cur = s.rows[-1] %}
+{% set prev = s.rows[-2] if s.rows|length > 1 else none %}
+<section class="wrap field-stats" aria-labelledby="stats-title">
+  <div class="section-head">
+    <p class="eyebrow">The field on arXiv</p>
+    <h2 id="stats-title">A growing field, tracked every day</h2>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stats-figures">
+      <p class="hero-figure">
+        <span class="hero-value">{{ "{:,}".format(s.total) }}</span>
+        <span class="hero-label">quantum control papers on arXiv since {{ s.first_year }}</span>
+      </p>
+      <dl class="stat-tiles">
+        {% if last %}
+        <div class="stat">
+          <dt>Papers in {{ last.year }}</dt>
+          <dd>{{ "{:,}".format(last.count) }}</dd>
+          {% if s.growth_since_first is not none %}
+          <p class="stat-delta">{{ '▲' if s.growth_since_first >= 0 else '▼' }} {{ "{:+.0%}".format(s.growth_since_first) }} vs {{ s.first_year }}</p>
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="stat">
+          <dt>{{ cur.year }} so far</dt>
+          <dd>{{ "{:,}".format(cur.count) }}</dd>
+          {% if s.ytd_change is not none and prev %}
+          <p class="stat-delta">{{ '▲' if s.ytd_change >= 0 else '▼' }} {{ "{:+.0%}".format(s.ytd_change) }} vs same period of {{ prev.year }}</p>
+          {% endif %}
+        </div>
+      </dl>
+      <p class="stats-note">Counted automatically from arXiv every day: preprints in quant-ph (and quantum papers in
+        neighbouring categories) whose title or abstract uses quantum-control vocabulary.
+        <a href="{{ url('about/#paper-counting') }}">How papers are counted</a>.</p>
+    </div>
+
+    <figure class="card chart-card" data-chart>
+      <figcaption class="chart-title">QOC papers per year <span>by date of first arXiv submission</span></figcaption>
+      <div class="chart-wrap">
+        <svg class="year-chart" viewBox="0 0 {{ c.width }} {{ c.height }}" role="img"
+             aria-label="Column chart of quantum control papers per year on arXiv from {{ s.first_year }} to {{ cur.year }}; {{ cur.year }} is incomplete. Values are in the data table below.">
+          <g class="chart-grid" aria-hidden="true">
+            {% for t in c.ticks %}
+            <line x1="{{ c.left }}" x2="{{ c.right }}" y1="{{ t.y }}" y2="{{ t.y }}"{% if t.value == 0 %} class="baseline"{% endif %}/>
+            <text x="{{ c.left - 10 }}" y="{{ t.y + 4 }}" text-anchor="end">{{ "{:,}".format(t.value) }}</text>
+            {% endfor %}
+          </g>
+          <g class="chart-bars">
+            {% for b in c.bars %}
+            <g class="bar{% if b.partial %} is-partial{% endif %}" data-chart-bar tabindex="0"
+               data-year="{{ b.year }}" data-count="{{ b.count }}" data-partial="{{ 'true' if b.partial else 'false' }}"
+               {% if b.partial and prev %}data-prev-ytd="{{ prev.ytd }}" data-prev-year="{{ prev.year }}"{% endif %}
+               aria-label="{{ b.year }}{{ ' to date' if b.partial }}: {{ b.count }} papers">
+              <rect class="hit" x="{{ b.hit_x }}" y="{{ c.plot_top }}" width="{{ b.hit_w }}" height="{{ c.baseline - c.plot_top + 30 }}"/>
+              {% if b.path %}<path d="{{ b.path }}"/>{% endif %}
+              {% if b.show_label %}<text class="cap" x="{{ b.cx }}" y="{{ b.label_y }}" text-anchor="middle">{{ "{:,}".format(b.count) }}</text>{% endif %}
+              <text class="year" x="{{ b.cx }}" y="{{ c.baseline + 20 }}" text-anchor="middle">{{ b.year }}</text>
+              {% if b.partial %}<text class="year-note" x="{{ b.cx }}" y="{{ c.baseline + 38 }}" text-anchor="middle">to date</text>{% endif %}
+            </g>
+            {% endfor %}
+          </g>
+        </svg>
+        <div class="chart-tip" role="status" hidden></div>
+      </div>
+      <details class="chart-table">
+        <summary>Show the numbers</summary>
+        <table>
+          <thead><tr><th scope="col">Year</th><th scope="col">Papers</th><th scope="col">1 Jan – {{ s.today[5:] | replace('-', '/') }}</th></tr></thead>
+          <tbody>
+            {% for r in s.rows %}
+            <tr><th scope="row">{{ r.year }}{{ ' (to date)' if r.partial }}</th><td>{{ "{:,}".format(r.count) }}</td><td>{{ "{:,}".format(r.ytd) }}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </details>
+    </figure>
+  </div>
+</section>

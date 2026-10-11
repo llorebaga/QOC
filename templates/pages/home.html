@@ -45,6 +45,8 @@
   </figure>
 </section>
 
+{% include "partials/papers_chart.html" %}
+
 <section class="wrap explore">
   <div class="section-head">
     <p class="eyebrow">Explore</p>
@@ -66,8 +68,9 @@
   <div class="section-head">
     <p class="eyebrow">The field at a glance</p>
     <h2>{{ taxonomy.families|length }} areas, {{ taxonomy.topics|length }} topics — and growing</h2>
-    <p class="section-lead">A first outline of the field. Each topic will get its own article, linked to
-      the papers, groups and open problems that concern it.</p>
+    <p class="section-lead">Every topic has its own page. Articles are written family by family — with the
+      equations that matter and the papers they come from — and linked to related topics, papers, groups and
+      open problems.</p>
   </div>
   <div class="family-grid">
     {% for f in taxonomy.families %}

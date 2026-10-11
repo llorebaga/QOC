@@ -98,6 +98,43 @@
     raf = requestAnimationFrame(draw);
   }
 
+  /* ------------------------------------------------------------ papers-per-year chart tooltip */
+  document.querySelectorAll("[data-chart]").forEach((fig) => {
+    const svg = fig.querySelector("svg");
+    const tip = fig.querySelector(".chart-tip");
+    const wrap = fig.querySelector(".chart-wrap");
+    const fmt = (n) => Number(n).toLocaleString("en-US");
+    const show = (bar) => {
+      const d = bar.dataset;
+      svg.classList.add("has-hover");
+      svg.querySelectorAll(".bar").forEach((b) => b.classList.toggle("is-hover", b === bar));
+      let html = `<strong>${fmt(d.count)} papers</strong>${d.year}`;
+      if (d.partial === "true") {
+        html = `<strong>${fmt(d.count)} papers so far</strong>${d.year}, to date`;
+        if (d.prevYtd) html += `<br>Same period of ${d.prevYear}: ${fmt(d.prevYtd)}`;
+      }
+      tip.innerHTML = html;
+      tip.hidden = false;
+      const br = (bar.querySelector("path") || bar.querySelector(".hit")).getBoundingClientRect();
+      const wr = wrap.getBoundingClientRect();
+      let x = br.left - wr.left + br.width / 2 - tip.offsetWidth / 2;
+      x = Math.max(0, Math.min(wr.width - tip.offsetWidth, x));
+      const y = Math.max(0, br.top - wr.top - tip.offsetHeight - 28);   // clear of the value label on the cap
+      tip.style.transform = `translate(${x}px, ${y}px)`;
+    };
+    const hide = () => {
+      tip.hidden = true;
+      svg.classList.remove("has-hover");
+      svg.querySelectorAll(".bar").forEach((b) => b.classList.remove("is-hover"));
+    };
+    fig.querySelectorAll("[data-chart-bar]").forEach((bar) => {
+      bar.addEventListener("mouseenter", () => show(bar));
+      bar.addEventListener("focus", () => show(bar));
+      bar.addEventListener("mouseleave", hide);
+      bar.addEventListener("blur", hide);
+    });
+  });
+
   /* ------------------------------------------------------------ piecewise-constant pulse plot */
   const SVG_NS = "http://www.w3.org/2000/svg";
   const el = (name, attrs, text) => {

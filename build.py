@@ -17,18 +17,25 @@ import datetime as dt
 import functools
 import hashlib
 import http.server
-import shutil
+import subprocess
 import sys
 import threading
 import time
 from pathlib import Path
 
+import json
+
 import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoescape
+from markupsafe import Markup
+
+from qocsite.content import ContentError, format_reference, render_article
+from qocsite import selection
+from qocsite.papers import load_papers, yearly_stats
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "_site"
-WATCHED = ["config.yaml", "data", "content", "templates", "static"]
+WATCHED = ["config.yaml", "data", "content", "templates", "static", "qocsite"]
 
 
 class BuildError(Exception):
@@ -77,12 +84,40 @@ def load_taxonomy(path: Path) -> dict:
 
     for tid, t in topics.items():
         t["neighbours"] = neighbours[tid]
+        t["label"] = t.get("label", t["title"])
         families[t["family"]]["topics"].append(t)
 
     return {
         "families": list(families.values()),
         "topics": topics,
         "edges": sorted(edges),
+    }
+
+
+def load_articles(taxonomy: dict, references: dict, url) -> dict:
+    """Render content/topics/<id>.md for every topic that has one."""
+    articles = {}
+    for f in sorted((ROOT / "content" / "topics").glob("*.md")):
+        tid = f.stem
+        if tid not in taxonomy["topics"]:
+            raise BuildError(f"content/topics/{f.name}: no topic '{tid}' in taxonomy.yaml")
+        try:
+            articles[tid] = render_article(tid, f.read_text(encoding="utf-8"), references=references,
+                                           topics=taxonomy["topics"], url=url)
+        except ContentError as exc:
+            raise BuildError(str(exc)) from exc
+    return articles
+
+
+def map_data(taxonomy: dict, articles: dict, url) -> dict:
+    """Graph data for the interactive field map."""
+    return {
+        "families": [{"id": f["id"], "title": f["title"]} for f in taxonomy["families"]],
+        "nodes": [{"id": t["id"], "label": t["label"], "title": t["title"], "family": t["family"],
+                   "short": t["short"], "url": url(f"topics/{t['id']}/"), "article": t["id"] in articles,
+                   "aliases": t["aliases"], "degree": len(t["neighbours"])}
+                  for t in taxonomy["topics"].values()],
+        "links": [{"source": a, "target": b} for a, b in taxonomy["edges"]],
     }
 
 
@@ -125,26 +160,57 @@ def make_env(base: str, config: dict, taxonomy: dict) -> Environment:
     return env
 
 
-def render(env: Environment, template: str, out_path: str, **ctx) -> None:
-    html = env.get_template(template).render(**ctx)
-    target = OUT / out_path
+WRITTEN: set[Path] = set()      # files produced by the current build
+
+
+def write(target: Path, data: bytes) -> None:
+    """Write only if changed, and remember the file (stale files are removed after the build)."""
+    WRITTEN.add(target)
+    if target.exists() and target.read_bytes() == data:
+        return
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(html, encoding="utf-8")
+    target.write_bytes(data)
+
+
+def render(env: Environment, template: str, out_path: str, **ctx) -> None:
+    write(OUT / out_path, env.get_template(template).render(**ctx).encode("utf-8"))
+
+
+def copy_static() -> None:
+    for src in (ROOT / "static").rglob("*"):
+        rel = src.relative_to(ROOT / "static")
+        if src.is_file() and not any(p.startswith(("_", ".")) for p in rel.parts):
+            write(OUT / "static" / rel, src.read_bytes())
+
+
+def remove_stale() -> None:
+    for f in sorted(OUT.rglob("*"), reverse=True):
+        if f.is_file() and f not in WRITTEN:
+            f.unlink()
+        elif f.is_dir() and not any(f.iterdir()):
+            f.rmdir()
 
 
 def build(base: str | None = None, quiet: bool = False) -> None:
     t0 = time.perf_counter()
     config = load_yaml(ROOT / "config.yaml")
     taxonomy = load_taxonomy(ROOT / "data" / "taxonomy.yaml")
+    references = load_yaml(ROOT / "data" / "references.yaml") or {}
     env = make_env(base if base is not None else config["site"]["base_url"], config, taxonomy)
+    url = env.globals["url"]
+    articles = load_articles(taxonomy, references, url)
+    papers = load_papers(ROOT / "data" / "papers")
+    stats = yearly_stats(papers)
+    env.globals.update(articles=articles, paper_stats=stats, selection=selection,
+                       fmt_ref=lambda key: Markup(format_reference(references[key])),
+                       references=references)
 
-    # Fresh output directory (keep the folder itself so a running server survives).
+    # Files are written in place (unchanged files are left alone) and stale ones are
+    # removed at the end, so a running dev server never serves a half-empty folder.
+    WRITTEN.clear()
     OUT.mkdir(exist_ok=True)
-    for child in OUT.iterdir():
-        shutil.rmtree(child) if child.is_dir() else child.unlink()
-    shutil.copytree(ROOT / "static", OUT / "static",
-                    ignore=shutil.ignore_patterns("_*", ".*"))
-    (OUT / ".nojekyll").touch()
+    copy_static()
+    write(OUT / ".nojekyll", b"")
 
     # Pages
     render(env, "pages/home.html", "index.html", page_id="home")
@@ -152,11 +218,24 @@ def build(base: str | None = None, quiet: bool = False) -> None:
     render(env, "pages/404.html", "404.html", page_id="404")
     for section in config["sections"]:
         template = "pages/section.html" if section["page"] == "placeholder" else f"pages/{section['page']}.html"
-        render(env, template, f"{section['id']}/index.html", page_id=section["id"], section=section)
+        extra = {"graph_json": Markup(json.dumps(map_data(taxonomy, articles, url), ensure_ascii=False)
+                                      .replace("</", "<\\/"))} if section["id"] == "map" else {}
+        render(env, template, f"{section['id']}/index.html", page_id=section["id"], section=section, **extra)
 
+    # One page per topic (with or without an article yet)
+    for family in taxonomy["families"]:
+        siblings = family["topics"]
+        for i, topic in enumerate(siblings):
+            render(env, "pages/topic.html", f"topics/{topic['id']}/index.html", page_id="map",
+                   topic=topic, family=family, article=articles.get(topic["id"]),
+                   prev_topic=siblings[i - 1] if i > 0 else None,
+                   next_topic=siblings[i + 1] if i + 1 < len(siblings) else None)
+
+    remove_stale()
     n = sum(1 for _ in OUT.rglob("*.html"))
     if not quiet:
-        print(f"built {n} pages into {OUT.relative_to(ROOT)}/ in {time.perf_counter() - t0:.2f}s")
+        print(f"built {n} pages ({len(articles)} articles, {len(references)} references, "
+              f"{stats['total']} papers) into {OUT.relative_to(ROOT)}/ in {time.perf_counter() - t0:.2f}s")
 
 
 # ------------------------------------------------------------------ serving
@@ -180,10 +259,8 @@ def watch(base: str) -> None:
         now = snapshot()
         if now != last:
             last = now
-            try:
-                build(base)
-            except Exception as exc:  # keep serving on template/data errors
-                print(f"build failed: {exc}", file=sys.stderr)
+            # A fresh process, so edits to build.py / qocsite/ take effect without a restart.
+            subprocess.run([sys.executable, str(ROOT / "build.py"), "--base", base or "/"], cwd=ROOT)
 
 
 def serve(port: int) -> None:

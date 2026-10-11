@@ -13,6 +13,16 @@ Static website about quantum optimal control. See README.md (structure) and ROAD
 - `python build.py --base QOC` is what CI runs (served under /QOC/).
 - The build validates `data/taxonomy.yaml` (unique ids, valid families, valid `related` refs). Keep it passing.
 
+## Content & data
+- References: only via `python tools/refs.py add KEY --doi ... / --arxiv ...` (Crossref/arXiv metadata). Never hand-type
+  bibliographic fields. Keys: `firstauthorYEARword`. Run `refs.py check` after changes.
+- Articles: `content/topics/<id>.md`; `[@key]` citations, `[[topic-id]]` links, `$…$`/`$$…$$` math. New articles start as
+  `status: draft`; only the user marks them `reviewed`. Verify software URLs (gh api / curl) before listing them.
+- Papers: `tools/fetch_arxiv.py`. The selection rule lives in `qocsite/selection.py` (shown on the About page); changing
+  TERMS requires a full re-harvest (`--since 2020-01-01`). arXiv rate-limits: never run other arXiv API calls while a
+  harvest is running. Use https://export.arxiv.org.
+- The dev server rebuilds in a subprocess, so code changes apply without restarting it.
+
 ## Conventions
 - Topic ids in `data/taxonomy.yaml` are permanent keys (URLs + data references). Rename only with a migration.
 - Colours: use CSS tokens from `static/css/main.css` `:root`; every taxonomy family has `--fam-<id>` in
