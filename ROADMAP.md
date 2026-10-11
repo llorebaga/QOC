@@ -29,9 +29,11 @@ understand any area; an expert can use it as a quick reference.
 - [x] Topic pages for all 50 topics (article or "not written yet" + related topics)
 - [x] Interactive field map (D3 force layout, family clusters, hover neighbours, search, zoom)
 - [x] **Algorithms family written** (10 articles) — *awaiting expert review*
-- [ ] Review of the Algorithms articles
-- [ ] Remaining families, one at a time, each reviewed before the next:
-      Foundations → Speed limits → Robust → Analytic → Learning → Open systems → Many-body → Tasks → Platforms
+- [x] **Foundations family written** (5 articles: controllability, problem formulation & figures of merit,
+      Pontryagin's maximum principle, geometric & time-optimal control, control landscapes) — *awaiting review*
+- [ ] Review of the Algorithms and Foundations articles
+- [ ] Remaining families, one at a time:
+      Speed limits → Robust → Analytic → Learning → Open systems → Many-body → Tasks → Platforms
 
 ## 🚧 Phase 3 — arXiv paper tracker (data pipeline running)
 

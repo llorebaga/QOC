@@ -1048,3 +1048,546 @@ bondar2020uncomputability:
   doi: 10.1038/s41598-019-56804-1
   arxiv: '1907.10082'
 
+huang1983controllability:
+  type: article
+  title: On the controllability of quantum-mechanical systems
+  authors:
+  - Garng M. Huang
+  - T. J. Tarn
+  - John W. Clark
+  journal: Journal of Mathematical Physics
+  volume: '24'
+  pages: 2608-2618
+  year: 1983
+  doi: 10.1063/1.525634
+
+ramakrishna1995controllability:
+  type: article
+  title: Controllability of molecular systems
+  authors:
+  - Viswanath Ramakrishna
+  - Murti V. Salapaka
+  - Mohammed Dahleh
+  - Herschel Rabitz
+  - Anthony Peirce
+  journal: Phys. Rev. A
+  volume: '51'
+  pages: 960-966
+  year: 1995
+  doi: 10.1103/physreva.51.960
+
+schirmer2001complete:
+  type: article
+  title: Complete controllability of quantum systems
+  authors:
+  - S. G. Schirmer
+  - H. Fu
+  - A. I. Solomon
+  journal: Phys. Rev. A
+  volume: '63'
+  pages: '063410'
+  year: 2001
+  doi: 10.1103/physreva.63.063410
+
+albertini2003notions:
+  type: article
+  title: Notions of controllability for bilinear multilevel quantum systems
+  authors:
+  - F. Albertini
+  - D. D'Alessandro
+  journal: IEEE Trans. Automat. Contr.
+  volume: '48'
+  pages: 1399-1403
+  year: 2003
+  doi: 10.1109/tac.2003.815027
+
+jurdjevic1972lie:
+  type: article
+  title: Control systems on Lie groups
+  authors:
+  - Velimir Jurdjevic
+  - Héctor J Sussmann
+  journal: Journal of Differential Equations
+  volume: '12'
+  pages: 313-329
+  year: 1972
+  doi: 10.1016/0022-0396(72)90035-6
+
+dalessandro2021introduction:
+  type: book
+  title: Introduction to Quantum Control and Dynamics
+  authors:
+  - Domenico D'Alessandro
+  publisher: Chapman and Hall/CRC
+  year: 2021
+  doi: 10.1201/9781003051268
+
+lloyd1995universal:
+  type: article
+  title: Almost Any Quantum Logic Gate is Universal
+  authors:
+  - Seth Lloyd
+  journal: Phys. Rev. Lett.
+  volume: '75'
+  pages: 346-349
+  year: 1995
+  doi: 10.1103/physrevlett.75.346
+
+zeier2011symmetry:
+  type: article
+  title: Symmetry principles in quantum systems theory
+  authors:
+  - Robert Zeier
+  - Thomas Schulte-Herbrüggen
+  journal: Journal of Mathematical Physics
+  volume: '52'
+  pages: '113510'
+  year: 2011
+  doi: 10.1063/1.3657939
+
+ball1982bilinear:
+  type: article
+  title: Controllability for Distributed Bilinear Systems
+  authors:
+  - J. M. Ball
+  - J. E. Marsden
+  - M. Slemrod
+  journal: SIAM J. Control Optim.
+  volume: '20'
+  pages: 575-597
+  year: 1982
+  doi: 10.1137/0320042
+
+larocca2022barren:
+  type: article
+  title: Diagnosing Barren Plateaus with Tools from Quantum Optimal Control
+  authors:
+  - Martin Larocca
+  - Piotr Czarnik
+  - Kunal Sharma
+  - Gopikrishnan Muraleedharan
+  - Patrick J. Coles
+  - M. Cerezo
+  journal: Quantum
+  volume: '6'
+  pages: '824'
+  year: 2022
+  doi: 10.22331/q-2022-09-29-824
+
+altafini2012modeling:
+  type: article
+  title: 'Modeling and Control of Quantum Systems: An Introduction'
+  authors:
+  - C. Altafini
+  - F. Ticozzi
+  journal: IEEE Trans. Automat. Contr.
+  volume: '57'
+  pages: 1898-1917
+  year: 2012
+  doi: 10.1109/tac.2012.2195830
+
+nielsen2002fidelity:
+  type: article
+  title: A simple formula for the average gate fidelity of a quantum dynamical operation
+  authors:
+  - Michael A Nielsen
+  journal: Physics Letters A
+  volume: '303'
+  pages: 249-252
+  year: 2002
+  doi: 10.1016/s0375-9601(02)01272-0
+
+pedersen2007fidelity:
+  type: article
+  title: Fidelity of quantum operations
+  authors:
+  - Line Hjortshøj Pedersen
+  - Niels Martin Møller
+  - Klaus Mølmer
+  journal: Physics Letters A
+  volume: '367'
+  pages: 47-51
+  year: 2007
+  doi: 10.1016/j.physleta.2007.02.069
+
+goerz2014dissipative:
+  type: article
+  title: Optimal control theory for a unitary operation under dissipative evolution
+  authors:
+  - Michael H Goerz
+  - Daniel M Reich
+  - Christiane P Koch
+  journal: New J. Phys.
+  volume: '16'
+  pages: '055012'
+  year: 2014
+  doi: 10.1088/1367-2630/16/5/055012
+
+watts2015perfect:
+  type: article
+  title: Optimizing for an arbitrary perfect entangler. I. Functionals
+  authors:
+  - Paul Watts
+  - Jiří Vala
+  - Matthias M. Müller
+  - Tommaso Calarco
+  - K. Birgitta Whaley
+  - Daniel M. Reich
+  - Michael H. Goerz
+  - Christiane P. Koch
+  journal: Phys. Rev. A
+  volume: '91'
+  pages: '062306'
+  year: 2015
+  doi: 10.1103/physreva.91.062306
+
+boscain2021pmp:
+  type: article
+  title: Introduction to the Pontryagin Maximum Principle for Quantum Optimal Control
+  authors:
+  - U. Boscain
+  - M. Sigalotti
+  - D. Sugny
+  journal: PRX Quantum
+  volume: '2'
+  pages: '030203'
+  year: 2021
+  doi: 10.1103/prxquantum.2.030203
+
+agrachev2004geometric:
+  type: book
+  title: Control Theory from the Geometric Viewpoint
+  authors:
+  - Andrei A. Agrachev
+  - Yuri L. Sachkov
+  publisher: Springer Berlin Heidelberg
+  year: 2004
+  doi: 10.1007/978-3-662-06404-7
+
+lapert2010singular:
+  type: article
+  title: Singular Extremals for the Time-Optimal Control of Dissipative Spin-1/2 Particles
+  authors:
+  - M. Lapert
+  - Y. Zhang
+  - M. Braun
+  - S. J. Glaser
+  - D. Sugny
+  journal: Phys. Rev. Lett.
+  volume: '104'
+  pages: 083001
+  year: 2010
+  doi: 10.1103/physrevlett.104.083001
+
+boscain2002laser:
+  type: article
+  title: Optimal control in laser-induced population transfer for two- and three-level quantum systems
+  authors:
+  - Ugo Boscain
+  - Grégoire Charlot
+  - Jean-Paul Gauthier
+  - Stéphane Guérin
+  - Hans-Rudolf Jauslin
+  journal: Journal of Mathematical Physics
+  volume: '43'
+  pages: 2107-2132
+  year: 2002
+  doi: 10.1063/1.1465516
+
+khaneja2001timeoptimal:
+  type: article
+  title: Time optimal control in spin systems
+  authors:
+  - Navin Khaneja
+  - Roger Brockett
+  - Steffen J. Glaser
+  journal: Phys. Rev. A
+  volume: '63'
+  pages: 032308
+  year: 2001
+  doi: 10.1103/physreva.63.032308
+
+carlini2006brachistochrone:
+  type: article
+  title: Time-Optimal Quantum Evolution
+  authors:
+  - Alberto Carlini
+  - Akio Hosoya
+  - Tatsuhiko Koike
+  - Yosuke Okudaira
+  journal: Phys. Rev. Lett.
+  volume: '96'
+  pages: '060503'
+  year: 2006
+  doi: 10.1103/physrevlett.96.060503
+
+boscain2005so3:
+  type: article
+  title: Time-Optimal Synthesis for Left-Invariant Control Systems on SO (3)
+  authors:
+  - Ugo Boscain
+  - Yacine Chitour
+  journal: SIAM J. Control Optim.
+  volume: '44'
+  pages: 111-139
+  year: 2005
+  doi: 10.1137/s0363012904441532
+
+garon2013su2:
+  type: article
+  title: Time-optimal control of SU(2) quantum operations
+  authors:
+  - A. Garon
+  - S. J. Glaser
+  - D. Sugny
+  journal: Phys. Rev. A
+  volume: '88'
+  pages: '043422'
+  year: 2013
+  doi: 10.1103/physreva.88.043422
+
+hegerfeldt2013qsl:
+  type: article
+  title: 'Driving at the Quantum Speed Limit: Optimal Control of a Two-Level System'
+  authors:
+  - Gerhard C. Hegerfeldt
+  journal: Phys. Rev. Lett.
+  volume: '111'
+  pages: '260501'
+  year: 2013
+  doi: 10.1103/physrevlett.111.260501
+
+nielsen2006geometry:
+  type: article
+  title: Quantum Computation as Geometry
+  authors:
+  - Michael A. Nielsen
+  - Mark R. Dowling
+  - Mile Gu
+  - Andrew C. Doherty
+  journal: Science
+  volume: '311'
+  pages: 1133-1135
+  year: 2006
+  doi: 10.1126/science.1121541
+
+khaneja2002subriemannian:
+  type: article
+  title: 'Sub-Riemannian geometry and time optimal control of three spin systems: Quantum gates and coherence
+    transfer'
+  authors:
+  - Navin Khaneja
+  - Steffen J. Glaser
+  - Roger Brockett
+  journal: Phys. Rev. A
+  volume: '65'
+  pages: '032301'
+  year: 2002
+  doi: 10.1103/physreva.65.032301
+
+yang2017pmpvqa:
+  type: article
+  title: Optimizing Variational Quantum Algorithms Using Pontryagin’s Minimum Principle
+  authors:
+  - Zhi-Cheng Yang
+  - Armin Rahmani
+  - Alireza Shabani
+  - Hartmut Neven
+  - Claudio Chamon
+  journal: Phys. Rev. X
+  volume: '7'
+  pages: '021027'
+  year: 2017
+  doi: 10.1103/physrevx.7.021027
+
+brady2021annealing:
+  type: article
+  title: Optimal Protocols in Quantum Annealing and Quantum Approximate Optimization Algorithm Problems
+  authors:
+  - Lucas T. Brady
+  - Christopher L. Baldwin
+  - Aniruddha Bapat
+  - Yaroslav Kharkov
+  - Alexey V. Gorshkov
+  journal: Phys. Rev. Lett.
+  volume: '126'
+  pages: '070505'
+  year: 2021
+  doi: 10.1103/physrevlett.126.070505
+
+chakrabarti2007landscapes:
+  type: article
+  title: Quantum control landscapes
+  authors:
+  - Raj Chakrabarti
+  - Herschel Rabitz
+  journal: International Reviews in Physical Chemistry
+  volume: '26'
+  pages: 671-735
+  year: 2007
+  doi: 10.1080/01442350701633300
+
+ho2006easy:
+  type: article
+  title: Why do effective quantum controls appear easy to find?
+  authors:
+  - Tak-San Ho
+  - Herschel Rabitz
+  journal: 'Journal of Photochemistry and Photobiology A: Chemistry'
+  volume: '180'
+  pages: 226-240
+  year: 2006
+  doi: 10.1016/j.jphotochem.2006.03.038
+
+defouquieres2013landscapes:
+  type: article
+  title: A CLOSER LOOK AT QUANTUM CONTROL LANDSCAPES AND THEIR IMPLICATION FOR CONTROL OPTIMIZATION
+  authors:
+  - PIERRE DE FOUQUIERES
+  - SOPHIE G. SCHIRMER
+  journal: Infin. Dimens. Anal. Quantum. Probab. Relat. Top.
+  volume: '16'
+  pages: '1350021'
+  year: 2013
+  doi: 10.1142/s0219025713500215
+
+russell2017trapfree:
+  type: article
+  title: 'Control landscapes are almost always trap free: a geometric assessment'
+  authors:
+  - Benjamin Russell
+  - Herschel Rabitz
+  - Re-Bing Wu
+  journal: 'J. Phys. A: Math. Theor.'
+  volume: '50'
+  pages: '205302'
+  year: 2017
+  doi: 10.1088/1751-8121/aa6b77
+
+moore2012constrained:
+  type: article
+  title: Exploring constrained quantum control landscapes
+  authors:
+  - Katharine W. Moore
+  - Herschel Rabitz
+  journal: The Journal of Chemical Physics
+  volume: '137'
+  pages: '134113'
+  year: 2012
+  doi: 10.1063/1.4757133
+
+larocca2018twolevel:
+  type: article
+  title: Quantum control landscape for a two-level system near the quantum speed limit
+  authors:
+  - Martín Larocca
+  - Pablo M Poggi
+  - Diego A Wisniacki
+  journal: 'J. Phys. A: Math. Theor.'
+  volume: '51'
+  pages: '385305'
+  year: 2018
+  doi: 10.1088/1751-8121/aad657
+
+day2019glassy:
+  type: article
+  title: Glassy Phase of Optimal Quantum Control
+  authors:
+  - Alexandre G. R. Day
+  - Marin Bukov
+  - Phillip Weinberg
+  - Pankaj Mehta
+  - Dries Sels
+  journal: Phys. Rev. Lett.
+  volume: '122'
+  pages: '020601'
+  year: 2019
+  doi: 10.1103/physrevlett.122.020601
+
+bukov2018phases:
+  type: article
+  title: Reinforcement Learning in Different Phases of Quantum Control
+  authors:
+  - Marin Bukov
+  - Alexandre G. R. Day
+  - Dries Sels
+  - Phillip Weinberg
+  - Anatoli Polkovnikov
+  - Pankaj Mehta
+  journal: Phys. Rev. X
+  volume: '8'
+  pages: 031086
+  year: 2018
+  doi: 10.1103/physrevx.8.031086
+
+riviello2015severe:
+  type: article
+  title: Searching for quantum optimal controls under severe constraints
+  authors:
+  - Gregory Riviello
+  - Katharine Moore Tibbetts
+  - Constantin Brif
+  - Ruixing Long
+  - Re-Bing Wu
+  - Tak-San Ho
+  - Herschel Rabitz
+  journal: Phys. Rev. A
+  volume: '91'
+  pages: '043401'
+  year: 2015
+  doi: 10.1103/physreva.91.043401
+
+tannor1985control:
+  type: article
+  title: Control of selectivity of chemical reaction via control of wave packet evolution
+  authors:
+  - David J. Tannor
+  - Stuart A. Rice
+  journal: The Journal of Chemical Physics
+  volume: '83'
+  pages: 5013-5018
+  year: 1985
+  doi: 10.1063/1.449767
+
+kosloff1989wavepacket:
+  type: article
+  title: 'Wavepacket dancing: Achieving chemical selectivity by shaping light pulses'
+  authors:
+  - R. Kosloff
+  - S.A. Rice
+  - P. Gaspard
+  - S. Tersigni
+  - D.J. Tannor
+  journal: Chemical Physics
+  volume: '139'
+  pages: 201-220
+  year: 1989
+  doi: 10.1016/0301-0104(89)90012-8
+
+shi1988optimal:
+  type: article
+  title: Optimal control of selective vibrational excitation in harmonic linear chain molecules
+  authors:
+  - Shenghua Shi
+  - Andrea Woody
+  - Herschel Rabitz
+  journal: The Journal of Chemical Physics
+  volume: '88'
+  pages: 6870-6883
+  year: 1988
+  doi: 10.1063/1.454384
+
+tannor1986coherent:
+  type: article
+  title: 'Coherent pulse sequence induced control of selectivity of reactions: Exact quantum mechanical
+    calculations'
+  authors:
+  - David J. Tannor
+  - Ronnie Kosloff
+  - Stuart A. Rice
+  journal: The Journal of Chemical Physics
+  volume: '85'
+  pages: 5805-5820
+  year: 1986
+  doi: 10.1063/1.451542
+

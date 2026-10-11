@@ -62,8 +62,15 @@ def http_get(url: str, accept: str = "application/json") -> bytes:
     raise RuntimeError("unreachable")
 
 
+MFRAC = re.compile(r"<mml:mfrac>\s*<mml:m[ni]>([^<]*)</mml:m[ni]>\s*<mml:m[ni]>([^<]*)</mml:m[ni]>\s*</mml:mfrac>")
+MATH = re.compile(r"(\w)?(<mml:math\b.*?</mml:math>)(\w)?", re.S)
+
+
 def clean(s: str) -> str:
-    s = html.unescape(re.sub(r"<[^>]+>", "", s))   # Crossref titles may contain JATS tags
+    # Crossref titles may contain MathML (e.g. spin-1/2) and JATS tags: keep simple fractions, pad inline math
+    s = MFRAC.sub(r"\1/\2", s)
+    s = MATH.sub(lambda m: (m.group(1) + "-" if m.group(1) else "") + m.group(2) + (" " + m.group(3) if m.group(3) else ""), s)
+    s = html.unescape(re.sub(r"<[^>]+>", "", s))
     return " ".join(s.split())
 
 
@@ -240,6 +247,10 @@ def main() -> None:
     a.add_argument("--force", action="store_true")
     s = sub.add_parser("show")
     s.add_argument("key")
+    r = sub.add_parser("remove")
+    r.add_argument("key")
+    q = sub.add_parser("search", help="search Crossref by free-text citation, to find a DOI")
+    q.add_argument("query")
     c = sub.add_parser("check")
     c.add_argument("--online", action="store_true")
     args = ap.parse_args()
@@ -251,6 +262,20 @@ def main() -> None:
     elif args.cmd == "show":
         e = load().get(args.key)
         print(dump_entry(args.key, e) if e else f"no entry '{args.key}'")
+    elif args.cmd == "remove":
+        refs = load()
+        if refs.pop(args.key, None) is None:
+            raise SystemExit(f"no entry '{args.key}'")
+        body = "".join(dump_entry(k, v) + "\n" for k, v in refs.items())
+        REFS.write_text(HEADER + "\n" + body, encoding="utf-8", newline="\n")
+        print(f"removed {args.key}")
+    elif args.cmd == "search":
+        url = "https://api.crossref.org/works?rows=5&query.bibliographic=" + urllib.parse.quote(args.query)
+        for item in json.loads(http_get(url))["message"]["items"]:
+            who = ", ".join(a.get("family", "") for a in item.get("author", [])[:3])
+            year = (item.get("issued", {}).get("date-parts") or [[None]])[0][0]
+            print(f"{item['DOI']}  |  {who} ({year})  |  {clean((item.get('title') or [''])[0])[:90]}"
+                  f"  |  {clean((item.get('container-title') or [''])[0])[:40]}")
     else:
         sys.exit(check(args.online))
 
