@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% from "partials/ui.html" import status_badge %}
+{% block title %}{{ section.title }} — QOC{% endblock %}
+{% block description %}{{ section.summary }}{% endblock %}
+
+{% block main %}
+<section class="page-hero">
+  <div class="wrap">
+    <span class="feature-icon feature-icon-lg">{{ icon(section.icon) }}</span>
+    <p class="eyebrow">Roadmap phase {{ section.phase }} {{ status_badge(section.status) }}</p>
+    <h1>{{ section.title }}</h1>
+    <p class="lead">{{ section.summary }}</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <aside class="notice">
+    {{ icon('info') }}
+    <p><strong>Draft outline.</strong> This is the current structure of the field —
+      {{ taxonomy.families|length }} families and {{ taxonomy.topics|length }} topics. The interactive map and
+      the topic articles come next, and they will be built on this outline.</p>
+  </aside>
+
+  <nav class="family-index" aria-label="Families">
+    {% for f in taxonomy.families %}
+    <a href="#{{ f.id }}" style="--fam: var(--fam-{{ f.id }})"><span class="fam-dot"></span>{{ f.title }}</a>
+    {% endfor %}
+  </nav>
+
+  {% for f in taxonomy.families %}
+  <section class="family-block" id="{{ f.id }}" style="--fam: var(--fam-{{ f.id }})">
+    <header class="family-head">
+      <h2><span class="fam-dot"></span>{{ f.title }}</h2>
+      <p>{{ f.blurb }}</p>
+    </header>
+    <div class="topic-grid">
+      {% for t in f.topics %}
+      <article class="card topic-card" id="topic-{{ t.id }}">
+        <h3>{{ t.title }}</h3>
+        <p>{{ t.short }}</p>
+        {% if t.aliases %}<p class="aliases"><span>Also known as</span> {{ t.aliases|join(' · ') }}</p>{% endif %}
+        {% if t.neighbours %}
+        <p class="related"><span>Related</span>
+          {% for rid in t.neighbours %}{% set r = taxonomy.topics[rid] %}<a href="#topic-{{ rid }}" style="--fam: var(--fam-{{ r.family }})">{{ r.title }}</a>{% endfor %}
+        </p>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

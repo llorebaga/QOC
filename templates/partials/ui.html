@@ -1,0 +1,5 @@
+{#- Small reusable UI pieces. -#}
+{% macro status_badge(status) -%}
+{%- set labels = {'live': 'Live', 'building': 'In progress', 'next': 'Up next', 'planned': 'Planned', 'done': 'Done'} -%}
+<span class="status status-{{ status }}">{{ labels[status] }}</span>
+{%- endmacro %}

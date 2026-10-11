@@ -1,0 +1,38 @@
+# Build check: makes sure the site builds (templates render, taxonomy is valid)
+# on every push and pull request. The built site is attached as an artifact so
+# it can be downloaded and previewed. Deployment to GitHub Pages is added at
+# public launch (see ROADMAP.md, Phase 7).
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build site
+        run: python build.py --base QOC
+
+      - name: Upload built site
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site/
+          retention-days: 7

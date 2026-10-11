@@ -1,0 +1,22 @@
+{% from "partials/logo.html" import logo %}
+{% from "partials/icons.html" import icon %}
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ url() }}" aria-label="QOC — home">{{ logo(id='hdr', cls='brand-logo') }}</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        {% for item in nav %}
+        <li><a href="{{ url(item.id ~ '/') }}"{% if page_id == item.id %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+        {{ icon('sun', 'i-sun') }}{{ icon('moon', 'i-moon') }}
+      </button>
+      <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        {{ icon('menu', 'i-menu') }}{{ icon('close', 'i-close') }}
+      </button>
+    </div>
+  </div>
+</header>

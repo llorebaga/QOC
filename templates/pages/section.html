@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% from "partials/ui.html" import status_badge %}
+{% block title %}{{ section.title }} — QOC{% endblock %}
+{% block description %}{{ section.summary }}{% endblock %}
+
+{% block main %}
+<section class="page-hero">
+  <div class="wrap">
+    <span class="feature-icon feature-icon-lg">{{ icon(section.icon) }}</span>
+    <p class="eyebrow">Roadmap phase {{ section.phase }} {{ status_badge(section.status) }}</p>
+    <h1>{{ section.title }}</h1>
+    <p class="lead">{{ section.summary }}</p>
+  </div>
+</section>
+
+<section class="wrap narrow">
+  <div class="card plan-card">
+    <h2>What this section will contain</h2>
+    <ul class="check-list">
+      {% for f in section.features %}<li>{{ icon('check') }}<span>{{ f }}</span></li>{% endfor %}
+    </ul>
+    <p class="muted">This part of QOC is scheduled for phase {{ section.phase }} of the
+      <a href="{{ url('about/#roadmap') }}">roadmap</a>.</p>
+  </div>
+</section>
+{% endblock %}

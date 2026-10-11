@@ -1,0 +1,98 @@
+# Site-wide configuration for the QOC website.
+
+site:
+  title: QOC
+  full_title: QOC — Quantum Optimal Control
+  tagline: Quantum optimal control, mapped.
+  description: >-
+    A living guide to quantum optimal control: the methods, the limits, the
+    people and the open questions, with new arXiv papers tracked daily.
+  lang: en
+  # Overridden at build time with --base (e.g. /QOC/ on GitHub Pages).
+  base_url: /
+
+# Main navigation (order matters). `id` must match a section below or a page.
+nav:
+  - { id: map, label: Field map }
+  - { id: papers, label: Papers }
+  - { id: groups, label: Groups }
+  - { id: open-problems, label: Open problems }
+  - { id: resources, label: Resources }
+  - { id: about, label: About }
+
+# The main sections of the site. Used for the home-page cards and, while a
+# section is still being built, for its placeholder page.
+#   status: live | building | next | planned
+#   page:   template used for the section page ("placeholder" = generic page)
+sections:
+  - id: map
+    title: Field map
+    icon: map
+    phase: 2
+    status: next
+    page: map
+    summary: >-
+      An interactive map of the field: every area and method, how they connect,
+      and an article per topic with the essential background and key papers.
+    features:
+      - Interactive graph of topics, grouped into families
+      - One article per topic — intuition, equations, key papers, software
+      - Links from every topic to its papers, groups and open problems
+
+  - id: papers
+    title: Paper tracker
+    icon: papers
+    phase: 3
+    status: planned
+    page: placeholder
+    summary: >-
+      New quantum control papers from arXiv, collected automatically every day
+      and classified into the topics of the field map.
+    features:
+      - Daily automatic fetch from arXiv, filtered for relevance
+      - Classification into field-map topics, with filters and search
+      - Author pages — click any author to see all their tracked papers
+      - RSS feed and weekly digest
+
+  - id: groups
+    title: Research groups
+    icon: globe
+    phase: 4
+    status: planned
+    page: placeholder
+    summary: >-
+      A world map of the groups working on quantum optimal control — who they
+      are, where they are, and what they work on.
+    features:
+      - Interactive world map with clustering
+      - Filter by topic and experimental platform
+      - Group pages linked to their papers in the tracker
+
+  - id: open-problems
+    title: Open problems
+    icon: question
+    phase: 5
+    status: planned
+    page: placeholder
+    summary: >-
+      A curated list of specific, well-posed open questions in quantum optimal
+      control — with context, partial results and references.
+    features:
+      - Precise problem statements, not general wishes
+      - Status tracking — open, partial progress, solved
+      - Linked to the topics and papers they concern
+
+  - id: resources
+    title: Resources
+    icon: book
+    phase: 6
+    status: planned
+    page: placeholder
+    summary: >-
+      Everything else you need: software packages, review articles and
+      tutorials, a glossary of notation, and a timeline of the field.
+    features:
+      - Software directory (QuTiP, Krotov, QuOCS, C3, Juqbox, …)
+      - Essential reading — reviews, tutorials, landmark papers
+      - Glossary of terms and notation
+      - A timeline of the history of the field

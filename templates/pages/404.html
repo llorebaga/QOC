@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% from "partials/logo.html" import logo %}
+{% block title %}Page not found — QOC{% endblock %}
+{% block main %}
+<section class="wrap narrow not-found">
+  {{ logo(id='nf', cls='nf-logo') }}
+  <h1>This state is not reachable.</h1>
+  <p class="lead">The page you are looking for does not exist — or has not been written yet.</p>
+  <p><a class="btn btn-primary" href="{{ url() }}">Back to the home page</a></p>
+</section>
+{% endblock %}

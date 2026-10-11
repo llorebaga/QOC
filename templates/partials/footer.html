@@ -1,0 +1,29 @@
+{% from "partials/logo.html" import logo %}
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a href="{{ url() }}" aria-label="QOC — home">{{ logo(id='ftr', cls='footer-logo') }}</a>
+      <p>{{ site.description }}</p>
+    </div>
+    <nav class="footer-cols" aria-label="Footer">
+      <div>
+        <h2>Explore</h2>
+        <ul>
+          {% for s in sections %}<li><a href="{{ url(s.id ~ '/') }}">{{ s.title }}</a></li>{% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="{{ url('about/') }}">About QOC</a></li>
+          <li><a href="{{ url('about/#roadmap') }}">Roadmap</a></li>
+          <li><a href="{{ url('about/#contribute') }}">Contribute</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="wrap footer-meta">
+    <span>Last built {{ build_date.strftime('%d %B %Y') }}</span>
+    <span>Under active development — content is a draft.</span>
+  </div>
+</footer>

@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% from "partials/logo.html" import logo %}
+{% from "partials/icons.html" import icon %}
+{% from "partials/ui.html" import status_badge %}
+{% block head %}{% include "partials/katex.html" %}{% endblock %}
+
+{% block main %}
+<section class="hero">
+  <canvas class="hero-waves" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    {{ logo(id='hero', cls='hero-logo is-animated') }}
+    <h1 class="hero-title">Quantum optimal control, <span class="grad-text">mapped.</span></h1>
+    <p class="hero-lead">A living guide to the field — its methods, its limits, its people and its open
+      questions — with new arXiv papers tracked every day.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ url('map/') }}">Explore the field map {{ icon('arrow') }}</a>
+      <a class="btn btn-ghost" href="{{ url('papers/') }}">Latest papers</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap intro">
+  <div class="intro-text">
+    <p class="eyebrow">The idea in one paragraph</p>
+    <h2>What is quantum optimal control?</h2>
+    <p>Quantum optimal control asks how to shape the time-dependent fields that drive a quantum system —
+      laser, microwave, radio-frequency or voltage pulses — so that it performs a task as well as
+      possible: prepare a state, implement a gate, or sense a signal, within limits on time, power and
+      bandwidth, and in the presence of noise.</p>
+    <p>The field grew out of nuclear magnetic resonance and the laser control of chemical reactions in the
+      1980s and 1990s. Today it is a core tool of quantum technologies, from superconducting and
+      trapped-ion processors to atomic clocks, quantum simulators and sensors.</p>
+    <a class="text-link" href="{{ url('map/') }}">See how the field is organized {{ icon('arrow') }}</a>
+  </div>
+  <figure class="card intro-figure">
+    <svg class="pwc-plot" data-pwc viewBox="0 0 420 148" role="img"
+         aria-label="A piecewise-constant control pulse u(t) under a smooth envelope"></svg>
+    <div class="eqs">
+      $$H(t) = H_0 + \sum_k u_k(t)\, H_k$$
+      $$\max_{u}\;\; \mathcal{F}\big[U(T)\big] \;-\; \lambda \sum_k \int_0^T u_k(t)^2\, dt$$
+    </div>
+    <figcaption>The controls \(u_k(t)\) enter the Hamiltonian alongside the drift \(H_0\). An optimizer
+      adjusts them — here piecewise constant, as in GRAPE — to maximize the fidelity \(\mathcal{F}\) of the
+      final evolution \(U(T)\) with respect to a target, while penalizing pulse power.</figcaption>
+  </figure>
+</section>
+
+<section class="wrap explore">
+  <div class="section-head">
+    <p class="eyebrow">Explore</p>
+    <h2>Everything about the field, in one place</h2>
+  </div>
+  <div class="card-grid">
+    {% for s in sections %}
+    <a class="card feature-card" href="{{ url(s.id ~ '/') }}">
+      <span class="feature-icon">{{ icon(s.icon) }}</span>
+      <h3>{{ s.title }}</h3>
+      <p>{{ s.summary }}</p>
+      <span class="feature-foot">{{ status_badge(s.status) }}<span class="go">{{ icon('arrow') }}</span></span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap families">
+  <div class="section-head">
+    <p class="eyebrow">The field at a glance</p>
+    <h2>{{ taxonomy.families|length }} areas, {{ taxonomy.topics|length }} topics — and growing</h2>
+    <p class="section-lead">A first outline of the field. Each topic will get its own article, linked to
+      the papers, groups and open problems that concern it.</p>
+  </div>
+  <div class="family-grid">
+    {% for f in taxonomy.families %}
+    <a class="family-card" style="--fam: var(--fam-{{ f.id }})" href="{{ url('map/#' ~ f.id) }}">
+      <span class="family-count">{{ f.topics|length }}</span>
+      <h3>{{ f.title }}</h3>
+      <p>{{ f.blurb }}</p>
+      <ul class="chip-row">
+        {% for t in f.topics[:3] %}<li class="chip">{{ t.title }}</li>{% endfor %}
+        {% if f.topics|length > 3 %}<li class="chip chip-more">+{{ f.topics|length - 3 }}</li>{% endif %}
+      </ul>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap principles">
+  <div class="principle">
+    <h3>Precise, with sources</h3>
+    <p>Every article states the key ideas plainly, with the equations that matter and the papers they come from.</p>
+  </div>
+  <div class="principle">
+    <h3>Updated every day</h3>
+    <p>New papers are fetched from arXiv automatically and placed on the map, so the site evolves with the field.</p>
+  </div>
+  <div class="principle">
+    <h3>Plain text, versioned</h3>
+    <p>All content lives in readable text files in a git repository: every change is tracked and reviewable.</p>
+  </div>
+</section>
+{% endblock %}
