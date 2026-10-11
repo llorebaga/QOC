@@ -88,6 +88,9 @@ def from_crossref(doi: str) -> dict:
     container = data.get("container-title") or [""]
     short = data.get("short-container-title") or []
     kind = data.get("type", "")
+    if kind == "other" and container[0]:
+        kind = "book-chapter"   # e.g. Wiley series chapters; the last container title is the specific book
+        container = [container[-1]]
     entry = {
         "type": {"journal-article": "article", "book": "book", "monograph": "book",
                  "book-chapter": "chapter", "proceedings-article": "proceedings"}.get(kind, kind or "misc"),

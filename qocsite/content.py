@@ -42,7 +42,8 @@ FRONT_MATTER = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.S)
 DISPLAY_MATH = re.compile(r"\$\$(.+?)\$\$", re.S)
 PAREN_MATH = re.compile(r"\\\((.+?)\\\)", re.S)
 # inline $...$ may wrap onto the next source line, but never across a blank line
-INLINE_MATH = re.compile(r"(?<![\\$\w])\$(?!\$)((?:[^$\n]|\n(?![ \t]*\n))+?)(?<![\\\s])\$(?![$\w])")
+# (as in Pandoc: the closing $ may be followed by letters, e.g. "$N$th", but not by a digit)
+INLINE_MATH = re.compile(r"(?<![\\$\w])\$(?!\$)((?:[^$\n]|\n(?![ \t]*\n))+?)(?<![\\\s])\$(?![$\d])")
 CITATION = re.compile(r"\[(@[\w-]+(?:\s*[;,]\s*@[\w-]+)*)\]")
 TOPIC_LINK = re.compile(r"\[\[([a-z0-9-]+)(?:\|([^\]]+))?\]\]")
 

@@ -1847,3 +1847,626 @@ muller2022noisybounds:
   doi: 10.1038/s41598-022-25770-6
   arxiv: '2006.16113'
 
+kobzar2004broadband:
+  type: article
+  title: Exploring the limits of broadband excitation and inversion pulses
+  authors:
+  - Kyryl Kobzar
+  - Thomas E. Skinner
+  - Navin Khaneja
+  - Steffen J. Glaser
+  - Burkhard Luy
+  journal: Journal of Magnetic Resonance
+  volume: '170'
+  pages: 236-243
+  year: 2004
+  doi: 10.1016/j.jmr.2004.06.017
+
+skinner2003broadband:
+  type: article
+  title: Application of optimal control theory to the design of broadband excitation pulses for high-resolution
+    NMR
+  authors:
+  - Thomas E Skinner
+  - Timo O Reiss
+  - Burkhard Luy
+  - Navin Khaneja
+  - Steffen J Glaser
+  journal: Journal of Magnetic Resonance
+  volume: '163'
+  pages: 8-15
+  year: 2003
+  doi: 10.1016/s1090-7807(03)00153-8
+
+li2006ensemble:
+  type: article
+  title: Control of inhomogeneous quantum ensembles
+  authors:
+  - Jr-Shin Li
+  - Navin Khaneja
+  journal: Phys. Rev. A
+  volume: '73'
+  pages: '030302'
+  year: 2006
+  doi: 10.1103/physreva.73.030302
+
+li2009bloch:
+  type: article
+  title: Ensemble Control of Bloch Equations
+  authors:
+  - J.-S. Li
+  - N. Khaneja
+  journal: IEEE Trans. Automat. Contr.
+  volume: '54'
+  pages: 528-536
+  year: 2009
+  doi: 10.1109/tac.2009.2012983
+
+kosut2013sequential:
+  type: article
+  title: Robust control of quantum gates via sequential convex programming
+  authors:
+  - Robert L. Kosut
+  - Matthew D. Grace
+  - Constantin Brif
+  journal: Phys. Rev. A
+  volume: '88'
+  pages: '052326'
+  year: 2013
+  doi: 10.1103/physreva.88.052326
+
+vandamme2017robust:
+  type: article
+  title: Robust optimal control of two-level quantum systems
+  authors:
+  - L. Van Damme
+  - Q. Ansel
+  - S. J. Glaser
+  - D. Sugny
+  journal: Phys. Rev. A
+  volume: '95'
+  pages: '063403'
+  year: 2017
+  doi: 10.1103/physreva.95.063403
+
+poggi2024universal:
+  type: article
+  title: Universally Robust Quantum Control
+  authors:
+  - Pablo M. Poggi
+  - Gabriele De Chiara
+  - Steve Campbell
+  - Anthony Kiely
+  journal: Phys. Rev. Lett.
+  volume: '132'
+  pages: '193801'
+  year: 2024
+  doi: 10.1103/physrevlett.132.193801
+
+barnes2022spacecurves:
+  type: article
+  title: Dynamically corrected gates from geometric space curves
+  authors:
+  - Edwin Barnes
+  - Fernando A Calderon-Vargas
+  - Wenzheng Dong
+  - Bikun Li
+  - Junkai Zeng
+  - Fei Zhuang
+  journal: Quantum Sci. Technol.
+  volume: '7'
+  pages: '023001'
+  year: 2022
+  doi: 10.1088/2058-9565/ac4421
+
+green2012filtering:
+  type: article
+  title: High-Order Noise Filtering in Nontrivial Quantum Logic Gates
+  authors:
+  - Todd Green
+  - Hermann Uys
+  - Michael J. Biercuk
+  journal: Phys. Rev. Lett.
+  volume: '109'
+  pages: '020501'
+  year: 2012
+  doi: 10.1103/physrevlett.109.020501
+
+ball2015walsh:
+  type: article
+  title: Walsh-synthesized noise filters for quantum logic
+  authors:
+  - Harrison Ball
+  - Michael J Biercuk
+  journal: EPJ Quantum Technol.
+  volume: '2'
+  pages: '11'
+  year: 2015
+  doi: 10.1140/epjqt/s40507-015-0022-4
+
+dridi2020inverse:
+  type: article
+  title: Optimal Robust Quantum Control by Inverse Geometric Optimization
+  authors:
+  - Ghassen Dridi
+  - Kaipeng Liu
+  - Stéphane Guérin
+  journal: Phys. Rev. Lett.
+  volume: '125'
+  pages: '250403'
+  year: 2020
+  doi: 10.1103/physrevlett.125.250403
+
+daems2013singleshot:
+  type: article
+  title: Robust Quantum Control by a Single-Shot Shaped Pulse
+  authors:
+  - D. Daems
+  - A. Ruschhaupt
+  - D. Sugny
+  - S. Guérin
+  journal: Phys. Rev. Lett.
+  volume: '111'
+  pages: '050404'
+  year: 2013
+  doi: 10.1103/physrevlett.111.050404
+
+ruschhaupt2012robust:
+  type: article
+  title: Optimally robust shortcuts to population inversion in two-level quantum systems
+  authors:
+  - A Ruschhaupt
+  - Xi Chen
+  - D Alonso
+  - J G Muga
+  journal: New J. Phys.
+  volume: '14'
+  pages: 093040
+  year: 2012
+  doi: 10.1088/1367-2630/14/9/093040
+
+levitt1986composite:
+  type: article
+  title: Composite pulses
+  authors:
+  - Malcolm H. Levitt
+  journal: Progress in Nuclear Magnetic Resonance Spectroscopy
+  volume: '18'
+  pages: 61-122
+  year: 1986
+  doi: 10.1016/0079-6565(86)80005-x
+
+levitt1979inversion:
+  type: article
+  title: NMR population inversion using a composite pulse
+  authors:
+  - Malcolm H. Levitt
+  - Ray Freeman
+  journal: Journal of Magnetic Resonance (1969)
+  volume: '33'
+  pages: 473-476
+  year: 1979
+  doi: 10.1016/0022-2364(79)90265-8
+
+wimperis1994bb1:
+  type: article
+  title: Broadband, Narrowband, and Passband Composite Pulses for Use in Advanced NMR Experiments
+  authors:
+  - S. Wimperis
+  journal: Journal of Magnetic Resonance, Series A
+  volume: '109'
+  pages: 221-231
+  year: 1994
+  doi: 10.1006/jmra.1994.1159
+
+cummins2003corpse:
+  type: article
+  title: Tackling systematic errors in quantum logic gates with composite rotations
+  authors:
+  - Holly K. Cummins
+  - Gavin Llewellyn
+  - Jonathan A. Jones
+  journal: Phys. Rev. A
+  volume: '67'
+  pages: 042308
+  year: 2003
+  doi: 10.1103/physreva.67.042308
+
+torosov2011smooth:
+  type: article
+  title: Smooth composite pulses for high-fidelity quantum information processing
+  authors:
+  - Boyan T. Torosov
+  - Nikolay V. Vitanov
+  journal: Phys. Rev. A
+  volume: '83'
+  pages: '053420'
+  year: 2011
+  doi: 10.1103/physreva.83.053420
+
+brown2004arbitrarily:
+  type: article
+  title: Arbitrarily accurate composite pulse sequences
+  authors:
+  - Kenneth R. Brown
+  - Aram W. Harrow
+  - Isaac L. Chuang
+  journal: Phys. Rev. A
+  volume: '70'
+  pages: 052318
+  year: 2004
+  doi: 10.1103/physreva.70.052318
+
+genov2017decoupling:
+  type: article
+  title: Arbitrarily Accurate Pulse Sequences for Robust Dynamical Decoupling
+  authors:
+  - Genko T. Genov
+  - Daniel Schraft
+  - Nikolay V. Vitanov
+  - Thomas Halfmann
+  journal: Phys. Rev. Lett.
+  volume: '118'
+  pages: '133202'
+  year: 2017
+  doi: 10.1103/physrevlett.118.133202
+
+merrill2014compensating:
+  type: chapter
+  title: Progress in Compensating Pulse Sequences for Quantum Computation
+  authors:
+  - J. True Merrill
+  - Kenneth R. Brown
+  booktitle: Quantum Information and Computation for Chemistry
+  publisher: Wiley
+  pages: 241-294
+  year: 2014
+  doi: 10.1002/9781118742631.ch10
+
+jones2013robustnot:
+  type: article
+  title: Designing short robust not gates for quantum computation
+  authors:
+  - Jonathan A. Jones
+  journal: Phys. Rev. A
+  volume: '87'
+  pages: '052317'
+  year: 2013
+  doi: 10.1103/physreva.87.052317
+
+hahn1950echo:
+  type: article
+  title: Spin Echoes
+  authors:
+  - E. L. Hahn
+  journal: Phys. Rev.
+  volume: '80'
+  pages: 580-594
+  year: 1950
+  doi: 10.1103/physrev.80.580
+
+carr1954diffusion:
+  type: article
+  title: Effects of Diffusion on Free Precession in Nuclear Magnetic Resonance Experiments
+  authors:
+  - H. Y. Carr
+  - E. M. Purcell
+  journal: Phys. Rev.
+  volume: '94'
+  pages: 630-638
+  year: 1954
+  doi: 10.1103/physrev.94.630
+
+meiboom1958modified:
+  type: article
+  title: Modified Spin-Echo Method for Measuring Nuclear Relaxation Times
+  authors:
+  - S. Meiboom
+  - D. Gill
+  journal: Review of Scientific Instruments
+  volume: '29'
+  pages: 688-691
+  year: 1958
+  doi: 10.1063/1.1716296
+
+viola1998suppression:
+  type: article
+  title: Dynamical suppression of decoherence in two-state quantum systems
+  authors:
+  - Lorenza Viola
+  - Seth Lloyd
+  journal: Phys. Rev. A
+  volume: '58'
+  pages: 2733-2744
+  year: 1998
+  doi: 10.1103/physreva.58.2733
+
+viola1999decoupling:
+  type: article
+  title: Dynamical Decoupling of Open Quantum Systems
+  authors:
+  - Lorenza Viola
+  - Emanuel Knill
+  - Seth Lloyd
+  journal: Phys. Rev. Lett.
+  volume: '82'
+  pages: 2417-2421
+  year: 1999
+  doi: 10.1103/physrevlett.82.2417
+
+uhrig2007keeping:
+  type: article
+  title: Keeping a Quantum Bit Alive by Optimized π -Pulse Sequences
+  authors:
+  - Götz S. Uhrig
+  journal: Phys. Rev. Lett.
+  volume: '98'
+  pages: '100504'
+  year: 2007
+  doi: 10.1103/physrevlett.98.100504
+
+khodjasteh2005cdd:
+  type: article
+  title: Fault-Tolerant Quantum Dynamical Decoupling
+  authors:
+  - K. Khodjasteh
+  - D. A. Lidar
+  journal: Phys. Rev. Lett.
+  volume: '95'
+  pages: '180501'
+  year: 2005
+  doi: 10.1103/physrevlett.95.180501
+
+gullion1990xy:
+  type: article
+  title: New, compensated Carr-Purcell sequences
+  authors:
+  - Terry Gullion
+  - David B Baker
+  - Mark S Conradi
+  journal: Journal of Magnetic Resonance (1969)
+  volume: '89'
+  pages: 479-484
+  year: 1990
+  doi: 10.1016/0022-2364(90)90331-3
+
+biercuk2009memory:
+  type: article
+  title: Optimized dynamical decoupling in a model quantum memory
+  authors:
+  - Michael J. Biercuk
+  - Hermann Uys
+  - Aaron P. VanDevender
+  - Nobuyasu Shiga
+  - Wayne M. Itano
+  - John J. Bollinger
+  journal: Nature
+  volume: '458'
+  pages: 996-1000
+  year: 2009
+  doi: 10.1038/nature07951
+
+delange2010universal:
+  type: article
+  title: Universal Dynamical Decoupling of a Single Solid-State Spin from a Spin Bath
+  authors:
+  - G. de Lange
+  - Z. H. Wang
+  - D. Ristè
+  - V. V. Dobrovitski
+  - R. Hanson
+  journal: Science
+  volume: '330'
+  pages: 60-63
+  year: 2010
+  doi: 10.1126/science.1192739
+
+souza2012robust:
+  type: article
+  title: Robust dynamical decoupling
+  authors:
+  - Alexandre M. Souza
+  - Gonzalo A. Álvarez
+  - Dieter Suter
+  journal: Phil. Trans. R. Soc. A.
+  volume: '370'
+  pages: 4748-4769
+  year: 2012
+  doi: 10.1098/rsta.2011.0355
+
+ezzell2023survey:
+  type: article
+  title: 'Dynamical decoupling for superconducting qubits: A performance survey'
+  authors:
+  - Nic Ezzell
+  - Bibek Pokharel
+  - Lina Tewala
+  - Gregory Quiroz
+  - Daniel A. Lidar
+  journal: Phys. Rev. Applied
+  volume: '20'
+  pages: '064027'
+  year: 2023
+  doi: 10.1103/physrevapplied.20.064027
+
+lidar2014review:
+  type: chapter
+  title: Review of Decoherence‐Free Subspaces, Noiseless Subsystems, and Dynamical Decoupling
+  authors:
+  - Daniel A. Lidar
+  booktitle: Quantum Information and Computation for Chemistry
+  publisher: Wiley
+  pages: 295-354
+  year: 2014
+  doi: 10.1002/9781118742631.ch11
+
+khodjasteh2009gates:
+  type: article
+  title: Dynamically Error-Corrected Gates for Universal Quantum Computation
+  authors:
+  - Kaveh Khodjasteh
+  - Lorenza Viola
+  journal: Phys. Rev. Lett.
+  volume: '102'
+  pages: 080501
+  year: 2009
+  doi: 10.1103/physrevlett.102.080501
+
+degen2017sensing:
+  type: article
+  title: Quantum sensing
+  authors:
+  - C. L. Degen
+  - F. Reinhard
+  - P. Cappellaro
+  journal: Rev. Mod. Phys.
+  volume: '89'
+  pages: '035002'
+  year: 2017
+  doi: 10.1103/revmodphys.89.035002
+
+kofman2001universal:
+  type: article
+  title: 'Universal Dynamical Control of Quantum Mechanical Decay: Modulation of the Coupling to the Continuum'
+  authors:
+  - A. G. Kofman
+  - G. Kurizki
+  journal: Phys. Rev. Lett.
+  volume: '87'
+  pages: '270405'
+  year: 2001
+  doi: 10.1103/physrevlett.87.270405
+
+cywinski2008dephasing:
+  type: article
+  title: How to enhance dephasing time in superconducting qubits
+  authors:
+  - Łukasz Cywiński
+  - Roman M. Lutchyn
+  - Cody P. Nave
+  - S. Das Sarma
+  journal: Phys. Rev. B
+  volume: '77'
+  pages: '174509'
+  year: 2008
+  doi: 10.1103/physrevb.77.174509
+
+green2013universal:
+  type: article
+  title: Arbitrary quantum control of qubits in the presence of universal noise
+  authors:
+  - Todd J Green
+  - Jarrah Sastrawan
+  - Hermann Uys
+  - Michael J Biercuk
+  journal: New J. Phys.
+  volume: '15'
+  pages: 095004
+  year: 2013
+  doi: 10.1088/1367-2630/15/9/095004
+
+pazsilva2014transfer:
+  type: article
+  title: General Transfer-Function Approach to Noise Filtering in Open-Loop Quantum Control
+  authors:
+  - Gerardo A. Paz-Silva
+  - Lorenza Viola
+  journal: Phys. Rev. Lett.
+  volume: '113'
+  pages: '250501'
+  year: 2014
+  doi: 10.1103/physrevlett.113.250501
+
+alvarez2011spectrum:
+  type: article
+  title: Measuring the Spectrum of Colored Noise by Dynamical Decoupling
+  authors:
+  - Gonzalo A. Álvarez
+  - Dieter Suter
+  journal: Phys. Rev. Lett.
+  volume: '107'
+  pages: '230501'
+  year: 2011
+  doi: 10.1103/physrevlett.107.230501
+
+bylander2011spectroscopy:
+  type: article
+  title: Noise spectroscopy through dynamical decoupling with a superconducting flux qubit
+  authors:
+  - Jonas Bylander
+  - Simon Gustavsson
+  - Fei Yan
+  - Fumiki Yoshihara
+  - Khalil Harrabi
+  - George Fitch
+  - David G. Cory
+  - Yasunobu Nakamura
+  - Jaw-Shen Tsai
+  - William D. Oliver
+  journal: Nature Phys
+  volume: '7'
+  pages: 565-570
+  year: 2011
+  doi: 10.1038/nphys1994
+
+norris2016nongaussian:
+  type: article
+  title: Qubit Noise Spectroscopy for Non-Gaussian Dephasing Environments
+  authors:
+  - Leigh M. Norris
+  - Gerardo A. Paz-Silva
+  - Lorenza Viola
+  journal: Phys. Rev. Lett.
+  volume: '116'
+  pages: '150503'
+  year: 2016
+  doi: 10.1103/physrevlett.116.150503
+
+hangleiter2021filter:
+  type: article
+  title: Filter-function formalism and software package to compute quantum processes of gate sequences
+    for classical non-Markovian noise
+  authors:
+  - Tobias Hangleiter
+  - Pascal Cerfontaine
+  - Hendrik Bluhm
+  journal: Phys. Rev. Research
+  volume: '3'
+  pages: '043047'
+  year: 2021
+  doi: 10.1103/physrevresearch.3.043047
+
+soare2014filtering:
+  type: article
+  title: Experimental noise filtering by quantum control
+  authors:
+  - A. Soare
+  - H. Ball
+  - D. Hayes
+  - J. Sastrawan
+  - M. C. Jarratt
+  - J. J. McLoughlin
+  - X. Zhen
+  - T. J. Green
+  - M. J. Biercuk
+  journal: Nature Phys
+  volume: '10'
+  pages: 825-829
+  year: 2014
+  doi: 10.1038/nphys3115
+
+chen2014sampling:
+  type: article
+  title: Sampling-based learning control of inhomogeneous quantum ensembles
+  authors:
+  - Chunlin Chen
+  - Daoyi Dong
+  - Ruixing Long
+  - Ian R. Petersen
+  - Herschel A. Rabitz
+  journal: Phys. Rev. A
+  volume: '89'
+  pages: '023402'
+  year: 2014
+  doi: 10.1103/physreva.89.023402
+
