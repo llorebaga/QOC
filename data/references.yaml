@@ -2470,3 +2470,972 @@ chen2014sampling:
   year: 2014
   doi: 10.1103/physreva.89.023402
 
+guery2019sta:
+  type: article
+  title: 'Shortcuts to adiabaticity: Concepts, methods, and applications'
+  authors:
+  - D. Guéry-Odelin
+  - A. Ruschhaupt
+  - A. Kiely
+  - E. Torrontegui
+  - S. Martínez-Garaot
+  - J. G. Muga
+  journal: Rev. Mod. Phys.
+  volume: '91'
+  pages: '045001'
+  year: 2019
+  doi: 10.1103/revmodphys.91.045001
+
+torrontegui2013sta:
+  type: chapter
+  title: Shortcuts to Adiabaticity
+  authors:
+  - Erik Torrontegui
+  - Sara Ibáñez
+  - Sofia Martínez-Garaot
+  - Michele Modugno
+  - Adolfo del Campo
+  - David Guéry-Odelin
+  - Andreas Ruschhaupt
+  - Xi Chen
+  - Juan Gonzalo Muga
+  booktitle: Advances In Atomic, Molecular, and Optical Physics
+  publisher: Elsevier
+  pages: 117-169
+  year: 2013
+  doi: 10.1016/b978-0-12-408090-4.00002-5
+
+demirplak2003adiabatic:
+  type: article
+  title: Adiabatic Population Transfer with Control Fields
+  authors:
+  - Mustafa Demirplak
+  - Stuart A. Rice
+  journal: J. Phys. Chem. A
+  volume: '107'
+  pages: 9937-9945
+  year: 2003
+  doi: 10.1021/jp030708a
+
+berry2009transitionless:
+  type: article
+  title: Transitionless quantum driving
+  authors:
+  - M V Berry
+  journal: 'J. Phys. A: Math. Theor.'
+  volume: '42'
+  pages: '365303'
+  year: 2009
+  doi: 10.1088/1751-8113/42/36/365303
+
+chen2010cooling:
+  type: article
+  title: 'Fast Optimal Frictionless Atom Cooling in Harmonic Traps: Shortcut to Adiabaticity'
+  authors:
+  - Xi Chen
+  - A. Ruschhaupt
+  - S. Schmidt
+  - A. del Campo
+  - D. Guéry-Odelin
+  - J. G. Muga
+  journal: Phys. Rev. Lett.
+  volume: '104'
+  pages: '063002'
+  year: 2010
+  doi: 10.1103/physrevlett.104.063002
+
+lewis1969invariant:
+  type: article
+  title: An Exact Quantum Theory of the Time-Dependent Harmonic Oscillator and of a Charged Particle in
+    a Time-Dependent Electromagnetic Field
+  authors:
+  - H. R. Lewis
+  - W. B. Riesenfeld
+  journal: Journal of Mathematical Physics
+  volume: '10'
+  pages: 1458-1473
+  year: 1969
+  doi: 10.1063/1.1664991
+
+masuda2010fastforward:
+  type: article
+  title: Fast-forward of adiabatic dynamics in quantum mechanics
+  authors:
+  - Shumpei Masuda
+  - Katsuhiro Nakamura
+  journal: Proc. R. Soc. A.
+  volume: '466'
+  pages: 1135-1154
+  year: 2010
+  doi: 10.1098/rspa.2009.0446
+
+delcampo2013counterdiabatic:
+  type: article
+  title: Shortcuts to Adiabaticity by Counterdiabatic Driving
+  authors:
+  - Adolfo del Campo
+  journal: Phys. Rev. Lett.
+  volume: '111'
+  pages: '100502'
+  year: 2013
+  doi: 10.1103/physrevlett.111.100502
+
+sels2017local:
+  type: article
+  title: Minimizing irreversible losses in quantum systems by local counterdiabatic driving
+  authors:
+  - Dries Sels
+  - Anatoli Polkovnikov
+  journal: Proc. Natl. Acad. Sci. U.S.A.
+  volume: '114'
+  year: 2017
+  doi: 10.1073/pnas.1619826114
+
+claeys2019floquetcd:
+  type: article
+  title: Floquet-Engineering Counterdiabatic Protocols in Quantum Many-Body Systems
+  authors:
+  - Pieter W. Claeys
+  - Mohit Pandey
+  - Dries Sels
+  - Anatoli Polkovnikov
+  journal: Phys. Rev. Lett.
+  volume: '123'
+  pages: 090602
+  year: 2019
+  doi: 10.1103/physrevlett.123.090602
+
+bason2012driving:
+  type: article
+  title: High-fidelity quantum driving
+  authors:
+  - Mark G. Bason
+  - Matthieu Viteau
+  - Nicola Malossi
+  - Paul Huillery
+  - Ennio Arimondo
+  - Donatella Ciampini
+  - Rosario Fazio
+  - Vittorio Giovannetti
+  - Riccardo Mannella
+  - Oliver Morsch
+  journal: Nature Phys
+  volume: '8'
+  pages: 147-152
+  year: 2012
+  doi: 10.1038/nphys2170
+
+zhang2013assisted:
+  type: article
+  title: Experimental Implementation of Assisted Quantum Adiabatic Passage in a Single Spin
+  authors:
+  - Jingfu Zhang
+  - Jeong Hyun Shim
+  - Ingo Niemeyer
+  - T. Taniguchi
+  - T. Teraji
+  - H. Abe
+  - S. Onoda
+  - T. Yamamoto
+  - T. Ohshima
+  - J. Isoya
+  - Dieter Suter
+  journal: Phys. Rev. Lett.
+  volume: '110'
+  pages: '240501'
+  year: 2013
+  doi: 10.1103/physrevlett.110.240501
+
+hegade2021digitized:
+  type: article
+  title: Shortcuts to Adiabaticity in Digitized Adiabatic Quantum Computing
+  authors:
+  - Narendra N. Hegade
+  - Koushik Paul
+  - Yongcheng Ding
+  - Mikel Sanz
+  - F. Albarrán-Arriagada
+  - Enrique Solano
+  - Xi Chen
+  journal: Phys. Rev. Applied
+  volume: '15'
+  pages: 024038
+  year: 2021
+  doi: 10.1103/physrevapplied.15.024038
+
+hegade2022dcqo:
+  type: article
+  title: Digitized counterdiabatic quantum optimization
+  authors:
+  - Narendra N. Hegade
+  - Xi Chen
+  - Enrique Solano
+  journal: Phys. Rev. Research
+  volume: '4'
+  pages: L042030
+  year: 2022
+  doi: 10.1103/physrevresearch.4.l042030
+
+kolodrubetz2017geometry:
+  type: article
+  title: Geometry and non-adiabatic response in quantum and classical systems
+  authors:
+  - Michael Kolodrubetz
+  - Dries Sels
+  - Pankaj Mehta
+  - Anatoli Polkovnikov
+  journal: Physics Reports
+  volume: '697'
+  pages: 1-87
+  year: 2017
+  doi: 10.1016/j.physrep.2017.07.001
+
+campbell2017tradeoff:
+  type: article
+  title: Trade-Off Between Speed and Cost in Shortcuts to Adiabaticity
+  authors:
+  - Steve Campbell
+  - Sebastian Deffner
+  journal: Phys. Rev. Lett.
+  volume: '118'
+  pages: '100601'
+  year: 2017
+  doi: 10.1103/physrevlett.118.100601
+
+stefanatos2010frictionless:
+  type: article
+  title: 'Frictionless atom cooling in harmonic traps: A time-optimal approach'
+  authors:
+  - Dionisis Stefanatos
+  - Justin Ruths
+  - Jr-Shin Li
+  journal: Phys. Rev. A
+  volume: '82'
+  pages: '063422'
+  year: 2010
+  doi: 10.1103/physreva.82.063422
+
+bergmann1998coherent:
+  type: article
+  title: Coherent population transfer among quantum states of atoms and molecules
+  authors:
+  - K. Bergmann
+  - H. Theuer
+  - B. W. Shore
+  journal: Rev. Mod. Phys.
+  volume: '70'
+  pages: 1003-1025
+  year: 1998
+  doi: 10.1103/revmodphys.70.1003
+
+vitanov2017stirap:
+  type: article
+  title: Stimulated Raman adiabatic passage in physics, chemistry, and beyond
+  authors:
+  - Nikolay V. Vitanov
+  - Andon A. Rangelov
+  - Bruce W. Shore
+  - Klaas Bergmann
+  journal: Rev. Mod. Phys.
+  volume: '89'
+  pages: '015006'
+  year: 2017
+  doi: 10.1103/revmodphys.89.015006
+
+gaubatz1990stirap:
+  type: article
+  title: Population transfer between molecular vibrational levels by stimulated Raman scattering with
+    partially overlapping laser fields. A new concept and experimental results
+  authors:
+  - U. Gaubatz
+  - P. Rudecki
+  - S. Schiemann
+  - K. Bergmann
+  journal: The Journal of Chemical Physics
+  volume: '92'
+  pages: 5363-5376
+  year: 1990
+  doi: 10.1063/1.458514
+
+vitanov2001adiabatic:
+  type: article
+  title: LASER-INDUCED POPULATION TRANSFER BY ADIABATIC PASSAGE TECHNIQUES
+  authors:
+  - Nikolay V Vitanov
+  - Thomas Halfmann
+  - Bruce W Shore
+  - Klaas Bergmann
+  journal: Annu. Rev. Phys. Chem.
+  volume: '52'
+  pages: 763-809
+  year: 2001
+  doi: 10.1146/annurev.physchem.52.1.763
+
+zener1932crossing:
+  type: article
+  title: Non-adiabatic crossing of energy levels
+  authors:
+  - Clarence Zener
+  journal: Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and
+    Physical Character
+  volume: '137'
+  pages: 696-702
+  year: 1932
+  doi: 10.1098/rspa.1932.0165
+
+born1928adiabatensatz:
+  type: article
+  title: Beweis des Adiabatensatzes
+  authors:
+  - M. Born
+  - V. Fock
+  journal: Z. Physik
+  volume: '51'
+  pages: 165-180
+  year: 1928
+  doi: 10.1007/bf01343193
+
+kato1950adiabatic:
+  type: article
+  title: On the Adiabatic Theorem of Quantum Mechanics
+  authors:
+  - Tosio Kato
+  journal: J. Phys. Soc. Jpn.
+  volume: '5'
+  pages: 435-439
+  year: 1950
+  doi: 10.1143/jpsj.5.435
+
+garwood2001sweep:
+  type: article
+  title: 'The Return of the Frequency Sweep: Designing Adiabatic Pulses for Contemporary NMR'
+  authors:
+  - Michael Garwood
+  - Lance DelaBarre
+  journal: Journal of Magnetic Resonance
+  volume: '153'
+  pages: 155-177
+  year: 2001
+  doi: 10.1006/jmre.2001.2340
+
+kumar2016scstirap:
+  type: article
+  title: Stimulated Raman adiabatic passage in a three-level superconducting circuit
+  authors:
+  - K. S. Kumar
+  - A. Vepsäläinen
+  - S. Danilin
+  - G. S. Paraoanu
+  journal: Nat Commun
+  volume: '7'
+  pages: '10628'
+  year: 2016
+  doi: 10.1038/ncomms10628
+
+albash2018aqc:
+  type: article
+  title: Adiabatic quantum computation
+  authors:
+  - Tameem Albash
+  - Daniel A. Lidar
+  journal: Rev. Mod. Phys.
+  volume: '90'
+  pages: '015002'
+  year: 2018
+  doi: 10.1103/revmodphys.90.015002
+
+roland2002search:
+  type: article
+  title: Quantum search by local adiabatic evolution
+  authors:
+  - Jérémie Roland
+  - Nicolas J. Cerf
+  journal: Phys. Rev. A
+  volume: '65'
+  pages: 042308
+  year: 2002
+  doi: 10.1103/physreva.65.042308
+
+baksic2016dressed:
+  type: article
+  title: Speeding up Adiabatic Quantum State Transfer by Using Dressed States
+  authors:
+  - Alexandre Baksic
+  - Hugo Ribeiro
+  - Aashish A. Clerk
+  journal: Phys. Rev. Lett.
+  volume: '116'
+  pages: '230503'
+  year: 2016
+  doi: 10.1103/physrevlett.116.230503
+
+gambetta2011analytic:
+  type: article
+  title: Analytic control methods for high-fidelity unitary operations in a weakly nonlinear oscillator
+  authors:
+  - J. M. Gambetta
+  - F. Motzoi
+  - S. T. Merkel
+  - F. K. Wilhelm
+  journal: Phys. Rev. A
+  volume: '83'
+  pages: 012308
+  year: 2011
+  doi: 10.1103/physreva.83.012308
+
+lucero2010phase:
+  type: article
+  title: Reduced phase error through optimized control of a superconducting qubit
+  authors:
+  - Erik Lucero
+  - Julian Kelly
+  - Radoslaw C. Bialczak
+  - Mike Lenander
+  - Matteo Mariantoni
+  - Matthew Neeley
+  - A. D. O’Connell
+  - Daniel Sank
+  - H. Wang
+  - Martin Weides
+  - James Wenner
+  - Tsuyoshi Yamamoto
+  - A. N. Cleland
+  - John M. Martinis
+  journal: Phys. Rev. A
+  volume: '82'
+  pages: 042339
+  year: 2010
+  doi: 10.1103/physreva.82.042339
+
+chow2010optimized:
+  type: article
+  title: Optimized driving of superconducting artificial atoms for improved single-qubit gates
+  authors:
+  - J. M. Chow
+  - L. DiCarlo
+  - J. M. Gambetta
+  - F. Motzoi
+  - L. Frunzio
+  - S. M. Girvin
+  - R. J. Schoelkopf
+  journal: Phys. Rev. A
+  volume: '82'
+  pages: '040305'
+  year: 2010
+  doi: 10.1103/physreva.82.040305
+
+motzoi2013frequency:
+  type: article
+  title: Improving frequency selection of driven pulses using derivative-based transition suppression
+  authors:
+  - F. Motzoi
+  - F. K. Wilhelm
+  journal: Phys. Rev. A
+  volume: '88'
+  pages: 062318
+  year: 2013
+  doi: 10.1103/physreva.88.062318
+
+werninghaus2021leakage:
+  type: article
+  title: Leakage reduction in fast superconducting qubit gates via optimal control
+  authors:
+  - M. Werninghaus
+  - D. J. Egger
+  - F. Roy
+  - S. Machnes
+  - F. K. Wilhelm
+  - S. Filipp
+  journal: npj Quantum Inf
+  volume: '7'
+  pages: '14'
+  year: 2021
+  doi: 10.1038/s41534-020-00346-2
+
+koch2007transmon:
+  type: article
+  title: Charge-insensitive qubit design derived from the Cooper pair box
+  authors:
+  - Jens Koch
+  - Terri M. Yu
+  - Jay Gambetta
+  - A. A. Houck
+  - D. I. Schuster
+  - J. Majer
+  - Alexandre Blais
+  - M. H. Devoret
+  - S. M. Girvin
+  - R. J. Schoelkopf
+  journal: Phys. Rev. A
+  volume: '76'
+  pages: 042319
+  year: 2007
+  doi: 10.1103/physreva.76.042319
+
+krantz2019guide:
+  type: article
+  title: A quantum engineer's guide to superconducting qubits
+  authors:
+  - P. Krantz
+  - M. Kjaergaard
+  - F. Yan
+  - T. P. Orlando
+  - S. Gustavsson
+  - W. D. Oliver
+  journal: Applied Physics Reviews
+  volume: '6'
+  pages: 021318
+  year: 2019
+  doi: 10.1063/1.5089550
+
+chen2016leakage:
+  type: article
+  title: Measuring and Suppressing Quantum State Leakage in a Superconducting Qubit
+  authors:
+  - Zijun Chen
+  - Julian Kelly
+  - Chris Quintana
+  - R. Barends
+  - B. Campbell
+  - Yu Chen
+  - B. Chiaro
+  - A. Dunsworth
+  - A. G. Fowler
+  - E. Lucero
+  - E. Jeffrey
+  - A. Megrant
+  - J. Mutus
+  - M. Neeley
+  - C. Neill
+  - P. J. J. O’Malley
+  - P. Roushan
+  - D. Sank
+  - A. Vainsencher
+  - J. Wenner
+  - T. C. White
+  - A. N. Korotkov
+  - John M. Martinis
+  journal: Phys. Rev. Lett.
+  volume: '116'
+  pages: '020501'
+  year: 2016
+  doi: 10.1103/physrevlett.116.020501
+
+theis2016crowded:
+  type: article
+  title: Simultaneous gates in frequency-crowded multilevel systems using fast, robust, analytic control
+    shapes
+  authors:
+  - L. S. Theis
+  - F. Motzoi
+  - F. K. Wilhelm
+  journal: Phys. Rev. A
+  volume: '93'
+  pages: '012324'
+  year: 2016
+  doi: 10.1103/physreva.93.012324
+
+goldman2014periodically:
+  type: article
+  title: 'Periodically Driven Quantum Systems: Effective Hamiltonians and Engineered Gauge Fields'
+  authors:
+  - N. Goldman
+  - J. Dalibard
+  journal: Phys. Rev. X
+  volume: '4'
+  pages: '031027'
+  year: 2014
+  doi: 10.1103/physrevx.4.031027
+
+bukov2015highfrequency:
+  type: article
+  title: 'Universal high-frequency behavior of periodically driven systems: from dynamical stabilization
+    to Floquet engineering'
+  authors:
+  - Marin Bukov
+  - Luca D'Alessio
+  - Anatoli Polkovnikov
+  journal: Advances in Physics
+  volume: '64'
+  pages: 139-226
+  year: 2015
+  doi: 10.1080/00018732.2015.1055918
+
+eckardt2017colloquium:
+  type: article
+  title: 'Colloquium: Atomic quantum gases in periodically driven optical lattices'
+  authors:
+  - André Eckardt
+  journal: Rev. Mod. Phys.
+  volume: '89'
+  pages: '011004'
+  year: 2017
+  doi: 10.1103/revmodphys.89.011004
+
+haeberlen1968averaging:
+  type: article
+  title: Coherent Averaging Effects in Magnetic Resonance
+  authors:
+  - U. Haeberlen
+  - J. S. Waugh
+  journal: Phys. Rev.
+  volume: '175'
+  pages: 453-467
+  year: 1968
+  doi: 10.1103/physrev.175.453
+
+waugh1968wahuha:
+  type: article
+  title: Approach to High-Resolution nmr in Solids
+  authors:
+  - J. S. Waugh
+  - L. M. Huber
+  - U. Haeberlen
+  journal: Phys. Rev. Lett.
+  volume: '20'
+  pages: 180-182
+  year: 1968
+  doi: 10.1103/physrevlett.20.180
+
+shirley1965floquet:
+  type: article
+  title: Solution of the Schrödinger Equation with a Hamiltonian Periodic in Time
+  authors:
+  - Jon H. Shirley
+  journal: Phys. Rev.
+  volume: '138'
+  pages: B979-B987
+  year: 1965
+  doi: 10.1103/physrev.138.b979
+
+oka2019floquet:
+  type: article
+  title: Floquet Engineering of Quantum Materials
+  authors:
+  - Takashi Oka
+  - Sota Kitamura
+  journal: Annu. Rev. Condens. Matter Phys.
+  volume: '10'
+  pages: 387-408
+  year: 2019
+  doi: 10.1146/annurev-conmatphys-031218-013423
+
+jotzu2014haldane:
+  type: article
+  title: Experimental realization of the topological Haldane model with ultracold fermions
+  authors:
+  - Gregor Jotzu
+  - Michael Messer
+  - Rémi Desbuquois
+  - Martin Lebrat
+  - Thomas Uehlinger
+  - Daniel Greif
+  - Tilman Esslinger
+  journal: Nature
+  volume: '515'
+  pages: 237-240
+  year: 2014
+  doi: 10.1038/nature13915
+
+choi2020robust:
+  type: article
+  title: Robust Dynamic Hamiltonian Engineering of Many-Body Spin Systems
+  authors:
+  - Joonhee Choi
+  - Hengyun Zhou
+  - Helena S. Knowles
+  - Renate Landig
+  - Soonwon Choi
+  - Mikhail D. Lukin
+  journal: Phys. Rev. X
+  volume: '10'
+  pages: '031002'
+  year: 2020
+  doi: 10.1103/physrevx.10.031002
+
+geier2021floquet:
+  type: article
+  title: Floquet Hamiltonian engineering of an isolated many-body spin system
+  authors:
+  - Sebastian Geier
+  - Nithiwadee Thaicharoen
+  - Clément Hainaut
+  - Titus Franz
+  - Andre Salzinger
+  - Annika Tebben
+  - David Grimshandl
+  - Gerhard Zürn
+  - Matthias Weidemüller
+  journal: Science
+  volume: '374'
+  pages: 1149-1152
+  year: 2021
+  doi: 10.1126/science.abd9547
+
+dalessio2014heating:
+  type: article
+  title: Long-time Behavior of Isolated Periodically Driven Interacting Lattice Systems
+  authors:
+  - Luca D’Alessio
+  - Marcos Rigol
+  journal: Phys. Rev. X
+  volume: '4'
+  pages: 041048
+  year: 2014
+  doi: 10.1103/physrevx.4.041048
+
+abanin2017prethermal:
+  type: article
+  title: A Rigorous Theory of Many-Body Prethermalization for Periodically Driven and Closed Quantum Systems
+  authors:
+  - Dmitry Abanin
+  - Wojciech De Roeck
+  - Wen Wei Ho
+  - François Huveneers
+  journal: Commun. Math. Phys.
+  volume: '354'
+  pages: 809-827
+  year: 2017
+  doi: 10.1007/s00220-017-2930-x
+
+reagor2018parametric:
+  type: article
+  title: Demonstration of universal parametric entangling gates on a multi-qubit lattice
+  authors:
+  - Matthew Reagor
+  - Christopher B. Osborn
+  - Nikolas Tezak
+  - Alexa Staley
+  - Guenevere Prawiroatmodjo
+  - Michael Scheer
+  - Nasser Alidoust
+  - Eyob A. Sete
+  - Nicolas Didier
+  - Marcus P. da Silva
+  - Ezer Acala
+  - Joel Angeles
+  - Andrew Bestwick
+  - Maxwell Block
+  - Benjamin Bloom
+  - Adam Bradley
+  - Catvu Bui
+  - Shane Caldwell
+  - Lauren Capelluto
+  - Rick Chilcott
+  - Jeff Cordova
+  - Genya Crossman
+  - Michael Curtis
+  - Saniya Deshpande
+  - Tristan El Bouayadi
+  - Daniel Girshovich
+  - Sabrina Hong
+  - Alex Hudson
+  - Peter Karalekas
+  - Kat Kuang
+  - Michael Lenihan
+  - Riccardo Manenti
+  - Thomas Manning
+  - Jayss Marshall
+  - Yuvraj Mohan
+  - William O’Brien
+  - Johannes Otterbach
+  - Alexander Papageorge
+  - Jean-Philip Paquette
+  - Michael Pelstring
+  - Anthony Polloreno
+  - Vijay Rawat
+  - Colm A. Ryan
+  - Russ Renzas
+  - Nick Rubin
+  - Damon Russel
+  - Michael Rust
+  - Diego Scarabelli
+  - Michael Selvanayagam
+  - Rodney Sinclair
+  - Robert Smith
+  - Mark Suska
+  - Ting-Wai To
+  - Mehrnoosh Vahidpour
+  - Nagesh Vodrahalli
+  - Tyler Whyland
+  - Kamal Yadav
+  - William Zeng
+  - Chad T. Rigetti
+  journal: Sci. Adv.
+  volume: '4'
+  pages: eaao3603
+  year: 2018
+  doi: 10.1126/sciadv.aao3603
+
+castro2023floquetoct:
+  type: article
+  title: Floquet engineering with quantum optimal control theory
+  authors:
+  - Alberto Castro
+  - Umberto De Giovannini
+  - Shunsuke A Sato
+  - Hannes Hübener
+  - Angel Rubio
+  journal: New J. Phys.
+  volume: '25'
+  pages: '043023'
+  year: 2023
+  doi: 10.1088/1367-2630/accb05
+
+mirrahimi2005lyapunov:
+  type: article
+  title: Lyapunov control of bilinear Schrödinger equations
+  authors:
+  - Mazyar Mirrahimi
+  - Pierre Rouchon
+  - Gabriel Turinici
+  journal: Automatica
+  volume: '41'
+  pages: 1987-1994
+  year: 2005
+  doi: 10.1016/j.automatica.2005.05.018
+
+kuang2008lyapunov:
+  type: article
+  title: Lyapunov control methods of closed quantum systems
+  authors:
+  - Sen Kuang
+  - Shuang Cong
+  journal: Automatica
+  volume: '44'
+  pages: 98-108
+  year: 2008
+  doi: 10.1016/j.automatica.2007.05.013
+
+magann2022falqon:
+  type: article
+  title: Feedback-Based Quantum Optimization
+  authors:
+  - Alicia B. Magann
+  - Kenneth M. Rudinger
+  - Matthew D. Grace
+  - Mohan Sarovar
+  journal: Phys. Rev. Lett.
+  volume: '129'
+  pages: '250502'
+  year: 2022
+  doi: 10.1103/physrevlett.129.250502
+
+magann2022lyapunovqaoa:
+  type: article
+  title: Lyapunov-control-inspired strategies for quantum combinatorial optimization
+  authors:
+  - Alicia B. Magann
+  - Kenneth M. Rudinger
+  - Matthew D. Grace
+  - Mohan Sarovar
+  journal: Phys. Rev. A
+  volume: '106'
+  pages: '062414'
+  year: 2022
+  doi: 10.1103/physreva.106.062414
+
+magann2018tracking:
+  type: article
+  title: Singularity-free quantum tracking control of molecular rotor orientation
+  authors:
+  - Alicia Magann
+  - Tak-San Ho
+  - Herschel Rabitz
+  journal: Phys. Rev. A
+  volume: '98'
+  pages: 043429
+  year: 2018
+  doi: 10.1103/physreva.98.043429
+
+magann2023symmetrictop:
+  type: article
+  title: Quantum tracking control of the orientation of symmetric-top molecules
+  authors:
+  - Alicia B. Magann
+  - Tak-San Ho
+  - Christian Arenz
+  - Herschel A. Rabitz
+  journal: Phys. Rev. A
+  volume: '108'
+  pages: '033106'
+  year: 2023
+  doi: 10.1103/physreva.108.033106
+
+mccaul2020imposters:
+  type: article
+  title: 'Driven Imposters: Controlling Expectations in Many-Body Systems'
+  authors:
+  - Gerard McCaul
+  - Christopher Orthodoxou
+  - Kurt Jacobs
+  - George H. Booth
+  - Denys I. Bondar
+  journal: Phys. Rev. Lett.
+  volume: '124'
+  pages: '183201'
+  year: 2020
+  doi: 10.1103/physrevlett.124.183201
+
+goldschmidt2022mpc:
+  type: article
+  title: Model predictive control for robust quantum state preparation
+  authors:
+  - Andy J. Goldschmidt
+  - Jonathan L. DuBois
+  - Steven L. Brunton
+  - J. Nathan Kutz
+  journal: Quantum
+  volume: '6'
+  pages: '837'
+  year: 2022
+  doi: 10.22331/q-2022-10-13-837
+
+mirrahimi2007stabilizing:
+  type: article
+  title: Stabilizing Feedback Controls for Quantum Systems
+  authors:
+  - Mazyar Mirrahimi
+  - Ramon Van Handel
+  journal: SIAM J. Control Optim.
+  volume: '46'
+  pages: 445-467
+  year: 2007
+  doi: 10.1137/050644793
+
+zhu2003tracking:
+  type: article
+  title: Quantum control design via adaptive tracking
+  authors:
+  - Wusheng Zhu
+  - Herschel Rabitz
+  journal: The Journal of Chemical Physics
+  volume: '119'
+  pages: 3619-3625
+  year: 2003
+  doi: 10.1063/1.1582847
+
+grivopoulos2003lyapunov:
+  type: proceedings
+  title: Lyapunov-based control of quantum systems
+  authors:
+  - S. Grivopoulos
+  - B. Bamieh
+  booktitle: 42nd IEEE International Conference on Decision and Control (IEEE Cat. No.03CH37475)
+  volume: '1'
+  pages: 434-438
+  year: 2003
+  doi: 10.1109/cdc.2003.1272601
+
+wang2010lyapunov:
+  type: article
+  title: Analysis of Lyapunov Method for Control of Quantum States
+  authors:
+  - Xiaoting Wang
+  - Sophie G. Schirmer
+  journal: IEEE Trans. Automat. Contr.
+  volume: '55'
+  pages: 2259-2270
+  year: 2010
+  doi: 10.1109/tac.2010.2043292
+

@@ -34,9 +34,11 @@ understand any area; an expert can use it as a quick reference.
 - [x] **Speed limits & complexity family written** (2 articles: quantum speed limits, control complexity) — *awaiting review*
 - [x] **Robust control family written** (4 articles: robust & ensemble control, composite pulses,
       dynamical decoupling, filter functions) — *awaiting review*
-- [ ] Review of the written articles (21 so far)
+- [x] **Analytic & adiabatic design family written** (5 articles: shortcuts to adiabaticity, adiabatic passage,
+      DRAG, Floquet engineering, Lyapunov/tracking/MPC) — *awaiting review*
+- [ ] Review of the written articles (26 so far)
 - [ ] Remaining families, one at a time:
-      Analytic → Learning → Open systems → Many-body → Tasks → Platforms
+      Learning → Open systems → Many-body → Tasks → Platforms
 
 ## 🚧 Phase 3 — arXiv paper tracker (data pipeline running)
 

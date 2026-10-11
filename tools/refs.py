@@ -37,6 +37,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 REFS = ROOT / "data" / "references.yaml"
 UA = "QOC-bibliography/1.0 (https://github.com/llorebaga/QOC)"
+YEAR_OVERRIDE: int | None = None   # set by --year, used only when Crossref has no date
 KEY_RE = re.compile(r"^[a-z][a-z0-9-]*\d{4}[a-z0-9-]*$")
 
 HEADER = """\
@@ -84,7 +85,16 @@ def from_crossref(doi: str) -> dict:
     if not authors:
         for e in data.get("editor", []):
             authors.append(clean(" ".join(p for p in (e.get("given"), e.get("family")) if p)))
-    issued = (data.get("published-print") or data.get("published-online") or data.get("issued"))["date-parts"][0]
+    issued = [None]
+    for field in ("published-print", "published-online", "issued"):
+        parts = ((data.get(field) or {}).get("date-parts") or [[None]])[0]
+        if parts and parts[0]:
+            issued = parts
+            break
+    if not issued[0]:
+        if not YEAR_OVERRIDE:
+            raise SystemExit(f"no publication year in Crossref record for {doi}; pass --year if you know it")
+        issued = [YEAR_OVERRIDE]
     container = data.get("container-title") or [""]
     short = data.get("short-container-title") or []
     kind = data.get("type", "")
@@ -226,11 +236,13 @@ def check(online: bool) -> int:
                     msgs.append(f"duplicate {ident} of '{seen[e[ident]]}'")
                 seen[e[ident]] = key
         if online and not msgs:
+            global YEAR_OVERRIDE
+            YEAR_OVERRIDE = e.get("year")   # only used for records that carry no date (e.g. some proceedings)
             try:
                 fresh = build_entry(e.get("doi"), e.get("arxiv"))
                 if norm_title(fresh["title"]) != norm_title(e["title"]):
                     msgs.append("title differs from source")
-            except Exception as exc:
+            except (Exception, SystemExit) as exc:
                 msgs.append(f"lookup failed: {exc}")
             time.sleep(1)
         if msgs:
@@ -248,6 +260,7 @@ def main() -> None:
     a.add_argument("--doi")
     a.add_argument("--arxiv")
     a.add_argument("--note")
+    a.add_argument("--year", type=int, help="publication year, only used if the Crossref record has none")
     a.add_argument("--force", action="store_true")
     s = sub.add_parser("show")
     s.add_argument("key")
@@ -259,7 +272,9 @@ def main() -> None:
     c.add_argument("--online", action="store_true")
     args = ap.parse_args()
 
+    global YEAR_OVERRIDE
     if args.cmd == "add":
+        YEAR_OVERRIDE = args.year
         if not (args.doi or args.arxiv):
             raise SystemExit("give --doi and/or --arxiv")
         add(args.key, args.doi, args.arxiv, args.note, args.force)
