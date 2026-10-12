@@ -291,6 +291,19 @@
   lon: 11.87
   checked: '2026-10-12'
 
+- id: muga-ehu
+  name: Muga group
+  pis:
+  - Juan Gonzalo Muga
+  institution: University of the Basque Country
+  wikidata: Q1232428
+  website: https://research.science.eus/investigadores/255467/detalle?lang=en
+  city: Leioa
+  country: Spain
+  lat: 43.3314
+  lon: -2.9706
+  checked: '2026-10-12'
+
 - id: peng-ustc
   name: Peng group
   pis:
