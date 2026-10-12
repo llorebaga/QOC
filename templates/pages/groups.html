@@ -44,19 +44,18 @@
         <option value="{{ t.id }}">{{ t.title }}</option>{% endfor %}{% endfor %}
       </select>
     </label>
-    <label class="tracker-select"><span class="visually-hidden">Kind</span>
-      <select name="kind">
-        <option value="">Theory &amp; experiment</option>
-        <option value="theory">Theory</option>
-        <option value="experiment">Experiment</option>
-      </select>
-    </label>
   </form>
   <p class="tracker-status" role="status" aria-live="polite" data-groups-status>{{ groups|length }} groups.</p>
 
-  <div class="groups-map card" data-groups-map role="region" aria-label="World map of research groups">
-    <noscript><p class="muted groups-map-fallback">The map needs JavaScript; all groups are listed below.</p></noscript>
-  </div>
+</div>
+
+<div class="groups-map" data-groups-map role="region" aria-label="World map of research groups"
+     data-world="https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json"
+     data-world-integrity="sha256-JRbJFYZ8e68Y3exyeuxGwxVUGgfPs9eaZVmwXV6U7ug=">
+  <noscript><p class="muted groups-map-fallback">The map needs JavaScript; all groups are listed below.</p></noscript>
+</div>
+
+<div class="wrap groups groups-below" data-groups-below>
 
   <ul class="group-list" data-groups-list>
     {% for g in groups | sort(attribute='name') %}
@@ -92,5 +91,6 @@
 {% block scripts %}
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" integrity="sha256-Hk4dIpcqOSb0hZjgyvFOP+cEmDXUKKNE/tT542ZbNQg=" crossorigin="" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha256-Jc0CrkhsxQY+AhWk5M+xXeg3AMh6xIusTVfcaq8+u4k=" crossorigin="" defer></script>
 <script src="{{ asset('js/groups.js') }}" defer></script>
 {% endblock %}

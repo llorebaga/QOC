@@ -65,11 +65,11 @@ understand any area; an expert can use it as a quick reference.
 
 ## 🚧 Phase 4 — Research groups map (first version built)
 
-- [x] `data/groups.yaml`, maintained with `tools/groups.py`: PIs, institution, website, optional theory/experiment;
+- [x] `data/groups.yaml`, maintained with `tools/groups.py`: PIs, institution, website;
       city, country and coordinates generated from the institution's Wikidata entry (never typed by hand)
 - [x] Every entry checked automatically: the website loads and names every PI (`groups.py check`)
 - [x] Topics and platforms derived from the PIs' tracked papers (not self-descriptions); PIs linked to author pages
-- [x] World map (Leaflet + OpenStreetMap tiles, marker clustering) with filters by topic, platform and kind,
+- [x] World map (Leaflet + OpenStreetMap tiles, marker clustering) with filters by topic and platform,
       synchronized with the group list; one page per group with topics and recent papers
 - [x] Seed: 22 well-known groups in 9 countries
 - [ ] Grow the list (candidates still to be verified: Sugny, Vitanov, Muga, Boscain & Sigalotti, Mirrahimi,

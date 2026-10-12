@@ -41,8 +41,7 @@ GENERATED = ["city", "country", "lat", "lon"]
 HEADER = """\
 # Research groups on the QOC world map.
 #
-# Hand-written: id, name, pis, institution, wikidata (the institution's Wikidata id), website, kind (optional:
-#   theory | experiment | both — only when the group's own website says so), arxiv_names (optional: other spellings
+# Hand-written: id, name, pis, institution, wikidata (the institution's Wikidata id), website, arxiv_names (optional: other spellings
 #   of a PI's name on arXiv, to link the right author page), note (optional).
 # Generated — do not edit by hand: city, country, lat, lon (python tools/groups.py coords) and checked
 #   (python tools/groups.py check --write: the website loaded and named every PI on that date).
@@ -90,7 +89,7 @@ def load() -> list[dict]:
 
 
 def save(groups: list[dict]) -> None:
-    order = ["id", "name", "pis", "arxiv_names", "institution", "wikidata", "website", "kind", "note"] + GENERATED + ["checked"]
+    order = ["id", "name", "pis", "arxiv_names", "institution", "wikidata", "website", "note"] + GENERATED + ["checked"]
     chunks = []
     for g in sorted(groups, key=lambda g: g["id"]):
         d = {k: g[k] for k in order if g.get(k) not in (None, "")}
@@ -201,8 +200,6 @@ def cmd_check(write: bool) -> int:
         if g.get("id") in ids:
             msgs.append("duplicate id")
         ids.add(g.get("id"))
-        if g.get("kind") not in (None, "theory", "experiment", "both"):
-            msgs.append(f"bad kind {g.get('kind')!r}")
         if any(g.get(k) is None for k in ("lat", "lon")):
             msgs.append("no coordinates (run: tools/groups.py coords)")
         try:
@@ -210,10 +207,6 @@ def cmd_check(write: bool) -> int:
             missing = [p for p in g["pis"] if fold(surname(p)) not in text]
             if missing:
                 msgs.append(f"website does not mention {missing}")
-            words = {"theory": ["theor"], "experiment": ["experiment"], "both": ["theor", "experiment"]}
-            for w in words.get(g.get("kind"), []):
-                if w not in text:
-                    msgs.append(f"kind '{g['kind']}' but the website does not say '{w}…'")
             if fold(g["name"]) not in text and not g["name"].endswith(" group"):
                 print(f"  (note: {g.get('id')}: the name '{g['name']}' is not on the website)")
         except Exception as exc:

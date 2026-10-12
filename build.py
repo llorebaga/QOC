@@ -125,8 +125,6 @@ def load_groups(path: Path, taxonomy: dict) -> list[dict]:
         if gid in seen:
             errors.append(f"duplicate group id '{gid}'")
         seen.add(gid)
-        if g.get("kind") not in (None, "theory", "experiment", "both"):
-            errors.append(f"group '{gid}': kind must be theory, experiment or both")
     if errors:
         raise BuildError("groups.yaml (see tools/groups.py):\n  " + "\n  ".join(errors))
     return groups
@@ -136,7 +134,7 @@ def groups_data(groups: list[dict], taxonomy: dict, url) -> list[dict]:
     """Compact group records for the map script."""
     return [{"id": g["id"], "name": g["name"], "pis": g["pis"], "institution": g["institution"],
              "place": ", ".join(x for x in (g.get("city"), g["country"]) if x), "lat": g["lat"], "lon": g["lon"],
-             "kind": g.get("kind"), "topics": g["topics"], "platforms": g["platforms"],
+             "topics": g["topics"], "platforms": g["platforms"],
              "url": url(f"groups/{g['id']}/"),
              "labels": [taxonomy["topics"][t]["label"] for t in g["topics"][:4]]} for g in groups]
 

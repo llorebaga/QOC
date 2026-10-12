@@ -14,7 +14,6 @@
       <div><dt>PI{{ 's' if g.pis|length > 1 }}</dt>
         <dd>{% for p in g.pi_links %}{% if p.slug %}<a href="{{ url('papers/authors/?a=' ~ p.slug) }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
       <div><dt>Website</dt><dd><a href="{{ g.website }}" rel="noopener">{{ g.website | replace('https://', '') | replace('http://', '') | truncate(60, true, '…') }}</a></dd></div>
-      {% if g.get('kind') %}<div><dt>Research</dt><dd>{{ {'theory': 'Theory', 'experiment': 'Experiment', 'both': 'Theory and experiment'}[g.get('kind')] }}</dd></div>{% endif %}
       <div><dt>Tracked papers</dt><dd>{{ g.papers|length }}{% if g.papers %} ({{ g.papers[-1].date[:4] }}–{{ g.papers[0].date[:4] }}){% endif %}</dd></div>
     </dl>
   </div>

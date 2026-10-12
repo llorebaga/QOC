@@ -1,7 +1,6 @@
 # Research groups on the QOC world map.
 #
-# Hand-written: id, name, pis, institution, wikidata (the institution's Wikidata id), website, kind (optional:
-#   theory | experiment | both — only when the group's own website says so), arxiv_names (optional: other spellings
+# Hand-written: id, name, pis, institution, wikidata (the institution's Wikidata id), website, arxiv_names (optional: other spellings
 #   of a PI's name on arXiv, to link the right author page), note (optional).
 # Generated — do not edit by hand: city, country, lat, lon (python tools/groups.py coords) and checked
 #   (python tools/groups.py check --write: the website loaded and named every PI on that date).
@@ -14,7 +13,6 @@
   institution: Tulane University
   wikidata: Q1193547
   website: https://sse.tulane.edu/pep/faculty/bondar
-  kind: theory
   city: New Orleans
   country: United States
   lat: 29.9408
@@ -41,7 +39,6 @@
   institution: University of Erlangen–Nuremberg
   wikidata: Q40025
   website: https://www.quantumtheory.nat.fau.eu/person/daniel-burgarth/
-  kind: theory
   city: Erlangen
   country: Germany
   lat: 49.6007
@@ -55,7 +52,6 @@
   institution: University of Luxembourg
   wikidata: Q59668
   website: https://sites.google.com/site/adolfodelcampo/
-  kind: theory
   city: Esch-sur-Alzette
   country: Luxembourg
   lat: 49.5042
@@ -82,7 +78,6 @@
   institution: Ulm University
   wikidata: Q835662
   website: https://www.uni-ulm.de/en/nawi/institute-for-quantum-optics/
-  kind: experiment
   city: Ulm
   country: Germany
   lat: 48.4221
@@ -96,7 +91,6 @@
   institution: Freie Universität Berlin
   wikidata: Q153006
   website: https://www.physik.fu-berlin.de/en/einrichtungen/ag/ag-koch/index.html
-  kind: theory
   city: Berlin
   country: Germany
   lat: 52.4543
@@ -110,7 +104,6 @@
   institution: Hebrew University of Jerusalem
   wikidata: Q174158
   website: https://scholars.huji.ac.il/ronniekosloff
-  kind: theory
   city: Jerusalem
   country: Israel
   lat: 31.7942
@@ -124,7 +117,6 @@
   institution: Weizmann Institute of Science
   wikidata: Q4182
   website: https://www.weizmann.ac.il/chembiophys/kuprov/
-  kind: theory
   city: Rehovot
   country: Israel
   lat: 31.9075
@@ -151,7 +143,6 @@
   institution: University of Southern California
   wikidata: Q4614
   website: https://qserver.usc.edu/
-  kind: both
   city: Los Angeles
   country: United States
   lat: 34.0217
@@ -193,7 +184,6 @@
   institution: Forschungszentrum Jülich
   wikidata: Q697111
   website: https://www.fz-juelich.de/en/pgi/pgi-12
-  kind: theory
   city: Jülich
   country: Germany
   lat: 50.905
@@ -220,7 +210,6 @@
   institution: Ulm University
   wikidata: Q835662
   website: https://uni-ulm.de/nawi/institut-fuer-theoretische-physik-start-page/controlled-quantum-dynamics
-  kind: theory
   city: Ulm
   country: Germany
   lat: 48.4221
@@ -234,7 +223,6 @@
   institution: Princeton University
   wikidata: Q21578
   website: https://rabitz.princeton.edu/
-  kind: both
   city: Princeton
   country: United States
   lat: 40.3453
@@ -261,7 +249,6 @@
   institution: Atominstitut, TU Wien
   wikidata: Q757615
   website: http://atomchip.org/
-  kind: experiment
   city: Vienna
   country: Austria
   lat: 48.1967
@@ -275,7 +262,6 @@
   institution: Weizmann Institute of Science
   wikidata: Q4182
   website: https://www.weizmann.ac.il/chemphys/tannor/
-  kind: theory
   city: Rehovot
   country: Israel
   lat: 31.9075
@@ -289,7 +275,6 @@
   institution: Dartmouth College
   wikidata: Q49116
   website: https://sites.dartmouth.edu/lorenzaviola-group
-  kind: theory
   city: Hanover
   country: United States
   lat: 43.7033
