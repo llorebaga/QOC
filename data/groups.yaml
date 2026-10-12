@@ -1,0 +1,310 @@
+# Research groups on the QOC world map.
+#
+# Hand-written: id, name, pis, institution, wikidata (the institution's Wikidata id), website, kind (optional:
+#   theory | experiment | both — only when the group's own website says so), arxiv_names (optional: other spellings
+#   of a PI's name on arXiv, to link the right author page), note (optional).
+# Generated — do not edit by hand: city, country, lat, lon (python tools/groups.py coords) and checked
+#   (python tools/groups.py check --write: the website loaded and named every PI on that date).
+# Topics are not stored here: the site derives them from the PIs' papers in the tracker.
+
+- id: bondar-tulane
+  name: Bondar group
+  pis:
+  - Denys I. Bondar
+  institution: Tulane University
+  wikidata: Q1193547
+  website: https://sse.tulane.edu/pep/faculty/bondar
+  kind: theory
+  city: New Orleans
+  country: United States
+  lat: 29.9408
+  lon: -90.1206
+  checked: '2026-10-12'
+
+- id: bukov-mpipks
+  name: Bukov group
+  pis:
+  - Marin Bukov
+  institution: Max Planck Institute for the Physics of Complex Systems
+  wikidata: Q1912086
+  website: https://www.pks.mpg.de/nqd/group-members
+  city: Dresden
+  country: Germany
+  lat: 51.0267
+  lon: 13.7169
+  checked: '2026-10-12'
+
+- id: burgarth-fau
+  name: Burgarth group
+  pis:
+  - Daniel Burgarth
+  institution: University of Erlangen–Nuremberg
+  wikidata: Q40025
+  website: https://www.quantumtheory.nat.fau.eu/person/daniel-burgarth/
+  kind: theory
+  city: Erlangen
+  country: Germany
+  lat: 49.6007
+  lon: 11.0047
+  checked: '2026-10-12'
+
+- id: del-campo-luxembourg
+  name: del Campo group
+  pis:
+  - Adolfo del Campo
+  institution: University of Luxembourg
+  wikidata: Q59668
+  website: https://sites.google.com/site/adolfodelcampo/
+  kind: theory
+  city: Esch-sur-Alzette
+  country: Luxembourg
+  lat: 49.5042
+  lon: 5.9484
+  checked: '2026-10-12'
+
+- id: glaser-tum
+  name: Glaser group
+  pis:
+  - Steffen J. Glaser
+  institution: Technical University of Munich
+  wikidata: Q157808
+  website: https://www.ch.nat.tum.de/en/ch/ueber-uns/people/profs/steffen-glaser
+  city: Munich
+  country: Germany
+  lat: 48.1481
+  lon: 11.5681
+  checked: '2026-10-12'
+
+- id: jelezko-ulm
+  name: Institute for Quantum Optics
+  pis:
+  - Fedor Jelezko
+  institution: Ulm University
+  wikidata: Q835662
+  website: https://www.uni-ulm.de/en/nawi/institute-for-quantum-optics/
+  kind: experiment
+  city: Ulm
+  country: Germany
+  lat: 48.4221
+  lon: 9.9538
+  checked: '2026-10-12'
+
+- id: koch-fu-berlin
+  name: Quantum Dynamics and Control
+  pis:
+  - Christiane P. Koch
+  institution: Freie Universität Berlin
+  wikidata: Q153006
+  website: https://www.physik.fu-berlin.de/en/einrichtungen/ag/ag-koch/index.html
+  kind: theory
+  city: Berlin
+  country: Germany
+  lat: 52.4543
+  lon: 13.2935
+  checked: '2026-10-12'
+
+- id: kosloff-huji
+  name: Kosloff group
+  pis:
+  - Ronnie Kosloff
+  institution: Hebrew University of Jerusalem
+  wikidata: Q174158
+  website: https://scholars.huji.ac.il/ronniekosloff
+  kind: theory
+  city: Jerusalem
+  country: Israel
+  lat: 31.7942
+  lon: 35.2428
+  checked: '2026-10-12'
+
+- id: kuprov-weizmann
+  name: Kuprov Lab
+  pis:
+  - Ilya Kuprov
+  institution: Weizmann Institute of Science
+  wikidata: Q4182
+  website: https://www.weizmann.ac.il/chembiophys/kuprov/
+  kind: theory
+  city: Rehovot
+  country: Israel
+  lat: 31.9075
+  lon: 34.8092
+  checked: '2026-10-12'
+
+- id: li-wustl
+  name: Li group
+  pis:
+  - Jr-Shin Li
+  institution: Washington University in St. Louis
+  wikidata: Q777403
+  website: https://research.engineering.wustl.edu/~jsli/AMLab/Home.html
+  city: St. Louis County
+  country: United States
+  lat: 38.648
+  lon: -90.305
+  checked: '2026-10-12'
+
+- id: lidar-usc
+  name: Quantum Computation and Open Quantum Systems
+  pis:
+  - Daniel A. Lidar
+  institution: University of Southern California
+  wikidata: Q4614
+  website: https://qserver.usc.edu/
+  kind: both
+  city: Los Angeles
+  country: United States
+  lat: 34.0217
+  lon: -118.2853
+  checked: '2026-10-12'
+
+- id: marecek-ctu
+  name: Mareček group
+  pis:
+  - Jakub Mareček
+  institution: Czech Technical University in Prague
+  wikidata: Q1329478
+  website: https://www.aic.fel.cvut.cz/members/jakub-marecek
+  city: Prague
+  country: Czech Republic
+  lat: 50.1022
+  lon: 14.3885
+  checked: '2026-10-12'
+
+- id: montangero-padova
+  name: Montangero group
+  pis:
+  - Simone Montangero
+  institution: University of Padua
+  wikidata: Q193510
+  website: https://quantum.dfa.unipd.it/people/
+  city: Padua
+  country: Italy
+  lat: 45.42
+  lon: 11.87
+  checked: '2026-10-12'
+
+- id: pgi-12-juelich
+  name: Quantum Computing Analytics (PGI-12)
+  pis:
+  - Frank K. Wilhelm-Mauch
+  arxiv_names:
+    Frank K. Wilhelm-Mauch: [Frank K. Wilhelm]
+  institution: Forschungszentrum Jülich
+  wikidata: Q697111
+  website: https://www.fz-juelich.de/en/pgi/pgi-12
+  kind: theory
+  city: Jülich
+  country: Germany
+  lat: 50.905
+  lon: 6.4119
+  checked: '2026-10-12'
+
+- id: pgi-8-juelich
+  name: Quantum Control (PGI-8)
+  pis:
+  - Tommaso Calarco
+  institution: Forschungszentrum Jülich
+  wikidata: Q697111
+  website: https://www.fz-juelich.de/en/pgi/pgi-8
+  city: Jülich
+  country: Germany
+  lat: 50.905
+  lon: 6.4119
+  checked: '2026-10-12'
+
+- id: plenio-ulm
+  name: Controlled Quantum Dynamics
+  pis:
+  - Martin B. Plenio
+  institution: Ulm University
+  wikidata: Q835662
+  website: https://uni-ulm.de/nawi/institut-fuer-theoretische-physik-start-page/controlled-quantum-dynamics
+  kind: theory
+  city: Ulm
+  country: Germany
+  lat: 48.4221
+  lon: 9.9538
+  checked: '2026-10-12'
+
+- id: rabitz-princeton
+  name: Rabitz group
+  pis:
+  - Herschel Rabitz
+  institution: Princeton University
+  wikidata: Q21578
+  website: https://rabitz.princeton.edu/
+  kind: both
+  city: Princeton
+  country: United States
+  lat: 40.3453
+  lon: -74.6561
+  checked: '2026-10-12'
+
+- id: rouchon-mines
+  name: Rouchon group
+  pis:
+  - Pierre Rouchon
+  institution: Mines Paris – PSL
+  wikidata: Q1189954
+  website: https://cas.minesparis.psl.eu/~rouchon
+  city: Paris
+  country: France
+  lat: 48.845
+  lon: 2.339
+  checked: '2026-10-12'
+
+- id: schmiedmayer-tuwien
+  name: Schmiedmayer group
+  pis:
+  - Jörg Schmiedmayer
+  institution: Atominstitut, TU Wien
+  wikidata: Q757615
+  website: http://atomchip.org/
+  kind: experiment
+  city: Vienna
+  country: Austria
+  lat: 48.1967
+  lon: 16.4128
+  checked: '2026-10-12'
+
+- id: tannor-weizmann
+  name: Tannor group
+  pis:
+  - David J. Tannor
+  institution: Weizmann Institute of Science
+  wikidata: Q4182
+  website: https://www.weizmann.ac.il/chemphys/tannor/
+  kind: theory
+  city: Rehovot
+  country: Israel
+  lat: 31.9075
+  lon: 34.8092
+  checked: '2026-10-12'
+
+- id: viola-dartmouth
+  name: Viola group
+  pis:
+  - Lorenza Viola
+  institution: Dartmouth College
+  wikidata: Q49116
+  website: https://sites.dartmouth.edu/lorenzaviola-group
+  kind: theory
+  city: Hanover
+  country: United States
+  lat: 43.7033
+  lon: -72.2883
+  checked: '2026-10-12'
+
+- id: wu-tsinghua
+  name: Wu group
+  pis:
+  - Re-Bing Wu
+  institution: Tsinghua University
+  wikidata: Q16955
+  website: https://www.au.tsinghua.edu.cn/info/1076/3251.htm
+  city: Beijing
+  country: People's Republic of China
+  lat: 40
+  lon: 116.3267
+  checked: '2026-10-12'

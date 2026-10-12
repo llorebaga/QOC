@@ -111,6 +111,36 @@ def load_articles(taxonomy: dict, references: dict, url) -> dict:
     return articles
 
 
+def load_groups(path: Path, taxonomy: dict) -> list[dict]:
+    """Load and validate data/groups.yaml (maintained with tools/groups.py)."""
+    if not path.exists():
+        return []
+    groups = load_yaml(path) or []
+    errors, seen = [], set()
+    for g in groups:
+        gid = g.get("id", "?")
+        for k in ("id", "name", "pis", "institution", "wikidata", "website", "country", "lat", "lon"):
+            if g.get(k) in (None, "", []):
+                errors.append(f"group '{gid}': missing {k}")
+        if gid in seen:
+            errors.append(f"duplicate group id '{gid}'")
+        seen.add(gid)
+        if g.get("kind") not in (None, "theory", "experiment", "both"):
+            errors.append(f"group '{gid}': kind must be theory, experiment or both")
+    if errors:
+        raise BuildError("groups.yaml (see tools/groups.py):\n  " + "\n  ".join(errors))
+    return groups
+
+
+def groups_data(groups: list[dict], taxonomy: dict, url) -> list[dict]:
+    """Compact group records for the map script."""
+    return [{"id": g["id"], "name": g["name"], "pis": g["pis"], "institution": g["institution"],
+             "place": ", ".join(x for x in (g.get("city"), g["country"]) if x), "lat": g["lat"], "lon": g["lon"],
+             "kind": g.get("kind"), "topics": g["topics"], "platforms": g["platforms"],
+             "url": url(f"groups/{g['id']}/"),
+             "labels": [taxonomy["topics"][t]["label"] for t in g["topics"][:4]]} for g in groups]
+
+
 def map_data(taxonomy: dict, articles: dict, url) -> dict:
     """Graph data for the interactive field map."""
     return {
@@ -211,6 +241,7 @@ def build(base: str | None = None, quiet: bool = False) -> None:
     except ValueError as exc:
         raise BuildError(str(exc)) from exc
     tracked = paper_tracker.prepare(papers, taxonomy, rules_file, ROOT / ".cache" / "topics.json")
+    groups = paper_tracker.prepare_groups(load_groups(ROOT / "data" / "groups.yaml", taxonomy), tracked, taxonomy)
     quality_file = ROOT / "data" / "quality" / "summary.yaml"
     quality = load_yaml(quality_file) if quality_file.exists() else None
     env.globals.update(articles=articles, paper_stats=stats, selection=selection, quality=quality, tracked=tracked,
@@ -232,6 +263,12 @@ def build(base: str | None = None, quiet: bool = False) -> None:
         template = "pages/section.html" if section["page"] == "placeholder" else f"pages/{section['page']}.html"
         extra = {"graph_json": Markup(json.dumps(map_data(taxonomy, articles, url), ensure_ascii=False)
                                       .replace("</", "<\\/"))} if section["id"] == "map" else {}
+        if section["id"] == "groups":
+            extra = {"groups": groups,
+                     "groups_json": Markup(json.dumps(groups_data(groups, taxonomy, url), ensure_ascii=False)
+                                           .replace("</", "<\\/")),
+                     "topic_options": sorted({t for g in groups for t in g["topics"]}),
+                     "platform_options": sorted({t for g in groups for t in g["platforms"]})}
         render(env, template, f"{section['id']}/index.html", page_id=section["id"], section=section, **extra)
 
     # One page per topic (with or without an article yet), with its recent papers and a feed
@@ -246,6 +283,10 @@ def build(base: str | None = None, quiet: bool = False) -> None:
                    next_topic=siblings[i + 1] if i + 1 < len(siblings) else None)
             render(env, "feeds/atom.xml", f"topics/{topic['id']}/feed.xml", feed_title=f"QOC — {topic['title']}",
                    feed_id=f"topics/{topic['id']}/", feed_page=f"topics/{topic['id']}/", entries=topic_papers[:30])
+
+    # Research groups: one page each (the map and the list are on the section page)
+    for g in groups:
+        render(env, "pages/group.html", f"groups/{g['id']}/index.html", page_id="groups", g=g)
 
     # Paper tracker: data for the client, author pages, weekly digest, feed
     write(OUT / "papers" / "data" / "index.json", paper_tracker.index_json(tracked, taxonomy).encode("utf-8"))

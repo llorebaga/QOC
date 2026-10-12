@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% from "partials/paper_list.html" import paper_item %}
+{% block title %}{{ g.name }} — {{ g.institution }} — QOC{% endblock %}
+{% block description %}{{ g.name }} ({{ g.pis | join(', ') }}), {{ g.institution }}: research topics and recent quantum control papers.{% endblock %}
+
+{% block main %}
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ url('groups/') }}">Research groups</a><span aria-hidden="true">/</span><span>{{ g.name }}</span></nav>
+    <h1>{{ g.name }}</h1>
+    <p class="lead">{{ g.institution }}{% if g.get('city') %}, {{ g.city }}{% endif %}, {{ g.country }}</p>
+    <dl class="group-facts">
+      <div><dt>PI{{ 's' if g.pis|length > 1 }}</dt>
+        <dd>{% for p in g.pi_links %}{% if p.slug %}<a href="{{ url('papers/authors/?a=' ~ p.slug) }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
+      <div><dt>Website</dt><dd><a href="{{ g.website }}" rel="noopener">{{ g.website | replace('https://', '') | replace('http://', '') | truncate(60, true, '…') }}</a></dd></div>
+      {% if g.get('kind') %}<div><dt>Research</dt><dd>{{ {'theory': 'Theory', 'experiment': 'Experiment', 'both': 'Theory and experiment'}[g.get('kind')] }}</dd></div>{% endif %}
+      <div><dt>Tracked papers</dt><dd>{{ g.papers|length }}{% if g.papers %} ({{ g.papers[-1].date[:4] }}–{{ g.papers[0].date[:4] }}){% endif %}</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="wrap group-layout">
+  <div class="group-main">
+    {% if g.topics %}
+    <section aria-labelledby="g-topics">
+      <h2 id="g-topics">Topics</h2>
+      <p class="section-note">The most frequent field-map topics among the PI{{ 's' if g.pis|length > 1 }}' tracked papers.</p>
+      <ul class="group-topics">
+        {% for t in g.topics %}{% set tt = taxonomy.topics[t] %}
+        <li><a class="topic-chip" href="{{ url('topics/' ~ t ~ '/') }}" style="--fam: var(--fam-{{ tt.family }})">{{ tt.label }}</a>
+          <span class="muted">{{ g.topic_counts[t] }}</span></li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    <section aria-labelledby="g-papers">
+      <h2 id="g-papers">Recent papers</h2>
+      {% if g.papers %}
+      <ol class="paper-list paper-list-compact">{% for p in g.papers[:10] %}{{ paper_item(p, 8) }}{% endfor %}</ol>
+      {% if g.pi_links and g.pi_links[0].slug and g.papers|length > 10 %}
+      <p class="section-note"><a href="{{ url('papers/authors/?a=' ~ g.pi_links[0].slug) }}">All {{ g.papers|length }} papers</a></p>
+      {% endif %}
+      {% else %}
+      <p class="section-note">No tracked papers yet.</p>
+      {% endif %}
+    </section>
+  </div>
+  <aside class="group-aside">
+    <div class="card group-check">
+      {{ icon('check') }}
+      <p>Checked against the group's website{% if g.get('checked') %} on {{ g.checked }}{% endif %}. The location is the
+        institution's <a href="https://www.wikidata.org/wiki/{{ g.wikidata }}" rel="noopener">Wikidata entry</a>.</p>
+    </div>
+    <p><a href="{{ url('groups/#' ~ g.id) }}">{{ icon('globe') }} Show on the map</a></p>
+  </aside>
+</div>
+{% endblock %}

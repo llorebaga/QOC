@@ -63,13 +63,17 @@ understand any area; an expert can use it as a quick reference.
 - [x] Author pages: every author → all their tracked papers, topics and co-authors (name variants merged when unambiguous)
 - [x] Atom feeds (all papers and one per topic); weekly digest page; recent papers on every topic page
 
-## Phase 4 — Research groups map
+## 🚧 Phase 4 — Research groups map (first version built)
 
-- [ ] `data/groups.yaml`: PI(s), institution, city, coordinates, website, topics, platforms,
-      theory/experiment
-- [ ] World map (Leaflet + OpenStreetMap tiles, marker clustering), filters by topic/platform
-- [ ] Group list view and group pages, linked to their papers in the tracker
-- [ ] Seed with well-known groups; every entry checked against the group's own website
+- [x] `data/groups.yaml`, maintained with `tools/groups.py`: PIs, institution, website, optional theory/experiment;
+      city, country and coordinates generated from the institution's Wikidata entry (never typed by hand)
+- [x] Every entry checked automatically: the website loads and names every PI (`groups.py check`)
+- [x] Topics and platforms derived from the PIs' tracked papers (not self-descriptions); PIs linked to author pages
+- [x] World map (Leaflet + OpenStreetMap tiles, marker clustering) with filters by topic, platform and kind,
+      synchronized with the group list; one page per group with topics and recent papers
+- [x] Seed: 22 well-known groups in 9 countries
+- [ ] Grow the list (candidates still to be verified: Sugny, Vitanov, Muga, Boscain & Sigalotti, Mirrahimi,
+      Sherson, Biercuk, Petersen, Dong, Yuan, Xi Chen, Schulte-Herbrüggen, Motzoi, …); contribution form at launch
 
 ## Phase 5 — Open problems
 

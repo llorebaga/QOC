@@ -104,3 +104,11 @@ def build_identities(papers: list[dict]) -> tuple[dict[str, str], dict[str, dict
         used_slugs.add(slug)
         ids[key] = {"name": name, "slug": slug, "variants": sorted(v), "count": sum(v.values())}
     return key_of, ids
+
+
+def identity_key(name: str) -> str | None:
+    """The identity key of a full name, as used by build_identities (for matching PIs of research groups)."""
+    pr = parse(name)
+    if not pr or not pr[0]:
+        return None
+    return f"{pr[1]}|{pr[0][0]}"

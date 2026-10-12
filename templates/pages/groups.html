@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% from "partials/ui.html" import status_badge %}
+{% block title %}Research groups — QOC{% endblock %}
+{% block description %}Research groups working on quantum optimal control around the world, with their topics and papers.{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" integrity="sha256-YU3qCpj/P06tdPBJGPax0bm6Q1wltfwjsho5TR4+TYc=" crossorigin="">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" integrity="sha256-YSWCMtmNZNwqex4CEw1nQhvFub2lmU7vcCKP+XVwwXA=" crossorigin="">
+{% endblock %}
+
+{% block main %}
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <p class="eyebrow">{{ groups|length }} groups · {{ groups | map(attribute='country') | unique | list | length }} countries
+      {{ status_badge(section.status) }}</p>
+    <h1>Research groups</h1>
+    <p class="lead">Groups working on quantum optimal control. Their topics come from the PIs' papers in the
+      <a href="{{ url('papers/') }}">tracker</a>; every entry is checked against the group's own website.</p>
+  </div>
+</section>
+
+<div class="wrap groups" data-groups>
+  <form class="tracker-toolbar" data-groups-form>
+    <label class="tracker-search">
+      {{ icon('search') }}
+      <span class="visually-hidden">Search groups</span>
+      <input type="search" name="q" placeholder="Search by name, institution, city…" autocomplete="off">
+    </label>
+    <label class="tracker-select"><span class="visually-hidden">Topic</span>
+      <select name="topic">
+        <option value="">All topics</option>
+        {% for f in taxonomy.families if f.id != 'platforms' %}{% set opts = f.topics | selectattr('id', 'in', topic_options) | list %}
+        {% if opts %}<optgroup label="{{ f.title }}">
+          {% for t in opts %}<option value="{{ t.id }}">{{ t.title }}</option>{% endfor %}
+        </optgroup>{% endif %}
+        {% endfor %}
+      </select>
+    </label>
+    <label class="tracker-select"><span class="visually-hidden">Platform</span>
+      <select name="platform">
+        <option value="">All platforms</option>
+        {% for f in taxonomy.families if f.id == 'platforms' %}{% for t in f.topics if t.id in platform_options %}
+        <option value="{{ t.id }}">{{ t.title }}</option>{% endfor %}{% endfor %}
+      </select>
+    </label>
+    <label class="tracker-select"><span class="visually-hidden">Kind</span>
+      <select name="kind">
+        <option value="">Theory &amp; experiment</option>
+        <option value="theory">Theory</option>
+        <option value="experiment">Experiment</option>
+      </select>
+    </label>
+  </form>
+  <p class="tracker-status" role="status" aria-live="polite" data-groups-status>{{ groups|length }} groups.</p>
+
+  <div class="groups-map card" data-groups-map role="region" aria-label="World map of research groups">
+    <noscript><p class="muted groups-map-fallback">The map needs JavaScript; all groups are listed below.</p></noscript>
+  </div>
+
+  <ul class="group-list" data-groups-list>
+    {% for g in groups | sort(attribute='name') %}
+    <li class="group-card card" data-group="{{ g.id }}">
+      <h2 class="group-card-title"><a href="{{ url('groups/' ~ g.id ~ '/') }}">{{ g.name }}</a></h2>
+      <p class="group-card-meta">{{ g.pis | join(', ') }} · {{ g.institution }}{% if g.get('city') %}, {{ g.city }}{% endif %}, {{ g.country }}</p>
+      {% if g.topics %}
+      <ul class="paper-topics">
+        {% for t in g.topics[:5] %}{% set tt = taxonomy.topics[t] %}
+        <li><a class="topic-chip" href="{{ url('topics/' ~ t ~ '/') }}" style="--fam: var(--fam-{{ tt.family }})">{{ tt.label }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+
+  <aside class="card tracker-note">
+    {{ icon('info') }}
+    <div>
+      <h2>About this list</h2>
+      <p>The list starts with well-known groups and grows over time. An entry needs a website that names its PIs; the
+        location is the institution's entry on Wikidata, and the topics are the most frequent ones among the PIs'
+        tracked papers (so they reflect recent output, not a self-description). Missing a group, or found an error?
+        The repository will accept suggestions once it is public.</p>
+    </div>
+  </aside>
+</div>
+
+<script type="application/json" id="groups-data">{{ groups_json | safe }}</script>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" integrity="sha256-Hk4dIpcqOSb0hZjgyvFOP+cEmDXUKKNE/tT542ZbNQg=" crossorigin="" defer></script>
+<script src="{{ asset('js/groups.js') }}" defer></script>
+{% endblock %}

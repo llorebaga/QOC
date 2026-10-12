@@ -38,6 +38,7 @@ def prepare(papers: list[dict], taxonomy: dict, rules_path: Path, cache_path: Pa
         "by_topic": by_topic,
         "by_author": by_author,
         "authors": author_list,
+        "identities": ids,
         "unclassified": sum(1 for r in records if not r["topics"]),
     }
 
@@ -82,4 +83,33 @@ def weeks(data: dict, n: int, today: dt.date) -> list[dict]:
         iso = start.isocalendar()
         out.append({"start": start, "end": end, "label": f"{iso[0]}-W{iso[1]:02d}", "papers": items,
                     "current": k == 0, "topics": Counter(t for r in items for t in r["topics"])})
+    return out
+
+
+def prepare_groups(groups: list[dict], data: dict, taxonomy: dict) -> list[dict]:
+    """Attach the PIs' author pages, papers and most frequent topics to each research group."""
+    from qocsite.authors import identity_key
+    ids = data["identities"]
+    out = []
+    for g in groups:
+        pis = []
+        papers: dict[str, dict] = {}
+        for name in g["pis"]:
+            slug, best = None, 0
+            for alias in [name] + list(g.get("arxiv_names", {}).get(name, [])):     # every spelling counts
+                key = identity_key(alias)
+                if key in ids:
+                    s = ids[key]["slug"]
+                    mine = data["by_author"].get(s, [])
+                    for r in mine:
+                        papers[r["id"]] = r
+                    if len(mine) > best:                 # link the author page with most papers
+                        slug, best = s, len(mine)
+            pis.append({"name": name, "slug": slug})
+        plist = sorted(papers.values(), key=lambda r: (r["date"], r["id"]), reverse=True)
+        counts = Counter(t for r in plist for t in r["topics"])
+        topics = [t for t, n in counts.most_common() if n >= 2][:8]
+        platforms = [t for t in topics if taxonomy["topics"][t]["family"] == "platforms"]
+        out.append({**g, "pi_links": pis, "papers": plist, "topic_counts": counts, "topics": topics,
+                    "platforms": platforms})
     return out

@@ -29,6 +29,9 @@ Static website about quantum optimal control. See README.md (structure) and ROAD
   run `paper_quality.py topics` on the dev labels; report test-set numbers honestly (the test set is for measuring,
   not tuning) and update `summary.yaml`. Classification results are cached in `.cache/` (gitignored).
 - Author identities: `qocsite/authors.py` (merging rules in its docstring).
+- Research groups: `data/groups.yaml` via `tools/groups.py` (`find` a Wikidata id, `coords`, `check --write`). Never
+  type coordinates/cities; only add a group whose website names its PIs; `kind` only if the website says so. Group
+  topics come from the PIs' papers (add `arxiv_names` when a PI publishes under another spelling).
 - The dev server rebuilds in a subprocess, so code changes apply without restarting it.
 
 ## Conventions
