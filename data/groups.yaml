@@ -385,6 +385,19 @@
   lon: 2.339
   checked: '2026-10-12'
 
+- id: saffman-wisconsin
+  name: Saffman group
+  pis:
+  - Mark Saffman
+  institution: University of Wisconsin–Madison
+  wikidata: Q838330
+  website: https://www.physics.wisc.edu/directory/saffman-mark/
+  city: Madison
+  country: United States
+  lat: 43.0753
+  lon: -89.4042
+  checked: '2026-10-12'
+
 - id: schmiedmayer-tuwien
   name: Schmiedmayer group
   pis:
