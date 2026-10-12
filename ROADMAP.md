@@ -40,16 +40,21 @@ understand any area; an expert can use it as a quick reference.
       reinforcement & machine learning, system identification) — *awaiting review*
 - [x] **Open systems & feedback family written** (4 articles: open-system control, reservoir engineering,
       measurement-based feedback, linear quantum systems & coherent feedback) — *awaiting review*
-- [ ] Review of the written articles (33 so far)
-- [ ] Remaining families, one at a time:
-      Many-body → Tasks → Platforms
+- [x] **Many-body & large systems family written** (3 articles: many-body optimal control, variational
+      algorithms & QAOA as control, bosonic & continuous-variable control) — *awaiting review*
+- [x] **Tasks family written** (6 articles: gate synthesis, state preparation & transfer, sensing & metrology,
+      quantum thermodynamics, quantum error correction, pulse-level compilation) — *awaiting review*
+- [x] **Platforms family written** (8 articles: superconducting circuits, trapped ions, neutral atoms & Rydberg
+      arrays, ultracold atoms, spins, molecules, photonics & optomechanics, control electronics) — *awaiting review*
+- [x] **Every topic of the map has an article (50)**
+- [ ] Review of the written articles (all 50 are drafts)
 
 ## 🚧 Phase 3 — arXiv paper tracker (data pipeline running)
 
 - [x] `tools/fetch_arxiv.py`: month-by-month harvest of arXiv, validated query strategy
       (API used as a superset pre-filter; 0/75 misses against a full month of quant-ph)
 - [x] Transparent selection rule in `qocsite/selection.py`, documented on the About page
-- [x] Archive of every QOC paper since 2020 in `data/papers/<year>.json`
+- [x] Archive of every QOC paper since 2010 in `data/papers/<year>.json` (2020+ harvested first; 2010–2019 back-filled)
 - [x] Daily GitHub Action (`.github/workflows/papers.yml`) fetching the last 14 days and committing
 - [x] Papers-per-year chart on the home page, regenerated at every build
 - [ ] Topic classifier (taxonomy aliases → evaluated against a hand-labelled sample)
@@ -75,7 +80,8 @@ understand any area; an expert can use it as a quick reference.
 ## Phase 6 — Resources
 
 - [ ] Software directory (QuTiP, Krotov, QuOCS, C3, Juqbox, QuantumControl.jl, Piccolo.jl,
-      Quandary, Boulder Opal, Dynamiqs, Qiskit Dynamics, Spinach, …)
+      Quandary, Boulder Opal, Dynamiqs, Spinach, …; note: Qiskit Dynamics is archived and Qiskit Pulse was
+      removed in Qiskit 2.0)
 - [ ] Essential reading: reviews, tutorials, theses, textbooks, landmark papers
 - [ ] Glossary of terms and notation
 - [ ] Timeline of the field

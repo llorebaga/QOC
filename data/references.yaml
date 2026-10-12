@@ -4869,3 +4869,4293 @@ iida2012squeezing:
   year: 2012
   doi: 10.1109/tac.2012.2195831
 
+caneva2011speeding:
+  type: article
+  title: Speeding up critical system dynamics through optimized evolution
+  authors:
+  - Tommaso Caneva
+  - Tommaso Calarco
+  - Rosario Fazio
+  - Giuseppe E. Santoro
+  - Simone Montangero
+  journal: Phys. Rev. A
+  volume: '84'
+  pages: '012312'
+  year: 2011
+  doi: 10.1103/physreva.84.012312
+
+rosi2013fast:
+  type: article
+  title: Fast closed-loop optimal control of ultracold atoms in an optical lattice
+  authors:
+  - S. Rosi
+  - A. Bernard
+  - N. Fabbri
+  - L. Fallani
+  - C. Fort
+  - M. Inguscio
+  - T. Calarco
+  - S. Montangero
+  journal: Phys. Rev. A
+  volume: '88'
+  pages: '021601'
+  year: 2013
+  doi: 10.1103/physreva.88.021601
+
+vanfrank2016complex:
+  type: article
+  title: Optimal control of complex atomic quantum systems
+  authors:
+  - S. van Frank
+  - M. Bonneau
+  - J. Schmiedmayer
+  - S. Hild
+  - C. Gross
+  - M. Cheneau
+  - I. Bloch
+  - T. Pichler
+  - A. Negretti
+  - T. Calarco
+  - S. Montangero
+  journal: Sci Rep
+  volume: '6'
+  pages: '34187'
+  year: 2016
+  doi: 10.1038/srep34187
+
+omran2019cat:
+  type: article
+  title: Generation and manipulation of Schrödinger cat states in Rydberg atom arrays
+  authors:
+  - A. Omran
+  - H. Levine
+  - A. Keesling
+  - G. Semeghini
+  - T. T. Wang
+  - S. Ebadi
+  - H. Bernien
+  - A. S. Zibrov
+  - H. Pichler
+  - S. Choi
+  - J. Cui
+  - M. Rossignolo
+  - P. Rembold
+  - S. Montangero
+  - T. Calarco
+  - M. Endres
+  - M. Greiner
+  - V. Vuletić
+  - M. D. Lukin
+  journal: Science
+  volume: '365'
+  pages: 570-574
+  year: 2019
+  doi: 10.1126/science.aax9743
+
+schollwock2011dmrg:
+  type: article
+  title: The density-matrix renormalization group in the age of matrix product states
+  authors:
+  - Ulrich Schollwöck
+  journal: Annals of Physics
+  volume: '326'
+  pages: 96-192
+  year: 2011
+  doi: 10.1016/j.aop.2010.09.012
+
+vidal2004tebd:
+  type: article
+  title: Efficient Simulation of One-Dimensional Quantum Many-Body Systems
+  authors:
+  - Guifré Vidal
+  journal: Phys. Rev. Lett.
+  volume: '93'
+  pages: '040502'
+  year: 2004
+  doi: 10.1103/physrevlett.93.040502
+
+cui2017rydberg:
+  type: article
+  title: Optimal control of Rydberg lattice gases
+  authors:
+  - Jian Cui
+  - Rick van Bijnen
+  - Thomas Pohl
+  - Simone Montangero
+  - Tommaso Calarco
+  journal: Quantum Sci. Technol.
+  volume: '2'
+  pages: '035006'
+  year: 2017
+  doi: 10.1088/2058-9565/aa7daf
+
+hohenester2007bec:
+  type: article
+  title: Optimal quantum control of Bose-Einstein condensates in magnetic microtraps
+  authors:
+  - Ulrich Hohenester
+  - Per Kristian Rekdal
+  - Alfio Borzì
+  - Jörg Schmiedmayer
+  journal: Phys. Rev. A
+  volume: '75'
+  pages: '023602'
+  year: 2007
+  doi: 10.1103/physreva.75.023602
+
+jager2014bec:
+  type: article
+  title: 'Optimal quantum control of Bose-Einstein condensates in magnetic microtraps: Comparison of gradient-ascent-pulse-engineering
+    and Krotov optimization schemes'
+  authors:
+  - Georg Jäger
+  - Daniel M. Reich
+  - Michael H. Goerz
+  - Christiane P. Koch
+  - Ulrich Hohenester
+  journal: Phys. Rev. A
+  volume: '90'
+  pages: 033628
+  year: 2014
+  doi: 10.1103/physreva.90.033628
+
+burgarth2009local:
+  type: article
+  title: Local controllability of quantum networks
+  authors:
+  - Daniel Burgarth
+  - Sougato Bose
+  - Christoph Bruder
+  - Vittorio Giovannetti
+  journal: Phys. Rev. A
+  volume: '79'
+  pages: '060305'
+  year: 2009
+  doi: 10.1103/physreva.79.060305
+
+peruzzo2014vqe:
+  type: article
+  title: A variational eigenvalue solver on a photonic quantum processor
+  authors:
+  - Alberto Peruzzo
+  - Jarrod McClean
+  - Peter Shadbolt
+  - Man-Hong Yung
+  - Xiao-Qi Zhou
+  - Peter J. Love
+  - Alán Aspuru-Guzik
+  - Jeremy L. O’Brien
+  journal: Nat Commun
+  volume: '5'
+  pages: '4213'
+  year: 2014
+  doi: 10.1038/ncomms5213
+
+cerezo2021vqa:
+  type: article
+  title: Variational quantum algorithms
+  authors:
+  - M. Cerezo
+  - Andrew Arrasmith
+  - Ryan Babbush
+  - Simon C. Benjamin
+  - Suguru Endo
+  - Keisuke Fujii
+  - Jarrod R. McClean
+  - Kosuke Mitarai
+  - Xiao Yuan
+  - Lukasz Cincio
+  - Patrick J. Coles
+  journal: Nat Rev Phys
+  volume: '3'
+  pages: 625-644
+  year: 2021
+  doi: 10.1038/s42254-021-00348-9
+
+magann2021pulses:
+  type: article
+  title: 'From Pulses to Circuits and Back Again: A Quantum Optimal Control Perspective on Variational
+    Quantum Algorithms'
+  authors:
+  - Alicia B. Magann
+  - Christian Arenz
+  - Matthew D. Grace
+  - Tak-San Ho
+  - Robert L. Kosut
+  - Jarrod R. McClean
+  - Herschel A. Rabitz
+  - Mohan Sarovar
+  journal: PRX Quantum
+  volume: '2'
+  pages: '010101'
+  year: 2021
+  doi: 10.1103/prxquantum.2.010101
+
+mcclean2018barren:
+  type: article
+  title: Barren plateaus in quantum neural network training landscapes
+  authors:
+  - Jarrod R. McClean
+  - Sergio Boixo
+  - Vadim N. Smelyanskiy
+  - Ryan Babbush
+  - Hartmut Neven
+  journal: Nat Commun
+  volume: '9'
+  pages: '4812'
+  year: 2018
+  doi: 10.1038/s41467-018-07090-4
+
+larocca2023overparametrization:
+  type: article
+  title: Theory of overparametrization in quantum neural networks
+  authors:
+  - Martín Larocca
+  - Nathan Ju
+  - Diego García-Martín
+  - Patrick J. Coles
+  - Marco Cerezo
+  journal: Nat Comput Sci
+  volume: '3'
+  pages: 542-551
+  year: 2023
+  doi: 10.1038/s43588-023-00467-6
+
+ragone2024lie:
+  type: article
+  title: A Lie algebraic theory of barren plateaus for deep parameterized quantum circuits
+  authors:
+  - Michael Ragone
+  - Bojko N. Bakalov
+  - Frédéric Sauvage
+  - Alexander F. Kemper
+  - Carlos Ortiz Marrero
+  - Martín Larocca
+  - M. Cerezo
+  journal: Nat Commun
+  volume: '15'
+  pages: '7172'
+  year: 2024
+  doi: 10.1038/s41467-024-49909-3
+
+meitei2021ctrlvqe:
+  type: article
+  title: Gate-free state preparation for fast variational quantum eigensolver simulations
+  authors:
+  - Oinam Romesh Meitei
+  - Bryan T. Gard
+  - George S. Barron
+  - David P. Pappas
+  - Sophia E. Economou
+  - Edwin Barnes
+  - Nicholas J. Mayhall
+  journal: npj Quantum Inf
+  volume: '7'
+  pages: '155'
+  year: 2021
+  doi: 10.1038/s41534-021-00493-0
+
+choquette2021ocvqa:
+  type: article
+  title: Quantum-optimal-control-inspired ansatz for variational quantum algorithms
+  authors:
+  - Alexandre Choquette
+  - Agustin Di Paolo
+  - Panagiotis Kl. Barkoutsos
+  - David Sénéchal
+  - Ivano Tavernelli
+  - Alexandre Blais
+  journal: Phys. Rev. Research
+  volume: '3'
+  pages: 023092
+  year: 2021
+  doi: 10.1103/physrevresearch.3.023092
+
+zhou2020qaoa:
+  type: article
+  title: 'Quantum Approximate Optimization Algorithm: Performance, Mechanism, and Implementation on Near-Term
+    Devices'
+  authors:
+  - Leo Zhou
+  - Sheng-Tao Wang
+  - Soonwon Choi
+  - Hannes Pichler
+  - Mikhail D. Lukin
+  journal: Phys. Rev. X
+  volume: '10'
+  pages: '021067'
+  year: 2020
+  doi: 10.1103/physrevx.10.021067
+
+kandala2017hardware:
+  type: article
+  title: Hardware-efficient variational quantum eigensolver for small molecules and quantum magnets
+  authors:
+  - Abhinav Kandala
+  - Antonio Mezzacapo
+  - Kristan Temme
+  - Maika Takita
+  - Markus Brink
+  - Jerry M. Chow
+  - Jay M. Gambetta
+  journal: Nature
+  volume: '549'
+  pages: 242-246
+  year: 2017
+  doi: 10.1038/nature23879
+
+bharti2022nisq:
+  type: article
+  title: Noisy intermediate-scale quantum algorithms
+  authors:
+  - Kishor Bharti
+  - Alba Cervera-Lierta
+  - Thi Ha Kyaw
+  - Tobias Haug
+  - Sumner Alperin-Lea
+  - Abhinav Anand
+  - Matthias Degroote
+  - Hermanni Heimonen
+  - Jakob S. Kottmann
+  - Tim Menke
+  - Wai-Keong Mok
+  - Sukin Sim
+  - Leong-Chuan Kwek
+  - Alán Aspuru-Guzik
+  journal: Rev. Mod. Phys.
+  volume: '94'
+  pages: '015004'
+  year: 2022
+  doi: 10.1103/revmodphys.94.015004
+
+kadowaki1998annealing:
+  type: article
+  title: Quantum annealing in the transverse Ising model
+  authors:
+  - Tadashi Kadowaki
+  - Hidetoshi Nishimori
+  journal: Phys. Rev. E
+  volume: '58'
+  pages: 5355-5363
+  year: 1998
+  doi: 10.1103/physreve.58.5355
+
+parrarodriguez2020digitalanalog:
+  type: article
+  title: Digital-analog quantum computation
+  authors:
+  - Adrian Parra-Rodriguez
+  - Pavel Lougovski
+  - Lucas Lamata
+  - Enrique Solano
+  - Mikel Sanz
+  journal: Phys. Rev. A
+  volume: '101'
+  pages: '022305'
+  year: 2020
+  doi: 10.1103/physreva.101.022305
+
+chandarana2022dcqaoa:
+  type: article
+  title: Digitized-counterdiabatic quantum approximate optimization algorithm
+  authors:
+  - P. Chandarana
+  - N. N. Hegade
+  - K. Paul
+  - F. Albarrán-Arriagada
+  - E. Solano
+  - A. del Campo
+  - Xi Chen
+  journal: Phys. Rev. Research
+  volume: '4'
+  pages: '013141'
+  year: 2022
+  doi: 10.1103/physrevresearch.4.013141
+
+wiersema2020hva:
+  type: article
+  title: Exploring Entanglement and Optimization within the Hamiltonian Variational Ansatz
+  authors:
+  - Roeland Wiersema
+  - Cunlu Zhou
+  - Yvette de Sereville
+  - Juan Felipe Carrasquilla
+  - Yong Baek Kim
+  - Henry Yuen
+  journal: PRX Quantum
+  volume: '1'
+  pages: 020319
+  year: 2020
+  doi: 10.1103/prxquantum.1.020319
+
+morales2020universality:
+  type: article
+  title: On the universality of the quantum approximate optimization algorithm
+  authors:
+  - M. E. S. Morales
+  - J. D. Biamonte
+  - Z. Zimborás
+  journal: Quantum Inf Process
+  volume: '19'
+  pages: '291'
+  year: 2020
+  doi: 10.1007/s11128-020-02748-9
+
+mitarai2018circuit:
+  type: article
+  title: Quantum circuit learning
+  authors:
+  - K. Mitarai
+  - M. Negoro
+  - M. Kitagawa
+  - K. Fujii
+  journal: Phys. Rev. A
+  volume: '98'
+  pages: 032309
+  year: 2018
+  doi: 10.1103/physreva.98.032309
+
+schuld2019gradients:
+  type: article
+  title: Evaluating analytic gradients on quantum hardware
+  authors:
+  - Maria Schuld
+  - Ville Bergholm
+  - Christian Gogolin
+  - Josh Izaac
+  - Nathan Killoran
+  journal: Phys. Rev. A
+  volume: '99'
+  pages: '032331'
+  year: 2019
+  doi: 10.1103/physreva.99.032331
+
+banchi2021stochastic:
+  type: article
+  title: Measuring Analytic Gradients of General Quantum Evolution with the Stochastic Parameter Shift
+    Rule
+  authors:
+  - Leonardo Banchi
+  - Gavin E. Crooks
+  journal: Quantum
+  volume: '5'
+  pages: '386'
+  year: 2021
+  doi: 10.22331/q-2021-01-25-386
+
+law1996arbitrary:
+  type: article
+  title: Arbitrary Control of a Quantum Electromagnetic Field
+  authors:
+  - C. K. Law
+  - J. H. Eberly
+  journal: Phys. Rev. Lett.
+  volume: '76'
+  pages: 1055-1058
+  year: 1996
+  doi: 10.1103/physrevlett.76.1055
+
+krastanov2015universal:
+  type: article
+  title: Universal control of an oscillator with dispersive coupling to a qubit
+  authors:
+  - Stefan Krastanov
+  - Victor V. Albert
+  - Chao Shen
+  - Chang-Ling Zou
+  - Reinier W. Heeres
+  - Brian Vlastakis
+  - Robert J. Schoelkopf
+  - Liang Jiang
+  journal: Phys. Rev. A
+  volume: '92'
+  pages: '040303'
+  year: 2015
+  doi: 10.1103/physreva.92.040303
+
+heeres2015snap:
+  type: article
+  title: Cavity State Manipulation Using Photon-Number Selective Phase Gates
+  authors:
+  - Reinier W. Heeres
+  - Brian Vlastakis
+  - Eric Holland
+  - Stefan Krastanov
+  - Victor V. Albert
+  - Luigi Frunzio
+  - Liang Jiang
+  - Robert J. Schoelkopf
+  journal: Phys. Rev. Lett.
+  volume: '115'
+  pages: '137002'
+  year: 2015
+  doi: 10.1103/physrevlett.115.137002
+
+heeres2017logical:
+  type: article
+  title: Implementing a universal gate set on a logical qubit encoded in an oscillator
+  authors:
+  - Reinier W. Heeres
+  - Philip Reinhold
+  - Nissim Ofek
+  - Luigi Frunzio
+  - Liang Jiang
+  - Michel H. Devoret
+  - Robert J. Schoelkopf
+  journal: Nat Commun
+  volume: '8'
+  pages: '94'
+  year: 2017
+  doi: 10.1038/s41467-017-00045-1
+
+kudra2022snap:
+  type: article
+  title: Robust Preparation of Wigner-Negative States with Optimized SNAP-Displacement Sequences
+  authors:
+  - Marina Kudra
+  - Mikael Kervinen
+  - Ingrid Strandberg
+  - Shahnawaz Ahmed
+  - Marco Scigliuzzo
+  - Amr Osman
+  - Daniel Pérez Lozano
+  - Mats O. Tholén
+  - Riccardo Borgani
+  - David B. Haviland
+  - Giulia Ferrini
+  - Jonas Bylander
+  - Anton Frisk Kockum
+  - Fernando Quijandría
+  - Per Delsing
+  - Simone Gasparinetti
+  journal: PRX Quantum
+  volume: '3'
+  pages: '030301'
+  year: 2022
+  doi: 10.1103/prxquantum.3.030301
+
+eickbusch2022ecd:
+  type: article
+  title: Fast universal control of an oscillator with weak dispersive coupling to a qubit
+  authors:
+  - Alec Eickbusch
+  - Volodymyr Sivak
+  - Andy Z. Ding
+  - Salvatore S. Elder
+  - Shantanu R. Jha
+  - Jayameenakshi Venkatraman
+  - Baptiste Royer
+  - S. M. Girvin
+  - Robert J. Schoelkopf
+  - Michel H. Devoret
+  journal: Nat. Phys.
+  volume: '18'
+  pages: 1464-1469
+  year: 2022
+  doi: 10.1038/s41567-022-01776-9
+
+gottesman2001gkp:
+  type: article
+  title: Encoding a qubit in an oscillator
+  authors:
+  - Daniel Gottesman
+  - Alexei Kitaev
+  - John Preskill
+  journal: Phys. Rev. A
+  volume: '64'
+  pages: '012310'
+  year: 2001
+  doi: 10.1103/physreva.64.012310
+
+campagneibarcq2020gkp:
+  type: article
+  title: Quantum error correction of a qubit encoded in grid states of an oscillator
+  authors:
+  - P. Campagne-Ibarcq
+  - A. Eickbusch
+  - S. Touzard
+  - E. Zalys-Geller
+  - N. E. Frattini
+  - V. V. Sivak
+  - P. Reinhold
+  - S. Puri
+  - S. Shankar
+  - R. J. Schoelkopf
+  - L. Frunzio
+  - M. Mirrahimi
+  - M. H. Devoret
+  journal: Nature
+  volume: '584'
+  pages: 368-372
+  year: 2020
+  doi: 10.1038/s41586-020-2603-3
+
+fluhmann2019gkp:
+  type: article
+  title: Encoding a qubit in a trapped-ion mechanical oscillator
+  authors:
+  - C. Flühmann
+  - T. L. Nguyen
+  - M. Marinelli
+  - V. Negnevitsky
+  - K. Mehta
+  - J. P. Home
+  journal: Nature
+  volume: '566'
+  pages: 513-517
+  year: 2019
+  doi: 10.1038/s41586-019-0960-6
+
+sivak2023beyond:
+  type: article
+  title: Real-time quantum error correction beyond break-even
+  authors:
+  - V. V. Sivak
+  - A. Eickbusch
+  - B. Royer
+  - S. Singh
+  - I. Tsioutsios
+  - S. Ganjam
+  - A. Miano
+  - B. L. Brock
+  - A. Z. Ding
+  - L. Frunzio
+  - S. M. Girvin
+  - R. J. Schoelkopf
+  - M. H. Devoret
+  journal: Nature
+  volume: '616'
+  pages: 50-55
+  year: 2023
+  doi: 10.1038/s41586-023-05782-6
+
+vlastakis2013cat:
+  type: article
+  title: Deterministically Encoding Quantum Information Using 100-Photon Schrödinger Cat States
+  authors:
+  - Brian Vlastakis
+  - Gerhard Kirchmair
+  - Zaki Leghtas
+  - Simon E. Nigg
+  - Luigi Frunzio
+  - S. M. Girvin
+  - Mazyar Mirrahimi
+  - M. H. Devoret
+  - R. J. Schoelkopf
+  journal: Science
+  volume: '342'
+  pages: 607-610
+  year: 2013
+  doi: 10.1126/science.1243289
+
+lloyd1999cv:
+  type: article
+  title: Quantum Computation over Continuous Variables
+  authors:
+  - Seth Lloyd
+  - Samuel L. Braunstein
+  journal: Phys. Rev. Lett.
+  volume: '82'
+  pages: 1784-1787
+  year: 1999
+  doi: 10.1103/physrevlett.82.1784
+
+chambrion2009controllability:
+  type: article
+  title: Controllability of the discrete-spectrum Schrödinger equation driven by an external field
+  authors:
+  - Thomas Chambrion
+  - Paolo Mason
+  - Mario Sigalotti
+  - Ugo Boscain
+  journal: Ann. Inst. H. Poincaré C Anal. Non Linéaire
+  volume: '26'
+  pages: 329-349
+  year: 2009
+  doi: 10.1016/j.anihpc.2008.05.001
+
+braunstein2005cv:
+  type: article
+  title: Quantum information with continuous variables
+  authors:
+  - Samuel L. Braunstein
+  - Peter van Loock
+  journal: Rev. Mod. Phys.
+  volume: '77'
+  pages: 513-577
+  year: 2005
+  doi: 10.1103/revmodphys.77.513
+
+weedbrook2012gaussian:
+  type: article
+  title: Gaussian quantum information
+  authors:
+  - Christian Weedbrook
+  - Stefano Pirandola
+  - Raúl García-Patrón
+  - Nicolas J. Cerf
+  - Timothy C. Ralph
+  - Jeffrey H. Shapiro
+  - Seth Lloyd
+  journal: Rev. Mod. Phys.
+  volume: '84'
+  pages: 621-669
+  year: 2012
+  doi: 10.1103/revmodphys.84.621
+
+joshi2021bosonic:
+  type: article
+  title: Quantum information processing with bosonic qubits in circuit QED
+  authors:
+  - Atharv Joshi
+  - Kyungjoo Noh
+  - Yvonne Y Gao
+  journal: Quantum Sci. Technol.
+  volume: '6'
+  pages: '033001'
+  year: 2021
+  doi: 10.1088/2058-9565/abe989
+
+grimm2020kerrcat:
+  type: article
+  title: Stabilization and operation of a Kerr-cat qubit
+  authors:
+  - A. Grimm
+  - N. E. Frattini
+  - S. Puri
+  - S. O. Mundhada
+  - S. Touzard
+  - M. Mirrahimi
+  - S. M. Girvin
+  - S. Shankar
+  - M. H. Devoret
+  journal: Nature
+  volume: '584'
+  pages: 205-209
+  year: 2020
+  doi: 10.1038/s41586-020-2587-z
+
+puri2017kerr:
+  type: article
+  title: Engineering the quantum states of light in a Kerr-nonlinear resonator by two-photon driving
+  authors:
+  - Shruti Puri
+  - Samuel Boutin
+  - Alexandre Blais
+  journal: npj Quantum Inf
+  volume: '3'
+  pages: '18'
+  year: 2017
+  doi: 10.1038/s41534-017-0019-1
+
+
+hofheinz2008fock:
+  type: article
+  title: Generation of Fock states in a superconducting quantum circuit
+  authors:
+  - Max Hofheinz
+  - E. M. Weig
+  - M. Ansmann
+  - Radoslaw C. Bialczak
+  - Erik Lucero
+  - M. Neeley
+  - A. D. O’Connell
+  - H. Wang
+  - John M. Martinis
+  - A. N. Cleland
+  journal: Nature
+  volume: '454'
+  pages: 310-314
+  year: 2008
+  doi: 10.1038/nature07136
+
+hofheinz2009synthesizing:
+  type: article
+  title: Synthesizing arbitrary quantum states in a superconducting resonator
+  authors:
+  - Max Hofheinz
+  - H. Wang
+  - M. Ansmann
+  - Radoslaw C. Bialczak
+  - Erik Lucero
+  - M. Neeley
+  - A. D. O'Connell
+  - D. Sank
+  - J. Wenner
+  - John M. Martinis
+  - A. N. Cleland
+  journal: Nature
+  volume: '459'
+  pages: 546-549
+  year: 2009
+  doi: 10.1038/nature08005
+
+reinhold2020errorcorrected:
+  type: article
+  title: Error-corrected gates on an encoded qubit
+  authors:
+  - Philip Reinhold
+  - Serge Rosenblum
+  - Wen-Long Ma
+  - Luigi Frunzio
+  - Liang Jiang
+  - Robert J. Schoelkopf
+  journal: Nat. Phys.
+  volume: '16'
+  pages: 822-826
+  year: 2020
+  doi: 10.1038/s41567-020-0931-8
+
+barends2014threshold:
+  type: article
+  title: Superconducting quantum circuits at the surface code threshold for fault tolerance
+  authors:
+  - R. Barends
+  - J. Kelly
+  - A. Megrant
+  - A. Veitia
+  - D. Sank
+  - E. Jeffrey
+  - T. C. White
+  - J. Mutus
+  - A. G. Fowler
+  - B. Campbell
+  - Y. Chen
+  - Z. Chen
+  - B. Chiaro
+  - A. Dunsworth
+  - C. Neill
+  - P. O’Malley
+  - P. Roushan
+  - A. Vainsencher
+  - J. Wenner
+  - A. N. Korotkov
+  - A. N. Cleland
+  - John M. Martinis
+  journal: Nature
+  volume: '508'
+  pages: 500-503
+  year: 2014
+  doi: 10.1038/nature13171
+
+ballance2016hyperfine:
+  type: article
+  title: High-Fidelity Quantum Logic Gates Using Trapped-Ion Hyperfine Qubits
+  authors:
+  - C. J. Ballance
+  - T. P. Harty
+  - N. M. Linke
+  - M. A. Sepiol
+  - D. M. Lucas
+  journal: Phys. Rev. Lett.
+  volume: '117'
+  pages: '060504'
+  year: 2016
+  doi: 10.1103/physrevlett.117.060504
+
+gaebler2016universal:
+  type: article
+  title: High-Fidelity Universal Gate Set for Be 9 + Ion Qubits
+  authors:
+  - J. P. Gaebler
+  - T. R. Tan
+  - Y. Lin
+  - Y. Wan
+  - R. Bowler
+  - A. C. Keith
+  - S. Glancy
+  - K. Coakley
+  - E. Knill
+  - D. Leibfried
+  - D. J. Wineland
+  journal: Phys. Rev. Lett.
+  volume: '117'
+  pages: '060505'
+  year: 2016
+  doi: 10.1103/physrevlett.117.060505
+
+molmer1999entanglement:
+  type: article
+  title: Multiparticle Entanglement of Hot Trapped Ions
+  authors:
+  - Klaus Mølmer
+  - Anders Sørensen
+  journal: Phys. Rev. Lett.
+  volume: '82'
+  pages: 1835-1838
+  year: 1999
+  doi: 10.1103/physrevlett.82.1835
+
+choi2014multimode:
+  type: article
+  title: Optimal Quantum Control of Multimode Couplings between Trapped Ion Qubits for Scalable Entanglement
+  authors:
+  - T. Choi
+  - S. Debnath
+  - T. A. Manning
+  - C. Figgatt
+  - Z.-X. Gong
+  - L.-M. Duan
+  - C. Monroe
+  journal: Phys. Rev. Lett.
+  volume: '112'
+  pages: '190502'
+  year: 2014
+  doi: 10.1103/physrevlett.112.190502
+
+jaksch2000rydberg:
+  type: article
+  title: Fast Quantum Gates for Neutral Atoms
+  authors:
+  - D. Jaksch
+  - J. I. Cirac
+  - P. Zoller
+  - S. L. Rolston
+  - R. Côté
+  - M. D. Lukin
+  journal: Phys. Rev. Lett.
+  volume: '85'
+  pages: 2208-2211
+  year: 2000
+  doi: 10.1103/physrevlett.85.2208
+
+levine2019parallel:
+  type: article
+  title: Parallel Implementation of High-Fidelity Multiqubit Gates with Neutral Atoms
+  authors:
+  - Harry Levine
+  - Alexander Keesling
+  - Giulia Semeghini
+  - Ahmed Omran
+  - Tout T. Wang
+  - Sepehr Ebadi
+  - Hannes Bernien
+  - Markus Greiner
+  - Vladan Vuletić
+  - Hannes Pichler
+  - Mikhail D. Lukin
+  journal: Phys. Rev. Lett.
+  volume: '123'
+  pages: '170503'
+  year: 2019
+  doi: 10.1103/physrevlett.123.170503
+
+jandura2022timeoptimal:
+  type: article
+  title: Time-Optimal Two- and Three-Qubit Gates for Rydberg Atoms
+  authors:
+  - Sven Jandura
+  - Guido Pupillo
+  journal: Quantum
+  volume: '6'
+  pages: '712'
+  year: 2022
+  doi: 10.22331/q-2022-05-13-712
+
+evered2023parallel:
+  type: article
+  title: High-fidelity parallel entangling gates on a neutral-atom quantum computer
+  authors:
+  - Simon J. Evered
+  - Dolev Bluvstein
+  - Marcin Kalinowski
+  - Sepehr Ebadi
+  - Tom Manovitz
+  - Hengyun Zhou
+  - Sophie H. Li
+  - Alexandra A. Geim
+  - Tout T. Wang
+  - Nishad Maskara
+  - Harry Levine
+  - Giulia Semeghini
+  - Markus Greiner
+  - Vladan Vuletić
+  - Mikhail D. Lukin
+  journal: Nature
+  volume: '622'
+  pages: 268-272
+  year: 2023
+  doi: 10.1038/s41586-023-06481-y
+
+sheldon2016crossresonance:
+  type: article
+  title: Procedure for systematically tuning up cross-talk in the cross-resonance gate
+  authors:
+  - Sarah Sheldon
+  - Easwar Magesan
+  - Jerry M. Chow
+  - Jay M. Gambetta
+  journal: Phys. Rev. A
+  volume: '93'
+  pages: '060302'
+  year: 2016
+  doi: 10.1103/physreva.93.060302
+
+rigetti2010crossresonance:
+  type: article
+  title: Fully microwave-tunable universal gates in superconducting qubits with linear couplings and fixed
+    transition frequencies
+  authors:
+  - Chad Rigetti
+  - Michel Devoret
+  journal: Phys. Rev. B
+  volume: '81'
+  pages: '134507'
+  year: 2010
+  doi: 10.1103/physrevb.81.134507
+
+zhang2003geometric:
+  type: article
+  title: Geometric theory of nonlocal two-qubit operations
+  authors:
+  - Jun Zhang
+  - Jiri Vala
+  - Shankar Sastry
+  - K. Birgitta Whaley
+  journal: Phys. Rev. A
+  volume: '67'
+  pages: '042313'
+  year: 2003
+  doi: 10.1103/physreva.67.042313
+
+ringbauer2022qudit:
+  type: article
+  title: A universal qudit quantum processor with trapped ions
+  authors:
+  - Martin Ringbauer
+  - Michael Meth
+  - Lukas Postler
+  - Roman Stricker
+  - Rainer Blatt
+  - Philipp Schindler
+  - Thomas Monz
+  journal: Nat. Phys.
+  volume: '18'
+  pages: 1053-1057
+  year: 2022
+  doi: 10.1038/s41567-022-01658-0
+
+knill2008benchmarking:
+  type: article
+  title: Randomized benchmarking of quantum gates
+  authors:
+  - E. Knill
+  - D. Leibfried
+  - R. Reichle
+  - J. Britton
+  - R. B. Blakestad
+  - J. D. Jost
+  - C. Langer
+  - R. Ozeri
+  - S. Seidelin
+  - D. J. Wineland
+  journal: Phys. Rev. A
+  volume: '77'
+  pages: '012307'
+  year: 2008
+  doi: 10.1103/physreva.77.012307
+
+magesan2011benchmarking:
+  type: article
+  title: Scalable and Robust Randomized Benchmarking of Quantum Processes
+  authors:
+  - Easwar Magesan
+  - J. M. Gambetta
+  - Joseph Emerson
+  journal: Phys. Rev. Lett.
+  volume: '106'
+  pages: '180504'
+  year: 2011
+  doi: 10.1103/physrevlett.106.180504
+
+sarovar2020crosstalk:
+  type: article
+  title: Detecting crosstalk errors in quantum information processors
+  authors:
+  - Mohan Sarovar
+  - Timothy Proctor
+  - Kenneth Rudinger
+  - Kevin Young
+  - Erik Nielsen
+  - Robin Blume-Kohout
+  journal: Quantum
+  volume: '4'
+  pages: '321'
+  year: 2020
+  doi: 10.22331/q-2020-09-11-321
+
+sung2021coupler:
+  type: article
+  title: Realization of High-Fidelity CZ and Z Z -Free iSWAP Gates with a Tunable Coupler
+  authors:
+  - Youngkyu Sung
+  - Leon Ding
+  - Jochen Braumüller
+  - Antti Vepsäläinen
+  - Bharath Kannan
+  - Morten Kjaergaard
+  - Ami Greene
+  - Gabriel O. Samach
+  - Chris McNally
+  - David Kim
+  - Alexander Melville
+  - Bethany M. Niedzielski
+  - Mollie E. Schwartz
+  - Jonilyn L. Yoder
+  - Terry P. Orlando
+  - Simon Gustavsson
+  - William D. Oliver
+  journal: Phys. Rev. X
+  volume: '11'
+  pages: 021058
+  year: 2021
+  doi: 10.1103/physrevx.11.021058
+
+bose2003chain:
+  type: article
+  title: Quantum Communication through an Unmodulated Spin Chain
+  authors:
+  - Sougato Bose
+  journal: Phys. Rev. Lett.
+  volume: '91'
+  pages: '207901'
+  year: 2003
+  doi: 10.1103/physrevlett.91.207901
+
+christandl2004perfect:
+  type: article
+  title: Perfect State Transfer in Quantum Spin Networks
+  authors:
+  - Matthias Christandl
+  - Nilanjana Datta
+  - Artur Ekert
+  - Andrew J. Landahl
+  journal: Phys. Rev. Lett.
+  volume: '92'
+  pages: '187902'
+  year: 2004
+  doi: 10.1103/physrevlett.92.187902
+
+cirac1997network:
+  type: article
+  title: Quantum State Transfer and Entanglement Distribution among Distant Nodes in a Quantum Network
+  authors:
+  - J. I. Cirac
+  - P. Zoller
+  - H. J. Kimble
+  - H. Mabuchi
+  journal: Phys. Rev. Lett.
+  volume: '78'
+  pages: 3221-3224
+  year: 1997
+  doi: 10.1103/physrevlett.78.3221
+
+kurpiers2018transfer:
+  type: article
+  title: Deterministic quantum state transfer and remote entanglement using microwave photons
+  authors:
+  - P. Kurpiers
+  - P. Magnard
+  - T. Walter
+  - B. Royer
+  - M. Pechal
+  - J. Heinsoo
+  - Y. Salathé
+  - A. Akin
+  - S. Storz
+  - J.-C. Besse
+  - S. Gasparinetti
+  - A. Blais
+  - A. Wallraff
+  journal: Nature
+  volume: '558'
+  pages: 264-267
+  year: 2018
+  doi: 10.1038/s41586-018-0195-y
+
+rabitz2000whither:
+  type: article
+  title: Whither the Future of Controlling Quantum Phenomena?
+  authors:
+  - Herschel Rabitz
+  - Regina de Vivie-Riedle
+  - Marcus Motzkus
+  - Karl Kompa
+  journal: Science
+  volume: '288'
+  pages: 824-828
+  year: 2000
+  doi: 10.1126/science.288.5467.824
+
+monz2011fourteen:
+  type: article
+  title: '14-Qubit Entanglement: Creation and Coherence'
+  authors:
+  - Thomas Monz
+  - Philipp Schindler
+  - Julio T. Barreiro
+  - Michael Chwalla
+  - Daniel Nigg
+  - William A. Coish
+  - Maximilian Harlander
+  - Wolfgang Hänsel
+  - Markus Hennrich
+  - Rainer Blatt
+  journal: Phys. Rev. Lett.
+  volume: '106'
+  pages: '130506'
+  year: 2011
+  doi: 10.1103/physrevlett.106.130506
+
+giovannetti2011advances:
+  type: article
+  title: Advances in quantum metrology
+  authors:
+  - Vittorio Giovannetti
+  - Seth Lloyd
+  - Lorenzo Maccone
+  journal: Nature Photon
+  volume: '5'
+  pages: 222-229
+  year: 2011
+  doi: 10.1038/nphoton.2011.35
+
+braunstein1994statistical:
+  type: article
+  title: Statistical distance and the geometry of quantum states
+  authors:
+  - Samuel L. Braunstein
+  - Carlton M. Caves
+  journal: Phys. Rev. Lett.
+  volume: '72'
+  pages: 3439-3443
+  year: 1994
+  doi: 10.1103/physrevlett.72.3439
+
+escher2011noisy:
+  type: article
+  title: General framework for estimating the ultimate precision limit in noisy quantum-enhanced metrology
+  authors:
+  - B. M. Escher
+  - R. L. de Matos Filho
+  - L. Davidovich
+  journal: Nature Phys
+  volume: '7'
+  pages: 406-411
+  year: 2011
+  doi: 10.1038/nphys1958
+
+demkowicz2012elusive:
+  type: article
+  title: The elusive Heisenberg limit in quantum-enhanced metrology
+  authors:
+  - Rafał Demkowicz-Dobrzański
+  - Jan Kołodyński
+  - Mădălin Guţă
+  journal: Nat Commun
+  volume: '3'
+  pages: '1063'
+  year: 2012
+  doi: 10.1038/ncomms2067
+
+demkowicz2014noise:
+  type: article
+  title: Using Entanglement Against Noise in Quantum Metrology
+  authors:
+  - Rafal Demkowicz-Dobrzański
+  - Lorenzo Maccone
+  journal: Phys. Rev. Lett.
+  volume: '113'
+  pages: '250801'
+  year: 2014
+  doi: 10.1103/physrevlett.113.250801
+
+yuan2015feedback:
+  type: article
+  title: Optimal Feedback Scheme and Universal Time Scaling for Hamiltonian Parameter Estimation
+  authors:
+  - Haidong Yuan
+  - Chi-Hang Fred Fung
+  journal: Phys. Rev. Lett.
+  volume: '115'
+  pages: '110401'
+  year: 2015
+  doi: 10.1103/physrevlett.115.110401
+
+pang2017adaptive:
+  type: article
+  title: Optimal adaptive control for quantum metrology with time-dependent Hamiltonians
+  authors:
+  - Shengshi Pang
+  - Andrew N. Jordan
+  journal: Nat Commun
+  volume: '8'
+  pages: '14695'
+  year: 2017
+  doi: 10.1038/ncomms14695
+
+liu2017estimation:
+  type: article
+  title: Quantum parameter estimation with optimal control
+  authors:
+  - Jing Liu
+  - Haidong Yuan
+  journal: Phys. Rev. A
+  volume: '96'
+  pages: '012117'
+  year: 2017
+  doi: 10.1103/physreva.96.012117
+
+kessler2014qecmetrology:
+  type: article
+  title: Quantum Error Correction for Metrology
+  authors:
+  - E. M. Kessler
+  - I. Lovchinsky
+  - A. O. Sushkov
+  - M. D. Lukin
+  journal: Phys. Rev. Lett.
+  volume: '112'
+  pages: '150802'
+  year: 2014
+  doi: 10.1103/physrevlett.112.150802
+
+dur2014qecmetrology:
+  type: article
+  title: Improved Quantum Metrology Using Quantum Error Correction
+  authors:
+  - W. Dür
+  - M. Skotiniotis
+  - F. Fröwis
+  - B. Kraus
+  journal: Phys. Rev. Lett.
+  volume: '112'
+  pages: 080801
+  year: 2014
+  doi: 10.1103/physrevlett.112.080801
+
+zhou2018heisenberg:
+  type: article
+  title: Achieving the Heisenberg limit in quantum metrology using quantum error correction
+  authors:
+  - Sisi Zhou
+  - Mengzhen Zhang
+  - John Preskill
+  - Liang Jiang
+  journal: Nat Commun
+  volume: '9'
+  pages: '78'
+  year: 2018
+  doi: 10.1038/s41467-017-02510-3
+
+taylor2008magnetometer:
+  type: article
+  title: High-sensitivity diamond magnetometer with nanoscale resolution
+  authors:
+  - J. M. Taylor
+  - P. Cappellaro
+  - L. Childress
+  - L. Jiang
+  - D. Budker
+  - P. R. Hemmer
+  - A. Yacoby
+  - R. Walsworth
+  - M. D. Lukin
+  journal: Nature Phys
+  volume: '4'
+  pages: 810-816
+  year: 2008
+  doi: 10.1038/nphys1075
+
+poggiali2018sensing:
+  type: article
+  title: Optimal Control for One-Qubit Quantum Sensing
+  authors:
+  - F. Poggiali
+  - P. Cappellaro
+  - N. Fabbri
+  journal: Phys. Rev. X
+  volume: '8'
+  pages: 021059
+  year: 2018
+  doi: 10.1103/physrevx.8.021059
+
+higgins2007heisenberg:
+  type: article
+  title: Entanglement-free Heisenberg-limited phase estimation
+  authors:
+  - B. L. Higgins
+  - D. W. Berry
+  - S. D. Bartlett
+  - H. M. Wiseman
+  - G. J. Pryde
+  journal: Nature
+  volume: '450'
+  pages: 393-396
+  year: 2007
+  doi: 10.1038/nature06257
+
+wiseman1995adaptive:
+  type: article
+  title: 'Adaptive Phase Measurements of Optical Modes: Going Beyond the Marginal Q Distribution'
+  authors:
+  - H. M. Wiseman
+  journal: Phys. Rev. Lett.
+  volume: '75'
+  pages: 4587-4590
+  year: 1995
+  doi: 10.1103/physrevlett.75.4587
+
+taminiau2012nuclear:
+  type: article
+  title: Detection and Control of Individual Nuclear Spins Using a Weakly Coupled Electron Spin
+  authors:
+  - T. H. Taminiau
+  - J. J. T. Wagenaar
+  - T. van der Sar
+  - F. Jelezko
+  - V. V. Dobrovitski
+  - R. Hanson
+  journal: Phys. Rev. Lett.
+  volume: '109'
+  pages: '137602'
+  year: 2012
+  doi: 10.1103/physrevlett.109.137602
+
+pezze2018ensembles:
+  type: article
+  title: Quantum metrology with nonclassical states of atomic ensembles
+  authors:
+  - Luca Pezzè
+  - Augusto Smerzi
+  - Markus K. Oberthaler
+  - Roman Schmied
+  - Philipp Treutlein
+  journal: Rev. Mod. Phys.
+  volume: '90'
+  pages: '035005'
+  year: 2018
+  doi: 10.1103/revmodphys.90.035005
+
+rembold2020nvsensing:
+  type: article
+  title: Introduction to quantum optimal control for quantum sensing with nitrogen-vacancy centers in
+    diamond
+  authors:
+  - Phila Rembold
+  - Nimba Oshnik
+  - Matthias M. Müller
+  - Simone Montangero
+  - Tommaso Calarco
+  - Elke Neu
+  journal: AVS Quantum Science
+  volume: '2'
+  pages: '024701'
+  year: 2020
+  doi: 10.1116/5.0006785
+
+kosloff2013thermodynamics:
+  type: article
+  title: 'Quantum Thermodynamics: A Dynamical Viewpoint'
+  authors:
+  - Ronnie Kosloff
+  journal: Entropy
+  volume: '15'
+  pages: 2100-2128
+  year: 2013
+  doi: 10.3390/e15062100
+
+vinjanampathy2016thermodynamics:
+  type: article
+  title: Quantum thermodynamics
+  authors:
+  - Sai Vinjanampathy
+  - Janet Anders
+  journal: Contemporary Physics
+  volume: '57'
+  pages: 545-579
+  year: 2016
+  doi: 10.1080/00107514.2016.1201896
+
+scovil1959maser:
+  type: article
+  title: Three-Level Masers as Heat Engines
+  authors:
+  - H. E. D. Scovil
+  - E. O. Schulz-DuBois
+  journal: Phys. Rev. Lett.
+  volume: '2'
+  pages: 262-263
+  year: 1959
+  doi: 10.1103/physrevlett.2.262
+
+alicki1979engine:
+  type: article
+  title: The quantum open system as a model of the heat engine
+  authors:
+  - R Alicki
+  journal: 'J. Phys. A: Math. Gen.'
+  volume: '12'
+  pages: L103-L107
+  year: 1979
+  doi: 10.1088/0305-4470/12/5/007
+
+kosloff2017otto:
+  type: article
+  title: The Quantum Harmonic Otto Cycle
+  authors:
+  - Ronnie Kosloff
+  - Yair Rezek
+  journal: Entropy
+  volume: '19'
+  pages: '136'
+  year: 2017
+  doi: 10.3390/e19040136
+
+rezek2006irreversible:
+  type: article
+  title: Irreversible performance of a quantum harmonic heat engine
+  authors:
+  - Yair Rezek
+  - Ronnie Kosloff
+  journal: New J. Phys.
+  volume: '8'
+  pages: 83-83
+  year: 2006
+  doi: 10.1088/1367-2630/8/5/083
+
+curzon1975efficiency:
+  type: article
+  title: Efficiency of a Carnot engine at maximum power output
+  authors:
+  - F. L. Curzon
+  - B. Ahlborn
+  journal: American Journal of Physics
+  volume: '43'
+  pages: 22-24
+  year: 1975
+  doi: 10.1119/1.10023
+
+abah2012singleion:
+  type: article
+  title: Single-Ion Heat Engine at Maximum Power
+  authors:
+  - O. Abah
+  - J. Roßnagel
+  - G. Jacob
+  - S. Deffner
+  - F. Schmidt-Kaler
+  - K. Singer
+  - E. Lutz
+  journal: Phys. Rev. Lett.
+  volume: '109'
+  pages: '203006'
+  year: 2012
+  doi: 10.1103/physrevlett.109.203006
+
+rossnagel2016singleatom:
+  type: article
+  title: A single-atom heat engine
+  authors:
+  - Johannes Roßnagel
+  - Samuel T. Dawkins
+  - Karl N. Tolazzi
+  - Obinna Abah
+  - Eric Lutz
+  - Ferdinand Schmidt-Kaler
+  - Kilian Singer
+  journal: Science
+  volume: '352'
+  pages: 325-329
+  year: 2016
+  doi: 10.1126/science.aad6320
+
+delcampo2014superadiabatic:
+  type: article
+  title: 'More bang for your buck: Super-adiabatic quantum engines'
+  authors:
+  - A. del Campo
+  - J. Goold
+  - M. Paternostro
+  journal: Sci Rep
+  volume: '4'
+  pages: '6208'
+  year: 2014
+  doi: 10.1038/srep06208
+
+deng2013boosting:
+  type: article
+  title: 'Boosting work characteristics and overall heat-engine performance via shortcuts to adiabaticity:
+    Quantum and classical systems'
+  authors:
+  - Jiawen Deng
+  - Qing-hai Wang
+  - Zhihao Liu
+  - Peter Hänggi
+  - Jiangbin Gong
+  journal: Phys. Rev. E
+  volume: '88'
+  pages: '062122'
+  year: 2013
+  doi: 10.1103/physreve.88.062122
+
+alicki2013batteries:
+  type: article
+  title: Entanglement boost for extractable work from ensembles of quantum batteries
+  authors:
+  - Robert Alicki
+  - Mark Fannes
+  journal: Phys. Rev. E
+  volume: '87'
+  pages: '042123'
+  year: 2013
+  doi: 10.1103/physreve.87.042123
+
+campaioli2017charging:
+  type: article
+  title: Enhancing the Charging Power of Quantum Batteries
+  authors:
+  - Francesco Campaioli
+  - Felix A. Pollock
+  - Felix C. Binder
+  - Lucas Céleri
+  - John Goold
+  - Sai Vinjanampathy
+  - Kavan Modi
+  journal: Phys. Rev. Lett.
+  volume: '118'
+  pages: '150601'
+  year: 2017
+  doi: 10.1103/physrevlett.118.150601
+
+binder2015quantacell:
+  type: article
+  title: 'Quantacell: powerful charging of quantum batteries'
+  authors:
+  - Felix C Binder
+  - Sai Vinjanampathy
+  - Kavan Modi
+  - John Goold
+  journal: New J. Phys.
+  volume: '17'
+  pages: '075015'
+  year: 2015
+  doi: 10.1088/1367-2630/17/7/075015
+
+cavina2017slow:
+  type: article
+  title: Slow Dynamics and Thermodynamics of Open Quantum Systems
+  authors:
+  - Vasco Cavina
+  - Andrea Mari
+  - Vittorio Giovannetti
+  journal: Phys. Rev. Lett.
+  volume: '119'
+  pages: '050601'
+  year: 2017
+  doi: 10.1103/physrevlett.119.050601
+
+erdman2023pareto:
+  type: article
+  title: Pareto-optimal cycles for power, efficiency and fluctuations of quantum heat engines using reinforcement
+    learning
+  authors:
+  - Paolo A. Erdman
+  - Alberto Rolandi
+  - Paolo Abiuso
+  - Martí Perarnau-Llobet
+  - Frank Noé
+  journal: Phys. Rev. Research
+  volume: '5'
+  pages: L022017
+  year: 2023
+  doi: 10.1103/physrevresearch.5.l022017
+
+abiuso2020lowdissipation:
+  type: article
+  title: Optimal Cycles for Low-Dissipation Heat Engines
+  authors:
+  - Paolo Abiuso
+  - Martí Perarnau-Llobet
+  journal: Phys. Rev. Lett.
+  volume: '124'
+  pages: '110606'
+  year: 2020
+  doi: 10.1103/physrevlett.124.110606
+
+scandi2019length:
+  type: article
+  title: Thermodynamic length in open quantum systems
+  authors:
+  - Matteo Scandi
+  - Martí Perarnau-Llobet
+  journal: Quantum
+  volume: '3'
+  pages: '197'
+  year: 2019
+  doi: 10.22331/q-2019-10-24-197
+
+salamon1983length:
+  type: article
+  title: Thermodynamic Length and Dissipated Availability
+  authors:
+  - Peter Salamon
+  - R. Stephen Berry
+  journal: Phys. Rev. Lett.
+  volume: '51'
+  pages: 1127-1130
+  year: 1983
+  doi: 10.1103/physrevlett.51.1127
+
+klatzow2019engines:
+  type: article
+  title: Experimental Demonstration of Quantum Effects in the Operation of Microscopic Heat Engines
+  authors:
+  - James Klatzow
+  - Jonas N. Becker
+  - Patrick M. Ledingham
+  - Christian Weinzetl
+  - Krzysztof T. Kaczmarek
+  - Dylan J. Saunders
+  - Joshua Nunn
+  - Ian A. Walmsley
+  - Raam Uzdin
+  - Eilon Poem
+  journal: Phys. Rev. Lett.
+  volume: '122'
+  pages: '110601'
+  year: 2019
+  doi: 10.1103/physrevlett.122.110601
+
+sagawa2008feedback:
+  type: article
+  title: Second Law of Thermodynamics with Discrete Quantum Feedback Control
+  authors:
+  - Takahiro Sagawa
+  - Masahito Ueda
+  journal: Phys. Rev. Lett.
+  volume: '100'
+  pages: 080403
+  year: 2008
+  doi: 10.1103/physrevlett.100.080403
+
+masanes2017thirdlaw:
+  type: article
+  title: A general derivation and quantification of the third law of thermodynamics
+  authors:
+  - Lluís Masanes
+  - Jonathan Oppenheim
+  journal: Nat Commun
+  volume: '8'
+  pages: '14538'
+  year: 2017
+  doi: 10.1038/ncomms14538
+
+shor1995scheme:
+  type: article
+  title: Scheme for reducing decoherence in quantum computer memory
+  authors:
+  - Peter W. Shor
+  journal: Phys. Rev. A
+  volume: '52'
+  pages: R2493-R2496
+  year: 1995
+  doi: 10.1103/physreva.52.r2493
+
+steane1996codes:
+  type: article
+  title: Error Correcting Codes in Quantum Theory
+  authors:
+  - A. M. Steane
+  journal: Phys. Rev. Lett.
+  volume: '77'
+  pages: 793-797
+  year: 1996
+  doi: 10.1103/physrevlett.77.793
+
+fowler2012surface:
+  type: article
+  title: 'Surface codes: Towards practical large-scale quantum computation'
+  authors:
+  - Austin G. Fowler
+  - Matteo Mariantoni
+  - John M. Martinis
+  - Andrew N. Cleland
+  journal: Phys. Rev. A
+  volume: '86'
+  pages: '032324'
+  year: 2012
+  doi: 10.1103/physreva.86.032324
+
+terhal2015memories:
+  type: article
+  title: Quantum error correction for quantum memories
+  authors:
+  - Barbara M. Terhal
+  journal: Rev. Mod. Phys.
+  volume: '87'
+  pages: 307-346
+  year: 2015
+  doi: 10.1103/revmodphys.87.307
+
+google2023scaling:
+  type: article
+  title: Suppressing quantum errors by scaling a surface code logical qubit
+  authors:
+  - Google Quantum AI
+  - Rajeev Acharya
+  - Igor Aleiner
+  - Richard Allen
+  - Trond I. Andersen
+  - Markus Ansmann
+  - Frank Arute
+  - Kunal Arya
+  - Abraham Asfaw
+  - Juan Atalaya
+  - Ryan Babbush
+  - Dave Bacon
+  - Joseph C. Bardin
+  - Joao Basso
+  - Andreas Bengtsson
+  - Sergio Boixo
+  - Gina Bortoli
+  - Alexandre Bourassa
+  - Jenna Bovaird
+  - Leon Brill
+  - Michael Broughton
+  - Bob B. Buckley
+  - David A. Buell
+  - Tim Burger
+  - Brian Burkett
+  - Nicholas Bushnell
+  - Yu Chen
+  - Zijun Chen
+  - Ben Chiaro
+  - Josh Cogan
+  - Roberto Collins
+  - Paul Conner
+  - William Courtney
+  - Alexander L. Crook
+  - Ben Curtin
+  - Dripto M. Debroy
+  - Alexander Del Toro Barba
+  - Sean Demura
+  - Andrew Dunsworth
+  - Daniel Eppens
+  - Catherine Erickson
+  - Lara Faoro
+  - Edward Farhi
+  - Reza Fatemi
+  - Leslie Flores Burgos
+  - Ebrahim Forati
+  - Austin G. Fowler
+  - Brooks Foxen
+  - William Giang
+  - Craig Gidney
+  - Dar Gilboa
+  - Marissa Giustina
+  - Alejandro Grajales Dau
+  - Jonathan A. Gross
+  - Steve Habegger
+  - Michael C. Hamilton
+  - Matthew P. Harrigan
+  - Sean D. Harrington
+  - Oscar Higgott
+  - Jeremy Hilton
+  - Markus Hoffmann
+  - Sabrina Hong
+  - Trent Huang
+  - Ashley Huff
+  - William J. Huggins
+  - Lev B. Ioffe
+  - Sergei V. Isakov
+  - Justin Iveland
+  - Evan Jeffrey
+  - Zhang Jiang
+  - Cody Jones
+  - Pavol Juhas
+  - Dvir Kafri
+  - Kostyantyn Kechedzhi
+  - Julian Kelly
+  - Tanuj Khattar
+  - Mostafa Khezri
+  - Mária Kieferová
+  - Seon Kim
+  - Alexei Kitaev
+  - Paul V. Klimov
+  - Andrey R. Klots
+  - Alexander N. Korotkov
+  - Fedor Kostritsa
+  - John Mark Kreikebaum
+  - David Landhuis
+  - Pavel Laptev
+  - Kim-Ming Lau
+  - Lily Laws
+  - Joonho Lee
+  - Kenny Lee
+  - Brian J. Lester
+  - Alexander Lill
+  - Wayne Liu
+  - Aditya Locharla
+  - Erik Lucero
+  - Fionn D. Malone
+  - Jeffrey Marshall
+  - Orion Martin
+  - Jarrod R. McClean
+  - Trevor McCourt
+  - Matt McEwen
+  - Anthony Megrant
+  - Bernardo Meurer Costa
+  - Xiao Mi
+  - Kevin C. Miao
+  - Masoud Mohseni
+  - Shirin Montazeri
+  - Alexis Morvan
+  - Emily Mount
+  - Wojciech Mruczkiewicz
+  - Ofer Naaman
+  - Matthew Neeley
+  - Charles Neill
+  - Ani Nersisyan
+  - Hartmut Neven
+  - Michael Newman
+  - Jiun How Ng
+  - Anthony Nguyen
+  - Murray Nguyen
+  - Murphy Yuezhen Niu
+  - Thomas E. O’Brien
+  - Alex Opremcak
+  - John Platt
+  - Andre Petukhov
+  - Rebecca Potter
+  - Leonid P. Pryadko
+  - Chris Quintana
+  - Pedram Roushan
+  - Nicholas C. Rubin
+  - Negar Saei
+  - Daniel Sank
+  - Kannan Sankaragomathi
+  - Kevin J. Satzinger
+  - Henry F. Schurkus
+  - Christopher Schuster
+  - Michael J. Shearn
+  - Aaron Shorter
+  - Vladimir Shvarts
+  - Jindra Skruzny
+  - Vadim Smelyanskiy
+  - W. Clarke Smith
+  - George Sterling
+  - Doug Strain
+  - Marco Szalay
+  - Alfredo Torres
+  - Guifre Vidal
+  - Benjamin Villalonga
+  - Catherine Vollgraff Heidweiller
+  - Theodore White
+  - Cheng Xing
+  - Z. Jamie Yao
+  - Ping Yeh
+  - Juhwan Yoo
+  - Grayson Young
+  - Adam Zalcman
+  - Yaxing Zhang
+  - Ningfeng Zhu
+  journal: Nature
+  volume: '614'
+  pages: 676-681
+  year: 2023
+  doi: 10.1038/s41586-022-05434-1
+
+google2025threshold:
+  type: article
+  title: Quantum error correction below the surface code threshold
+  authors:
+  - Google Quantum AI and Collaborators
+  - Rajeev Acharya
+  - Dmitry A. Abanin
+  - Laleh Aghababaie-Beni
+  - Igor Aleiner
+  - Trond I. Andersen
+  - Markus Ansmann
+  - Frank Arute
+  - Kunal Arya
+  - Abraham Asfaw
+  - Nikita Astrakhantsev
+  - Juan Atalaya
+  - Ryan Babbush
+  - Dave Bacon
+  - Brian Ballard
+  - Joseph C. Bardin
+  - Johannes Bausch
+  - Andreas Bengtsson
+  - Alexander Bilmes
+  - Sam Blackwell
+  - Sergio Boixo
+  - Gina Bortoli
+  - Alexandre Bourassa
+  - Jenna Bovaird
+  - Leon Brill
+  - Michael Broughton
+  - David A. Browne
+  - Brett Buchea
+  - Bob B. Buckley
+  - David A. Buell
+  - Tim Burger
+  - Brian Burkett
+  - Nicholas Bushnell
+  - Anthony Cabrera
+  - Juan Campero
+  - Hung-Shen Chang
+  - Yu Chen
+  - Zijun Chen
+  - Ben Chiaro
+  - Desmond Chik
+  - Charina Chou
+  - Jahan Claes
+  - Agnetta Y. Cleland
+  - Josh Cogan
+  - Roberto Collins
+  - Paul Conner
+  - William Courtney
+  - Alexander L. Crook
+  - Ben Curtin
+  - Sayan Das
+  - Alex Davies
+  - Laura De Lorenzo
+  - Dripto M. Debroy
+  - Sean Demura
+  - Michel Devoret
+  - Agustin Di Paolo
+  - Paul Donohoe
+  - Ilya Drozdov
+  - Andrew Dunsworth
+  - Clint Earle
+  - Thomas Edlich
+  - Alec Eickbusch
+  - Aviv Moshe Elbag
+  - Mahmoud Elzouka
+  - Catherine Erickson
+  - Lara Faoro
+  - Edward Farhi
+  - Vinicius S. Ferreira
+  - Leslie Flores Burgos
+  - Ebrahim Forati
+  - Austin G. Fowler
+  - Brooks Foxen
+  - Suhas Ganjam
+  - Gonzalo Garcia
+  - Robert Gasca
+  - Élie Genois
+  - William Giang
+  - Craig Gidney
+  - Dar Gilboa
+  - Raja Gosula
+  - Alejandro Grajales Dau
+  - Dietrich Graumann
+  - Alex Greene
+  - Jonathan A. Gross
+  - Steve Habegger
+  - John Hall
+  - Michael C. Hamilton
+  - Monica Hansen
+  - Matthew P. Harrigan
+  - Sean D. Harrington
+  - Francisco J. H. Heras
+  - Stephen Heslin
+  - Paula Heu
+  - Oscar Higgott
+  - Gordon Hill
+  - Jeremy Hilton
+  - George Holland
+  - Sabrina Hong
+  - Hsin-Yuan Huang
+  - Ashley Huff
+  - William J. Huggins
+  - Lev B. Ioffe
+  - Sergei V. Isakov
+  - Justin Iveland
+  - Evan Jeffrey
+  - Zhang Jiang
+  - Cody Jones
+  - Stephen Jordan
+  - Chaitali Joshi
+  - Pavol Juhas
+  - Dvir Kafri
+  - Hui Kang
+  - Amir H. Karamlou
+  - Kostyantyn Kechedzhi
+  - Julian Kelly
+  - Trupti Khaire
+  - Tanuj Khattar
+  - Mostafa Khezri
+  - Seon Kim
+  - Paul V. Klimov
+  - Andrey R. Klots
+  - Bryce Kobrin
+  - Pushmeet Kohli
+  - Alexander N. Korotkov
+  - Fedor Kostritsa
+  - Robin Kothari
+  - Borislav Kozlovskii
+  - John Mark Kreikebaum
+  - Vladislav D. Kurilovich
+  - Nathan Lacroix
+  - David Landhuis
+  - Tiano Lange-Dei
+  - Brandon W. Langley
+  - Pavel Laptev
+  - Kim-Ming Lau
+  - Loïck Le Guevel
+  - Justin Ledford
+  - Joonho Lee
+  - Kenny Lee
+  - Yuri D. Lensky
+  - Shannon Leon
+  - Brian J. Lester
+  - Wing Yan Li
+  - Yin Li
+  - Alexander T. Lill
+  - Wayne Liu
+  - William P. Livingston
+  - Aditya Locharla
+  - Erik Lucero
+  - Daniel Lundahl
+  - Aaron Lunt
+  - Sid Madhuk
+  - Fionn D. Malone
+  - Ashley Maloney
+  - Salvatore Mandrà
+  - James Manyika
+  - Leigh S. Martin
+  - Orion Martin
+  - Steven Martin
+  - Cameron Maxfield
+  - Jarrod R. McClean
+  - Matt McEwen
+  - Seneca Meeks
+  - Anthony Megrant
+  - Xiao Mi
+  - Kevin C. Miao
+  - Amanda Mieszala
+  - Reza Molavi
+  - Sebastian Molina
+  - Shirin Montazeri
+  - Alexis Morvan
+  - Ramis Movassagh
+  - Wojciech Mruczkiewicz
+  - Ofer Naaman
+  - Matthew Neeley
+  - Charles Neill
+  - Ani Nersisyan
+  - Hartmut Neven
+  - Michael Newman
+  - Jiun How Ng
+  - Anthony Nguyen
+  - Murray Nguyen
+  - Chia-Hung Ni
+  - Murphy Yuezhen Niu
+  - Thomas E. O’Brien
+  - William D. Oliver
+  - Alex Opremcak
+  - Kristoffer Ottosson
+  - Andre Petukhov
+  - Alex Pizzuto
+  - John Platt
+  - Rebecca Potter
+  - Orion Pritchard
+  - Leonid P. Pryadko
+  - Chris Quintana
+  - Ganesh Ramachandran
+  - Matthew J. Reagor
+  - John Redding
+  - David M. Rhodes
+  - Gabrielle Roberts
+  - Eliott Rosenberg
+  - Emma Rosenfeld
+  - Pedram Roushan
+  - Nicholas C. Rubin
+  - Negar Saei
+  - Daniel Sank
+  - Kannan Sankaragomathi
+  - Kevin J. Satzinger
+  - Henry F. Schurkus
+  - Christopher Schuster
+  - Andrew W. Senior
+  - Michael J. Shearn
+  - Aaron Shorter
+  - Noah Shutty
+  - Vladimir Shvarts
+  - Shraddha Singh
+  - Volodymyr Sivak
+  - Jindra Skruzny
+  - Spencer Small
+  - Vadim Smelyanskiy
+  - W. Clarke Smith
+  - Rolando D. Somma
+  - Sofia Springer
+  - George Sterling
+  - Doug Strain
+  - Jordan Suchard
+  - Aaron Szasz
+  - Alex Sztein
+  - Douglas Thor
+  - Alfredo Torres
+  - M. Mert Torunbalci
+  - Abeer Vaishnav
+  - Justin Vargas
+  - Sergey Vdovichev
+  - Guifre Vidal
+  - Benjamin Villalonga
+  - Catherine Vollgraff Heidweiller
+  - Steven Waltman
+  - Shannon X. Wang
+  - Brayden Ware
+  - Kate Weber
+  - Travis Weidel
+  - Theodore White
+  - Kristi Wong
+  - Bryan W. K. Woo
+  - Cheng Xing
+  - Z. Jamie Yao
+  - Ping Yeh
+  - Bicheng Ying
+  - Juhwan Yoo
+  - Noureldin Yosri
+  - Grayson Young
+  - Adam Zalcman
+  - Yaxing Zhang
+  - Ningfeng Zhu
+  - Nicholas Zobrist
+  journal: Nature
+  volume: '638'
+  pages: 920-926
+  year: 2025
+  doi: 10.1038/s41586-024-08449-y
+
+heinsoo2018readout:
+  type: article
+  title: Rapid High-fidelity Multiplexed Readout of Superconducting Qubits
+  authors:
+  - Johannes Heinsoo
+  - Christian Kraglund Andersen
+  - Ants Remm
+  - Sebastian Krinner
+  - Theodore Walter
+  - Yves Salathé
+  - Simone Gasparinetti
+  - Jean-Claude Besse
+  - Anton Potočnik
+  - Andreas Wallraff
+  - Christopher Eichler
+  journal: Phys. Rev. Applied
+  volume: '10'
+  pages: '034040'
+  year: 2018
+  doi: 10.1103/physrevapplied.10.034040
+
+walter2017readout:
+  type: article
+  title: Rapid High-Fidelity Single-Shot Dispersive Readout of Superconducting Qubits
+  authors:
+  - T. Walter
+  - P. Kurpiers
+  - S. Gasparinetti
+  - P. Magnard
+  - A. Potočnik
+  - Y. Salathé
+  - M. Pechal
+  - M. Mondal
+  - M. Oppliger
+  - C. Eichler
+  - A. Wallraff
+  journal: Phys. Rev. Applied
+  volume: '7'
+  pages: '054020'
+  year: 2017
+  doi: 10.1103/physrevapplied.7.054020
+
+mcclure2016reset:
+  type: article
+  title: Rapid Driven Reset of a Qubit Readout Resonator
+  authors:
+  - D. T. McClure
+  - Hanhee Paik
+  - L. S. Bishop
+  - M. Steffen
+  - Jerry M. Chow
+  - Jay M. Gambetta
+  journal: Phys. Rev. Applied
+  volume: '5'
+  pages: '011001'
+  year: 2016
+  doi: 10.1103/physrevapplied.5.011001
+
+magnard2018reset:
+  type: article
+  title: Fast and Unconditional All-Microwave Reset of a Superconducting Qubit
+  authors:
+  - P. Magnard
+  - P. Kurpiers
+  - B. Royer
+  - T. Walter
+  - J.-C. Besse
+  - S. Gasparinetti
+  - M. Pechal
+  - J. Heinsoo
+  - S. Storz
+  - A. Blais
+  - A. Wallraff
+  journal: Phys. Rev. Lett.
+  volume: '121'
+  pages: '060502'
+  year: 2018
+  doi: 10.1103/physrevlett.121.060502
+
+mcewen2021leakage:
+  type: article
+  title: Removing leakage-induced correlated errors in superconducting quantum error correction
+  authors:
+  - M. McEwen
+  - D. Kafri
+  - Z. Chen
+  - J. Atalaya
+  - K. J. Satzinger
+  - C. Quintana
+  - P. V. Klimov
+  - D. Sank
+  - C. Gidney
+  - A. G. Fowler
+  - F. Arute
+  - K. Arya
+  - B. Buckley
+  - B. Burkett
+  - N. Bushnell
+  - B. Chiaro
+  - R. Collins
+  - S. Demura
+  - A. Dunsworth
+  - C. Erickson
+  - B. Foxen
+  - M. Giustina
+  - T. Huang
+  - S. Hong
+  - E. Jeffrey
+  - S. Kim
+  - K. Kechedzhi
+  - F. Kostritsa
+  - P. Laptev
+  - A. Megrant
+  - X. Mi
+  - J. Mutus
+  - O. Naaman
+  - M. Neeley
+  - C. Neill
+  - M. Niu
+  - A. Paler
+  - N. Redd
+  - P. Roushan
+  - T. C. White
+  - J. Yao
+  - P. Yeh
+  - A. Zalcman
+  - Yu Chen
+  - V. N. Smelyanskiy
+  - John M. Martinis
+  - H. Neven
+  - J. Kelly
+  - A. N. Korotkov
+  - A. G. Petukhov
+  - R. Barends
+  journal: Nat Commun
+  volume: '12'
+  pages: '1761'
+  year: 2021
+  doi: 10.1038/s41467-021-21982-y
+
+puri2020biaspreserving:
+  type: article
+  title: Bias-preserving gates with stabilized cat qubits
+  authors:
+  - Shruti Puri
+  - Lucas St-Jean
+  - Jonathan A. Gross
+  - Alexander Grimm
+  - Nicholas E. Frattini
+  - Pavithran S. Iyer
+  - Anirudh Krishna
+  - Steven Touzard
+  - Liang Jiang
+  - Alexandre Blais
+  - Steven T. Flammia
+  - S. M. Girvin
+  journal: Sci. Adv.
+  volume: '6'
+  pages: eaay5901
+  year: 2020
+  doi: 10.1126/sciadv.aay5901
+
+kosut2008robustqec:
+  type: article
+  title: Robust Quantum Error Correction via Convex Optimization
+  authors:
+  - Robert L. Kosut
+  - Alireza Shabani
+  - Daniel A. Lidar
+  journal: Phys. Rev. Lett.
+  volume: '100'
+  pages: '020502'
+  year: 2008
+  doi: 10.1103/physrevlett.100.020502
+
+reimpell2005iterative:
+  type: article
+  title: Iterative Optimization of Quantum Error Correcting Codes
+  authors:
+  - M. Reimpell
+  - R. F. Werner
+  journal: Phys. Rev. Lett.
+  volume: '94'
+  pages: 080501
+  year: 2005
+  doi: 10.1103/physrevlett.94.080501
+
+fletcher2007recovery:
+  type: article
+  title: Optimum quantum error recovery using semidefinite programming
+  authors:
+  - Andrew S. Fletcher
+  - Peter W. Shor
+  - Moe Z. Win
+  journal: Phys. Rev. A
+  volume: '75'
+  pages: 012338
+  year: 2007
+  doi: 10.1103/physreva.75.012338
+
+ahn2002continuous:
+  type: article
+  title: Continuous quantum error correction via quantum feedback control
+  authors:
+  - Charlene Ahn
+  - Andrew C. Doherty
+  - Andrew J. Landahl
+  journal: Phys. Rev. A
+  volume: '65'
+  pages: '042301'
+  year: 2002
+  doi: 10.1103/physreva.65.042301
+
+kapit2018transparent:
+  type: article
+  title: Error-Transparent Quantum Gates for Small Logical Qubit Architectures
+  authors:
+  - Eliot Kapit
+  journal: Phys. Rev. Lett.
+  volume: '120'
+  pages: '050503'
+  year: 2018
+  doi: 10.1103/physrevlett.120.050503
+
+rosenblum2018faulttolerant:
+  type: article
+  title: Fault-tolerant detection of a quantum error
+  authors:
+  - S. Rosenblum
+  - P. Reinhold
+  - M. Mirrahimi
+  - Liang Jiang
+  - L. Frunzio
+  - R. J. Schoelkopf
+  journal: Science
+  volume: '361'
+  pages: 266-270
+  year: 2018
+  doi: 10.1126/science.aat3996
+
+lescanne2020bitflips:
+  type: article
+  title: Exponential suppression of bit-flips in a qubit encoded in an oscillator
+  authors:
+  - Raphaël Lescanne
+  - Marius Villiers
+  - Théau Peronnin
+  - Alain Sarlette
+  - Matthieu Delbecq
+  - Benjamin Huard
+  - Takis Kontos
+  - Mazyar Mirrahimi
+  - Zaki Leghtas
+  journal: Nat. Phys.
+  volume: '16'
+  pages: 509-513
+  year: 2020
+  doi: 10.1038/s41567-020-0824-x
+
+bluvstein2024logical:
+  type: article
+  title: Logical quantum processor based on reconfigurable atom arrays
+  authors:
+  - Dolev Bluvstein
+  - Simon J. Evered
+  - Alexandra A. Geim
+  - Sophie H. Li
+  - Hengyun Zhou
+  - Tom Manovitz
+  - Sepehr Ebadi
+  - Madelyn Cain
+  - Marcin Kalinowski
+  - Dominik Hangleiter
+  - J. Pablo Bonilla Ataides
+  - Nishad Maskara
+  - Iris Cong
+  - Xun Gao
+  - Pedro Sales Rodriguez
+  - Thomas Karolyshyn
+  - Giulia Semeghini
+  - Michael J. Gullans
+  - Markus Greiner
+  - Vladan Vuletić
+  - Mikhail D. Lukin
+  journal: Nature
+  volume: '626'
+  pages: 58-65
+  year: 2024
+  doi: 10.1038/s41586-023-06927-3
+
+shi2019aggregated:
+  type: proceedings
+  title: Optimized Compilation of Aggregated Instructions for Realistic Quantum Computers
+  authors:
+  - Yunong Shi
+  - Nelson Leung
+  - Pranav Gokhale
+  - Zane Rossi
+  - David I. Schuster
+  - Henry Hoffmann
+  - Frederic T. Chong
+  booktitle: Proceedings of the Twenty-Fourth International Conference on Architectural Support for Programming
+    Languages and Operating Systems
+  pages: 1031-1044
+  year: 2019
+  doi: 10.1145/3297858.3304018
+
+gokhale2019partial:
+  type: proceedings
+  title: Partial Compilation of Variational Algorithms for Noisy Intermediate-Scale Quantum Machines
+  authors:
+  - Pranav Gokhale
+  - Yongshan Ding
+  - Thomas Propson
+  - Christopher Winkler
+  - Nelson Leung
+  - Yunong Shi
+  - David I. Schuster
+  - Henry Hoffmann
+  - Frederic T. Chong
+  booktitle: Proceedings of the 52nd Annual IEEE/ACM International Symposium on Microarchitecture
+  pages: 266-278
+  year: 2019
+  doi: 10.1145/3352460.3358313
+
+earnest2021pulseefficient:
+  type: article
+  title: Pulse-efficient circuit transpilation for quantum applications on cross-resonance-based hardware
+  authors:
+  - Nathan Earnest
+  - Caroline Tornow
+  - Daniel J. Egger
+  journal: Phys. Rev. Research
+  volume: '3'
+  pages: 043088
+  year: 2021
+  doi: 10.1103/physrevresearch.3.043088
+
+alexander2020qiskitpulse:
+  type: article
+  title: 'Qiskit pulse: programming quantum computers through the cloud with pulses'
+  authors:
+  - Thomas Alexander
+  - Naoki Kanazawa
+  - Daniel J Egger
+  - Lauren Capelluto
+  - Christopher J Wood
+  - Ali Javadi-Abhari
+  - David C McKay
+  journal: Quantum Sci. Technol.
+  volume: '5'
+  pages: '044006'
+  year: 2020
+  doi: 10.1088/2058-9565/aba404
+
+cross2022openqasm3:
+  type: article
+  title: 'OpenQASM 3: A Broader and Deeper Quantum Assembly Language'
+  authors:
+  - Andrew Cross
+  - Ali Javadi-Abhari
+  - Thomas Alexander
+  - Niel De Beaudrap
+  - Lev S. Bishop
+  - Steven Heidel
+  - Colm A. Ryan
+  - Prasahnt Sivarajah
+  - John Smolin
+  - Jay M. Gambetta
+  - Blake R. Johnson
+  journal: ACM Transactions on Quantum Computing
+  volume: '3'
+  pages: 1-50
+  year: 2022
+  doi: 10.1145/3505636
+
+mckay2017virtualz:
+  type: article
+  title: Efficient Z gates for quantum computing
+  authors:
+  - David C. McKay
+  - Christopher J. Wood
+  - Sarah Sheldon
+  - Jerry M. Chow
+  - Jay M. Gambetta
+  journal: Phys. Rev. A
+  volume: '96'
+  pages: '022330'
+  year: 2017
+  doi: 10.1103/physreva.96.022330
+
+
+
+silverio2022pulser:
+  type: article
+  title: 'Pulser: An open-source package for the design of pulse sequences in programmable neutral-atom
+    arrays'
+  authors:
+  - Henrique Silvério
+  - Sebastián Grijalva
+  - Constantin Dalyac
+  - Lucas Leclerc
+  - Peter J. Karalekas
+  - Nathan Shammah
+  - Mourad Beji
+  - Louis-Paul Henry
+  - Loïc Henriet
+  journal: Quantum
+  volume: '6'
+  pages: '629'
+  year: 2022
+  doi: 10.22331/q-2022-01-24-629
+
+li2022qutipqip:
+  type: article
+  title: Pulse-level noisy quantum circuits with QuTiP
+  authors:
+  - Boxi Li
+  - Shahnawaz Ahmed
+  - Sidhant Saraogi
+  - Neill Lambert
+  - Franco Nori
+  - Alexander Pitchford
+  - Nathan Shammah
+  journal: Quantum
+  volume: '6'
+  pages: '630'
+  year: 2022
+  doi: 10.22331/q-2022-01-24-630
+
+gokhale2020openpulse:
+  type: proceedings
+  title: Optimized Quantum Compilation for Near-Term Algorithms with OpenPulse
+  authors:
+  - Pranav Gokhale
+  - Ali Javadi-Abhari
+  - Nathan Earnest
+  - Yunong Shi
+  - Frederic T. Chong
+  booktitle: 2020 53rd Annual IEEE/ACM International Symposium on Microarchitecture (MICRO)
+  pages: 186-200
+  year: 2020
+  doi: 10.1109/micro50266.2020.00027
+
+cheng2020accqoc:
+  type: proceedings
+  title: 'AccQOC: Accelerating Quantum Optimal Control Based Pulse Generation'
+  authors:
+  - Jinglei Cheng
+  - Haoqing Deng
+  - Xuehai Qia
+  booktitle: 2020 ACM/IEEE 47th Annual International Symposium on Computer Architecture (ISCA)
+  pages: 543-555
+  year: 2020
+  doi: 10.1109/isca45697.2020.00052
+
+dekeijzer2023pulsevqoc:
+  type: article
+  title: Pulse based Variational Quantum Optimal Control for hybrid quantum computing
+  authors:
+  - Robert de Keijzer
+  - Oliver Tse
+  - Servaas Kokkelmans
+  journal: Quantum
+  volume: '7'
+  pages: '908'
+  year: 2023
+  doi: 10.22331/q-2023-01-26-908
+
+blais2021cqed:
+  type: article
+  title: Circuit quantum electrodynamics
+  authors:
+  - Alexandre Blais
+  - Arne L. Grimsmo
+  - S. M. Girvin
+  - Andreas Wallraff
+  journal: Rev. Mod. Phys.
+  volume: '93'
+  pages: '025005'
+  year: 2021
+  doi: 10.1103/revmodphys.93.025005
+
+manucharyan2009fluxonium:
+  type: article
+  title: 'Fluxonium: Single Cooper-Pair Circuit Free of Charge Offsets'
+  authors:
+  - Vladimir E. Manucharyan
+  - Jens Koch
+  - Leonid I. Glazman
+  - Michel H. Devoret
+  journal: Science
+  volume: '326'
+  pages: 113-116
+  year: 2009
+  doi: 10.1126/science.1175552
+
+nakamura1999cooperpair:
+  type: article
+  title: Coherent control of macroscopic quantum states in a single-Cooper-pair box
+  authors:
+  - Y. Nakamura
+  - Yu. A. Pashkin
+  - J. S. Tsai
+  journal: Nature
+  volume: '398'
+  pages: 786-788
+  year: 1999
+  doi: 10.1038/19718
+
+rol2019netzero:
+  type: article
+  title: Fast, High-Fidelity Conditional-Phase Gate Exploiting Leakage Interference in Weakly Anharmonic
+    Superconducting Qubits
+  authors:
+  - M. A. Rol
+  - F. Battistel
+  - F. K. Malinowski
+  - C. C. Bultink
+  - B. M. Tarasinski
+  - R. Vollmer
+  - N. Haider
+  - N. Muthusubramanian
+  - A. Bruno
+  - B. M. Terhal
+  - L. DiCarlo
+  journal: Phys. Rev. Lett.
+  volume: '123'
+  pages: '120502'
+  year: 2019
+  doi: 10.1103/physrevlett.123.120502
+
+martinis2014adiabatic:
+  type: article
+  title: Fast adiabatic qubit gates using only σ z control
+  authors:
+  - John M. Martinis
+  - Michael R. Geller
+  journal: Phys. Rev. A
+  volume: '90'
+  pages: '022307'
+  year: 2014
+  doi: 10.1103/physreva.90.022307
+
+kjaergaard2020superconducting:
+  type: article
+  title: 'Superconducting Qubits: Current State of Play'
+  authors:
+  - Morten Kjaergaard
+  - Mollie E. Schwartz
+  - Jochen Braumüller
+  - Philip Krantz
+  - Joel I.-J. Wang
+  - Simon Gustavsson
+  - William D. Oliver
+  journal: Annu. Rev. Condens. Matter Phys.
+  volume: '11'
+  pages: 369-395
+  year: 2020
+  doi: 10.1146/annurev-conmatphys-031119-050605
+
+nguyen2019fluxonium:
+  type: article
+  title: High-Coherence Fluxonium Qubit
+  authors:
+  - Long B. Nguyen
+  - Yen-Hsiang Lin
+  - Aaron Somoroff
+  - Raymond Mencia
+  - Nicholas Grabon
+  - Vladimir E. Manucharyan
+  journal: Phys. Rev. X
+  volume: '9'
+  pages: '041041'
+  year: 2019
+  doi: 10.1103/physrevx.9.041041
+
+cirac1995ions:
+  type: article
+  title: Quantum Computations with Cold Trapped Ions
+  authors:
+  - J. I. Cirac
+  - P. Zoller
+  journal: Phys. Rev. Lett.
+  volume: '74'
+  pages: 4091-4094
+  year: 1995
+  doi: 10.1103/physrevlett.74.4091
+
+leibfried2003ions:
+  type: article
+  title: Quantum dynamics of single trapped ions
+  authors:
+  - D. Leibfried
+  - R. Blatt
+  - C. Monroe
+  - D. Wineland
+  journal: Rev. Mod. Phys.
+  volume: '75'
+  pages: 281-324
+  year: 2003
+  doi: 10.1103/revmodphys.75.281
+
+bruzewicz2019ions:
+  type: article
+  title: 'Trapped-ion quantum computing: Progress and challenges'
+  authors:
+  - Colin D. Bruzewicz
+  - John Chiaverini
+  - Robert McConnell
+  - Jeremy M. Sage
+  journal: Applied Physics Reviews
+  volume: '6'
+  pages: '021314'
+  year: 2019
+  doi: 10.1063/1.5088164
+
+sorensen2000thermal:
+  type: article
+  title: Entanglement and quantum computation with ions in thermal motion
+  authors:
+  - Anders Sørensen
+  - Klaus Mølmer
+  journal: Phys. Rev. A
+  volume: '62'
+  pages: '022311'
+  year: 2000
+  doi: 10.1103/physreva.62.022311
+
+green2015phasemodulated:
+  type: article
+  title: Phase-Modulated Decoupling and Error Suppression in Qubit-Oscillator Systems
+  authors:
+  - Todd J. Green
+  - Michael J. Biercuk
+  journal: Phys. Rev. Lett.
+  volume: '114'
+  pages: '120502'
+  year: 2015
+  doi: 10.1103/physrevlett.114.120502
+
+leung2018robust:
+  type: article
+  title: Robust 2-Qubit Gates in a Linear Ion Crystal Using a Frequency-Modulated Driving Force
+  authors:
+  - Pak Hong Leung
+  - Kevin A. Landsman
+  - Caroline Figgatt
+  - Norbert M. Linke
+  - Christopher Monroe
+  - Kenneth R. Brown
+  journal: Phys. Rev. Lett.
+  volume: '120'
+  pages: '020501'
+  year: 2018
+  doi: 10.1103/physrevlett.120.020501
+
+shapira2018robust:
+  type: article
+  title: Robust Entanglement Gates for Trapped-Ion Qubits
+  authors:
+  - Yotam Shapira
+  - Ravid Shaniv
+  - Tom Manovitz
+  - Nitzan Akerman
+  - Roee Ozeri
+  journal: Phys. Rev. Lett.
+  volume: '121'
+  pages: '180502'
+  year: 2018
+  doi: 10.1103/physrevlett.121.180502
+
+bowler2012transport:
+  type: article
+  title: Coherent Diabatic Ion Transport and Separation in a Multizone Trap Array
+  authors:
+  - R. Bowler
+  - J. Gaebler
+  - Y. Lin
+  - T. R. Tan
+  - D. Hanneke
+  - J. D. Jost
+  - J. P. Home
+  - D. Leibfried
+  - D. J. Wineland
+  journal: Phys. Rev. Lett.
+  volume: '109'
+  pages: 080502
+  year: 2012
+  doi: 10.1103/physrevlett.109.080502
+
+walther2012transport:
+  type: article
+  title: Controlling Fast Transport of Cold Trapped Ions
+  authors:
+  - A. Walther
+  - F. Ziesel
+  - T. Ruster
+  - S. T. Dawkins
+  - K. Ott
+  - M. Hettrich
+  - K. Singer
+  - F. Schmidt-Kaler
+  - U. Poschinger
+  journal: Phys. Rev. Lett.
+  volume: '109'
+  pages: 080501
+  year: 2012
+  doi: 10.1103/physrevlett.109.080501
+
+ospelkaus2011microwave:
+  type: article
+  title: Microwave quantum logic gates for trapped ions
+  authors:
+  - C. Ospelkaus
+  - U. Warring
+  - Y. Colombe
+  - K. R. Brown
+  - J. M. Amini
+  - D. Leibfried
+  - D. J. Wineland
+  journal: Nature
+  volume: '476'
+  pages: 181-184
+  year: 2011
+  doi: 10.1038/nature10290
+
+pino2021qccd:
+  type: article
+  title: Demonstration of the trapped-ion quantum CCD computer architecture
+  authors:
+  - J. M. Pino
+  - J. M. Dreiling
+  - C. Figgatt
+  - J. P. Gaebler
+  - S. A. Moses
+  - M. S. Allman
+  - C. H. Baldwin
+  - M. Foss-Feig
+  - D. Hayes
+  - K. Mayer
+  - C. Ryan-Anderson
+  - B. Neyenhuis
+  journal: Nature
+  volume: '592'
+  pages: 209-213
+  year: 2021
+  doi: 10.1038/s41586-021-03318-4
+
+kielpinski2002architecture:
+  type: article
+  title: Architecture for a large-scale ion-trap quantum computer
+  authors:
+  - D. Kielpinski
+  - C. Monroe
+  - D. J. Wineland
+  journal: Nature
+  volume: '417'
+  pages: 709-711
+  year: 2002
+  doi: 10.1038/nature00784
+
+furst2014transport:
+  type: article
+  title: 'Controlling the transport of an ion: classical and quantum mechanical solutions'
+  authors:
+  - H A Fürst
+  - M H Goerz
+  - U G Poschinger
+  - M Murphy
+  - S Montangero
+  - T Calarco
+  - F Schmidt-Kaler
+  - K Singer
+  - C P Koch
+  journal: New J. Phys.
+  volume: '16'
+  pages: '075007'
+  year: 2014
+  doi: 10.1088/1367-2630/16/7/075007
+
+schafer2018fast:
+  type: article
+  title: Fast quantum logic gates with trapped-ion qubits
+  authors:
+  - V. M. Schäfer
+  - C. J. Ballance
+  - K. Thirumalai
+  - L. J. Stephenson
+  - T. G. Ballance
+  - A. M. Steane
+  - D. M. Lucas
+  journal: Nature
+  volume: '555'
+  pages: 75-78
+  year: 2018
+  doi: 10.1038/nature25737
+
+saffman2010rydberg:
+  type: article
+  title: Quantum information with Rydberg atoms
+  authors:
+  - M. Saffman
+  - T. G. Walker
+  - K. Mølmer
+  journal: Rev. Mod. Phys.
+  volume: '82'
+  pages: 2313-2363
+  year: 2010
+  doi: 10.1103/revmodphys.82.2313
+
+browaeys2020rydberg:
+  type: article
+  title: Many-body physics with individually controlled Rydberg atoms
+  authors:
+  - Antoine Browaeys
+  - Thierry Lahaye
+  journal: Nat. Phys.
+  volume: '16'
+  pages: 132-142
+  year: 2020
+  doi: 10.1038/s41567-019-0733-z
+
+bernien2017probing:
+  type: article
+  title: Probing many-body dynamics on a 51-atom quantum simulator
+  authors:
+  - Hannes Bernien
+  - Sylvain Schwartz
+  - Alexander Keesling
+  - Harry Levine
+  - Ahmed Omran
+  - Hannes Pichler
+  - Soonwon Choi
+  - Alexander S. Zibrov
+  - Manuel Endres
+  - Markus Greiner
+  - Vladan Vuletić
+  - Mikhail D. Lukin
+  journal: Nature
+  volume: '551'
+  pages: 579-584
+  year: 2017
+  doi: 10.1038/nature24622
+
+barredo2016assembler:
+  type: article
+  title: An atom-by-atom assembler of defect-free arbitrary two-dimensional atomic arrays
+  authors:
+  - Daniel Barredo
+  - Sylvain de Léséleuc
+  - Vincent Lienhard
+  - Thierry Lahaye
+  - Antoine Browaeys
+  journal: Science
+  volume: '354'
+  pages: 1021-1023
+  year: 2016
+  doi: 10.1126/science.aah3778
+
+endres2016arrays:
+  type: article
+  title: Atom-by-atom assembly of defect-free one-dimensional cold atom arrays
+  authors:
+  - Manuel Endres
+  - Hannes Bernien
+  - Alexander Keesling
+  - Harry Levine
+  - Eric R. Anschuetz
+  - Alexandre Krajenbrink
+  - Crystal Senko
+  - Vladan Vuletic
+  - Markus Greiner
+  - Mikhail D. Lukin
+  journal: Science
+  volume: '354'
+  pages: 1024-1027
+  year: 2016
+  doi: 10.1126/science.aah3752
+
+ebadi2022mis:
+  type: article
+  title: Quantum optimization of maximum independent set using Rydberg atom arrays
+  authors:
+  - S. Ebadi
+  - A. Keesling
+  - M. Cain
+  - T. T. Wang
+  - H. Levine
+  - D. Bluvstein
+  - G. Semeghini
+  - A. Omran
+  - J.-G. Liu
+  - R. Samajdar
+  - X.-Z. Luo
+  - B. Nash
+  - X. Gao
+  - B. Barak
+  - E. Farhi
+  - S. Sachdev
+  - N. Gemelke
+  - L. Zhou
+  - S. Choi
+  - H. Pichler
+  - S.-T. Wang
+  - M. Greiner
+  - V. Vuletić
+  - M. D. Lukin
+  journal: Science
+  volume: '376'
+  pages: 1209-1215
+  year: 2022
+  doi: 10.1126/science.abo6587
+
+scholl2021antiferromagnets:
+  type: article
+  title: Quantum simulation of 2D antiferromagnets with hundreds of Rydberg atoms
+  authors:
+  - Pascal Scholl
+  - Michael Schuler
+  - Hannah J. Williams
+  - Alexander A. Eberharter
+  - Daniel Barredo
+  - Kai-Niklas Schymik
+  - Vincent Lienhard
+  - Louis-Paul Henry
+  - Thomas C. Lang
+  - Thierry Lahaye
+  - Andreas M. Läuchli
+  - Antoine Browaeys
+  journal: Nature
+  volume: '595'
+  pages: 233-238
+  year: 2021
+  doi: 10.1038/s41586-021-03585-1
+
+theis2016rydberg:
+  type: article
+  title: High-fidelity Rydberg-blockade entangling gate using shaped, analytic pulses
+  authors:
+  - L. S. Theis
+  - F. Motzoi
+  - F. K. Wilhelm
+  - M. Saffman
+  journal: Phys. Rev. A
+  volume: '94'
+  pages: '032306'
+  year: 2016
+  doi: 10.1103/physreva.94.032306
+
+graham2022multiqubit:
+  type: article
+  title: Multi-qubit entanglement and algorithms on a neutral-atom quantum computer
+  authors:
+  - T. M. Graham
+  - Y. Song
+  - J. Scott
+  - C. Poole
+  - L. Phuttitarn
+  - K. Jooya
+  - P. Eichler
+  - X. Jiang
+  - A. Marra
+  - B. Grinkemeyer
+  - M. Kwon
+  - M. Ebert
+  - J. Cherek
+  - M. T. Lichtman
+  - M. Gillette
+  - J. Gilbert
+  - D. Bowman
+  - T. Ballance
+  - C. Campbell
+  - E. D. Dahl
+  - O. Crawford
+  - N. S. Blunt
+  - B. Rogers
+  - T. Noel
+  - M. Saffman
+  journal: Nature
+  volume: '604'
+  pages: 457-462
+  year: 2022
+  doi: 10.1038/s41586-022-04603-6
+
+bluvstein2022transport:
+  type: article
+  title: A quantum processor based on coherent transport of entangled atom arrays
+  authors:
+  - Dolev Bluvstein
+  - Harry Levine
+  - Giulia Semeghini
+  - Tout T. Wang
+  - Sepehr Ebadi
+  - Marcin Kalinowski
+  - Alexander Keesling
+  - Nishad Maskara
+  - Hannes Pichler
+  - Markus Greiner
+  - Vladan Vuletić
+  - Mikhail D. Lukin
+  journal: Nature
+  volume: '604'
+  pages: 451-456
+  year: 2022
+  doi: 10.1038/s41586-022-04592-6
+
+bloch2008manybody:
+  type: article
+  title: Many-body physics with ultracold gases
+  authors:
+  - Immanuel Bloch
+  - Jean Dalibard
+  - Wilhelm Zwerger
+  journal: Rev. Mod. Phys.
+  volume: '80'
+  pages: 885-964
+  year: 2008
+  doi: 10.1103/revmodphys.80.885
+
+greiner2002mott:
+  type: article
+  title: Quantum phase transition from a superfluid to a Mott insulator in a gas of ultracold atoms
+  authors:
+  - Markus Greiner
+  - Olaf Mandel
+  - Tilman Esslinger
+  - Theodor W. Hänsch
+  - Immanuel Bloch
+  journal: Nature
+  volume: '415'
+  pages: 39-44
+  year: 2002
+  doi: 10.1038/415039a
+
+bucker2011twin:
+  type: article
+  title: Twin-atom beams
+  authors:
+  - Robert Bücker
+  - Julian Grond
+  - Stephanie Manz
+  - Tarik Berrada
+  - Thomas Betz
+  - Christian Koller
+  - Ulrich Hohenester
+  - Thorsten Schumm
+  - Aurélien Perrin
+  - Jörg Schmiedmayer
+  journal: Nature Phys
+  volume: '7'
+  pages: 608-611
+  year: 2011
+  doi: 10.1038/nphys1992
+
+schaff2010fast:
+  type: article
+  title: Fast optimal transition between two equilibrium states
+  authors:
+  - Jean-François Schaff
+  - Xiao-Li Song
+  - Patrizia Vignolo
+  - Guillaume Labeyrie
+  journal: Phys. Rev. A
+  volume: '82'
+  pages: '033430'
+  year: 2010
+  doi: 10.1103/physreva.82.033430
+
+schaff2011bec:
+  type: article
+  title: Shortcut to adiabaticity for an interacting Bose-Einstein condensate
+  authors:
+  - J.-F. Schaff
+  - X.-L. Song
+  - P. Capuzzi
+  - P. Vignolo
+  - G. Labeyrie
+  journal: EPL
+  volume: '93'
+  pages: '23001'
+  year: 2011
+  doi: 10.1209/0295-5075/93/23001
+
+couvert2008transport:
+  type: article
+  title: Optimal transport of ultracold atoms in the non-adiabatic regime
+  authors:
+  - A. Couvert
+  - T. Kawalec
+  - G. Reinaudi
+  - D. Guéry-Odelin
+  journal: Europhys. Lett.
+  volume: '83'
+  pages: '13001'
+  year: 2008
+  doi: 10.1209/0295-5075/83/13001
+
+grond2009squeezing:
+  type: article
+  title: Optimal control of number squeezing in trapped Bose-Einstein condensates
+  authors:
+  - Julian Grond
+  - Gregory von Winckel
+  - Jörg Schmiedmayer
+  - Ulrich Hohenester
+  journal: Phys. Rev. A
+  volume: '80'
+  pages: '053625'
+  year: 2009
+  doi: 10.1103/physreva.80.053625
+
+cronin2009interferometry:
+  type: article
+  title: Optics and interferometry with atoms and molecules
+  authors:
+  - Alexander D. Cronin
+  - Jörg Schmiedmayer
+  - David E. Pritchard
+  journal: Rev. Mod. Phys.
+  volume: '81'
+  pages: 1051-1129
+  year: 2009
+  doi: 10.1103/revmodphys.81.1051
+
+saywell2018mirror:
+  type: article
+  title: Optimal control of mirror pulses for cold-atom interferometry
+  authors:
+  - Jack C. Saywell
+  - Ilya Kuprov
+  - David Goodwin
+  - Max Carey
+  - Tim Freegarde
+  journal: Phys. Rev. A
+  volume: '98'
+  pages: '023625'
+  year: 2018
+  doi: 10.1103/physreva.98.023625
+
+weidner2018shaken:
+  type: article
+  title: Experimental Demonstration of Shaken-Lattice Interferometry
+  authors:
+  - C. A. Weidner
+  - Dana Z. Anderson
+  journal: Phys. Rev. Lett.
+  volume: '120'
+  pages: '263201'
+  year: 2018
+  doi: 10.1103/physrevlett.120.263201
+
+dupont2021lattice:
+  type: article
+  title: Quantum State Control of a Bose-Einstein Condensate in an Optical Lattice
+  authors:
+  - N. Dupont
+  - G. Chatelain
+  - L. Gabardos
+  - M. Arnal
+  - J. Billy
+  - B. Peaudecerf
+  - D. Sugny
+  - D. Guéry-Odelin
+  journal: PRX Quantum
+  volume: '2'
+  pages: '040303'
+  year: 2021
+  doi: 10.1103/prxquantum.2.040303
+
+farhi2014qaoa:
+  type: preprint
+  title: A Quantum Approximate Optimization Algorithm
+  authors:
+  - Edward Farhi
+  - Jeffrey Goldstone
+  - Sam Gutmann
+  year: 2014
+  arxiv: '1411.4028'
+
+mckay2018openpulse:
+  type: preprint
+  title: Qiskit Backend Specifications for OpenQASM and OpenPulse Experiments
+  authors:
+  - David C. McKay
+  - Thomas Alexander
+  - Luciano Bello
+  - Michael J. Biercuk
+  - Lev Bishop
+  - Jiayin Chen
+  - Jerry M. Chow
+  - Antonio D. Córcoles
+  - Daniel Egger
+  - Stefan Filipp
+  - Juan Gomez
+  - Michael Hush
+  - Ali Javadi-Abhari
+  - Diego Moreda
+  - Paul Nation
+  - Brent Paulovicks
+  - Erick Winston
+  - Christopher J. Wood
+  - James Wootton
+  - Jay M. Gambetta
+  year: 2018
+  arxiv: '1809.03452'
+
+vandersypen2005nmr:
+  type: article
+  title: NMR techniques for quantum control and computation
+  authors:
+  - L. M. K. Vandersypen
+  - I. L. Chuang
+  journal: Rev. Mod. Phys.
+  volume: '76'
+  pages: 1037-1069
+  year: 2005
+  doi: 10.1103/revmodphys.76.1037
+
+glaser1998unitary:
+  type: article
+  title: 'Unitary Control in Quantum Ensembles: Maximizing Signal Intensity in Coherent Spectroscopy'
+  authors:
+  - S. J. Glaser
+  - T. Schulte-Herbrüggen
+  - M. Sieveking
+  - O. Schedletzky
+  - N. C. Nielsen
+  - O. W. Sørensen
+  - C. Griesinger
+  journal: Science
+  volume: '280'
+  pages: 421-424
+  year: 1998
+  doi: 10.1126/science.280.5362.421
+
+doherty2013nv:
+  type: article
+  title: The nitrogen-vacancy colour centre in diamond
+  authors:
+  - Marcus W. Doherty
+  - Neil B. Manson
+  - Paul Delaney
+  - Fedor Jelezko
+  - Jörg Wrachtrup
+  - Lloyd C.L. Hollenberg
+  journal: Physics Reports
+  volume: '528'
+  pages: 1-45
+  year: 2013
+  doi: 10.1016/j.physrep.2013.02.001
+
+dolde2014entanglement:
+  type: article
+  title: High-fidelity spin entanglement using optimal control
+  authors:
+  - Florian Dolde
+  - Ville Bergholm
+  - Ya Wang
+  - Ingmar Jakobi
+  - Boris Naydenov
+  - Sébastien Pezzagna
+  - Jan Meijer
+  - Fedor Jelezko
+  - Philipp Neumann
+  - Thomas Schulte-Herbrüggen
+  - Jacob Biamonte
+  - Jörg Wrachtrup
+  journal: Nat Commun
+  volume: '5'
+  pages: '3371'
+  year: 2014
+  doi: 10.1038/ncomms4371
+
+loss1998dots:
+  type: article
+  title: Quantum computation with quantum dots
+  authors:
+  - Daniel Loss
+  - David P. DiVincenzo
+  journal: Phys. Rev. A
+  volume: '57'
+  pages: 120-126
+  year: 1998
+  doi: 10.1103/physreva.57.120
+
+petta2005coherent:
+  type: article
+  title: Coherent Manipulation of Coupled Electron Spins in Semiconductor Quantum Dots
+  authors:
+  - J. R. Petta
+  - A. C. Johnson
+  - J. M. Taylor
+  - E. A. Laird
+  - A. Yacoby
+  - M. D. Lukin
+  - C. M. Marcus
+  - M. P. Hanson
+  - A. C. Gossard
+  journal: Science
+  volume: '309'
+  pages: 2180-2184
+  year: 2005
+  doi: 10.1126/science.1116955
+
+burkard2023spin:
+  type: article
+  title: Semiconductor spin qubits
+  authors:
+  - Guido Burkard
+  - Thaddeus D. Ladd
+  - Andrew Pan
+  - John M. Nichol
+  - Jason R. Petta
+  journal: Rev. Mod. Phys.
+  volume: '95'
+  pages: '025003'
+  year: 2023
+  doi: 10.1103/revmodphys.95.025003
+
+xue2022threshold:
+  type: article
+  title: Quantum logic with spin qubits crossing the surface code threshold
+  authors:
+  - Xiao Xue
+  - Maximilian Russ
+  - Nodar Samkharadze
+  - Brennan Undseth
+  - Amir Sammak
+  - Giordano Scappucci
+  - Lieven M. K. Vandersypen
+  journal: Nature
+  volume: '601'
+  pages: 343-347
+  year: 2022
+  doi: 10.1038/s41586-021-04273-w
+
+cerfontaine2020closedloop:
+  type: article
+  title: Closed-loop control of a GaAs-based singlet-triplet spin qubit with 99.5% gate fidelity and low
+    leakage
+  authors:
+  - Pascal Cerfontaine
+  - Tim Botzem
+  - Julian Ritzmann
+  - Simon Sebastian Humpohl
+  - Arne Ludwig
+  - Dieter Schuh
+  - Dominique Bougeard
+  - Andreas D. Wieck
+  - Hendrik Bluhm
+  journal: Nat Commun
+  volume: '11'
+  pages: '4144'
+  year: 2020
+  doi: 10.1038/s41467-020-17865-3
+
+spindler2012epr:
+  type: article
+  title: Shaped optimal control pulses for increased excitation bandwidth in EPR
+  authors:
+  - Philipp E. Spindler
+  - Yun Zhang
+  - Burkhard Endeward
+  - Naum Gershernzon
+  - Thomas E. Skinner
+  - Steffen J. Glaser
+  - Thomas F. Prisner
+  journal: Journal of Magnetic Resonance
+  volume: '218'
+  pages: 49-58
+  year: 2012
+  doi: 10.1016/j.jmr.2012.02.013
+
+nobauer2015magnetometry:
+  type: article
+  title: Smooth Optimal Quantum Control for Robust Solid-State Spin Magnetometry
+  authors:
+  - Tobias Nöbauer
+  - Andreas Angerer
+  - Björn Bartels
+  - Michael Trupke
+  - Stefan Rotter
+  - Jörg Schmiedmayer
+  - Florian Mintert
+  - Johannes Majer
+  journal: Phys. Rev. Lett.
+  volume: '115'
+  pages: '190801'
+  year: 2015
+  doi: 10.1103/physrevlett.115.190801
+
+hogben2011spinach:
+  type: article
+  title: Spinach – A software library for simulation of spin dynamics in large spin systems
+  authors:
+  - H.J. Hogben
+  - M. Krzystyniak
+  - G.T.P. Charnock
+  - P.J. Hore
+  - Ilya Kuprov
+  journal: Journal of Magnetic Resonance
+  volume: '208'
+  pages: 179-194
+  year: 2011
+  doi: 10.1016/j.jmr.2010.11.008
+
+brumer1986control:
+  type: article
+  title: Control of unimolecular reactions using coherent light
+  authors:
+  - Paul Brumer
+  - Moshe Shapiro
+  journal: Chemical Physics Letters
+  volume: '126'
+  pages: 541-546
+  year: 1986
+  doi: 10.1016/s0009-2614(86)80171-3
+
+weiner2000shaping:
+  type: article
+  title: Femtosecond pulse shaping using spatial light modulators
+  authors:
+  - A. M. Weiner
+  journal: Review of Scientific Instruments
+  volume: '71'
+  pages: 1929-1960
+  year: 2000
+  doi: 10.1063/1.1150614
+
+levis2001selective:
+  type: article
+  title: Selective Bond Dissociation and Rearrangement with Optimally Tailored, Strong-Field Laser Pulses
+  authors:
+  - Robert J. Levis
+  - Getahun M. Menkir
+  - Herschel Rabitz
+  journal: Science
+  volume: '292'
+  pages: 709-713
+  year: 2001
+  doi: 10.1126/science.1059133
+
+herek2002harvesting:
+  type: article
+  title: Quantum control of energy flow in light harvesting
+  authors:
+  - Jennifer L. Herek
+  - Wendel Wohlleben
+  - Richard J. Cogdell
+  - Dirk Zeidler
+  - Marcus Motzkus
+  journal: Nature
+  volume: '417'
+  pages: 533-535
+  year: 2002
+  doi: 10.1038/417533a
+
+meshulach1998twophoton:
+  type: article
+  title: Coherent quantum control of two-photon transitions by a femtosecond laser pulse
+  authors:
+  - Doron Meshulach
+  - Yaron Silberberg
+  journal: Nature
+  volume: '396'
+  pages: 239-242
+  year: 1998
+  doi: 10.1038/24329
+
+stapelfeldt2003aligning:
+  type: article
+  title: 'Colloquium : Aligning molecules with strong laser pulses'
+  authors:
+  - Henrik Stapelfeldt
+  - Tamar Seideman
+  journal: Rev. Mod. Phys.
+  volume: '75'
+  pages: 543-557
+  year: 2003
+  doi: 10.1103/revmodphys.75.543
+
+koch2019rotation:
+  type: article
+  title: Quantum control of molecular rotation
+  authors:
+  - Christiane P. Koch
+  - Mikhail Lemeshko
+  - Dominique Sugny
+  journal: Rev. Mod. Phys.
+  volume: '91'
+  pages: '035005'
+  year: 2019
+  doi: 10.1103/revmodphys.91.035005
+
+patterson2013chiral:
+  type: article
+  title: Enantiomer-specific detection of chiral molecules via microwave spectroscopy
+  authors:
+  - David Patterson
+  - Melanie Schnell
+  - John M. Doyle
+  journal: Nature
+  volume: '497'
+  pages: 475-477
+  year: 2013
+  doi: 10.1038/nature12150
+
+eibenberger2017chiral:
+  type: article
+  title: Enantiomer-Specific State Transfer of Chiral Molecules
+  authors:
+  - Sandra Eibenberger
+  - John Doyle
+  - David Patterson
+  journal: Phys. Rev. Lett.
+  volume: '118'
+  pages: '123002'
+  year: 2017
+  doi: 10.1103/physrevlett.118.123002
+
+ni2008polar:
+  type: article
+  title: A High Phase-Space-Density Gas of Polar Molecules
+  authors:
+  - K.-K. Ni
+  - S. Ospelkaus
+  - M. H. G. de Miranda
+  - A. Pe'er
+  - B. Neyenhuis
+  - J. J. Zirbel
+  - S. Kotochigova
+  - P. S. Julienne
+  - D. S. Jin
+  - J. Ye
+  journal: Science
+  volume: '322'
+  pages: 231-235
+  year: 2008
+  doi: 10.1126/science.1163861
+
+koch2012photoassociation:
+  type: article
+  title: Coherent Control of Ultracold Photoassociation
+  authors:
+  - Christiane P. Koch
+  - Moshe Shapiro
+  journal: Chem. Rev.
+  volume: '112'
+  pages: 4928-4948
+  year: 2012
+  doi: 10.1021/cr2003882
+
+gordon1997active:
+  type: article
+  title: ACTIVE CONTROL OF THE DYNAMICS OF ATOMS AND MOLECULES
+  authors:
+  - Robert J. Gordon
+  - Stuart A. Rice
+  journal: Annu. Rev. Phys. Chem.
+  volume: '48'
+  pages: 601-641
+  year: 1997
+  doi: 10.1146/annurev.physchem.48.1.601
+
+aspelmeyer2014optomechanics:
+  type: article
+  title: Cavity optomechanics
+  authors:
+  - Markus Aspelmeyer
+  - Tobias J. Kippenberg
+  - Florian Marquardt
+  journal: Rev. Mod. Phys.
+  volume: '86'
+  pages: 1391-1452
+  year: 2014
+  doi: 10.1103/revmodphys.86.1391
+
+kok2007linear:
+  type: article
+  title: Linear optical quantum computing with photonic qubits
+  authors:
+  - Pieter Kok
+  - W. J. Munro
+  - Kae Nemoto
+  - T. C. Ralph
+  - Jonathan P. Dowling
+  - G. J. Milburn
+  journal: Rev. Mod. Phys.
+  volume: '79'
+  pages: 135-174
+  year: 2007
+  doi: 10.1103/revmodphys.79.135
+
+knill2001klm:
+  type: article
+  title: A scheme for efficient quantum computation with linear optics
+  authors:
+  - E. Knill
+  - R. Laflamme
+  - G. J. Milburn
+  journal: Nature
+  volume: '409'
+  pages: 46-52
+  year: 2001
+  doi: 10.1038/35051009
+
+reck1994unitary:
+  type: article
+  title: Experimental realization of any discrete unitary operator
+  authors:
+  - Michael Reck
+  - Anton Zeilinger
+  - Herbert J. Bernstein
+  - Philip Bertani
+  journal: Phys. Rev. Lett.
+  volume: '73'
+  pages: 58-61
+  year: 1994
+  doi: 10.1103/physrevlett.73.58
+
+clements2016interferometers:
+  type: article
+  title: Optimal design for universal multiport interferometers
+  authors:
+  - William R. Clements
+  - Peter C. Humphreys
+  - Benjamin J. Metcalf
+  - W. Steven Kolthammer
+  - Ian A. Walsmley
+  journal: Optica
+  volume: '3'
+  pages: '1460'
+  year: 2016
+  doi: 10.1364/optica.3.001460
+
+carolan2015universal:
+  type: article
+  title: Universal linear optics
+  authors:
+  - Jacques Carolan
+  - Christopher Harrold
+  - Chris Sparrow
+  - Enrique Martín-López
+  - Nicholas J. Russell
+  - Joshua W. Silverstone
+  - Peter J. Shadbolt
+  - Nobuyuki Matsuda
+  - Manabu Oguma
+  - Mikitaka Itoh
+  - Graham D. Marshall
+  - Mark G. Thompson
+  - Jonathan C. F. Matthews
+  - Toshikazu Hashimoto
+  - Jeremy L. O’Brien
+  - Anthony Laing
+  journal: Science
+  volume: '349'
+  pages: 711-716
+  year: 2015
+  doi: 10.1126/science.aab3642
+
+kuhn2002photon:
+  type: article
+  title: Deterministic Single-Photon Source for Distributed Quantum Networking
+  authors:
+  - Axel Kuhn
+  - Markus Hennrich
+  - Gerhard Rempe
+  journal: Phys. Rev. Lett.
+  volume: '89'
+  pages: 067901
+  year: 2002
+  doi: 10.1103/physrevlett.89.067901
+
+gorshkov2007storage:
+  type: article
+  title: Photon storage in-Λ-type optically dense atomic media. I. Cavity model
+  authors:
+  - Alexey V. Gorshkov
+  - Axel André
+  - Mikhail D. Lukin
+  - Anders S. Sørensen
+  journal: Phys. Rev. A
+  volume: '76'
+  pages: 033804
+  year: 2007
+  doi: 10.1103/physreva.76.033804
+
+novikova2007storage:
+  type: article
+  title: Optimal Control of Light Pulse Storage and Retrieval
+  authors:
+  - Irina Novikova
+  - Alexey V. Gorshkov
+  - David F. Phillips
+  - Anders S. Sørensen
+  - Mikhail D. Lukin
+  - Ronald L. Walsworth
+  journal: Phys. Rev. Lett.
+  volume: '98'
+  pages: '243602'
+  year: 2007
+  doi: 10.1103/physrevlett.98.243602
+
+fleischhauer2000polaritons:
+  type: article
+  title: Dark-State Polaritons in Electromagnetically Induced Transparency
+  authors:
+  - M. Fleischhauer
+  - M. D. Lukin
+  journal: Phys. Rev. Lett.
+  volume: '84'
+  pages: 5094-5097
+  year: 2000
+  doi: 10.1103/physrevlett.84.5094
+
+chan2011groundstate:
+  type: article
+  title: Laser cooling of a nanomechanical oscillator into its quantum ground state
+  authors:
+  - Jasper Chan
+  - T. P. Mayer Alegre
+  - Amir H. Safavi-Naeini
+  - Jeff T. Hill
+  - Alex Krause
+  - Simon Gröblacher
+  - Markus Aspelmeyer
+  - Oskar Painter
+  journal: Nature
+  volume: '478'
+  pages: 89-92
+  year: 2011
+  doi: 10.1038/nature10461
+
+teufel2011groundstate:
+  type: article
+  title: Sideband cooling of micromechanical motion to the quantum ground state
+  authors:
+  - J. D. Teufel
+  - T. Donner
+  - Dale Li
+  - J. W. Harlow
+  - M. S. Allman
+  - K. Cicak
+  - A. J. Sirois
+  - J. D. Whittaker
+  - K. W. Lehnert
+  - R. W. Simmonds
+  journal: Nature
+  volume: '475'
+  pages: 359-363
+  year: 2011
+  doi: 10.1038/nature10261
+
+delic2020levitated:
+  type: article
+  title: Cooling of a levitated nanoparticle to the motional quantum ground state
+  authors:
+  - Uroš Delić
+  - Manuel Reisenbauer
+  - Kahan Dare
+  - David Grass
+  - Vladan Vuletić
+  - Nikolai Kiesel
+  - Markus Aspelmeyer
+  journal: Science
+  volume: '367'
+  pages: 892-895
+  year: 2020
+  doi: 10.1126/science.aba3993
+
+tebbenjohanns2021levitated:
+  type: article
+  title: Quantum control of a nanoparticle optically levitated in cryogenic free space
+  authors:
+  - Felix Tebbenjohanns
+  - M. Luisa Mattana
+  - Massimiliano Rossi
+  - Martin Frimmer
+  - Lukas Novotny
+  journal: Nature
+  volume: '595'
+  pages: 378-382
+  year: 2021
+  doi: 10.1038/s41586-021-03617-w
+
+lodahl2015dots:
+  type: article
+  title: Interfacing single photons and single quantum dots with photonic nanostructures
+  authors:
+  - Peter Lodahl
+  - Sahand Mahmoodian
+  - Søren Stobbe
+  journal: Rev. Mod. Phys.
+  volume: '87'
+  pages: 347-400
+  year: 2015
+  doi: 10.1103/revmodphys.87.347
+
+stefanazzi2022qick:
+  type: article
+  title: 'The QICK (Quantum Instrumentation Control Kit): Readout and control for qubits and detectors'
+  authors:
+  - Leandro Stefanazzi
+  - Kenneth Treptow
+  - Neal Wilcer
+  - Chris Stoughton
+  - Collin Bradford
+  - Sho Uemura
+  - Silvia Zorzetti
+  - Salvatore Montella
+  - Gustavo Cancelo
+  - Sara Sussman
+  - Andrew Houck
+  - Shefali Saxena
+  - Horacio Arnaldi
+  - Ankur Agrawal
+  - Helin Zhang
+  - Chunyang Ding
+  - David I. Schuster
+  journal: Review of Scientific Instruments
+  volume: '93'
+  pages: 044709
+  year: 2022
+  doi: 10.1063/5.0076249
+
+reilly2015interface:
+  type: article
+  title: Engineering the quantum-classical interface of solid-state qubits
+  authors:
+  - David J Reilly
+  journal: npj Quantum Inf
+  volume: '1'
+  pages: '15011'
+  year: 2015
+  doi: 10.1038/npjqi.2015.11
+
+patra2018cryocmos:
+  type: article
+  title: Cryo-CMOS Circuits and Systems for Quantum Computing Applications
+  authors:
+  - Bishnu Patra
+  - Rosario M. Incandela
+  - Jeroen P. G. van Dijk
+  - Harald A. R. Homulle
+  - Lin Song
+  - Mina Shahmohammadi
+  - Robert Bogdan Staszewski
+  - Andrei Vladimirescu
+  - Masoud Babaie
+  - Fabio Sebastiano
+  - Edoardo Charbon
+  journal: IEEE J. Solid-State Circuits
+  volume: '53'
+  pages: 309-321
+  year: 2018
+  doi: 10.1109/jssc.2017.2737549
+
+bardin2019cryocmos:
+  type: article
+  title: Design and Characterization of a 28-nm Bulk-CMOS Cryogenic Quantum Controller Dissipating Less
+    Than 2 mW at 3 K
+  authors:
+  - Joseph C. Bardin
+  - Ted White
+  - Marissa Giustina
+  - Kevin J. Satzinger
+  - Kunal Arya
+  - Pedram Roushan
+  - Benjamin Chiaro
+  - Julian Kelly
+  - Zijun Chen
+  - Brian Burkett
+  - Yu Chen
+  - Evan Jeffrey
+  - Andrew Dunsworth
+  - Austin Fowler
+  - Brooks Foxen
+  - Craig Gidney
+  - Rob Graff
+  - Paul Klimov
+  - Josh Mutus
+  - Matthew J. McEwen
+  - Matthew Neeley
+  - Charles J. Neill
+  - Erik Lucero
+  - Chris Quintana
+  - Amit Vainsencher
+  - Hartmut Neven
+  - John Martinis
+  - Trent Huang
+  - Sayan Das
+  - Daniel Thomas Sank
+  - Ofer Naaman
+  - Anthony Edward Megrant
+  - Rami Barends
+  journal: IEEE J. Solid-State Circuits
+  volume: '54'
+  pages: 3043-3060
+  year: 2019
+  doi: 10.1109/jssc.2019.2937234
+
+xue2021cmos:
+  type: article
+  title: CMOS-based cryogenic control of silicon quantum circuits
+  authors:
+  - Xiao Xue
+  - Bishnu Patra
+  - Jeroen P. G. van Dijk
+  - Nodar Samkharadze
+  - Sushil Subramanian
+  - Andrea Corna
+  - Brian Paquelet Wuetz
+  - Charles Jeon
+  - Farhana Sheikh
+  - Esdras Juarez-Hernandez
+  - Brando Perez Esparza
+  - Huzaifa Rampurawala
+  - Brent Carlton
+  - Surej Ravikumar
+  - Carlos Nieva
+  - Sungwon Kim
+  - Hyung-Jin Lee
+  - Amir Sammak
+  - Giordano Scappucci
+  - Menno Veldhorst
+  - Fabio Sebastiano
+  - Masoud Babaie
+  - Stefano Pellerano
+  - Edoardo Charbon
+  - Lieven M. K. Vandersypen
+  journal: Nature
+  volume: '593'
+  pages: 205-210
+  year: 2021
+  doi: 10.1038/s41586-021-03469-4
+
+mcdermott2018sfq:
+  type: article
+  title: Quantum–classical interface based on single flux quantum digital logic
+  authors:
+  - R McDermott
+  - M G Vavilov
+  - B L T Plourde
+  - F K Wilhelm
+  - P J Liebermann
+  - O A Mukhanov
+  - T A Ohki
+  journal: Quantum Sci. Technol.
+  volume: '3'
+  pages: '024004'
+  year: 2018
+  doi: 10.1088/2058-9565/aaa3a0
+
+gustavsson2013distortions:
+  type: article
+  title: Improving Quantum Gate Fidelities by Using a Qubit to Measure Microwave Pulse Distortions
+  authors:
+  - Simon Gustavsson
+  - Olger Zwier
+  - Jonas Bylander
+  - Fei Yan
+  - Fumiki Yoshihara
+  - Yasunobu Nakamura
+  - Terry P. Orlando
+  - William D. Oliver
+  journal: Phys. Rev. Lett.
+  volume: '110'
+  pages: '040502'
+  year: 2013
+  doi: 10.1103/physrevlett.110.040502
+
+salathe2018latency:
+  type: article
+  title: Low-Latency Digital Signal Processing for Feedback and Feedforward in Quantum Computing and Communication
+  authors:
+  - Yves Salathé
+  - Philipp Kurpiers
+  - Thomas Karg
+  - Christian Lang
+  - Christian Kraglund Andersen
+  - Abdulkadir Akin
+  - Sebastian Krinner
+  - Christopher Eichler
+  - Andreas Wallraff
+  journal: Phys. Rev. Applied
+  volume: '9'
+  pages: '034011'
+  year: 2018
+  doi: 10.1103/physrevapplied.9.034011
+
+xu2021qubic:
+  type: article
+  title: 'QubiC: An Open-Source FPGA-Based Control and Measurement System for Superconducting Quantum
+    Information Processors'
+  authors:
+  - Yilun Xu
+  - Gang Huang
+  - Jan Balewski
+  - Ravi Naik
+  - Alexis Morvan
+  - Bradley Mitchell
+  - Kasra Nowrouzi
+  - David I. Santiago
+  - Irfan Siddiqi
+  journal: IEEE Trans. Quantum Eng.
+  volume: '2'
+  pages: 1-11
+  year: 2021
+  doi: 10.1109/tqe.2021.3116540
+
+ryan2017hardware:
+  type: article
+  title: Hardware for dynamic quantum computing
+  authors:
+  - Colm A. Ryan
+  - Blake R. Johnson
+  - Diego Ristè
+  - Brian Donovan
+  - Thomas A. Ohki
+  journal: Review of Scientific Instruments
+  volume: '88'
+  pages: '104703'
+  year: 2017
+  doi: 10.1063/1.5006525
+
