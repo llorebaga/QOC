@@ -6,6 +6,19 @@
 #   (python tools/groups.py check --write: the website loaded and named every PI on that date).
 # Topics are not stored here: the site derives them from the PIs' papers in the tracker.
 
+- id: biercuk-sydney
+  name: Quantum Control Laboratory
+  pis:
+  - Michael J. Biercuk
+  institution: University of Sydney
+  wikidata: Q487556
+  website: https://sydney.edu.au/science/about/our-people/academic-staff/michael-biercuk.html
+  city: Sydney
+  country: Australia
+  lat: -33.8875
+  lon: 151.19
+  checked: '2026-10-12'
+
 - id: bondar-tulane
   name: Bondar group
   pis:
@@ -175,6 +188,19 @@
   lon: 34.8092
   checked: '2026-10-12'
 
+- id: kurizki-weizmann
+  name: Kurizki group
+  pis:
+  - Gershon Kurizki
+  institution: Weizmann Institute of Science
+  wikidata: Q4182
+  website: https://www.weizmann.ac.il/chemphys/gershon/group-members
+  city: Rehovot
+  country: Israel
+  lat: 31.9075
+  lon: 34.8092
+  checked: '2026-10-12'
+
 - id: li-wustl
   name: Li group
   pis:
@@ -225,6 +251,18 @@
   country: Germany
   lat: 49.0996
   lon: 8.4319
+  checked: '2026-10-12'
+
+- id: mabuchi-stanford
+  name: Mabuchi group
+  pis:
+  - Hideo Mabuchi
+  institution: Stanford University
+  wikidata: Q41506
+  website: https://appliedphysics.stanford.edu/profile/48
+  country: United States
+  lat: 37.4275
+  lon: -122.1703
   checked: '2026-10-12'
 
 - id: marecek-ctu
