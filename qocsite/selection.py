@@ -9,7 +9,7 @@ A paper counts as a quantum-control paper if
     about optimal control or pulses.
 
 Changing TERMS changes historical counts: re-run the full harvest afterwards
-(python tools/fetch_arxiv.py --since 2010-01-01).
+(python tools/fetch_arxiv.py --since 2000-01-01).
 """
 from __future__ import annotations
 

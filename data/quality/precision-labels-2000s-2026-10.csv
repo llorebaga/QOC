@@ -1,0 +1,101 @@
+arxiv_id,year,label,title
+cond-mat/0008058,2000,R,Coherent population transfer in coupled semiconductor quantum dots
+quant-ph/0001094,2000,R,Dark-State Polaritons in Electromagnetically Induced Transparency
+quant-ph/0003097,2000,X,Coherent Control of Magneto-optical Rotation
+quant-ph/0004025,2000,R,Quantum Feedback for Protection of Schroedinger-cat states
+quant-ph/0004084,2000,R,Dynamic generation of maximally entangled photon multiplets by adiabatic passage
+quant-ph/0005091,2000,X,Mesoscopic quantum coherence in an optical lattice
+quant-ph/0006013,2000,R,"Information, disturbance and Hamiltonian quantum feedback control"
+quant-ph/0010001,2000,X,Quantum coherence and control in one- and two-photon optical systems
+quant-ph/0010031,2000,R,Complete controllability of quantum systems
+quant-ph/0011074,2000,R,Non-Markovian homodyne-mediated feedback on a two-level atom: a quantum trajectory treatment
+cond-mat/0107280,2001,R,Quantum feedback control of a solid-state two-level system
+physics/0102091,2001,R,The manipulation of massive ro-vibronic superpositions using time-frequency-resolved coherent anti-Stokes Raman scattering (TFRCARS): from quantum control to quantum computing
+quant-ph/0103060,2001,R,A Simple and Convenient Measure of NMR Rotor Fidelity
+quant-ph/0103117,2001,R,Quantum control of population inversion in the presence of spontaneous emission
+quant-ph/0105050,2001,X,Relativity of motion in quantum vacuum
+quant-ph/0106085,2001,R,Complexity of decoupling and time-reversal for n spins with pair-interactions: Arrow of time in quantum control
+quant-ph/0107141,2001,R,Electrical control of superposed quantum states evolution in quantum dot molecule by pulsed field
+quant-ph/0110057,2001,R,A stationary source of non-classical or entangled atoms
+quant-ph/0110111,2001,R,Continuous quantum error correction via quantum feedback control
+quant-ph/0112168,2001,R,Interaction cost of non-local gates
+physics/0203049,2002,R,Non-adiabatic coupling and adiabatic population transfer in quantum molecular systems
+physics/0210131,2002,R,Rapid Adiabatic Passage from an Atomic to a Molecular Condensate
+quant-ph/0201145,2002,R,Bayesian feedback versus Markovian feedback in a two-level atom
+quant-ph/0204026,2002,R,Phase Control of Nonadiabaticity-induced Quantum Chaos in An Optical Lattice
+quant-ph/0204118,2002,R,Quantum information processing in bosonic lattices
+quant-ph/0205118,2002,R,Entanglement generation by adiabatic navigation in the space of symmetric multi-particle states
+quant-ph/0208108,2002,R,"Measurement, Filtering and Control in Quantum Open Dynamical Systems"
+quant-ph/0208160,2002,R,Continuous quantum nondemolition feedback and unconditional atomic spin squeezing
+quant-ph/0210189,2002,X,Quasi-spin wave quantum memories with dynamic symmetry
+quant-ph/0211027,2002,R,"Dissipative ""Groups"" and the Bloch Ball"
+quant-ph/0301144,2003,R,The Lie Algebra Rank Condition for Non-Bilinear Quantum System
+quant-ph/0305021,2003,R,Space-Filling Curves for Quantum Control Parameters
+quant-ph/0305130,2003,R,"Efficient scheme for quantum entanglement, quantum information transfer, and quantum gate with three-level SQUID qubits in cavity QED"
+quant-ph/0306006,2003,R,Fast and robust two-qubit gates for scalable ion trap quantum computing
+quant-ph/0306187,2003,R,Adiabatic passage of collective excitations in atomic ensembles
+quant-ph/0307127,2003,R,On Quantum State Observability and Measurement
+quant-ph/0307208,2003,R,Qubit Rotation by STIRAP
+quant-ph/0308132,2003,X,Universal quantum control in irreducible state sectors: application to bosonic and spin-boson systems
+quant-ph/0309197,2003,R,Analytical solution of the optimal laser control problem in two-level systems
+quant-ph/0312080,2003,R,Pulse-driven near-resonant quantum adiabatic dynamics: lifting of quasi-degeneracy
+nlin/0402005,2004,R,Coarse-Grained Picture for Controlling Quantum Chaos
+physics/0412048,2004,R,Zero-Temperature Theory of Collisionless Rapid Adiabatic Passage from a Fermi Degenerate Gas of Atoms to a Bose-Einstein Condensate of Molecules
+quant-ph/0403086,2004,R,Measurement-assisted Coherent Control
+quant-ph/0404038,2004,R,Advances in decoherence control
+quant-ph/0404064,2004,R,NMR Techniques for Quantum Control and Computation
+quant-ph/0407192,2004,R,Bellman equations for optimal feedback control of qubit states
+quant-ph/0410048,2004,R,Stabilizing qubit coherence via tracking-control
+quant-ph/0410106,2004,X,Liquid state NMR simulations of quantum many-body problems
+quant-ph/0411159,2004,R,Energy Level Sets for the Morse Potential
+quant-ph/0411160,2004,R,Optimal Control of Quantum Systems and a Generalized Level Set Method
+quant-ph/0501001,2005,X,"Manipulative resonant nonlinear optics: nonlinear interference effects and quantum control of nonlinearity, dispersion, transparency and inversionless amplification in an extended strongly-absorbing inhomogeneously-broadened medium"
+quant-ph/0502173,2005,R,Time Optimal Control of Coupled Qubits Under Non-Stationary Interactions
+quant-ph/0503206,2005,R,Markovian feedback to control continuous variable entanglement
+quant-ph/0506038,2005,R,Controlling quantum systems by embedded dynamical decoupling schemes
+quant-ph/0506187,2005,R,Quantum feedback cooling of a single trapped ion in front of a mirror
+quant-ph/0507181,2005,R,Quantum information transport to multiple receivers
+quant-ph/0508053,2005,R,High fidelity one-qubit operations under random telegraph noise
+quant-ph/0508123,2005,X,Entanglement of Trapped-Ion Clock States
+quant-ph/0509024,2005,R,Mechanisms in Adaptive Feedback Control: Photoisomerization in a Liquid
+quant-ph/0512063,2005,R,Quantum Heat Engines Using Superconducting Quantum Circuits
+cond-mat/0607222,2006,X,Adiabatic feedback control of Hamiltonian systems
+physics/0610214,2006,X,Ultracold atom-molecule collisions and bound states in magnetic fields: tuning zero-energy Feshbach resonances in He-NH (3Sigma-)
+quant-ph/0601213,2006,R,"Improvement by laser quenching of an ""atom diode"": a one-way barrier for ultra-cold atoms"
+quant-ph/0602235,2006,R,Robust observer for uncertain linear quantum systems
+quant-ph/0605015,2006,R,Applications of Feedback Control in Quantum Systems
+quant-ph/0605252,2006,R,Photoassociation adiabatic passage of ultracold Rb atoms to form ultracold Rb_2 molecules
+quant-ph/0609037,2006,R,Optimal Control for Generating Quantum Gates in Open Dissipative Systems
+quant-ph/0610006,2006,R,Optimal control of entanglement via quantum feedback
+quant-ph/0611166,2006,R,Robust optimal quantum gates for Josephson charge qubits
+quant-ph/0612160,2006,R,Alternative scheme for two-qubit conditional phase gate by adiabatic passage under dissipation
+0704.0763,2007,R,Coherent control of atomic tunneling
+0705.2312,2007,X,Readout of solid-state charge qubits using a single-electron pump
+0707.0021,2007,R,Towards Fault Tolerant Adiabatic Quantum Computation
+0707.0063,2007,R,The STIRAP-based unitary decelerating and accelerating processes of a single free atom
+0707.3001,2007,R,Optimality of feedback control strategies for qubit purification
+0710.0956,2007,R,Second Law of Thermodynamics with Discrete Quantum Feedback Control
+0710.3145,2007,R,Population transfer between two quantum states by piecewise chirping of femtosecond pulses: Theory and experiment
+0712.1823,2007,X,Valley interference effects on a donor electron close to a Si/SiO2 interface
+0712.1860,2007,R,"Integrability, stability, and adiabaticity in nonlinear stimulated Raman adiabatic passage"
+quant-ph/0701094,2007,R,Optimal quantum control of Bose Einstein condensates in magnetic microtraps
+0801.0721,2008,R,Global controllability with a single local actuator
+0801.0942,2008,R,Entangling distant quantum dots using classical interference
+0802.2364,2008,X,Quantum Stirring in low dimensional devices
+0803.0397,2008,R,Entanglement of superconducting qubits via microwave fields: classical and quantum regimes
+0803.2411,2008,R,Numerical Analysis of Optimized Coherent Control Pulses
+0808.1181,2008,R,Analog Grover search by adiabatic passage in a cavity-laser-atom system
+0809.0768,2008,R,Coherent control of dressed matter waves
+0810.5116,2008,R,Ensemble Control of Finite Dimensional Time-Varying Linear Systems
+0811.3409,2008,R,Coherent Patterning of Matter Waves with Subwavelength Localization
+0812.0361,2008,X,Stimulated Raman adiabatic passage analogs in classical physics
+0905.2490,2009,R,Coherent Tunneling Adiabatic Passage with the Alternating Coupling Scheme
+0906.1727,2009,X,Constructing 2D and 3D cluster states with photonic modules
+0906.1830,2009,R,Entanglement generation between distant atoms by Lyapunov control
+0906.3976,2009,R,"Adiabatic Splitting, Transport, and Self-Trapping of a Bose-Einstein Condensate in a Double-Well Potential"
+0910.0362,2009,R,Optimal Control for Open Quantum Systems: Qubits and Quantum Gates
+0911.4657,2009,R,Optimal control of circuit quantum electrodynamics in one and two dimensions
+0912.1806,2009,R,Complete controllability of finite quantum systems with two-fold energy level degeneracy
+0912.2035,2009,R,Towards optimized suppression of dephasing in systems subject to pulse timing constraints
+0912.2684,2009,X,Variational Optimal-Control Problems with Delayed Arguments on Time Scales
+0912.2943,2009,X,Interaction of a propagating guided matter wave with a localized potential

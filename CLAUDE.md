@@ -19,7 +19,7 @@ Static website about quantum optimal control. See README.md (structure) and ROAD
 - Articles: `content/topics/<id>.md`; `[@key]` citations, `[[topic-id]]` links, `$…$`/`$$…$$` math. New articles start as
   `status: draft`; only the user marks them `reviewed`. Verify software URLs (gh api / curl) before listing them.
 - Papers: `tools/fetch_arxiv.py`. The selection rule lives in `qocsite/selection.py` (shown on the About page).
-  *Widening* it (new TERMS) requires a full re-harvest (`--since 2010-01-01`); *tightening* it only needs
+  *Widening* it (new TERMS) requires a full re-harvest (`--since 2000-01-01`); *tightening* it only needs
   `--reselect`. Any rule change must be validated: download all quant-ph papers of a few months and check the API
   query misses nothing, then label a sample of the affected papers. arXiv rate-limits: never run other arXiv API calls
   while a harvest is running. Use https://export.arxiv.org.

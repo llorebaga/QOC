@@ -2,8 +2,8 @@
 
 Usage
 -----
-    python tools/fetch_arxiv.py --since 2010-01-01     # full harvest (month by month)
-    python tools/fetch_arxiv.py --since 2010-01-01 --until 2019-12-31   # back-fill a period
+    python tools/fetch_arxiv.py --since 2000-01-01     # full harvest (month by month)
+    python tools/fetch_arxiv.py --since 2000-01-01 --until 2009-12-31   # back-fill a period
     python tools/fetch_arxiv.py --days 10              # daily update: last 10 days (overlap is safe)
 
 How a paper is selected

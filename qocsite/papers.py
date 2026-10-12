@@ -58,6 +58,10 @@ def yearly_stats(papers: list[dict], first_year: int | None = None, today: dt.da
                         max(r["share"] for r in rows if r["share"] is not None))
                        if any(r["share"] is not None for r in rows) else None,
         "share_latest": complete[-1]["share"] if complete else None,
+        "share_first": complete[0]["share"] if complete else None,
+        "share_recent": (lambda rec: (min(rec), max(rec)) if rec else None)(
+            [r["share"] for r in complete[-10:] if r["share"] is not None]),
+        "years_span": len(rows),
     }
 
 
@@ -90,7 +94,16 @@ def column_chart(rows: list[dict], width: int = 640, height: int = 280) -> dict:
     bar_w = min(24.0, slot * 0.5)
     y = lambda v: top + ph * (1 - v / ymax)
     peak = max(rows, key=lambda r: (r["count"] if not r["partial"] else -1)) if rows else None
-    year_every = 1 if len(rows) <= 10 else 2      # thin the axis labels, counting back so the latest year is shown
+    # axis labels: every year for short ranges, every other year for medium ones, round years (2000, 2005, …)
+    # for long ones — always including the latest year
+    def show_year(i: int) -> bool:
+        if len(rows) <= 10:
+            return True
+        if len(rows) <= 20:
+            return (len(rows) - 1 - i) % 2 == 0
+        y = rows[i]["year"]
+        last = rows[-1]["year"]
+        return y == last or (y % 5 == 0 and last - y >= 3)
     bars = []
     for i, r in enumerate(rows):
         cx = left + slot * (i + 0.5)
@@ -101,7 +114,7 @@ def column_chart(rows: list[dict], width: int = 640, height: int = 280) -> dict:
                 f"H{x1 - rad:.1f}Q{x1:.1f} {yt:.1f} {x1:.1f} {yt + rad:.1f}V{yb:.1f}Z") if r["count"] else ""
         label = i == 0 or r["partial"] or r is peak
         bars.append({**r, "cx": round(cx, 1), "path": path, "label_y": round(yt - 8, 1), "show_label": label,
-                     "show_year": (len(rows) - 1 - i) % year_every == 0,
+                     "show_year": show_year(i),
                      "hit_x": round(left + slot * i, 1), "hit_w": round(slot, 1)})
     ticks = [{"value": v, "y": round(y(v), 1)} for v in range(0, ymax + 1, step)]
     return {"width": width, "height": height, "left": left, "right": width - right, "top": top,

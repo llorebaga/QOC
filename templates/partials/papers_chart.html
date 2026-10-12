@@ -7,7 +7,7 @@
 {% set prev = s.rows[-2] if s.rows|length > 1 else none %}
 <section class="wrap field-stats" aria-labelledby="stats-title">
   <div class="section-head">
-    <h2 id="stats-title">A growing field, in step with quantum physics</h2>
+    <h2 id="stats-title">{{ s.years_span }} years of quantum control on arXiv</h2>
   </div>
 
   <div class="stats-grid">
@@ -22,7 +22,8 @@
           <dt>Papers in {{ last.year }}</dt>
           <dd>{{ "{:,}".format(last.count) }}</dd>
           {% if s.growth_since_first is not none %}
-          <p class="stat-delta">{{ '▲' if s.growth_since_first >= 0 else '▼' }} {{ "{:+.0%}".format(s.growth_since_first) }} vs {{ s.first_year }}</p>
+          {% if s.growth_since_first > 2 %}<p class="stat-delta">▲ ×{{ "{:.0f}".format(1 + s.growth_since_first) }} since {{ s.first_year }}</p>
+          {% else %}<p class="stat-delta">{{ '▲' if s.growth_since_first >= 0 else '▼' }} {{ "{:+.0%}".format(s.growth_since_first) }} vs {{ s.first_year }}</p>{% endif %}
           {% endif %}
         </div>
         {% endif %}
@@ -37,7 +38,7 @@
         <div class="stat stat-wide">
           <dt>Share of all quant-ph papers{% if last %} ({{ last.year }}){% endif %}</dt>
           <dd>{{ "{:.1%}".format(s.share_latest) }}</dd>
-          <p class="stat-delta">between {{ "{:.1%}".format(s.share_range[0]) }} and {{ "{:.1%}".format(s.share_range[1]) }} every year since {{ s.first_year }}</p>
+          <p class="stat-delta">up from {{ "{:.1%}".format(s.share_first) }} in {{ s.first_year }}; between {{ "{:.1%}".format(s.share_recent[0]) }} and {{ "{:.1%}".format(s.share_recent[1]) }} in each of the last ten years</p>
         </div>
         {% endif %}
       </dl>

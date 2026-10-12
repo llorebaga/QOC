@@ -54,7 +54,7 @@ understand any area; an expert can use it as a quick reference.
 - [x] `tools/fetch_arxiv.py`: month-by-month harvest of arXiv, validated query strategy
       (API used as a superset pre-filter; 0/75 misses against a full month of quant-ph)
 - [x] Transparent selection rule in `qocsite/selection.py`, documented on the About page
-- [x] Archive of every QOC paper since 2010 in `data/papers/<year>.json` (2020+ harvested first; 2010–2019 back-filled)
+- [x] Archive of every QOC paper since 2000 in `data/papers/<year>.json` (2020+ harvested first; 2000–2019 back-filled)
 - [x] Daily GitHub Action (`.github/workflows/papers.yml`) fetching the last 14 days and committing
 - [x] Papers-per-year chart on the home page, regenerated at every build
 - [x] Topic classifier: phrase rules per topic (`data/classifier.yaml`, `qocsite/classify.py`), tuned on 60

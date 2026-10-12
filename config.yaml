@@ -51,7 +51,7 @@ sections:
       New quantum control papers from arXiv, collected automatically every day
       and classified into the topics of the field map.
     features:
-      - Daily automatic fetch from arXiv, filtered for relevance (running — every paper since 2010 is archived)
+      - Daily automatic fetch from arXiv, filtered for relevance (running — every paper since 2000 is archived)
       - Classification into field-map topics, with filters and search (built)
       - Author pages — click any author to see all their tracked papers (built)
       - Atom feeds per topic and a weekly digest (built)
