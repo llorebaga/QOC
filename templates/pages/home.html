@@ -21,7 +21,6 @@
 
 <section class="wrap intro">
   <div class="intro-text">
-    <p class="eyebrow">The idea in one paragraph</p>
     <h2>What is quantum optimal control?</h2>
     <p>Quantum optimal control asks how to shape the time-dependent fields that drive a quantum system —
       laser, microwave, radio-frequency or voltage pulses — so that it performs a task as well as
@@ -45,11 +44,64 @@
   </figure>
 </section>
 
+<section class="wrap pulses-circuits" aria-labelledby="pc-title">
+  <div class="section-head">
+    <h2 id="pc-title">Optimal control and the circuit model</h2>
+    <p class="section-lead">Quantum algorithms are usually written in the circuit model: a sequence of gates from a
+      small, fixed set, each carried out by a calibrated pulse. Quantum optimal control works one level lower. It designs
+      the pulses themselves — for one gate, for a block of gates, or for a whole task such as preparing a state or
+      sensing a field. The two views are complementary: optimal control produces the gates the circuit model takes for
+      granted, and <a href="{{ url('topics/pulse-level-compilation/') }}">pulse-level compilation</a> lets a program
+      use either where it pays off.</p>
+  </div>
+  <div class="pc-grid">
+    <div class="card pc-card">
+      <h3>Designing pulses</h3>
+      <h4>Strengths</h4>
+      <ul class="pc-list pc-pro">
+        <li>Uses the full dynamics of the hardware, so operations can be shorter and closer to the
+          <a href="{{ url('topics/quantum-speed-limits/') }}">speed limit</a>.</li>
+        <li>Can replace a whole block of gates with one pulse, shortening programs and their exposure to noise.</li>
+        <li>Handles device-specific effects — <a href="{{ url('topics/drag/') }}">leakage</a>, crosstalk, distortion —
+          directly in the design.</li>
+        <li>Targets any task, not only unitary gates: state preparation, sensing, dissipative and open-system control.</li>
+      </ul>
+      <h4>Limitations</h4>
+      <ul class="pc-list pc-con">
+        <li>Needs an accurate model of the device, or costly <a href="{{ url('topics/closed-loop/') }}">optimization
+          on the hardware</a>.</li>
+        <li>Optimized pulses are specific to one device and harder to benchmark and verify.</li>
+        <li>Numerical design scales with the Hilbert-space dimension, so it is limited to a few qubits or to blocks.</li>
+        <li>Its errors are less regular, which complicates error-correction analyses.</li>
+      </ul>
+    </div>
+    <div class="card pc-card">
+      <h3>Composing gates</h3>
+      <h4>Strengths</h4>
+      <ul class="pc-list pc-pro">
+        <li>A hardware-independent abstraction: the same program runs on different devices.</li>
+        <li>A small gate set is calibrated once and benchmarked, for example with randomized benchmarking.</li>
+        <li><a href="{{ url('topics/error-correction/') }}">Error correction</a> and fault tolerance are built on gates
+          with simple error models.</li>
+        <li>Scales by composition: large circuits are built from verified parts.</li>
+      </ul>
+      <h4>Limitations</h4>
+      <ul class="pc-list pc-con">
+        <li>Decompositions into native gates can be much longer than the operation requires.</li>
+        <li>Fixed gate times and idle periods spend coherence that near-term devices cannot spare.</li>
+        <li>The abstraction hides hardware features that a pulse could exploit.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="pc-more">Where the two meet: <a href="{{ url('topics/gate-synthesis/') }}">gate synthesis</a>,
+    <a href="{{ url('topics/pulse-level-compilation/') }}">pulse-level compilation</a> and
+    <a href="{{ url('topics/variational-algorithms/') }}">variational algorithms as control</a>.</p>
+</section>
+
 {% include "partials/papers_chart.html" %}
 
 <section class="wrap explore">
   <div class="section-head">
-    <p class="eyebrow">Explore</p>
     <h2>Everything about the field, in one place</h2>
   </div>
   <div class="card-grid">
@@ -66,7 +118,6 @@
 
 <section class="wrap families">
   <div class="section-head">
-    <p class="eyebrow">The field at a glance</p>
     <h2>{{ taxonomy.families|length }} areas, {{ taxonomy.topics|length }} topics — and growing</h2>
     <p class="section-lead">Every topic has its own page. Articles are written family by family — with the
       equations that matter and the papers they come from — and linked to related topics, papers, groups and

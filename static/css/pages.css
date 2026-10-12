@@ -439,3 +439,17 @@ a.topic-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover
 .group-aside a { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
 .group-aside .icon { width: 18px; height: 18px; }
 @media (max-width: 900px) { .group-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
+
+/* home: optimal control and the circuit model */
+.pulses-circuits { padding-block: 24px 8px; }
+.pc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 8px; }
+.pc-card { padding: 22px 24px; }
+.pc-card h3 { font-size: 1.2rem; margin-bottom: .4em; }
+.pc-card h4 { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 16px 0 6px; }
+.pc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: .94rem; color: var(--ink-2); }
+.pc-list li { position: relative; padding-left: 22px; line-height: 1.5; }
+.pc-list li::before { position: absolute; left: 0; top: 0; font-weight: 700; }
+.pc-pro li::before { content: "+"; color: var(--st-live); }
+.pc-con li::before { content: "−"; color: var(--st-building); }
+.pc-more { margin-top: 14px; color: var(--ink-2); font-size: .94rem; }
+@media (max-width: 800px) { .pc-grid { grid-template-columns: minmax(0, 1fr); } }
