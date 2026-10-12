@@ -14,9 +14,10 @@ def load_papers(folder: Path) -> list[dict]:
     return papers
 
 
-def yearly_stats(papers: list[dict], first_year: int = 2020, today: dt.date | None = None) -> dict:
+def yearly_stats(papers: list[dict], first_year: int = 2020, today: dt.date | None = None,
+                 quantph_totals: dict | None = None) -> dict:
     """Papers per year by date of first submission, with a like-for-like comparison
-    for the current (incomplete) year."""
+    for the current (incomplete) year, and the share of all quant-ph papers when totals are known."""
     today = today or dt.date.today()
     years = list(range(first_year, today.year + 1))
     dates = [dt.date.fromisoformat(p["published"]) for p in papers]
@@ -29,7 +30,14 @@ def yearly_stats(papers: list[dict], first_year: int = 2020, today: dt.date | No
             cutoff = today.replace(year=year, day=28)
         return sum(1 for d in dates if d.year == year and d <= cutoff)
 
-    rows = [{"year": y, "count": per_year.get(y, 0), "partial": y == today.year, "ytd": ytd(y)} for y in years]
+    qph = Counter(dt.date.fromisoformat(p["published"]).year for p in papers if "quant-ph" in p.get("categories", []))
+    totals = {int(k): v for k, v in (quantph_totals or {}).items()}
+
+    def share(y: int):
+        return qph.get(y, 0) / totals[y] if totals.get(y) else None
+
+    rows = [{"year": y, "count": per_year.get(y, 0), "partial": y == today.year, "ytd": ytd(y), "share": share(y)}
+            for y in years]
     complete = [r for r in rows if not r["partial"]]
     latest = max(dates) if dates else None
     current = rows[-1] if rows else None
@@ -45,6 +53,10 @@ def yearly_stats(papers: list[dict], first_year: int = 2020, today: dt.date | No
         "growth_since_first": (complete[-1]["count"] / complete[0]["count"] - 1) if len(complete) > 1 and complete[0]["count"] else None,
         "ytd_change": (current["ytd"] / prev["ytd"] - 1) if current and prev and prev["ytd"] else None,
         "today": today.isoformat(),
+        "share_range": (min(r["share"] for r in rows if r["share"] is not None),
+                        max(r["share"] for r in rows if r["share"] is not None))
+                       if any(r["share"] is not None for r in rows) else None,
+        "share_latest": complete[-1]["share"] if complete else None,
     }
 
 

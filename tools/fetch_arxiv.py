@@ -184,7 +184,13 @@ def main() -> None:
     g.add_argument("--days", type=int, help="fetch the last N days")
     g.add_argument("--reselect", action="store_true",
                    help="re-apply the selection rule to the stored archive (after tightening it; no API calls)")
+    g.add_argument("--totals", action="store_true",
+                   help="refresh the number of all quant-ph papers for every archived year (context for the chart)")
     args = ap.parse_args()
+
+    if args.totals:
+        update_totals(sorted(int(f.stem) for f in OUT.glob("*.json")))
+        return
 
     if args.reselect:
         removed = 0
@@ -210,6 +216,26 @@ def main() -> None:
         print(f"{a} .. {b}: {len(papers):4d} candidates, {kept:4d} selected, {added:4d} new, {updated:4d} updated",
               flush=True)
     print(f"done: {total_added} new, {total_updated} updated")
+    update_totals(sorted({since.year, today.year}))
+
+
+TOTALS = ROOT / "data" / "quality" / "quantph-totals.json"
+
+
+def update_totals(years: list[int]) -> None:
+    """Record the number of all quant-ph submissions per year (incl. cross-lists), for the share shown on the site."""
+    totals = json.loads(TOTALS.read_text(encoding="utf-8")) if TOTALS.exists() else {}
+    for y in years:
+        query = f"cat:quant-ph AND submittedDate:[{y}01010000 TO {y}12312359]"
+        params = {"search_query": query, "start": 0, "max_results": 1}
+        req = urllib.request.Request(API + "?" + urllib.parse.urlencode(params), headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=120) as r:
+            n, _ = parse(r.read().decode("utf-8"))
+        totals[str(y)] = n
+        print(f"quant-ph total {y}: {n}")
+        time.sleep(DELAY)
+    TOTALS.parent.mkdir(parents=True, exist_ok=True)
+    TOTALS.write_text(json.dumps(dict(sorted(totals.items())), indent=1) + "\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

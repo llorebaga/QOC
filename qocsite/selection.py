@@ -23,8 +23,10 @@ TERMS = [
     "counter-diabatic", "quantum speed limit", "quantum speed limits", "composite pulse", "composite pulses",
     "dynamical decoupling", "controllability", "control landscape", "control landscapes",
     "feedback control", "Lyapunov control", "robust control",
-    # added 2026-10-11 after a recall analysis (papers citing core QOC works); aligned with field-map topics
-    "dynamic decoupling", "adiabatic passage", "STIRAP", "Floquet engineering", "Hamiltonian engineering",
+    # added 2026-10-11 after a recall analysis (papers citing core QOC works); aligned with field-map topics.
+    # ("Floquet engineering" and "Hamiltonian engineering" were tried and dropped: ~40-50% precision in a
+    #  hand-labelled sample, since both also name large physics subfields that are not about control.)
+    "dynamic decoupling", "adiabatic passage", "STIRAP",
     "inverse engineering", "time-optimal", "pulse-level", "derivative removal", "quantum feedback",
     "coherent feedback", "measurement-based feedback", "shaped pulse", "shaped pulses",
     "control protocol", "control protocols",

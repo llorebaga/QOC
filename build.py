@@ -200,8 +200,12 @@ def build(base: str | None = None, quiet: bool = False) -> None:
     url = env.globals["url"]
     articles = load_articles(taxonomy, references, url)
     papers = load_papers(ROOT / "data" / "papers")
-    stats = yearly_stats(papers)
-    env.globals.update(articles=articles, paper_stats=stats, selection=selection,
+    totals_file = ROOT / "data" / "quality" / "quantph-totals.json"
+    totals = json.loads(totals_file.read_text(encoding="utf-8")) if totals_file.exists() else None
+    stats = yearly_stats(papers, quantph_totals=totals)
+    quality_file = ROOT / "data" / "quality" / "summary.yaml"
+    quality = load_yaml(quality_file) if quality_file.exists() else None
+    env.globals.update(articles=articles, paper_stats=stats, selection=selection, quality=quality,
                        fmt_ref=lambda key: Markup(format_reference(references[key])),
                        references=references)
 

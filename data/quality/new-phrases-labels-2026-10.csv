@@ -1,0 +1,61 @@
+arxiv_id,year,label,matched_phrases,title
+2605.06263,2026,R,hamiltonian engineering,Beating noise in frequency estimation with squeezing and memory in continuous-variable systems
+2104.09666,2021,X,adiabatic passage,Decoherence-free quantum register of nuclear spins in diamond
+2003.10058,2020,R,"adiabatic passage, stirap",Robust stability of quantum interference realized by coexisting detuned and resonant STIRAPs
+2303.03860,2023,X,floquet engineering,Electron-spin double resonance of nitrogen-vacancy centers in diamond under strong driving field
+2212.01502,2022,R,feedback control,Measurement-based quantum thermal machines with feedback control
+2209.09297,2022,X,hamiltonian engineering,Controlling local thermalization dynamics in a Floquet-engineered dipolar ensemble
+2108.01276,2021,X,floquet engineering,Probing Operator Spreading via Floquet Engineering in a Superconducting Circuit
+2103.06098,2021,R,shortcut-to-adiabaticity,Experimental Determination of Electronic States via Digitized Shortcut-to-Adiabaticity and Sequential Dig
+2607.06789,2026,R,coherent control,Microsecond-Scale Coherent Control of a Forbidden Clock Transition with Doppler-Free Multiphoton Excitati
+2511.05031,2025,R,control protocols,Frequency collisions in parametrically modulated superconducting circuits
+2101.01987,2021,R,adiabatic passage,Experimental Creation of Single Rydberg Excitations via Adiabatic Passage
+2601.20458,2026,R,pulse-shaping,Echo Cross Resonance gate error budgeting on a superconducting quantum processor
+2409.05431,2024,R,"coherent feedback, quantum feedback",Noise Suppression via Coherent Quantum Feedback: a Schr{ö}dinger Picture Approach
+2004.05826,2020,R,stirap,Interaction induced non-reciprocal three-level quantum transport
+2004.05114,2020,R,measurement based feedback,Number-resolved photocounter for propagating microwave mode
+2102.03344,2021,R,shaped pulses,Ground-State Cooling of Levitated Magnets in Low-Frequency Traps
+2208.04161,2022,R,adiabatic passage,Excitation transfer in disordered spin chains with long-range exchange interactions
+2211.00350,2022,R,pulse-level,Evaluation of Parameterized Quantum Circuits with Cross-Resonance Pulse-Driven Entanglers
+2507.02460,2025,R,floquet engineering,Enhancing Photon Indistinguishability of Spectrally Mismatched Single Photons by Cavity Floquet Engineeri
+2602.20421,2026,X,hamiltonian engineering,Revealing Pseudo-Fermionization and Chiral Binding of One-Dimensional Anyons using Adiabatic State Prepar
+2004.01830,2020,R,quantum-feedback,Quantum-feedback-controlled macroscopic quantum nonlocality in cavity optomechanics
+2512.09043,2025,R,"floquet engineering, hamiltonian engineering",Dressed-state Hamiltonian engineering in a strongly interacting solid-state spin ensemble
+2205.12866,2022,R,adiabatic passage,Neutral atom entanglement using adiabatic Rydberg dressing
+2609.27908,2026,X,quantum feedback,"The quantum lifetime of a future-referential feedback loop: certified index, architecture floor, and ther"
+2605.19439,2026,X,quantum speed-limit,Enhancing ultracold atomic batteries using many-body resonances
+2609.00861,2026,X,optimal-control,Low-Thrust Trajectory Optimization with Quantum Computing and Sequential Convex Programming
+2408.17048,2024,R,adiabatic passage,Efficient generation of multiqubit entanglement states using rapid adiabatic passage
+2209.00555,2022,X,"quantum feedback, quantum-feedback",Strong Converse Exponent for Entanglement-Assisted Communication
+2412.08754,2024,X,shortcut-to-adiabaticity,Quantum Zeno Engines and Heat Pumps
+2601.19988,2026,X,dynamic decoupling,Optically Addressable Molecular Spins at 2D Surfaces
+2303.11491,2023,R,optimal-control,Completely Positive Map for Noisy Driven Quantum Systems Derived by Keldysh Expansion
+2001.07604,2020,R,dynamic decoupling,Entanglement protection in higher-dimensional systems
+2111.14896,2021,X,adiabatic passage,Prospects for assembling ultracold radioactive molecules from laser-cooled atoms
+2608.17400,2026,X,dynamical-decoupling,Quantum sensors that compute: quantum computational magnetic-field sensing using a superconducting qubit
+2311.07302,2023,R,quantum feedback,Continuous Coherent Quantum Feedback with Time Delays: Tensor Network Solution
+2111.04117,2021,R,floquet engineering,Variational principle for optimal quantum controls in quantum metrology
+2207.11619,2022,X,hamiltonian engineering,Trapped Ions as an Architecture for Quantum Computing
+2310.16159,2023,R,shaped pulses,Robust shaped pulses for arrays of superconducting or semiconductor spin qubits with fixed Ising coupling
+2101.07603,2021,R,quantum feedback,Diagrammatic Approach to Scattering of Multi-Photon States in Waveguide QED
+2404.11663,2024,R,quantum feedback,Optimized measurement-free and fault-tolerant quantum error correction for neutral atoms
+2102.12204,2021,X,pulse-shaping,Scalable quantum random number generator for cryptography based on the random flip-flop approach
+2401.10362,2024,R,floquet engineering,Floquet control of interactions and edge states in a programmable quantum simulator
+2311.17219,2023,R,quantum feedback,Charge transport battery with quantum feedback
+2602.21839,2026,R,floquet engineering,Generating large-scale Greenberger-Horne-Zeilinger-like states in lattice spin systems
+2302.04167,2023,R,composite-pulse,Dynamical-Corrected Nonadiabatic Geometric Quantum Computation
+2005.14594,2020,R,time-optimal,Purity Speed Limit of Open Quantum Systems from Magic Subspaces
+2502.01125,2025,X,floquet engineering,"Beyond Conventional Pairing: Bosonic Quartic Superfluidity, Exotic XY Magnetism, and Phase Criticality"
+2510.10334,2025,X,coherent feedback,Monogamy of Gaussian quantum steering and entanglement in a hybrid qubit-cavity optomagnonic system with
+2106.05990,2021,R,shortcut-to-adiabaticity,Energetic advantages of non-adiabatic drives combined with non-thermal quantum states
+2404.05844,2024,R,"time optimal, time-optimal",Estimate of the time required to perform a nonadiabatic holonomic quantum computation
+2011.07979,2020,X,adiabatic passage,PyLCP: A python package for computing laser cooling physics
+2511.20255,2025,X,floquet engineering,Escaping AB caging via Floquet engineering: photo-induced long-range interference in an all-band-flat mod
+2305.08352,2023,R,counter diabatic,A general method to construct mean field counter diabatic driving for a ground state search
+2604.21230,2026,R,time-optimal,Time-optimal Qubit Reset via Environmental Spectral Structure
+2604.05048,2026,R,pulse-shaping,Unlocking a fast adiabatic CZ gate and exact residual $ZZ$ cancellation between fixed-frequency transmons
+2402.13873,2024,R,floquet engineering,Time-reversal in a dipolar quantum many-body spin system
+2601.03863,2026,R,control protocols,Two-Mode Floquet Fewest Switches Surface Hopping for Nonadiabatic Dynamics Driven by Two-Frequency Laser
+2204.13524,2022,R,optimal-control,Numerical analysis of quantum circuits for state preparation and unitary operator synthesis
+2609.03543,2026,R,optimal-control,Pulse-Controlled Topologically Protected Quantum Batteries
+2011.00199,2020,X,floquet engineering,Floquet dynamical quantum phase transitions in periodically quenched systems
