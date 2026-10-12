@@ -14,13 +14,14 @@ def load_papers(folder: Path) -> list[dict]:
     return papers
 
 
-def yearly_stats(papers: list[dict], first_year: int = 2020, today: dt.date | None = None,
+def yearly_stats(papers: list[dict], first_year: int | None = None, today: dt.date | None = None,
                  quantph_totals: dict | None = None) -> dict:
     """Papers per year by date of first submission, with a like-for-like comparison
     for the current (incomplete) year, and the share of all quant-ph papers when totals are known."""
     today = today or dt.date.today()
-    years = list(range(first_year, today.year + 1))
     dates = [dt.date.fromisoformat(p["published"]) for p in papers]
+    first_year = first_year or min((d.year for d in dates), default=today.year)   # the archive's first year
+    years = list(range(first_year, today.year + 1))
     per_year = Counter(d.year for d in dates)
     # same calendar window (1 Jan .. today's month/day) for every year, for the YTD comparison
     def ytd(year: int) -> int:
@@ -89,6 +90,7 @@ def column_chart(rows: list[dict], width: int = 640, height: int = 280) -> dict:
     bar_w = min(24.0, slot * 0.5)
     y = lambda v: top + ph * (1 - v / ymax)
     peak = max(rows, key=lambda r: (r["count"] if not r["partial"] else -1)) if rows else None
+    year_every = 1 if len(rows) <= 10 else 2      # thin the axis labels, counting back so the latest year is shown
     bars = []
     for i, r in enumerate(rows):
         cx = left + slot * (i + 0.5)
@@ -99,6 +101,7 @@ def column_chart(rows: list[dict], width: int = 640, height: int = 280) -> dict:
                 f"H{x1 - rad:.1f}Q{x1:.1f} {yt:.1f} {x1:.1f} {yt + rad:.1f}V{yb:.1f}Z") if r["count"] else ""
         label = i == 0 or r["partial"] or r is peak
         bars.append({**r, "cx": round(cx, 1), "path": path, "label_y": round(yt - 8, 1), "show_label": label,
+                     "show_year": (len(rows) - 1 - i) % year_every == 0,
                      "hit_x": round(left + slot * i, 1), "hit_w": round(slot, 1)})
     ticks = [{"value": v, "y": round(y(v), 1)} for v in range(0, ymax + 1, step)]
     return {"width": width, "height": height, "left": left, "right": width - right, "top": top,

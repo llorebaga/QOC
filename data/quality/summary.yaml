@@ -1,34 +1,35 @@
 # Results of the latest quality check of the paper archive (shown on the About page).
 # Reproduce with tools/paper_quality.py; see data/quality/README.md for the method.
 checked: 2026-10-12
-archive_size: 3905
+archive_size: 6585
 
 completeness:
   query_validation: >-
-    All quant-ph papers of three full months (Mar 2021, Feb 2024, Sep 2026; 4,388 papers) were downloaded and
-    the selection rule applied locally: the archive's API query missed none of the 172 matching papers.
+    All quant-ph papers of five full months (May 2012, Oct 2017, Mar 2021, Feb 2024, Sep 2026; 5,558 papers) were
+    downloaded and the selection rule applied locally: the archive's API query missed none of the 209 matching papers.
   refetch: >-
     Five months, including the three with the lowest counts, were re-fetched independently: identical papers.
 
 precision:
-  estimate: 0.78
-  ci95: 0.07
-  n_labelled: 178
+  estimate: 0.76
+  ci95: 0.05
+  n_labelled: 328
   note: >-
-    133 papers from a stratified random sample (19-20 per year) plus 45 from the phrases added in October 2026,
-    labelled by hand. No trend across years (70-89% per year, within sampling error).
+    283 papers from stratified random samples (15-20 per year, 2010-2026) plus 45 from the phrases added in October
+    2026, labelled by hand. No trend across years (60-93% per year, within sampling error; 75% for 2010-2019 and 78%
+    for 2020-2026).
 
 recall:
-  raw: 0.61
+  raw: 0.60
   corrected_low: 0.70
   corrected_high: 0.85
   reference: >-
-    1,351 arXiv papers (2020-2026) citing core QOC works (GRAPE, CRAB, dCRAB, Krotov, GOAT, the QOC roadmap and
-    major reviews); 61% are in the archive, 55-64% in every year. Many citing papers are not about control:
-    in a labelled sample of the missed ones, 30% were genuine QOC papers, which puts the true recall at roughly
-    70-85%.
+    1,848 arXiv papers (2010-2026) citing core QOC works (GRAPE, CRAB, dCRAB, Krotov, GOAT, the QOC roadmap and
+    major reviews); 60% are in the archive, with no trend over time (55-64% per year since 2017; noisier before, when
+    the reference set is small). Many citing papers are not about control: in a labelled sample of the missed ones,
+    30% were genuine QOC papers, which puts the true recall at roughly 70-85%.
 
 share:
   note: >-
-    QOC papers are 3.9-4.5% of all quant-ph submissions in every year since 2020: the field grows at the
-    same pace as quantum physics as a whole.
+    QOC papers rose from 3.3% to 4.4% of all quant-ph submissions between 2010 and 2014 and have stayed between 3.8%
+    and 4.5% every year since: the field now grows at the same pace as quantum physics as a whole.

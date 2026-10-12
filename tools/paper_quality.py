@@ -6,14 +6,17 @@ Usage
     python tools/paper_quality.py precision data/quality/precision-labels.csv          # precision per year
     python tools/paper_quality.py recall                                                # vs. papers citing core QOC works
     python tools/paper_quality.py share                                                 # QOC papers / all quant-ph per year
+    python tools/paper_quality.py completeness 2013-06                                  # full quant-ph month vs archive
 
 Precision: a stratified random sample of archived papers is labelled by hand
     R  about quantum control (methods, theory, protocols, limits, decoupling, shortcuts, feedback, pulses, hardware)
     Q  quantum-speed-limit theory outside a control context (in scope by design)
     X  false positive (control only mentioned in passing, generic "controllability", device demos, ...)
-Recall: arXiv papers (2020+) citing core QOC works (GRAPE, CRAB, dCRAB, Krotov, GOAT, reviews), via the
+Recall: arXiv papers (since the first archived year) citing core QOC works (GRAPE, CRAB, dCRAB, Krotov, GOAT, reviews), via the
 Semantic Scholar API. Citing a core paper does not make a paper a QOC paper, so this is a lower bound; a labelled
 sample of the missed papers gives the correction (see data/quality/README.md).
+Completeness: download *every* quant-ph paper of one month, apply the selection rule locally and check that the
+archive (built from a pre-filtered API query) contains all the matches.
 """
 from __future__ import annotations
 
@@ -90,8 +93,9 @@ def cmd_precision(path: str) -> None:
     print(f"all   {n:3d} {tot['R']:3d} {tot['Q']:3d} {tot['X']:3d}   {p:.1%} ± {1.96 * se:.1%} (95% CI)")
 
 
-def cmd_recall() -> None:
+def cmd_recall(since: int | None) -> None:
     papers = archive()
+    since = since or min(int(p["published"][:4]) for p in papers.values())
     ref: dict[str, int] = {}
     for name, doi in SEMINAL.items():
         offset = 0
@@ -101,7 +105,7 @@ def cmd_recall() -> None:
             for c in d.get("data", []):
                 cp = c["citingPaper"]
                 ax = (cp.get("externalIds") or {}).get("ArXiv")
-                if ax and cp.get("year") and 2020 <= cp["year"] <= dt.date.today().year:
+                if ax and cp.get("year") and since <= cp["year"] <= dt.date.today().year:
                     ref[ax.split("v")[0]] = cp["year"]
             if not d.get("next") or offset + 1000 >= 9000:
                 break
@@ -130,6 +134,22 @@ def cmd_share() -> None:
         time.sleep(fa.DELAY)
 
 
+def cmd_completeness(month: str) -> None:
+    """Every quant-ph paper submitted in `month` (YYYY-MM) -> selection rule -> compare with the archive."""
+    import fetch_arxiv as fa
+    from qocsite.selection import selected
+    start = dt.date.fromisoformat(month + "-01")
+    end = (start.replace(day=28) + dt.timedelta(days=4)).replace(day=1) - dt.timedelta(days=1)
+    q = f"cat:quant-ph AND submittedDate:[{start:%Y%m%d}0000 TO {end:%Y%m%d}2359]"
+    allp = fa.fetch_query(q)
+    match = {p["id"] for p in allp if selected(p)}
+    papers = archive()
+    missing = sorted(i for i in match if i not in papers)
+    print(f"{month}: {len(allp)} quant-ph papers, {len(match)} match the rule, {len(missing)} missing from the archive")
+    for i in missing:
+        print("  missing:", i)
+
+
 def _total(fa, q: str) -> str:
     import urllib.parse
     url = fa.API + "?" + urllib.parse.urlencode({"search_query": q, "max_results": 1})
@@ -142,15 +162,18 @@ def main() -> None:
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("sample"); s.add_argument("--per-year", type=int, default=20); s.add_argument("--seed", type=int, default=1)
     p = sub.add_parser("precision"); p.add_argument("labels")
-    sub.add_parser("recall")
+    r = sub.add_parser("recall"); r.add_argument("--since", type=int, help="first year (default: first archived year)")
     sub.add_parser("share")
+    c = sub.add_parser("completeness"); c.add_argument("month", help="YYYY-MM")
     a = ap.parse_args()
     if a.cmd == "sample":
         cmd_sample(a.per_year, a.seed)
     elif a.cmd == "precision":
         cmd_precision(a.labels)
     elif a.cmd == "recall":
-        cmd_recall()
+        cmd_recall(a.since)
+    elif a.cmd == "completeness":
+        cmd_completeness(a.month)
     else:
         cmd_share()
 

@@ -2,7 +2,8 @@
 
 Usage
 -----
-    python tools/fetch_arxiv.py --since 2020-01-01     # full harvest (month by month)
+    python tools/fetch_arxiv.py --since 2010-01-01     # full harvest (month by month)
+    python tools/fetch_arxiv.py --since 2010-01-01 --until 2019-12-31   # back-fill a period
     python tools/fetch_arxiv.py --days 10              # daily update: last 10 days (overlap is safe)
 
 How a paper is selected
@@ -181,6 +182,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--since", type=dt.date.fromisoformat, help="harvest from this date (YYYY-MM-DD) to today")
+    ap.add_argument("--until", type=dt.date.fromisoformat, help="with --since: stop at this date instead of today")
     g.add_argument("--days", type=int, help="fetch the last N days")
     g.add_argument("--reselect", action="store_true",
                    help="re-apply the selection rule to the stored archive (after tightening it; no API calls)")
@@ -206,8 +208,9 @@ def main() -> None:
 
     today = dt.datetime.now(dt.timezone.utc).date()
     since = args.since or today - dt.timedelta(days=args.days)
+    until = min(args.until, today) if args.until and args.since else today
     total_added = total_updated = 0
-    for a, b in months(since, today):
+    for a, b in months(since, until):
         papers = fetch_window(a, b)
         added, updated = merge(papers)
         total_added += added
@@ -216,7 +219,7 @@ def main() -> None:
         print(f"{a} .. {b}: {len(papers):4d} candidates, {kept:4d} selected, {added:4d} new, {updated:4d} updated",
               flush=True)
     print(f"done: {total_added} new, {total_updated} updated")
-    update_totals(sorted({since.year, today.year}))
+    update_totals(sorted(set(range(since.year, until.year + 1)) | {today.year}))
 
 
 TOTALS = ROOT / "data" / "quality" / "quantph-totals.json"

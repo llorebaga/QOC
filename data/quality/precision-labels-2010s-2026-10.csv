@@ -1,0 +1,151 @@
+arxiv_id,year,label,title
+1001.1138,2010,R,Quasi-classical model of dynamic molecular structure and non-destructive wavepacket manipulation by ultrashort laser pulses
+1001.2041,2010,X,Multimode analysis of non-classical correlations in double well Bose-Einstein condensates
+1002.4630,2010,R,Harnessing the GaAs quantum dot nuclear spin bath for quantum control
+1003.0897,2010,R,Electric g Tensor Control and Spin Echo of a Hole-Spin Qubit in a Quantum Dot Molecule
+1003.1523,2010,X,Theory of plasmon decay in dense plasmas and warm dense matter
+1003.2593,2010,R,Manipulation of the dynamics of many-body systems via quantum control methods
+1006.1601,2010,R,Protection of quantum systems by nested dynamical decoupling
+1006.1829,2010,R,Search complexity and resource scaling for the quantum optimal control of unitary transformations
+1008.0337,2010,X,Measuring the temperature dependence of individual two-level systems by direct coherent control
+1008.3820,2010,X,Coherent Control of Rydberg States in Silicon
+1010.0138,2010,R,Coherent control of atomic excitation using off-resonant strong few-cycle pulses
+1010.0326,2010,X,How to decompose arbitrary continuous-variable quantum operations
+1010.5134,2010,R,Coherent control of the cooperative branching ratio for nuclear x-ray pumping
+1011.1903,2010,R,Dynamical Decoupling in the Presence of Realistic Pulse Errors
+1101.0292,2010,R,Aperiodic dynamical decoupling sequences in presence of pulse errors
+1101.3461,2011,R,Coherent-feedback control strategy to suppress spontaneous switching in ultra-low power optical bistability
+1102.3713,2011,R,Optimal Control of Inhomogeneous Ensembles
+1102.4403,2011,R,Effect of control procedures on the evolution of entanglement in open quantum systems
+1103.2339,2011,R,Coherent adiabatic transport of atoms in radio-frequency traps
+1104.4648,2011,R,Controlling the quantum dynamics of a mesoscopic spin bath in diamond
+1104.5507,2011,R,Zeno effect for quantum computation and control
+1106.1313,2011,X,Microscopic description of dissipative dynamics of a level crossing transition
+1106.5676,2011,X,Coherent control and suppressed nuclear feedback of a single quantum dot hole qubit
+1107.3751,2011,X,Attojoule all-optical switching with a single quantum dot
+1107.5643,2011,R,Filtering of matter wave vibrational states via spatial adiabatic passage
+1108.3200,2011,R,Entanglement Storage Units
+1110.5262,2011,R,Multiple-spin coherence transfer in linear Ising spin chains and beyond: numerically-optimized pulses and experiments
+1111.0529,2011,R,Coherent control of atomic spin currents in a double well
+1111.5074,2011,R,Multi-Particle Quantum Szilard Engine with Optimal Cycles Assisted by a Maxwell's Demon
+1112.0485,2011,X,Manipulating ultracold atoms with a reconfigurable nanomagnetic system of domain walls
+1201.4829,2012,R,Resonant Adiabatic Passage with Three Qubits
+1205.1307,2012,R,Coherence-protected Quantum Gate by Continuous Dynamical Decoupling in Diamond
+1206.4945,2012,R,How to Transfer between Arbitrary $n$-Qubit Quantum States by Coherent Control and Simplest Switchable Noise on a Single Qubit
+1207.4741,2012,X,Steady-state many-body entanglement of hot reactive fermions
+1207.6872,2012,R,Thermodynamic Work Gain from Entanglement
+1208.3256,2012,R,Preservation of Commutation Relations and Physical Realizability of Open Two-Level Quantum Systems
+1208.6371,2012,R,Unification and limitations of error suppression techniques for adiabatic quantum computing
+1209.0923,2012,R,Generation of Dicke States with Phonon-Mediated Multi-level Stimulated Raman Adiabatic Passage
+1209.1226,2012,R,Reverse quantum state engineering using electronic feedback loops
+1209.1737,2012,Q,Quantum speed limits in open system dynamics
+1209.4247,2012,R,Concatenated composite pulses compensating simultaneous systematic errors
+1210.4311,2012,R,Modulated pulses compensating classical noise
+1211.4377,2012,R,Dynamical Decoupling in Common Environment
+1212.1138,2012,R,Quantum gates in mesoscopic atomic ensembles based on adiabatic passage and Rydberg blockade
+1212.3416,2012,R,Implicit Lyapunov Control for the Quantum Liouville Equation
+1301.2726,2013,X,Quantum control of a model qubit based on a multi-layered quantum dot
+1302.3823,2013,R,Dynamical decoupling with tailored waveplates for long distance communication using polarization qubits
+1302.5069,2013,Q,Quantum speed limit for non-Markovian dynamics
+1303.0600,2013,R,Optical Control of a Quantum Rotor
+1305.6403,2013,R,Driving at the quantum speed limit: Optimal control of a two-level system
+1305.7270,2013,X,Observing single quantum trajectories of a superconducting qubit
+1306.0556,2013,R,Optimal Lyapunov quantum control on two-level systems: convergence and extended techniques
+1309.0578,2013,R,Coherent-Classical Estimation for Quantum Linear Systems
+1309.1916,2013,R,Fast spin control in a two-electron double quantum dot by dynamical invariants
+1309.4910,2013,X,Coherent exciton dynamics in the presence of underdamped vibrations
+1309.5634,2013,R,Fast transport of two ions in an anharmonic trap
+1309.5780,2013,X,Direct and Parallel Tomography of a Quantum Process
+1310.4095,2013,R,Adiabatic quantum control hampered by entanglement
+1310.7145,2013,R,Arbitrarily accurate passband composite pulses for dynamical suppression of amplitude noise
+1312.0949,2013,R,Robust Two-Qubit Gates for Exchange-Coupled Qubits
+1401.0657,2014,R,Tunneling-induced angular momentum for single cold atoms
+1401.1858,2014,R,Robustness of high-fidelity Rydberg gates with single-site addressability
+1402.5174,2014,R,Robustness of composite pulses to time-dependent control noise
+1404.3133,2014,R,Utilizing Nitrogen Vacancy Centers to measure oscillating magnetic fields
+1404.3182,2014,R,Characteristic Operator Functions for Quantum Input-Plant-Output Models & Coherent Control
+1405.5319,2014,R,Design of a Photonic Lattice Using Shortcuts to Adiabaticity
+1405.5950,2014,R,Characterization of control noise effects in optimal quantum unitary dynamics
+1405.6079,2014,R,Time limited optimal dynamics beyond the Quantum Speed Limit
+1405.6255,2014,R,Generation of atomic NOON states via adiabatic passage
+1407.7491,2014,R,Minimum Time Optimal Synthesis for a Control System on SU(2)
+1409.7473,2014,R,Modular Quantum Memories Using Passive Linear Optics and Coherent Feedback
+1409.7497,2014,R,Exploiting Non-Markovianity of the Environment for Quantum Control
+1410.3891,2014,R,Accurate and robust unitary transformation of a high-dimensional quantum system
+1411.1779,2014,R,Optimized Quantum Error Correction Codes for Experiments
+1411.2177,2014,X,Controlled-Not Quantum Logic Gate in Two Strongly Coupled Semiconductor Charge Qubits
+1501.01236,2015,X,High-precision spectroscopy of ultracold molecules in an optical lattice
+1501.04577,2015,X,Theory of Dipole Induced Electromagnetic Transparency
+1501.05654,2015,X,Real-space grids and the Octopus code as tools for the development of new simulation approaches for electronic systems
+1501.06294,2015,R,Quantum logic gates from time-dependent global magnetic field in a system with constant exchange
+1502.07815,2015,R,Scaling Behavior in the Decoherence of Decoupled Multi-spin System
+1504.03926,2015,R,Performance Measure for Optimal Quantum Control
+1507.08785,2015,R,Role of control constraints in quantum optimal control
+1508.05993,2015,X,Low-Power Cross-Phase Modulation in a Metastable Xenon-Filled Cavity for Quantum Information Applications
+1508.06436,2015,R,Rotating-frame relaxation as a noise spectrum analyzer of a superconducting qubit undergoing driven evolution
+1509.01239,2015,R,"Universal set of Dynamically Protected Gates for Bipartite Qubit Networks II: Soft Pulse Implementation of the [[5,1,3]] Quantum Error Correcting Code"
+1510.02671,2015,X,On quantum phase transitions in tilted 2D lattices
+1510.04098,2015,R,Optimizing electrically controlled echo sequences for the exchange-only qubit
+1511.06800,2015,R,Thermodynamics of quantum feedback cooling
+1512.04725,2015,X,Coherent control of a solid-state quantum bit with few-photon pulses
+1512.08385,2015,R,Steering Quantum Dynamics via Bang-Bang Control: Implementing optimal fixed point quantum search algorithm
+1601.07282,2016,R,Simulated quantum process tomography of quantum gates with Rydberg superatoms
+1602.05479,2016,R,Using Spontaneous Emission of a Qubit as a Resource for Feedback Control
+1602.05685,2016,X,Atom-light superposition oscillation and Ramsey-like atom-light interferometer
+1603.01701,2016,R,Optimization of STIRAP-based state transfer under dissipation
+1603.04984,2016,X,Cutting Feynman Loops in Ultrastrong Cavity QED: Stimulated Emission and Reabsorption of Virtual Particles Dressing a Physical Excitation
+1605.07476,2016,R,Optimal control of many-body non-equilibrium quantum thermodynamics
+1606.08198,2016,R,Two-qubit gates using adiabatic passage of the Stark-tuned Förster resonances in Rydberg atoms
+1607.04159,2016,X,Anderson Localization of Composite Excitations in Disordered Optomechanical Arrays
+1607.04694,2016,R,Pulse Width Modulation for Speeding Up Quantum Optimal Control Design
+1610.06630,2016,X,Selective addressing of solid-state spins at the nanoscale via magnetic resonance frequency encoding
+1611.00104,2016,X,Quantum control of photonic entanglement with a single sub-wavelength structure
+1611.09451,2016,R,Entangled states of two quantum dots mediated by Majorana fermions
+1612.05144,2016,R,Maximizing optomechanical entanglement with optimal control
+1612.08208,2016,R,Scalable quantum circuit and control for a superconducting surface code
+1612.08389,2016,R,Spin-selective electron transfer in quantum dot array
+1701.00575,2017,R,Feasible superadiabatic-based shortcuts for fast generating 3D entanglement between two atoms
+1701.01304,2017,R,Demonstrating the decoupling regime of the electron-phonon interaction in a quantum dot using chirped optical excitation
+1701.05550,2017,Q,Computing with a single qubit faster than the computation quantum speed limit
+1704.01486,2017,R,Quantum and classical resources for unitary design of open-system evolutions
+1706.02877,2017,R,Pulsed Dynamical Decoupling for Fast and Robust Two-Qubit Gates on Trapped Ions
+1706.08577,2017,R,Incoherent qubit control using the quantum Zeno effect
+1707.03481,2017,X,Magnetic pseudo-fields in a rotating electron-nuclear spin system
+1707.09963,2017,R,Performance of shortcut-to-adiabaticity quantum engines
+1708.02129,2017,R,Revival of Raman Coherence of Trapped Atoms
+1708.08184,2017,R,Anomalous Rabi oscillations in multilevel quantum systems
+1709.05279,2017,R,High-fidelity quantum state preparation using neighboring optimal control
+1709.09387,2017,X,Robust quantum sensing with strongly interacting probe systems
+1709.09672,2017,Q,Precision thermometry and the quantum speed limit
+1711.07508,2017,X,Driving forbidden transitions in the fluxonium artificial atom
+1711.10551,2017,R,Entangling protocols due to non-Markovian dynamics
+1802.05267,2018,R,Reinforcement Learning with Neural Networks for Quantum Feedback
+1804.03118,2018,R,Continuous dynamical decoupling and decoherence-free subspaces for qubits with tunable interaction
+1805.04083,2018,Q,"Quantum speed limits for adiabatic evolution, Loschmidt echo and beyond"
+1806.03263,2018,X,Hard limits on the postselectability of optical graph states
+1807.04718,2018,R,Quantum Optimal Control for Mixed State Squeezing in Cavity Optomechanics
+1807.08122,2018,X,Photon statistics of radiation emitted by two quantum wells embedded in two optically coupled semiconductor microcavities
+1808.00726,2018,R,Catching and reversing quantum jumps and thermodynamics of quantum trajectories
+1808.00836,2018,R,"Conditioned outputs, distribution of decision times and measurement-based feedback scheme for continuous weak linear measurement of a simple quantum system"
+1808.02516,2018,R,Quantum Lyapunov control with machine learning
+1808.03003,2018,R,On-Demand Generation of Traveling Cat States Using a Parametric Oscillator
+1808.07177,2018,R,Hamiltonian engineering for adiabatic quantum computation: Lessons from shortcuts to adiabaticity
+1810.10452,2018,R,Optimal conditions for spatial adiabatic passage of a Bose-Einstein condensate
+1811.01004,2018,X,Quantum Jump Metrology
+1811.01293,2018,X,Resonant optical spin initialization and readout of single silicon vacancies in 4H-SiC
+1811.09541,2018,R,Quantum Control at the Boundary
+1901.10057,2019,R,Sensing electrons during an adiabatic coherent transport passage
+1901.11487,2019,R,Optically-Induced Highly-Efficient Detection and Separation of Chiral Molecules through Shortcuts to Adiabaticity
+1902.04190,2019,X,Spectroscopy of Wigner molecules on superfluid helium using a superconducting resonator
+1902.05879,2019,R,On exponential stabilization of N-level quantum angular momentum systems
+1903.01043,2019,R,Non-Gaussian noise spectroscopy with a superconducting qubit sensor
+1903.11732,2019,X,Quantum back-action of variable-strength measurement
+1906.02934,2019,R,An algorithm for solving unconstrained unitary quantum brachistochrone problems
+1907.07460,2019,R,Shortcuts to Adiabaticity in Driven Open Quantum Systems: Balanced Gain and Loss and Non-Markovian Evolution
+1908.05496,2019,X,Thermodynamics of Cyclic Quantum Amplifiers
+1908.07796,2019,X,Level anti-crossings of an NV center in diamond: Decoherence-free subspaces and 3D sensors of microwave magnetic fields
+1909.06612,2019,R,Circularizing Rydberg atoms with time-dependent optical traps
+1909.09216,2019,R,Control landscape for ultrafast manipulation by a qubit
+1910.03591,2019,R,Robust and efficient algorithms for high-dimensional black-box quantum optimization
+1911.06796,2019,R,Superadiabatic population transfer in a three-level superconducting circuit
+1912.11979,2019,Q,Performance Evaluation of Adiabatic Quantum Computation via Quantum Speed Limits and Possible Applications to Many-Body Systems
