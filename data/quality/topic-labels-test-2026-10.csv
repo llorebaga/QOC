@@ -1,0 +1,121 @@
+arxiv_id,topics,title
+2606.31534,machine-learning-control;photonics,Machine Learning based Optimization of CV-QKD Under Practical Constraints
+2104.01988,spins;floquet-engineering,Floquet prethermalization with lifetime exceeding 90s in a bulk hyperpolarized solid
+2505.13634,quantum-sensing;molecules,OH molecule as a quantum probe to jointly estimate electric and magnetic fields
+2210.04197,photonics;linear-quantum-systems,Normal-mode splitting in the optomechanical system with an optical parametric amplifier and coherent feedback
+2110.02315,control-hardware,Cryogenic characterization and modeling of a CMOS floating-gate device for quantum control hardware
+1609.03170,grape;open-system-control;superconducting;state-preparation,Resonator reset in circuit QED by optimal control for large open quantum systems
+1608.06962,linear-quantum-systems;photonics,Silicon nanophotonics for scalable quantum coherent feedback networks
+2509.18334,quantum-sensing,Optimal scheme for distributed quantum metrology
+2107.02789,variational-algorithms;shortcuts-to-adiabaticity,Digitized-counterdiabatic quantum approximate optimization algorithm
+1206.2399,-,Feedback-controlled laser fabrication of micromirror substrates
+2201.12486,cold-atoms,Angular topological superfluid and topological vortex in an ultracold Fermi gas
+2204.14005,quantum-thermodynamics;floquet-engineering;crab,Precision bound and optimal control in periodically modulated continuous quantum thermal machines
+2206.06064,trapped-ions;gate-synthesis;robust-optimal-control,Quantum control methods for robust entanglement of trapped ions
+1108.1703,shortcuts-to-adiabaticity;cold-atoms;geometric-control,Optimal trajectories for efficient atomic transport without final excitation
+2309.05360,robust-optimal-control;quantum-speed-limits;gate-synthesis,Robust Control of Single-Qubit Gates at the Quantum Speed Limit
+2001.05502,spins;gate-synthesis,Entanglement generation via power-of-SWAP operations between dynamic electron-spin qubits
+1610.07261,photonics;linear-quantum-systems,Enhanced entanglement of two different mechanical resonators via coherent feedback
+1710.04488,shortcuts-to-adiabaticity;open-system-control,Improving shortcuts to non-Hermitian adiabaticity for fast population transfer in open quantum systems
+2303.05921,spins;variational-algorithms,"Clustering into three groups on a quantum processor of five spins S = 1, controlled by pulses of resonant RF fields"
+2503.03884,-,A Quantum Good Authentication Protocol
+2411.08543,-,Quantum Time Travel Revisited: Noncommutative Möbius Transformations and Time Loops
+2606.05099,-,Quantum Time Lower Bounds by Permutation Invariance
+2505.03152,-,Optical vortex generation by magnons with spin-orbit-coupled light
+2308.06361,-,Quantum control of exciton wavefunctions in 2D semiconductors
+1607.03079,molecules,Optimal control of photoelectron emission by realistic waveforms
+2108.03351,state-preparation,Universal quantum state preparation via revised greedy algorithm
+2001.07479,quantum-speed-limits;feedback-control,The effect of Homodyne-based feedback control on quantum speed limit time
+2211.10383,superconducting;floquet-engineering,Programmable Heisenberg interactions between Floquet qubits
+1409.7767,molecules,Laser pulses for coherent xuv Raman excitation
+2201.05835,model-learning;feedback-control;machine-learning-control,"Quantum estimation, control and learning: opportunities and challenges"
+2209.02259,spins;feedback-control;state-preparation,Feedback-based active reset of a spin qubit in silicon
+2605.05290,-,Krylov Dynamics and Operator Growth in Time-Dependent Systems via Lie Algebras
+2602.05777,open-system-control,Efficient implementation of arbitrary Hermitian-preserving and trace-preserving maps
+2601.05231,superconducting;gate-synthesis,Scalable Suppression of XY Crosstalk by Pulse-Level Control in Superconducting Quantum Processors
+2507.01497,photonics,Fiber transmission of cluster states via multi-level time-bin encoding
+1108.3806,control-landscapes;molecules,Topology of Classical Molecular Optimal Control Landscapes in Phase Space
+2308.04098,variational-algorithms;shortcuts-to-adiabaticity,Molecular docking via quantum approximate optimization algorithm
+1802.02792,dynamical-decoupling;gate-synthesis,Optimized dynamical protection of nonclassical correlation in a quantum algorithm
+2606.00358,trapped-ions;control-hardware,Software compensation of trigger-synchronous control-frame errors in qubits and qudits
+1803.10856,many-body-control;control-landscapes;state-preparation,Glassy Phase of Optimal Quantum Control
+2205.11900,photonics,Flying-Qubit Control via a Three-level Atom with Tunable Waveguide Couplings
+2210.14521,robust-optimal-control;gate-synthesis,Geometric correspondence of noisy quantum dynamics and universal robust quantum gates
+2303.01450,control-hardware;variational-algorithms,Q-Profile: Profiling Tool for Quantum Control Stacks applied to the Quantum Approximate Optimization Algorithm
+1808.09707,-,An exact solution of the partition function for mean-field quantum spin systems without the static approximation
+1201.3151,molecules,Quantum resonances in selective rotational excitation of molecules with a sequence of ultrashort laser pulses
+1602.07144,quantum-sensing;error-correction;spins,Quantum metrology enhanced by repetitive quantum error correction
+2502.10196,molecules,Precise Quantum Control of Molecular Rotation Toward a Desired Orientation
+2607.15915,adiabatic-passage,Optimization of multistate STIRAP by pulse shaping
+1311.2266,dynamical-decoupling;quantum-sensing,Room-temperature ultra-sensitive mass spectrometer via dynamic decoupling
+1109.5344,feedback-control,Design and Stability of Discrete-Time Quantum Filters with Measurement Imperfections
+2102.11562,-,Modified quantum delayed-choice experiment without quantum control
+1805.10879,shortcuts-to-adiabaticity;quantum-thermodynamics;superconducting,Experimental demonstration of work fluctuations along a shortcut to adiabaticity with a superconducting Xmon qubit
+1008.1679,-,Optimal path for a quantum teleportation protocol in entangled networks
+1602.06261,dynamical-decoupling;filter-functions,Dynamical decoupling sequences for multi-qubit dephasing suppression and long-time quantum memory
+1702.04350,quantum-speed-limits,Scrambling the spectral form factor: unitarity constraints and exact results
+1610.07578,feedback-control;photonics,On capacity of optical communications over a lossy bosonic channel with a receiver employing the most general coherent electro-optic feedback control
+1408.6881,dynamical-decoupling;filter-functions,Preserving entanglement and nonlocality in solid-state qubits by dynamical decoupling
+2008.11563,superconducting;gate-synthesis,Picosecond operations on superconducting quantum register based on Ramsey patterns
+1409.6410,composite-pulses;gate-synthesis,High-fidelity error-resilient composite phase gates
+1704.06704,shortcuts-to-adiabaticity;quantum-thermodynamics,Energy consumption for Shortcuts To Adiabaticity
+2511.04553,variational-algorithms;shortcuts-to-adiabaticity,Scaling advantage with quantum-enhanced memetic tabu search for LABS
+2609.28294,cold-atoms;photonics,A photonic integrated comb engine for ultracold quantum gases
+2506.19122,robust-optimal-control,Existence of a robust optimal control process for efficient measurements in a two-qubit system
+2203.09080,machine-learning-control;superconducting;variational-algorithms,Experimental Quantum End-to-End Learning on a Superconducting Processor
+1710.04645,control-hardware;superconducting,Quantum--Classical Interface Based on Single Flux Quantum Digital Logic
+1908.01611,adiabatic-passage,Roadmap on STIRAP applications
+2506.09320,shortcuts-to-adiabaticity,Accelerating quantum adiabatic evolution with $π$-pulse sequences
+2006.14468,many-body-control,"Quantum chaos, equilibration and control in extremely short spin chains"
+1607.02692,geometric-control;spins,Time optimal control in coupled spin systems: a second order analysis
+1905.07328,quantum-thermodynamics,Work fluctuations in slow processes: quantum signatures and optimal control
+1903.05059,reservoir-engineering;superconducting;open-system-control;state-preparation,Reservoir Engineering using Quantum Optimal Control for Qubit Reset
+2004.01333,controllability,Theoretical Studies on Quantum Walks with a Time-varying Coin
+2208.00044,molecules,Rational pulse design for enantiomer-selective microwave three-wave mixing
+2607.05361,molecules;open-system-control,Coherent Control of Energy Transport at Room Temperature in a Noisy Bath
+1711.09439,shortcuts-to-adiabaticity;robust-optimal-control,Noise Resistant Quantum Control Using Dynamical Invariants
+2006.10686,quantum-speed-limits,Controlling the quantum speed limit time for unital maps via filtering operations
+2607.12802,variational-algorithms;state-preparation,A Variational Surrogate Approach to Finite-Horizon Quantum Control via Hardware-Efficient Ansatz
+1206.3897,robust-optimal-control,Sampled-data design for robust control of a single qubit
+2411.17187,spins;dynamical-decoupling,Quantum Orbital-State Control of a Neutral Nitrogen-Vacancy Center at Millikelvin Temperatures
+1608.01977,quantum-thermodynamics;shortcuts-to-adiabaticity,Superadiabatic quantum heat engine with a multiferroic working medium
+2609.36006,floquet-engineering;control-complexity;polynomial-optimization,Fast Hamiltonian engineering from cut polytope geometry
+2103.13098,quantum-thermodynamics,Quantum control of solid-state qubits for thermodynamic applications
+2105.07899,geometric-control,Left-invariant optimal control problems on Lie groups
+2308.01860,superconducting;open-system-control,Dissipative Dynamics of Graph-State Stabilizers with Superconducting Qubits
+2606.27907,machine-learning-control;state-preparation,End-to-End Learning of Quantum Control on Latent Dynamical Manifold
+2405.03804,pulse-level-compilation,EPOC: A Novel Pulse Generation Framework Incorporating Advanced Synthesis Techniques for Quantum Circuits
+2005.12759,machine-learning-control;state-preparation,Classifying global state preparation via deep reinforcement learning
+2006.10585,dynamical-decoupling;superconducting,Process tomography of Robust Dynamical Decoupling in Superconducting Qubits
+2110.01590,spins;dynamical-decoupling,Five-second coherence of a single spin with single-shot readout in silicon carbide
+1508.04042,quantum-thermodynamics,Work fluctuation-dissipation trade-off in heat engines
+1711.03934,spins,All-optical control of long-lived nuclear spins in rare-earth doped nanoparticles
+2402.08952,model-learning,A two-stage solution to quantum process tomography: error analysis and optimal design
+2006.08813,machine-learning-control;spins;gate-synthesis,Designing high-fidelity multi-qubit gates for semiconductor quantum dots through deep reinforcement learning
+2005.10258,variational-algorithms,An adaptive quantum approximate optimization algorithm for solving combinatorial problems on a quantum computer
+1404.0980,neutral-atoms;many-body-control;state-preparation,Dynamical crystallization in a low-dimensional Rydberg gas
+1609.03721,shortcuts-to-adiabaticity;cold-atoms,Shortcuts to adiabaticity in the double well
+2407.14018,spins,Energy efficient coherent quantum control of nitrogen vacancy (NV) spin with nanoscale magnets
+2001.01517,quantum-sensing,Quantum sensing and control of spin state dynamics in the radical pair mechanism
+1010.0940,open-system-control;krotov,Optimal control of open quantum systems: cooperative effects of driving and dissipation
+1304.4270,reservoir-engineering;state-preparation,Steady-State Entanglement by Engineered Quasi-Local Markovian Dissipation
+2508.10361,quantum-speed-limits,Saturable Quantum Speed Limits for Imaginary-Time Evolution
+2305.01169,machine-learning-control;gate-synthesis;closed-loop,Fast quantum gate design with deep reinforcement learning using real-time feedback on readout signals
+2105.02105,spins;dynamical-decoupling,Spin dynamical decoupling for generating macroscopic superpositions of a free-falling nanodiamond
+2404.15964,-,Complex Stochastic Optimal Control Foundation of Quantum Mechanics
+1911.05265,photonics;spins,Large-scale integration of near-indistinguishable artificial atoms in hybrid photonic circuits
+1401.7446,floquet-engineering,Optimal Control of Effective Hamiltonians
+1902.02466,photonics;feedback-control,Single-photon transfer using levitated cavityless optomechanics
+2604.14623,superconducting;control-hardware,Quantum Landscape of Superconducting Diodes
+1511.03893,cold-atoms;quantum-sensing,Adiabatic Mach-Zehnder interferometer in dipolar spin-1 condensate
+1803.02148,reservoir-engineering;feedback-control,Noise-induced distributed entanglement in atom-cavity-fiber system
+2408.17089,molecules;machine-learning-control;control-landscapes,Machine learning for predicting control landscape maps of quantum molecular dynamics: Laser-induced three-dimensional alignment of asymmetric top molecules
+2509.20347,quantum-speed-limits,Quantum speed limits based on Jensen-Shannon and Jeffreys divergences for general physical processes
+2304.00286,cold-atoms,Itinerant ferromagnetism entrenched by the anisotropy of spin-orbit coupling in a dipolar Fermi gas
+2601.15972,shortcuts-to-adiabaticity,Universal Digitized Counterdiabatic Driving
+1906.07112,molecules,Tracking Attosecond Electronic Coherences Using Phase-Manipulated Extreme Ultraviolet Pulses
+2506.17904,quantum-speed-limits,Attainable quantum speed limit for N-dimensional quantum systems
+2506.11920,spins;many-body-control,Collective many-body dynamics in a solid-state quantum sensor controlled through nanoscale magnetic gradients
+1410.0059,shortcuts-to-adiabaticity;many-body-control,Counterdiabatic driving of the quantum Ising model
+2403.01821,cold-atoms,Complete Interband Transitions for Non-Hermitian Spin-Orbit-Coupled Cold-Atom Systems
+1605.00256,molecules,"An Approach to ""Quantumness"" in Coherent Control"

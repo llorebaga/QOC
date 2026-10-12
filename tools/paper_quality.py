@@ -150,6 +150,44 @@ def cmd_completeness(month: str) -> None:
         print("  missing:", i)
 
 
+def cmd_topics(path: str, verbose: bool) -> None:
+    """Compare the topic classifier with hand labels (CSV: arxiv_id, topics separated by ';' or '-', title)."""
+    from qocsite.classify import load_rules, classify, explain
+    rules = load_rules(ROOT / "data" / "classifier.yaml")
+    papers = archive()
+    rows = [r for r in csv.DictReader(open(path, encoding="utf-8")) if r["arxiv_id"] in papers]
+    tp = fp = fn = 0
+    any_hit = labelled = 0
+    per_topic = collections.defaultdict(lambda: [0, 0, 0])          # tp, fp, fn
+    errors = []
+    for r in rows:
+        gold = {t for t in r["topics"].split(";") if t and t != "-"}
+        pred = set(classify(papers[r["arxiv_id"]], rules))
+        tp += len(gold & pred); fp += len(pred - gold); fn += len(gold - pred)
+        if gold:
+            labelled += 1
+            any_hit += bool(gold & pred)
+        for t in gold & pred: per_topic[t][0] += 1
+        for t in pred - gold: per_topic[t][1] += 1
+        for t in gold - pred: per_topic[t][2] += 1
+        if verbose and gold != pred:
+            p = papers[r["arxiv_id"]]
+            extra = {t: explain(p, rules, t) for t in pred - gold}
+            errors.append(f"{r['arxiv_id']} {p['title'][:70]}\n    missed: {sorted(gold - pred)}\n"
+                          f"    extra:  {extra}")
+    prec = tp / (tp + fp) if tp + fp else 0
+    rec = tp / (tp + fn) if tp + fn else 0
+    f1 = 2 * prec * rec / (prec + rec) if prec + rec else 0
+    print(f"{len(rows)} papers, {tp + fn} labelled assignments, {tp + fp} predicted")
+    print(f"precision {prec:.0%}  recall {rec:.0%}  F1 {f1:.2f}  "
+          f"papers with at least one correct topic: {any_hit}/{labelled} ({any_hit / max(labelled, 1):.0%})")
+    if verbose:
+        print("\nper topic (tp fp fn):")
+        for t, (a, b, c) in sorted(per_topic.items(), key=lambda kv: -(kv[1][1] + kv[1][2])):
+            print(f"  {t:28s} {a:3d} {b:3d} {c:3d}")
+        print("\n" + "\n".join(errors))
+
+
 def _total(fa, q: str) -> str:
     import urllib.parse
     url = fa.API + "?" + urllib.parse.urlencode({"search_query": q, "max_results": 1})
@@ -165,6 +203,7 @@ def main() -> None:
     r = sub.add_parser("recall"); r.add_argument("--since", type=int, help="first year (default: first archived year)")
     sub.add_parser("share")
     c = sub.add_parser("completeness"); c.add_argument("month", help="YYYY-MM")
+    t = sub.add_parser("topics"); t.add_argument("labels"); t.add_argument("-v", "--verbose", action="store_true")
     a = ap.parse_args()
     if a.cmd == "sample":
         cmd_sample(a.per_year, a.seed)
@@ -174,6 +213,8 @@ def main() -> None:
         cmd_recall(a.since)
     elif a.cmd == "completeness":
         cmd_completeness(a.month)
+    elif a.cmd == "topics":
+        cmd_topics(a.labels, a.verbose)
     else:
         cmd_share()
 

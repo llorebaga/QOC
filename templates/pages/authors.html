@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% block title %}Authors — QOC papers{% endblock %}
+{% block description %}Authors of the quantum control papers tracked by QOC, with all their papers since {{ paper_stats.first_year }}.{% endblock %}
+
+{% block main %}
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ url('papers/') }}">Papers</a><span aria-hidden="true">/</span><span>Authors</span></nav>
+    <h1 data-author-title>Authors</h1>
+    <p class="lead" data-author-lead>{{ "{:,}".format(tracked.authors|length) }} authors of the
+      {{ "{:,}".format(tracked.papers|length) }} tracked papers. Search for anyone, or open an author to see all their
+      papers, topics and co-authors.</p>
+  </div>
+</section>
+
+<div class="wrap tracker" data-tracker data-mode="authors" data-index="{{ url('papers/data/index.json') }}"
+     data-abstracts="{{ url('papers/data/abstracts-') }}" data-base="{{ url('') }}">
+  <div class="author-search-box" data-author-search-box>
+    <label class="tracker-search">
+      {{ icon('search') }}
+      <span class="visually-hidden">Search authors</span>
+      <input type="search" placeholder="Search authors by name…" autocomplete="off" data-author-search disabled>
+    </label>
+    <ul class="author-results" data-author-results></ul>
+  </div>
+
+  <section class="author-view" data-author-view hidden>
+    <dl class="author-stats" data-author-stats></dl>
+    <div class="author-columns">
+      <div>
+        <h2>Papers</h2>
+        <ol class="paper-list" data-tracker-list></ol>
+        <div class="tracker-more"><button class="btn btn-ghost" type="button" data-tracker-more hidden>Show more</button></div>
+      </div>
+      <aside class="author-aside">
+        <h2>Topics</h2>
+        <ul class="author-topics" data-author-topics></ul>
+        <h2>Frequent co-authors</h2>
+        <ul class="author-coauthors" data-author-coauthors></ul>
+      </aside>
+    </div>
+    <p class="muted author-note">Names are grouped automatically: spellings with and without diacritics, middle names
+      or full first names are merged when unambiguous. Different people with the same name cannot be told apart.</p>
+  </section>
+
+  <section class="author-top" data-author-top>
+    <h2>Most frequent authors</h2>
+    <ol class="author-top-list">
+      {% for a in top_authors %}
+      <li><a href="?a={{ a.slug }}">{{ a.name }}</a> <span class="muted">{{ a.count }}</span></li>
+      {% endfor %}
+    </ol>
+  </section>
+</div>
+{% endblock %}
+
+{% block scripts %}<script src="{{ asset('js/papers.js') }}" defer></script>{% endblock %}

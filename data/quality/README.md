@@ -8,6 +8,8 @@ How good are the paper counts on the home page? This folder holds the evidence.
 | `precision-labels-2026-10.csv` | Hand-labelled random sample used for the precision estimate (2020–2026) |
 | `precision-labels-2010s-2026-10.csv` | Hand-labelled random sample for the back-filled years (2010–2019, 15 per year) |
 | `new-phrases-labels-2026-10.csv` | Hand-labelled sample of papers added by the October 2026 phrases |
+| `topic-labels-dev-2026-10.csv` | 60 papers with hand-assigned field-map topics, used to tune the classifier |
+| `topic-labels-test-2026-10.csv` | 120 different papers, labelled blind, used only to measure the classifier |
 | `quantph-totals.json` | Number of all quant-ph submissions per year (refreshed daily), for the share of QOC |
 
 ## Method (October 2026)
@@ -35,12 +37,23 @@ The archive was first built for 2020–2026 and then back-filled to 2010 (`fetch
 5. **Context.** QOC papers rose from 3.3% to 4.4% of all quant-ph submissions between 2010 and 2014 and have
    been ~3.8–4.5% every year since: the field now grows with quantum physics as a whole.
 
+## Topic classification (October 2026)
+
+Papers are placed on the field map by phrase rules (`data/classifier.yaml`, scoring in `qocsite/classify.py`).
+Each paper was labelled with the topics it is *about* (method, task, platform), from title and abstract, without
+looking at the classifier's output. The rules were tuned on the dev sample (60 papers, seed 101) and frozen; the
+test sample (120 other papers, seed 202) then gave **60% precision, 82% recall**, and 89% of the papers received at
+least one correct topic. Most false positives are topics a paper mentions in passing (a platform named as an
+example, "decoherence" as motivation). One fix prompted by the test errors (generic noise words no longer count
+for open-system control) raises precision to 63% on the same — no longer blind — sample.
+
 ## Reproduce
 
 ```bash
 python tools/paper_quality.py precision data/quality/precision-labels-2026-10.csv
 python tools/paper_quality.py recall [--since 2010]
 python tools/paper_quality.py completeness 2017-10
+python tools/paper_quality.py topics data/quality/topic-labels-test-2026-10.csv [-v]
 python tools/paper_quality.py share
 python tools/paper_quality.py sample --per-year 20 --seed <new seed>   # draw a fresh sample to label
 ```

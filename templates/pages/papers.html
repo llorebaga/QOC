@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% from "partials/ui.html" import status_badge %}
+{% from "partials/paper_list.html" import paper_item %}
+{% block title %}Papers — QOC{% endblock %}
+{% block description %}Every quantum control paper on arXiv since {{ paper_stats.first_year }}, classified into the topics of the field map and updated daily.{% endblock %}
+{% block head %}<link rel="alternate" type="application/atom+xml" title="QOC — new quantum control papers" href="{{ url('papers/feed.xml') }}">{% endblock %}
+
+{% block main %}
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <p class="eyebrow">{{ "{:,}".format(tracked.papers|length) }} papers since {{ paper_stats.first_year }} · updated daily
+      {{ status_badge(section.status) }}</p>
+    <h1>Papers</h1>
+    <p class="lead">Quantum control papers on arXiv, selected by a transparent rule and placed on the
+      <a href="{{ url('map/') }}">field map</a> automatically. Search, filter by topic or year, or follow a topic's feed.</p>
+    <p class="tracker-links">
+      <a href="{{ url('papers/weekly/') }}">This week</a>
+      <a href="{{ url('papers/authors/') }}">Authors</a>
+      <a href="{{ url('papers/feed.xml') }}">{{ icon('rss') }}Feed</a>
+      <a href="{{ url('about/#paper-counting') }}">How papers are selected</a>
+    </p>
+  </div>
+</section>
+
+<div class="wrap tracker" data-tracker data-index="{{ url('papers/data/index.json') }}"
+     data-abstracts="{{ url('papers/data/abstracts-') }}" data-base="{{ url('') }}">
+  <form class="tracker-toolbar" role="search" data-tracker-form>
+    <label class="tracker-search">
+      {{ icon('search') }}
+      <span class="visually-hidden">Search titles, authors and abstracts</span>
+      <input type="search" name="q" placeholder="Search titles, authors, abstracts — e.g. GRAPE transmon" autocomplete="off">
+    </label>
+    <label class="tracker-select">
+      <span class="visually-hidden">Topic</span>
+      <select name="topic">
+        <option value="">All topics</option>
+        {% for f in taxonomy.families %}
+        <optgroup label="{{ f.title }}">
+          {% for t in f.topics %}<option value="{{ t.id }}">{{ t.title }} ({{ tracked.by_topic.get(t.id, [])|length }})</option>{% endfor %}
+        </optgroup>
+        {% endfor %}
+      </select>
+    </label>
+    <label class="tracker-select">
+      <span class="visually-hidden">Year</span>
+      <select name="year">
+        <option value="">All years</option>
+        {% for r in paper_stats.rows|reverse %}<option value="{{ r.year }}">{{ r.year }}</option>{% endfor %}
+      </select>
+    </label>
+    <button class="btn btn-ghost tracker-reset" type="reset">Clear</button>
+  </form>
+
+  <p class="tracker-status" role="status" aria-live="polite" data-tracker-status>
+    The 40 most recent papers.</p>
+  <noscript><p class="muted">Search and filters need JavaScript. Without it, the most recent papers are shown below;
+    every paper is also listed on the <a href="{{ url('papers/weekly/') }}">weekly digest</a> and in the topic feeds.</p></noscript>
+
+  <ol class="paper-list" data-tracker-list>
+    {% for p in tracked.papers[:40] %}{{ paper_item(p) }}{% endfor %}
+  </ol>
+  <div class="tracker-more"><button class="btn btn-ghost" type="button" data-tracker-more hidden>Show more</button></div>
+
+  <aside class="card tracker-note">
+    {{ icon('info') }}
+    <div>
+      <h2>How this list is made</h2>
+      <p>Every day, new arXiv papers are matched against a published <a href="{{ url('about/#paper-counting') }}">selection
+        rule</a> and assigned up to four topics of the field map by a phrase-based classifier
+        (<code>data/classifier.yaml</code>). Checked against hand-labelled papers, about {{ "{:.0%}".format(quality.topics.precision) }} of the
+        assigned topics are correct and {{ "{:.0%}".format(quality.topics.recall) }} of the right ones are found.
+        Topics are a guide for browsing, not a judgement of the papers.</p>
+    </div>
+  </aside>
+</div>
+{% endblock %}
+
+{% block scripts %}<script src="{{ asset('js/papers.js') }}" defer></script>{% endblock %}

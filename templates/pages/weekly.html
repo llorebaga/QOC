@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% from "partials/paper_list.html" import paper_item %}
+{% block title %}This week in quantum control — QOC{% endblock %}
+{% block description %}New quantum control papers on arXiv, week by week, grouped by topic.{% endblock %}
+{% block head %}<link rel="alternate" type="application/atom+xml" title="QOC — new quantum control papers" href="{{ url('papers/feed.xml') }}">{% endblock %}
+
+{% block main %}
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ url('papers/') }}">Papers</a><span aria-hidden="true">/</span><span>Weekly digest</span></nav>
+    <h1>Weekly digest</h1>
+    <p class="lead">New quantum control papers of the last four weeks, by date of first submission. Each paper is listed under its
+      best-matching topic.</p>
+  </div>
+</section>
+
+<div class="wrap narrow weekly">
+  <nav class="weekly-nav" aria-label="Weeks">
+    {% for w in weeks %}<a href="#{{ w.label }}">{{ w.label }}{% if w.current %} (so far){% endif %} <span class="muted">{{ w.papers|length }}</span></a>{% endfor %}
+  </nav>
+
+  {% for w in weeks %}
+  <section class="weekly-week" id="{{ w.label }}" aria-labelledby="h-{{ w.label }}">
+    <h2 id="h-{{ w.label }}">{{ w.start.strftime('%d %b') }} – {{ w.end.strftime('%d %b %Y') }}
+      <span class="muted">{{ w.papers|length }} paper{{ '' if w.papers|length == 1 else 's' }}{% if w.current %} so far{% endif %}</span></h2>
+    {% if not w.papers %}<p class="muted">No papers yet.</p>{% endif %}
+    {% for f in taxonomy.families %}
+      {% set items = w.papers | selectattr('topics') | list %}
+      {% set fam_items = [] %}
+      {% for p in items %}{% if taxonomy.topics[p.topics[0]].family == f.id %}{% set _ = fam_items.append(p) %}{% endif %}{% endfor %}
+      {% if fam_items %}
+      <h3 class="weekly-family" style="--fam: var(--fam-{{ f.id }})"><span class="fam-dot"></span>{{ f.title }}</h3>
+      <ol class="paper-list">{% for p in fam_items %}{{ paper_item(p) }}{% endfor %}</ol>
+      {% endif %}
+    {% endfor %}
+    {% set other = w.papers | rejectattr('topics') | list %}
+    {% if other %}
+    <h3 class="weekly-family">Not classified</h3>
+    <ol class="paper-list">{% for p in other %}{{ paper_item(p) }}{% endfor %}</ol>
+    {% endif %}
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

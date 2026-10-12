@@ -49,7 +49,7 @@ understand any area; an expert can use it as a quick reference.
 - [x] **Every topic of the map has an article (50)**
 - [ ] Review of the written articles (all 50 are drafts)
 
-## 🚧 Phase 3 — arXiv paper tracker (data pipeline running)
+## 🚧 Phase 3 — arXiv paper tracker (built; awaiting review)
 
 - [x] `tools/fetch_arxiv.py`: month-by-month harvest of arXiv, validated query strategy
       (API used as a superset pre-filter; 0/75 misses against a full month of quant-ph)
@@ -57,10 +57,11 @@ understand any area; an expert can use it as a quick reference.
 - [x] Archive of every QOC paper since 2010 in `data/papers/<year>.json` (2020+ harvested first; 2010–2019 back-filled)
 - [x] Daily GitHub Action (`.github/workflows/papers.yml`) fetching the last 14 days and committing
 - [x] Papers-per-year chart on the home page, regenerated at every build
-- [ ] Topic classifier (taxonomy aliases → evaluated against a hand-labelled sample)
-- [ ] Papers page: latest first, filter by topic/date, full-text search
-- [ ] Author pages: click any author → all their tracked papers (with name normalization)
-- [ ] RSS/Atom feed per topic; weekly digest page
+- [x] Topic classifier: phrase rules per topic (`data/classifier.yaml`, `qocsite/classify.py`), tuned on 60
+      hand-labelled papers, evaluated blind on 120 others — 60% precision, 82% recall, 89% of papers with ≥1 correct topic
+- [x] Papers page: newest first, filters by topic and year, full-text search (abstracts loaded on demand)
+- [x] Author pages: every author → all their tracked papers, topics and co-authors (name variants merged when unambiguous)
+- [x] Atom feeds (all papers and one per topic); weekly digest page; recent papers on every topic page
 
 ## Phase 4 — Research groups map
 

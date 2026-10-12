@@ -25,6 +25,10 @@ Static website about quantum optimal control. See README.md (structure) and ROAD
   while a harvest is running. Use https://export.arxiv.org.
 - Paper-count quality: `tools/paper_quality.py` (precision / recall / share) with hand labels in `data/quality/`;
   `data/quality/summary.yaml` feeds the About page. Re-run after rule changes and update the summary.
+- Topics of papers: phrase rules in `data/classifier.yaml` (scoring in `qocsite/classify.py`). After changing rules,
+  run `paper_quality.py topics` on the dev labels; report test-set numbers honestly (the test set is for measuring,
+  not tuning) and update `summary.yaml`. Classification results are cached in `.cache/` (gitignored).
+- Author identities: `qocsite/authors.py` (merging rules in its docstring).
 - The dev server rebuilds in a subprocess, so code changes apply without restarting it.
 
 ## Conventions

@@ -1,0 +1,297 @@
+# Topic classifier for the paper tracker: which field-map topics a paper is about.
+#
+# For every topic (ids from data/taxonomy.yaml):
+#   strong: characteristic phrases — enough when repeated, in the title, or supported by any other phrase
+#   weak:   phrases that count only when repeated, in the title, or alongside other phrases
+# Scoring (qocsite/classify.py): strong = 1.5 points, weak = 1 point per mention (at most 2 mentions per phrase),
+# mentions in the title count double; a topic is assigned at 2 points or more, at most 4 topics per paper
+# (the best supported ones).
+#
+# Matching: whole words, case-insensitive, spaces/hyphens interchangeable or absent, optional plural "s"/"es".
+# A phrase without spaces and with two or more capitals (GRAPE, QAOA, NV, dCRAB) is matched case-sensitively.
+# "re:" introduces a raw regular expression (case-insensitive), "RE:" a case-sensitive one.
+#
+# The rules are evaluated against hand-labelled papers (data/quality/topic-labels-*.csv):
+#   python tools/paper_quality.py topics data/quality/topic-labels-test-2026-10.csv
+
+controllability:
+  strong: [controllability, dynamical Lie algebra, Lie algebra rank condition, Lie-algebraic, reachable set,
+           reachability, universal control, Lie closure, subspace controllability, approximately controllable,
+           completely controllable]
+  weak: [universality, controllable, Lie algebra, accessibility]
+
+problem-formulation:
+  strong: [figure of merit, cost functional, objective functional, fidelity measure, fidelity function,
+           performance index, control objective]
+  weak: [cost function, objective function, penalty term]
+
+pmp:
+  strong: [Pontryagin, maximum principle, minimum principle, PMP, costate, co-state]
+  weak: [adjoint equation, adjoint state]
+
+geometric-control:
+  strong: [time-optimal, brachistochrone, sub-Riemannian, singular arc, bang-bang, geometric control,
+           geometric optimal control, minimum-time control, optimal synthesis]
+  weak: [geodesic, minimum time, minimal time, Cartan decomposition, shortest time]
+
+control-landscapes:
+  strong: [control landscape, optimization landscape, fidelity landscape, trap-free, kinematic landscape,
+           landscape topology, barren plateau]
+  weak: [critical point, saddle point, local optima, local minima, level set, false traps]
+
+quantum-speed-limits:
+  strong: [quantum speed limit, speed limit, QSL, Mandelstam-Tamm, Margolus-Levitin, orthogonalization time,
+           minimal evolution time, minimum evolution time]
+  weak: [evolution time, speed of evolution, minimal gate time, minimum gate time, fundamental bound]
+
+control-complexity:
+  strong: [control complexity, complexity of control, control resources, number of control parameters,
+           Solovay-Kitaev, uncomputable, uncomputability]
+  weak: [information-theoretic, computational complexity, resource scaling, search complexity]
+
+grape:
+  strong: [GRAPE, gradient ascent pulse engineering, gradient-ascent pulse engineering]
+  weak: [piecewise constant, piecewise-constant pulse]
+
+krotov:
+  strong: [Krotov]
+  weak: [monotonically convergent, monotonic convergence]
+
+crab:
+  strong: [CRAB, dCRAB, RedCRAB, chopped random basis, chopped random-basis]
+  weak: []
+
+goat:
+  strong: [GOAT, gradient optimization of analytic controls]
+  weak: []
+
+polynomial-optimization:
+  strong: [polynomial optimization, QCPOP, sum of squares, Lasserre, moment hierarchy, moment-SOS,
+           semidefinite relaxation, homotopy continuation, convex relaxation]
+  weak: [global optimum, globally optimal, semidefinite programming, semidefinite program, global optimization]
+
+second-order-methods:
+  strong: [BFGS, L-BFGS, quasi-Newton, Newton method, Newton's method, Gauss-Newton]
+  weak: [Hessian, second-order optimization, second-order method]
+
+autodiff-control:
+  strong: [automatic differentiation, autodiff, auto-differentiation, algorithmic differentiation,
+           differentiable programming, differentiable simulation, differentiable simulator, JAX]
+  weak: [backpropagation, back-propagation, adjoint method]
+
+gradient-free:
+  strong: [Nelder-Mead, CMA-ES, genetic algorithm, evolutionary algorithm, particle swarm, gradient-free,
+           derivative-free, differential evolution, evolution strategy, simplex method]
+  weak: [simulated annealing, evolutionary, black-box optimization, Bayesian optimization, stochastic search]
+
+pulse-parametrization:
+  strong: [pulse parametrization, pulse parameterization, Slepian, bandwidth-limited, band-limited,
+           bandwidth constraint, amplitude constraint, spectral constraint]
+  weak: [basis function, smooth pulse, Fourier basis, Fourier series, spline, finite bandwidth, transfer function,
+         filtered pulse, pulse shape, pulse shaping]
+
+propagation-methods:
+  strong: [Chebyshev propagator, Chebyshev expansion, split-operator, Krylov, matrix exponential, propagation scheme,
+           numerical propagation, time propagation, propagation method, Lanczos propagation, Magnus integrator]
+  weak: [propagator, Trotter, time evolution operator, numerical integration, GPU]
+
+shortcuts-to-adiabaticity:
+  strong: [shortcut to adiabaticity, shortcuts to adiabaticity, counterdiabatic, counter-diabatic, transitionless, inverse engineering,
+           Lewis-Riesenfeld, fast-forward, superadiabatic, super-adiabatic, invariant-based, adiabatic gauge potential, DCQO,
+           STA]
+  weak: [adiabatic invariant, dynamical invariant, fast quantum driving]
+
+adiabatic-passage:
+  strong: [adiabatic passage, STIRAP, rapid adiabatic passage, Landau-Zener, adiabatic transfer, CTAP,
+           adiabatic population transfer, adiabatic rapid passage, stimulated Raman adiabatic]
+  weak: [chirped pulse, adiabatic following, adiabatic evolution, dark state, chirp]
+
+drag:
+  strong: [DRAG, derivative removal, leakage suppression, leakage reduction]
+  weak: [leakage, anharmonicity, weakly anharmonic]
+
+floquet-engineering:
+  strong: [Floquet, periodic driving, periodically driven, periodically modulated, average Hamiltonian,
+           high-frequency expansion, time-periodic]
+  weak: [effective Hamiltonian, parametric driving, parametric modulation, Magnus expansion]
+
+lyapunov-control:
+  strong: ["re:\\bLyapunov(?![\\s-]+(?:exponent|spectrum|time))", tracking control, model predictive control,
+           MPC, FALQON, feedback-based quantum algorithm, quantum tracking, receding horizon]
+  weak: [inverse control, control law]
+
+robust-optimal-control:
+  strong: [robust control, robust optimal control, ensemble control, robust pulse, robust gate, robust quantum gate,
+           error-robust, noise-robust, robust quantum control, sampling-based, robust unitary,
+           're:\binhomogeneous\s+(?:\w+\s+)?ensembles?\b']
+  weak: [robustness, inhomogeneity, inhomogeneities, parameter uncertainty, systematic error, robust against,
+         robust to]
+
+composite-pulses:
+  strong: [composite pulse, BB1, CORPSE, SCROFULOUS, composite sequence, passband]
+  weak: [broadband, narrowband, pulse sequence]
+
+dynamical-decoupling:
+  strong: [dynamical decoupling, dynamic decoupling, spin echo, Hahn echo, CPMG, Carr-Purcell, XY4, XY8, UDD,
+           Uhrig, decoupling sequence, concatenated decoupling, decoupling pulse]
+  weak: [decoupling, spin locking, echo, refocusing]
+
+filter-functions:
+  strong: [filter function, noise spectroscopy, noise spectra, noise spectrum, 1/f noise, colored noise,
+           coloured noise, noise power spectrum]
+  weak: [spectral density, non-Gaussian noise, noise correlations, time-dependent noise]
+
+closed-loop:
+  strong: [closed-loop, learning control, adaptive feedback control, ad-HOC, in-situ optimization,
+           in situ optimization, hardware-in-the-loop, optimization on hardware, experimental optimization,
+           online optimization]
+  weak: [in situ, in-situ, calibration, model-free, tune-up, experimental feedback]
+
+machine-learning-control:
+  strong: [reinforcement learning, machine learning, neural network, deep learning, policy gradient, Q-learning,
+           artificial intelligence, supervised learning, Bayesian optimization, learning agent]
+  weak: [trained, training, learned]
+
+model-learning:
+  strong: [system identification, Hamiltonian learning, Hamiltonian identification, Hamiltonian estimation,
+           Hamiltonian tomography, gate set tomography, model calibration, digital twin, model learning,
+           parameter identification, noise characterization, device characterization]
+  weak: [process tomography, characterization, parameter estimation, identifiability]
+
+open-system-control:
+  strong: [open quantum system, open system, Lindblad, master equation, non-Markovian, dissipative dynamics,
+           dissipative quantum, quantum channel, Markovian dynamics]
+  weak: [dissipative, open-system dynamics, dissipative process]
+
+reservoir-engineering:
+  strong: [reservoir engineering, engineered dissipation, dissipative state preparation, dissipative preparation,
+           autonomous stabilization, autonomous error correction, bath engineering, engineered reservoir,
+           dissipative stabilization, engineered environment, dissipative engineering]
+  weak: [steady state, dark state, stabilization, stabilize]
+
+feedback-control:
+  strong: [quantum feedback, measurement-based feedback, feedback control, quantum filtering, continuous measurement,
+           real-time feedback, feedback cooling, measurement-based control, stochastic master equation,
+           quantum trajectory, quantum trajectories, measurement feedback, Zeno dragging, feedback loop,
+           feedback protocol, feedback scheme]
+  weak: [weak measurement, Zeno, feedforward, feed-forward, feedback, quantum filter, homodyne]
+
+linear-quantum-systems:
+  strong: [linear quantum system, coherent feedback, SLH, LQG, H-infinity, quantum stochastic differential,
+           physical realizability, coherent controller, quantum feedback network, input-output network,
+           coherent-classical estimation]
+  weak: [input-output, linear system, passive linear, quantum network, cascaded]
+
+many-body-control:
+  strong: [many-body, tensor network, matrix product state, MPS, DMRG, tDMRG, spin chain, Ising chain, Bose-Hubbard,
+           Fermi-Hubbard, quantum phase transition, Lipkin-Meshkov-Glick, many-particle, Heisenberg chain]
+  weak: [quantum simulator, quantum simulation, Ising model, phase transition, interacting spins]
+
+variational-algorithms:
+  strong: [QAOA, VQE, variational quantum, quantum approximate optimization, variational eigensolver,
+           quantum annealing, adiabatic quantum computation, adiabatic quantum computing, digital-analog,
+           parameterized quantum circuit, parametrized quantum circuit, variational algorithm, variational circuit,
+           hybrid quantum-classical, quantum annealer]
+  weak: [variational, ansatz, annealing, combinatorial optimization, MaxCut]
+
+bosonic-control:
+  strong: [bosonic, continuous variable, continuous-variable, cat state, Schrödinger cat, Schrodinger cat,
+           GKP, Gottesman-Kitaev-Preskill, Fock state, SNAP, binomial code, cat qubit, Kerr cat, Kerr-cat,
+           grid state, non-Gaussian state, oscillator state]
+  weak: [harmonic oscillator, Kerr, Gaussian state, squeezed state, cavity mode, photon number, Wigner function,
+         displacement operator]
+
+gate-synthesis:
+  strong: [quantum gate, gate synthesis, unitary synthesis, entangling gate, two-qubit gate, single-qubit gate,
+           CNOT, controlled-Z, CZ gate, iSWAP, Toffoli, gate design, gate optimization, logic gate,
+           universal gate set, phase gate, controlled-NOT, target unitary, high-fidelity gate, fast gate,
+           multi-qubit gate, three-qubit gate, entangling operation, qubit gate]
+  weak: [gate fidelity, gate set, unitary transformation, qutrit, qudit, crosstalk, cross-talk, unitary operation,
+         gate operation, gate time]
+
+state-preparation:
+  strong: [state preparation, state transfer, state-to-state, population transfer, state engineering,
+           preparation of, state generation, ground-state cooling, prepare the, state initialization,
+           Dicke state, NOON state, GHZ state]
+  weak: [target state, prepare, preparing, cooling, initialization, reset, entangled state, entanglement generation]
+
+quantum-sensing:
+  strong: [metrology, quantum sensing, magnetometry, magnetometer, quantum Fisher information, Fisher information,
+           Heisenberg limit, Heisenberg scaling, Heisenberg-limited, standard quantum limit, quantum sensor,
+           thermometry, Cramér-Rao, Cramer-Rao, quantum-enhanced, field sensing, phase estimation]
+  weak: [sensitivity, sensor, sensing, Ramsey, interferometry, estimation precision, parameter estimation]
+
+quantum-thermodynamics:
+  strong: [heat engine, quantum engine, quantum refrigerator, absorption refrigerator, quantum battery,
+           quantum batteries, work extraction, thermal transistor, heat current,
+           ergotropy, entropy production, Otto cycle, Otto engine, Carnot, thermal machine, Maxwell's demon,
+           Maxwell demon, Szilard, quantum thermodynamics, Landauer, finite-time thermodynamics, thermodynamic cost,
+           heat pump, quantum heat]
+  weak: [thermodynamic, thermodynamics, thermal bath, entropy, heat bath]
+
+error-correction:
+  strong: [error correction, error-corrected, QEC, surface code, logical qubit, cat code, bosonic code,
+           repetition code, syndrome, stabilizer code, logical gate, break-even, below threshold,
+           quantum error-correcting code]
+  weak: [GKP, error detection, erasure, code space, codeword, stabilizer, fault-tolerant, fault tolerance, decoder,
+         error-correcting]
+
+pulse-level-compilation:
+  strong: [compilation, compiler, OpenPulse, Qiskit Pulse, pulse-level, pulse level, pulse schedule,
+           pulse scheduling, transpilation, transpiler, OpenQASM, quantum assembly, pulse programming,
+           instruction set, gate decomposition, circuit compilation]
+  weak: [circuit depth, native gate, gate count, circuit optimization, schedule]
+
+superconducting:
+  strong: [superconducting, transmon, fluxonium, circuit QED, cQED, Josephson, flux qubit, Cooper-pair box,
+           Xmon, cross-resonance, phase qubit, charge qubit, superconducting qubit, superconducting circuit,
+           circuit quantum electrodynamics]
+  weak: [microwave resonator, SQUID, coplanar, microwave, flux pulse, dispersive readout, readout resonator]
+
+trapped-ions:
+  strong: [trapped ion, trapped-ion, ion trap, Paul trap, Penning trap, Mølmer-Sørensen, Molmer-Sorensen,
+           ion crystal, ion chain, ion shuttling, trapped atomic ion, single ion, ion qubit,
+           "RE:\\b\\d{1,3}(?:Ca|Be|Yb|Sr|Mg|Ba|Hg|Cd)\\+"]
+  weak: [ions, motional mode, motional state, phonon, sideband]
+
+neutral-atoms:
+  strong: [Rydberg, neutral atom, neutral-atom, Rydberg blockade, atom array, atomic array, tweezer array,
+           optical tweezer array, Rydberg atom]
+  weak: [tweezer, optical tweezer, blockade, alkali atom, single atom]
+
+cold-atoms:
+  strong: [Bose-Einstein condensate, BEC, ultracold, ultra-cold, cold atom, optical lattice, atom chip,
+           atom interferometer, atom interferometry, matter wave, matter-wave, Gross-Pitaevskii, cold atomic,
+           degenerate gas, atomic condensate, quantum gas, cold neutral atom, atomic ensemble, atomic gas]
+  weak: [condensate, double well, double-well, atomic cloud, trapped atom, magnetic trap, harmonic trap]
+
+spins:
+  strong: [NMR, nuclear magnetic resonance, electron spin resonance, ESR, electron paramagnetic resonance, MRI,
+           magnetic resonance, nitrogen-vacancy, NV center, NV centre, NV, color center, colour centre,
+           silicon vacancy, spin qubit, quantum dot, singlet-triplet, exchange-only, nuclear spin, electron spin,
+           spin ensemble, donor spin, double quantum dot, spin resonance, solid-state spin, spin defect,
+           spins in solids]
+  weak: [donor, hyperfine, diamond, silicon, Zeeman]
+
+molecules:
+  strong: [molecule, molecules, chemical reaction, photodissociation, photoassociation, femtosecond, chiral,
+           enantiomer, laser control, attosecond, molecular alignment, molecular orientation, dissociation,
+           vibrational state, rotational state, wave packet, wavepacket, polyatomic, diatomic, molecular ion,
+           chemical dynamics, strong-field]
+  weak: [molecular, chemical, reaction, vibrational, rotational, alignment, orientation, ionization,
+         electronic state, chemistry, harmonic generation]
+
+photonics:
+  strong: [photonic, optomechanical, optomechanics, opto-mechanical, cavity QED, single-photon source, single photon,
+           mechanical resonator, mechanical oscillator, levitated, linear optics, optical cavity, light storage,
+           electromagnetically induced transparency, squeezed light, photon pair, integrated photonics,
+           photonic circuit, optical fibre, optical fiber]
+  weak: [photon, photons, interferometer, nanoparticle, polarization, waveguide, quantum memory, cavity field,
+         optical mode, optical pulse]
+
+control-hardware:
+  strong: [FPGA, control electronics, arbitrary waveform generator, AWG, cryo-CMOS, cryogenic CMOS, RFSoC,
+           real-time control, control hardware, control stack, signal chain, pulse distortion, single flux quantum,
+           SFQ, classical control electronics, microwave electronics, control system architecture]
+  weak: [electronics, latency, distortion, transfer function, wiring, digital-to-analog, readout electronics,
+         classical control]

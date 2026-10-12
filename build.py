@@ -32,6 +32,8 @@ from markupsafe import Markup
 from qocsite.content import ContentError, format_reference, render_article
 from qocsite import selection
 from qocsite.papers import load_papers, yearly_stats
+from qocsite import tracker as paper_tracker
+from qocsite.classify import load_rules
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "_site"
@@ -125,7 +127,7 @@ def map_data(taxonomy: dict, articles: dict, url) -> dict:
 def make_env(base: str, config: dict, taxonomy: dict) -> Environment:
     env = Environment(
         loader=FileSystemLoader(ROOT / "templates"),
-        autoescape=select_autoescape(["html"]),
+        autoescape=select_autoescape(["html", "xml"]),
         trim_blocks=True,
         lstrip_blocks=True,
         undefined=StrictUndefined,
@@ -203,9 +205,15 @@ def build(base: str | None = None, quiet: bool = False) -> None:
     totals_file = ROOT / "data" / "quality" / "quantph-totals.json"
     totals = json.loads(totals_file.read_text(encoding="utf-8")) if totals_file.exists() else None
     stats = yearly_stats(papers, quantph_totals=totals)
+    rules_file = ROOT / "data" / "classifier.yaml"
+    try:
+        load_rules(rules_file, set(taxonomy["topics"]))          # validates topic ids
+    except ValueError as exc:
+        raise BuildError(str(exc)) from exc
+    tracked = paper_tracker.prepare(papers, taxonomy, rules_file, ROOT / ".cache" / "topics.json")
     quality_file = ROOT / "data" / "quality" / "summary.yaml"
     quality = load_yaml(quality_file) if quality_file.exists() else None
-    env.globals.update(articles=articles, paper_stats=stats, selection=selection, quality=quality,
+    env.globals.update(articles=articles, paper_stats=stats, selection=selection, quality=quality, tracked=tracked,
                        fmt_ref=lambda key: Markup(format_reference(references[key])),
                        references=references)
 
@@ -226,14 +234,29 @@ def build(base: str | None = None, quiet: bool = False) -> None:
                                       .replace("</", "<\\/"))} if section["id"] == "map" else {}
         render(env, template, f"{section['id']}/index.html", page_id=section["id"], section=section, **extra)
 
-    # One page per topic (with or without an article yet)
+    # One page per topic (with or without an article yet), with its recent papers and a feed
     for family in taxonomy["families"]:
         siblings = family["topics"]
         for i, topic in enumerate(siblings):
+            topic_papers = tracked["by_topic"].get(topic["id"], [])
             render(env, "pages/topic.html", f"topics/{topic['id']}/index.html", page_id="map",
                    topic=topic, family=family, article=articles.get(topic["id"]),
+                   topic_papers=topic_papers,
                    prev_topic=siblings[i - 1] if i > 0 else None,
                    next_topic=siblings[i + 1] if i + 1 < len(siblings) else None)
+            render(env, "feeds/atom.xml", f"topics/{topic['id']}/feed.xml", feed_title=f"QOC — {topic['title']}",
+                   feed_id=f"topics/{topic['id']}/", feed_page=f"topics/{topic['id']}/", entries=topic_papers[:30])
+
+    # Paper tracker: data for the client, author pages, weekly digest, feed
+    write(OUT / "papers" / "data" / "index.json", paper_tracker.index_json(tracked, taxonomy).encode("utf-8"))
+    for year, blob in paper_tracker.abstracts_json(tracked).items():
+        write(OUT / "papers" / "data" / f"abstracts-{year}.json", blob.encode("utf-8"))
+    render(env, "pages/authors.html", "papers/authors/index.html", page_id="papers",
+           top_authors=[a for a in tracked["authors"] if a["count"] >= 8])
+    render(env, "pages/weekly.html", "papers/weekly/index.html", page_id="papers",
+           weeks=paper_tracker.weeks(tracked, 4, dt.date.today()))
+    render(env, "feeds/atom.xml", "papers/feed.xml", feed_title="QOC — new quantum control papers",
+           feed_id="papers/", feed_page="papers/", entries=tracked["papers"][:50])
 
     remove_stale()
     n = sum(1 for _ in OUT.rglob("*.html"))

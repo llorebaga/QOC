@@ -33,3 +33,15 @@ share:
   note: >-
     QOC papers rose from 3.3% to 4.4% of all quant-ph submissions between 2010 and 2014 and have stayed between 3.8%
     and 4.5% every year since: the field now grows at the same pace as quantum physics as a whole.
+
+topics:
+  precision: 0.60
+  recall: 0.82
+  any_correct: 0.89
+  n_test: 120
+  note: >-
+    Papers are assigned up to four field-map topics by a phrase-based classifier (data/classifier.yaml). The rules
+    were tuned on 60 hand-labelled papers and then frozen; on 120 different papers, labelled blind beforehand, 60% of
+    the assigned topics were correct, 82% of the correct topics were found, and 89% of the papers received at least
+    one correct topic. Most errors are topics a paper mentions without being about them. (One rule fix prompted by
+    the test, for open-system control, raises precision to 63% on the same sample.)

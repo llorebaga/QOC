@@ -10,6 +10,8 @@ site:
   lang: en
   # Overridden at build time with --base (e.g. /QOC/ on GitHub Pages).
   base_url: /
+  # Public address of the site, used for absolute links in feeds. Empty until launch (Phase 7).
+  url: ""
 
 # Main navigation (order matters). `id` must match a section below or a page.
 nav:
@@ -44,15 +46,15 @@ sections:
     icon: papers
     phase: 3
     status: building
-    page: placeholder
+    page: papers
     summary: >-
       New quantum control papers from arXiv, collected automatically every day
       and classified into the topics of the field map.
     features:
       - Daily automatic fetch from arXiv, filtered for relevance (running — every paper since 2010 is archived)
-      - Classification into field-map topics, with filters and search
-      - Author pages — click any author to see all their tracked papers
-      - RSS feed and weekly digest
+      - Classification into field-map topics, with filters and search (built)
+      - Author pages — click any author to see all their tracked papers (built)
+      - Atom feeds per topic and a weekly digest (built)
 
   - id: groups
     title: Research groups

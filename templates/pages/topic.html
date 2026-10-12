@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% from "partials/icons.html" import icon %}
+{% from "partials/paper_list.html" import paper_item %}
 {% block title %}{{ topic.title }} — QOC{% endblock %}
 {% block description %}{{ topic.short }}{% endblock %}
-{% block head %}{% if article %}{% include "partials/katex.html" %}{% endif %}{% endblock %}
+{% block head %}{% if article %}{% include "partials/katex.html" %}{% endif %}
+<link rel="alternate" type="application/atom+xml" title="QOC — {{ topic.title }}" href="{{ url('topics/' ~ topic.id ~ '/feed.xml') }}">{% endblock %}
 
 {% block main %}
 <div class="topic" style="--fam: var(--fam-{{ family.id }})">
@@ -81,6 +83,20 @@
       </div>
       {% endif %}
 
+      <section class="article-section" aria-labelledby="recent-papers">
+        <h2 id="recent-papers">Recent papers</h2>
+        {% if topic_papers %}
+        <p class="section-note">{{ "{:,}".format(topic_papers|length) }} tracked papers since {{ paper_stats.first_year }} are classified
+          under this topic. <a href="{{ url('papers/?topic=' ~ topic.id) }}">See all</a> ·
+          <a href="{{ url('topics/' ~ topic.id ~ '/feed.xml') }}">{{ icon('rss') }}Feed</a></p>
+        <ol class="paper-list paper-list-compact">
+          {% for p in topic_papers[:5] %}{{ paper_item(p, 6) }}{% endfor %}
+        </ol>
+        {% else %}
+        <p class="section-note">No tracked papers are classified under this topic yet.</p>
+        {% endif %}
+      </section>
+
       {% if topic.neighbours %}
       <section class="article-section" aria-labelledby="related">
         <h2 id="related">Related topics</h2>
@@ -111,6 +127,7 @@
             {% if article.meta.key_papers %}<li><a href="#key-papers">Key papers</a></li>{% endif %}
             {% if article.meta.software %}<li><a href="#software">Software</a></li>{% endif %}
             {% if article.citations %}<li><a href="#references">References</a></li>{% endif %}
+            <li><a href="#recent-papers">Recent papers</a></li>
           </ol>
         </nav>
         {% endif %}

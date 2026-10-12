@@ -65,6 +65,8 @@
     <div><dt>Recall ≈ {{ "{:.0%}".format(quality.recall.corrected_low) }}–{{ "{:.0%}".format(quality.recall.corrected_high) }}</dt>
       <dd>Share of quantum-control papers that are counted: {{ quality.recall.reference }}</dd></div>
     <div><dt>Context</dt><dd>{{ quality.share.note }}</dd></div>
+    {% if quality.topics %}<div><dt>Topics ≈ {{ "{:.0%}".format(quality.topics.precision) }} precision, {{ "{:.0%}".format(quality.topics.recall) }} recall</dt>
+      <dd>How papers are placed on the field map: {{ quality.topics.note }}</dd></div>{% endif %}
   </dl>
   <p class="muted">Over- and under-counting are of similar size, so the totals are approximately right. More
     importantly, both are stable from year to year, so the <em>trend</em> is reliable.</p>

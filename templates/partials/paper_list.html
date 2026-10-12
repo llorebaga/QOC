@@ -1,0 +1,25 @@
+{#- Server-rendered paper entries (the papers page enhances the same markup with JavaScript). -#}
+{% macro paper_item(p, max_authors=12) -%}
+<li class="paper" data-id="{{ p.id }}">
+  <div class="paper-meta">
+    <time datetime="{{ p.date }}">{{ p.date }}</time>
+    <a class="paper-id" href="https://arxiv.org/abs/{{ p.id }}" rel="noopener">arXiv:{{ p.id }}</a>
+    {% if p.primary %}<span class="paper-cat">{{ p.primary }}</span>{% endif %}
+  </div>
+  <h3 class="paper-title"><a href="https://arxiv.org/abs/{{ p.id }}" rel="noopener">{{ p.title }}</a></h3>
+  <p class="paper-authors">
+    {%- for name, slug, raw in p.authors[:max_authors] -%}
+    <a href="{{ url('papers/authors/?a=' ~ slug) }}">{{ name }}</a>{% if not loop.last %}, {% endif %}
+    {%- endfor -%}
+    {%- if p.authors|length > max_authors %} <span class="muted">+{{ p.authors|length - max_authors }} more</span>{% endif -%}
+  </p>
+  {% if p.topics %}
+  <ul class="paper-topics">
+    {% for t in p.topics %}{% set tt = taxonomy.topics[t] %}
+    <li><a class="topic-chip" href="{{ url('papers/?topic=' ~ t) }}" style="--fam: var(--fam-{{ tt.family }})">{{ tt.label }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <details class="paper-abstract"><summary>Abstract</summary><p>{{ p.abstract }}</p></details>
+</li>
+{%- endmacro %}

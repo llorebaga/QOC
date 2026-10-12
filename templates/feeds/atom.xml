@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+{#- Atom feed of tracked papers. Entry links point to arXiv (absolute); site links need site.url (set at launch). -#}
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ feed_title }}</title>
+  <subtitle>Quantum control papers on arXiv, selected and classified automatically by QOC.</subtitle>
+  <id>{% if site.url %}{{ site.url.rstrip('/') }}{{ url(feed_id) }}{% else %}tag:qoc-quantum-optimal-control,2026:{{ feed_id }}{% endif %}</id>
+  {% if site.url %}<link rel="alternate" type="text/html" href="{{ site.url.rstrip('/') }}{{ url(feed_page) }}"/>
+  <link rel="self" type="application/atom+xml" href="{{ site.url.rstrip('/') }}{{ url(feed_page) }}feed.xml"/>{% endif %}
+  <updated>{{ (entries[0].updated if entries else build_date.isoformat()) }}T00:00:00Z</updated>
+  <generator>QOC</generator>
+  {% for p in entries %}
+  <entry>
+    <title>{{ p.title }}</title>
+    <id>https://arxiv.org/abs/{{ p.id }}</id>
+    <link rel="alternate" type="text/html" href="https://arxiv.org/abs/{{ p.id }}"/>
+    <published>{{ p.date }}T00:00:00Z</published>
+    <updated>{{ p.updated }}T00:00:00Z</updated>
+    {% for name, slug, raw in p.authors %}<author><name>{{ name }}</name></author>{% endfor %}
+    {% for t in p.topics %}<category term="{{ t }}" label="{{ taxonomy.topics[t].title }}"/>{% endfor %}
+    <summary type="text">{{ p.abstract }}</summary>
+  </entry>
+  {% endfor %}
+</feed>
