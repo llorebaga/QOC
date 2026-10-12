@@ -71,9 +71,9 @@ understand any area; an expert can use it as a quick reference.
 - [x] Topics and platforms derived from the PIs' tracked papers (not self-descriptions); PIs linked to author pages
 - [x] World map (Leaflet + OpenStreetMap tiles, marker clustering) with filters by topic and platform,
       synchronized with the group list; one page per group with topics and recent papers
-- [x] Seed: 22 well-known groups in 9 countries
+- [x] Seed: 32 well-known groups in 11 countries
 - [ ] Grow the list (candidates still to be verified: Sugny, Vitanov, Muga, Boscain & Sigalotti, Mirrahimi,
-      Sherson, Biercuk, Petersen, Dong, Yuan, Xi Chen, Schulte-Herbrüggen, Motzoi, …); contribution form at launch
+      Sherson, Biercuk, Petersen, Dong, Yuan, Xi Chen, Schulte-Herbrüggen, Pupillo, Pechen, Laflamme, …); contribution form at launch
 
 ## Phase 5 — Open problems
 

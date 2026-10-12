@@ -45,6 +45,32 @@
   lon: 11.0047
   checked: '2026-10-12'
 
+- id: cappellaro-mit
+  name: Quantum Engineering Group
+  pis:
+  - Paola Cappellaro
+  institution: Massachusetts Institute of Technology
+  wikidata: Q49108
+  website: http://qeg.mit.edu/
+  city: Cambridge
+  country: United States
+  lat: 42.3597
+  lon: -71.0919
+  checked: '2026-10-12'
+
+- id: dalessandro-iowa-state
+  name: D'Alessandro group
+  pis:
+  - Domenico D'Alessandro
+  institution: Iowa State University
+  wikidata: Q1136919
+  website: https://faculty.sites.iastate.edu/daless/
+  city: Ames
+  country: United States
+  lat: 42.0262
+  lon: -93.6484
+  checked: '2026-10-12'
+
 - id: del-campo-luxembourg
   name: del Campo group
   pis:
@@ -56,6 +82,19 @@
   country: Luxembourg
   lat: 49.5042
   lon: 5.9484
+  checked: '2026-10-12'
+
+- id: deutsch-unm
+  name: Deutsch group
+  pis:
+  - Ivan H. Deutsch
+  institution: University of New Mexico
+  wikidata: Q1190812
+  website: https://cquic.unm.edu/people/staff.html
+  city: Albuquerque
+  country: United States
+  lat: 35.0839
+  lon: -106.6186
   checked: '2026-10-12'
 
 - id: glaser-tum
@@ -82,6 +121,19 @@
   country: Germany
   lat: 48.4221
   lon: 9.9538
+  checked: '2026-10-12'
+
+- id: jessen-arizona
+  name: Jessen group
+  pis:
+  - Poul S. Jessen
+  institution: University of Arizona
+  wikidata: Q503419
+  website: https://optics.arizona.edu/person/poul-jessen
+  city: Tucson
+  country: United States
+  lat: 32.2319
+  lon: -110.9525
   checked: '2026-10-12'
 
 - id: koch-fu-berlin
@@ -149,6 +201,32 @@
   lon: -118.2853
   checked: '2026-10-12'
 
+- id: lu-sustech
+  name: Lu group
+  pis:
+  - Dawei Lu
+  institution: Southern University of Science and Technology
+  wikidata: Q7568723
+  website: https://phy.sustech.edu.cn/faculty/detail/id/1258.html?lang=en-us
+  city: Shenzhen
+  country: People's Republic of China
+  lat: 22.6006
+  lon: 113.9947
+  checked: '2026-10-12'
+
+- id: luy-kit
+  name: Luy group
+  pis:
+  - Burkhard Luy
+  institution: Karlsruhe Institute of Technology
+  wikidata: Q309988
+  website: https://www.ioc.kit.edu/luy/82.php
+  city: Karlsruhe
+  country: Germany
+  lat: 49.0996
+  lon: 8.4319
+  checked: '2026-10-12'
+
 - id: marecek-ctu
   name: Mareček group
   pis:
@@ -175,12 +253,26 @@
   lon: 11.87
   checked: '2026-10-12'
 
+- id: peng-ustc
+  name: Peng group
+  pis:
+  - Xinhua Peng
+  institution: University of Science and Technology of China
+  wikidata: Q1074103
+  website: https://faculty.ustc.edu.cn/pengxinhua/en/index/1035015/list/index.htm
+  city: Hefei
+  country: People's Republic of China
+  lat: 31.8417
+  lon: 117.2589
+  checked: '2026-10-12'
+
 - id: pgi-12-juelich
   name: Quantum Computing Analytics (PGI-12)
   pis:
   - Frank K. Wilhelm-Mauch
   arxiv_names:
-    Frank K. Wilhelm-Mauch: [Frank K. Wilhelm]
+    Frank K. Wilhelm-Mauch:
+    - Frank K. Wilhelm
   institution: Forschungszentrum Jülich
   wikidata: Q697111
   website: https://www.fz-juelich.de/en/pgi/pgi-12
@@ -268,6 +360,19 @@
   lon: 34.8092
   checked: '2026-10-12'
 
+- id: ticozzi-padova
+  name: Ticozzi group
+  pis:
+  - Francesco Ticozzi
+  institution: University of Padua
+  wikidata: Q193510
+  website: https://quantumdynamics.dei.unipd.it/
+  city: Padua
+  country: Italy
+  lat: 45.42
+  lon: 11.87
+  checked: '2026-10-12'
+
 - id: viola-dartmouth
   name: Viola group
   pis:
@@ -281,6 +386,18 @@
   lon: -72.2883
   checked: '2026-10-12'
 
+- id: wiseman-griffith
+  name: Wiseman group
+  pis:
+  - Howard M. Wiseman
+  institution: Griffith University
+  wikidata: Q1202292
+  website: https://howardwiseman.me
+  country: Australia
+  lat: -27.5526
+  lon: 153.0539
+  checked: '2026-10-12'
+
 - id: wu-tsinghua
   name: Wu group
   pis:
@@ -292,4 +409,17 @@
   country: People's Republic of China
   lat: 40
   lon: 116.3267
+  checked: '2026-10-12'
+
+- id: yamamoto-keio
+  name: Yamamoto group
+  pis:
+  - Naoki Yamamoto
+  institution: Keio University
+  wikidata: Q815432
+  website: https://www.keio.ac.jp/en/faculty/k_100011469/
+  city: Mita
+  country: Japan
+  lat: 35.6492
+  lon: 139.7428
   checked: '2026-10-12'
