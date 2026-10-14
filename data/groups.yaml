@@ -359,6 +359,18 @@
   lon: 9.9538
   checked: '2026-10-12'
 
+- id: poggi-strathclyde
+  name: Poggi group
+  pis:
+  - Pablo M. Poggi
+  institution: University of Strathclyde
+  wikidata: Q1859178
+  website: https://www.strath.ac.uk/staff/poggipablomr/
+  city: Glasgow
+  country: United Kingdom
+  lat: 55.8617
+  lon: -4.2416
+
 - id: rabitz-princeton
   name: Rabitz group
   pis:
