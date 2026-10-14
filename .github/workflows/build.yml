@@ -1,7 +1,7 @@
-# Build check: makes sure the site builds (templates render, taxonomy is valid)
-# on every push and pull request. The built site is attached as an artifact so
-# it can be downloaded and previewed. Deployment to GitHub Pages is added at
-# public launch (see ROADMAP.md, Phase 7).
+# Build and deploy: builds the site (templates render, taxonomy and content are valid)
+# on every push and pull request, and deploys main to GitHub Pages
+# (https://llorebaga.github.io/QOC/). Commits made by the daily paper update do not
+# trigger workflows, so a finished "Update papers" run also triggers a deploy.
 name: Build
 
 on:
@@ -9,15 +9,24 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Update papers"]
+    types: [completed]
 
 permissions:
   contents: read
+
+concurrency:
+  group: pages-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && 'main' || '' }}
 
       - uses: actions/setup-python@v5
         with:
@@ -30,9 +39,22 @@ jobs:
       - name: Build site
         run: python build.py --base QOC
 
-      - name: Upload built site
-        uses: actions/upload-artifact@v4
+      - name: Upload site for Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: site
           path: _site/
-          retention-days: 7
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

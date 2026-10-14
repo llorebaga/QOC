@@ -10,8 +10,8 @@ site:
   lang: en
   # Overridden at build time with --base (e.g. /QOC/ on GitHub Pages).
   base_url: /
-  # Public address of the site, used for absolute links in feeds. Empty until launch (Phase 7).
-  url: ""
+  # Public origin of the site (the base path is added at build time), used for absolute links in feeds.
+  url: https://llorebaga.github.io
 
 # Main navigation (order matters). `id` must match a section below or a page.
 nav:
