@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% from "partials/logo.html" import logo %}
 {% from "partials/icons.html" import icon %}
-{% from "partials/ui.html" import status_badge %}
 {% block head %}{% include "partials/katex.html" %}{% endblock %}
 
 {% block main %}
@@ -110,7 +109,7 @@
       <span class="feature-icon">{{ icon(s.icon) }}</span>
       <h3>{{ s.title }}</h3>
       <p>{{ s.summary }}</p>
-      <span class="feature-foot">{{ status_badge(s.status) }}<span class="go">{{ icon('arrow') }}</span></span>
+      <span class="feature-foot"><span class="go">{{ icon('arrow') }}</span></span>
     </a>
     {% endfor %}
   </div>
@@ -119,9 +118,8 @@
 <section class="wrap families">
   <div class="section-head">
     <h2>{{ taxonomy.families|length }} areas, {{ taxonomy.topics|length }} topics — and growing</h2>
-    <p class="section-lead">Every topic has its own page. Articles are written family by family — with the
-      equations that matter and the papers they come from — and linked to related topics, papers, groups and
-      open problems.</p>
+    <p class="section-lead">Every topic has its own article — with the equations that matter and the papers they
+      come from — linked to related topics, papers, groups and open problems.</p>
   </div>
   <div class="family-grid">
     {% for f in taxonomy.families %}

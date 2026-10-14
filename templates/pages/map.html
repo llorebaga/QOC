@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% from "partials/icons.html" import icon %}
-{% from "partials/ui.html" import status_badge %}
 {% block title %}{{ section.title }} — QOC{% endblock %}
 {% block description %}{{ section.summary }}{% endblock %}
 
@@ -8,7 +7,7 @@
 <section class="page-hero page-hero-compact">
   <div class="wrap">
     <p class="eyebrow">{{ taxonomy.families|length }} families · {{ taxonomy.topics|length }} topics ·
-      {{ articles|length }} articles written {{ status_badge(section.status) }}</p>
+      {{ articles|length }} articles</p>
     <h1>{{ section.title }}</h1>
     <p class="lead">Every area of quantum optimal control and how the areas connect. Hover a topic to see its
       neighbours, click it to read the article.</p>
@@ -44,8 +43,8 @@
       </div>
       <div class="fm-card" data-fm-card hidden></div>
       <p class="fm-hint">
-        <span><span class="fm-key fm-key-solid"></span>article available</span>
-        <span><span class="fm-key fm-key-hollow"></span>coming soon</span>
+        {% if articles|length < taxonomy.topics|length %}<span><span class="fm-key fm-key-solid"></span>article available</span>
+        <span><span class="fm-key fm-key-hollow"></span>no article yet</span>{% endif %}
         <span class="fm-hint-zoom">Ctrl + scroll to zoom · drag to move</span>
       </p>
     </div>

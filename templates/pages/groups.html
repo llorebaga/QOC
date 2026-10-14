@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% from "partials/icons.html" import icon %}
-{% from "partials/ui.html" import status_badge %}
 {% block title %}Research groups — QOC{% endblock %}
 {% block description %}Research groups working on quantum optimal control around the world, with their topics and papers.{% endblock %}
 {% block head %}
@@ -12,8 +11,7 @@
 {% block main %}
 <section class="page-hero page-hero-compact">
   <div class="wrap">
-    <p class="eyebrow">{{ groups|length }} groups · {{ groups | map(attribute='country') | unique | list | length }} countries
-      {{ status_badge(section.status) }}</p>
+    <p class="eyebrow">{{ groups|length }} groups · {{ groups | map(attribute='country') | unique | list | length }} countries</p>
     <h1>Research groups</h1>
     <p class="lead">Groups working on quantum optimal control. Their topics come from the PIs' papers in the
       <a href="{{ url('papers/') }}">tracker</a>; every entry is checked against the group's own website.</p>
@@ -80,7 +78,7 @@
       <p>The list starts with well-known groups and grows over time. An entry needs a website that names its PIs; the
         location is the institution's entry on Wikidata, and the topics are the most frequent ones among the PIs'
         tracked papers (so they reflect recent output, not a self-description). Missing a group, or found an error?
-        The repository will accept suggestions once it is public.</p>
+        Please <a href="https://github.com/llorebaga/QOC/issues" rel="noopener">open an issue on GitHub</a>.</p>
     </div>
   </aside>
 </div>

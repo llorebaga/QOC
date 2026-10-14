@@ -7,8 +7,10 @@ Static website about quantum optimal control. See README.md (structure) and ROAD
 - Scientific content must be accurate and sourced. Never invent references, DOIs, arXiv ids,
   group details or coordinates. Verify them, or leave them out and flag them.
 - The repo is **public** and the site is live at https://llorebaga.github.io/QOC/ (GitHub Pages, deployed by
-  `.github/workflows/build.yml` on every push to main and after each daily paper update). Everything pushed is public:
-  drafts are shown as drafts, so keep the draft/review labels accurate.
+  `.github/workflows/build.yml` on every push to main and after each daily paper update). Everything pushed is public.
+- The public site must read as finished: no "draft", "in progress", "coming soon" or roadmap wording on any page. The
+  `status: draft` / `review: draft` fields stay in the files as the internal review record, but are never displayed.
+  Track unfinished work in ROADMAP.md, not on the site.
 
 ## Build & preview
 - `python build.py --serve` → http://localhost:8000 (auto-rebuild). `.claude/launch.json` has the `qoc-site` config.
@@ -23,6 +25,8 @@ Static website about quantum optimal control. See README.md (structure) and ROAD
 - Open problems: `content/problems/<id>.md` (format in README; ids are permanent URLs). Only problems that a published
   paper poses (`posed_by`, with where/how). Read the sources themselves, search for later results before choosing the
   status (open / partial / solved), and justify it in the Status section. New ones start as `review: draft`.
+- Resources page: `data/resources.yaml` (software, reading, glossary, timeline); keys and topic ids are validated by the
+  build. Verify every software URL before listing it.
 - Papers: `tools/fetch_arxiv.py`. The selection rule lives in `qocsite/selection.py` (shown on the About page).
   *Widening* it (new TERMS) requires a full re-harvest (`--since 2000-01-01`); *tightening* it only needs
   `--reselect`. Any rule change must be validated: download all quant-ph papers of a few months and check the API

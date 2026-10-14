@@ -490,3 +490,43 @@ a.topic-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover
 .problem-question p { margin: 0; font-size: 1.08rem; line-height: 1.65; color: var(--ink); }
 .topic-problems { padding-left: 1.2em; display: grid; gap: 8px; color: var(--ink-2); }
 .topic-problems a { font-weight: 600; margin-right: 8px; }
+
+/* ---------------------------------------------------------------- Resources */
+.res-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.res-nav a {
+  padding: .45em .9em; border-radius: 999px; border: 1px solid var(--line); background: var(--bg-elev);
+  color: var(--ink-2); text-decoration: none; font-size: .9rem; font-weight: 500;
+}
+.res-nav a:hover { color: var(--ink); border-color: var(--line-strong); }
+.resources { margin-bottom: 64px; }
+.res-section { padding-top: 28px; }
+.res-section + .res-section { margin-top: 36px; border-top: 1px solid var(--line); }
+.res-section > h2 { font-size: 1.6rem; scroll-margin-top: calc(var(--header-h) + 16px); }
+.res-group { font-size: 1.08rem; margin: 28px 0 12px; }
+.sw-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 12px; }
+.sw-card { padding: 16px 18px; min-width: 0; display: flex; flex-direction: column; }
+.sw-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; }
+.sw-name { font-family: var(--font-display); font-weight: 600; font-size: 1.04rem; color: var(--ink); text-decoration: none; }
+.sw-name:hover { color: var(--accent); text-decoration: underline; }
+.sw-lang { font-family: var(--font-mono); font-size: .74rem; color: var(--ink-3); }
+.sw-what { margin: 6px 0 0; font-size: .9rem; color: var(--ink-2); line-height: 1.5; }
+.sw-refs { margin: 8px 0 0; display: grid; gap: 4px; }
+.sw-refs .ref { font-size: .8rem; }
+.sw-card .paper-topics { margin-top: auto; padding-top: 10px; }
+.glossary { margin: 0; display: grid; gap: 4px; }
+.glossary > div { padding: 12px 0; border-bottom: 1px solid var(--line); scroll-margin-top: calc(var(--header-h) + 16px); }
+.glossary > div:target { background: color-mix(in srgb, var(--accent) 8%, transparent); border-radius: 8px; padding-inline: 10px; }
+.glossary dt { font-family: var(--font-display); font-weight: 600; color: var(--ink); }
+.glossary dd { margin: 4px 0 0; color: var(--ink-2); line-height: 1.6; }
+.gl-links { display: block; margin-top: 4px; font-size: .86rem; color: var(--ink-3); }
+.timeline { list-style: none; margin: 16px 0 0; padding: 0; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 3.95rem; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+.timeline li { display: grid; grid-template-columns: 3.2rem minmax(0, 1fr); gap: 0 1.6rem; padding: 0 0 22px; position: relative; }
+.timeline li::before {
+  content: ""; position: absolute; left: calc(3.95rem - 4px); top: 7px; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 0 3px var(--bg);
+}
+.tl-year { font-family: var(--font-mono); font-weight: 600; color: var(--ink); text-align: right; padding-top: 1px; }
+.tl-body { padding-left: .6rem; }
+.tl-body p { margin: 0 0 6px; color: var(--ink); line-height: 1.55; }
+.tl-body .ref { font-size: .82rem; margin-top: 2px; }

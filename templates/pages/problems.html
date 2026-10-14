@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% from "partials/icons.html" import icon %}
-{% from "partials/ui.html" import status_badge, problem_status %}
+{% from "partials/ui.html" import problem_status %}
 {% block title %}Open problems — QOC{% endblock %}
 {% block description %}{{ section.summary }}{% endblock %}
 {% block head %}{% include "partials/katex.html" %}{% endblock %}
@@ -10,7 +10,7 @@
 {% for s in ['open', 'partial', 'solved'] %}{% set _ = counts.update({s: problems | selectattr('status', 'equalto', s) | list | length}) %}{% endfor %}
 <section class="page-hero page-hero-compact">
   <div class="wrap">
-    <p class="eyebrow">{{ problems|length }} problems {{ status_badge(section.status) }}</p>
+    <p class="eyebrow">{{ problems|length }} problems</p>
     <h1>Open problems</h1>
     <p class="lead">Specific, well-posed questions in quantum optimal control. Each one is stated precisely and
       comes with the paper that poses it, the known partial results and the references — in the spirit of the
@@ -44,7 +44,6 @@
     <li class="problem-card card" data-status="{{ pr.status }}" data-topics="{{ pr.topics | join(' ') }}">
       <div class="problem-card-head">
         {{ problem_status(pr.status) }}
-        {% if pr.review == 'draft' %}<span class="problem-draft" title="Written from the cited sources, not yet reviewed by a domain expert">Draft</span>{% endif %}
       </div>
       <h2 class="problem-card-title"><a href="{{ url('open-problems/' ~ pr.id ~ '/') }}">{{ pr.title }}</a></h2>
       <p class="problem-card-question">{{ pr.question }}</p>
@@ -64,8 +63,8 @@
       <p>A problem is listed only if it can be stated precisely and a published paper poses it — as a conjecture, an
         explicit open question or a stated goal. Its status follows the literature: <em>partial progress</em> means
         that special cases are proved, <em>solved</em> that the full statement is. Solved problems stay in the list
-        with the paper that solved them. Know of a result we missed, or a problem that belongs here? The repository
-        will accept suggestions once it is public.</p>
+        with the paper that solved them. Know of a result we missed, or a problem that belongs here? Please
+        <a href="https://github.com/llorebaga/QOC/issues" rel="noopener">open an issue on GitHub</a>.</p>
     </div>
   </aside>
 </div>

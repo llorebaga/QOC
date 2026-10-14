@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% from "partials/icons.html" import icon %}
-{% from "partials/ui.html" import status_badge %}
 {% from "partials/paper_list.html" import paper_item %}
 {% block title %}Papers — QOC{% endblock %}
 {% block description %}Every quantum control paper on arXiv since {{ paper_stats.first_year }}, classified into the topics of the field map and updated daily.{% endblock %}
@@ -9,8 +8,7 @@
 {% block main %}
 <section class="page-hero page-hero-compact">
   <div class="wrap">
-    <p class="eyebrow">{{ "{:,}".format(tracked.papers|length) }} papers since {{ paper_stats.first_year }} · updated daily
-      {{ status_badge(section.status) }}</p>
+    <p class="eyebrow">{{ "{:,}".format(tracked.papers|length) }} papers since {{ paper_stats.first_year }} · updated daily</p>
     <h1>Papers</h1>
     <p class="lead">Quantum control papers on arXiv, selected by a transparent rule and placed on the
       <a href="{{ url('map/') }}">field map</a> automatically. Search, filter by topic or year, or follow a topic's feed.</p>

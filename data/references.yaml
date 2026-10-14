@@ -9706,3 +9706,114 @@ malvetti2025reachability:
   doi: 10.1137/23m1594467
   arxiv: '2308.00561'
 
+johansson2012qutip:
+  type: article
+  title: 'QuTiP: An open-source Python framework for the dynamics of open quantum systems'
+  authors:
+  - J.R. Johansson
+  - P.D. Nation
+  - Franco Nori
+  journal: Computer Physics Communications
+  volume: '183'
+  pages: 1760-1772
+  year: 2012
+  doi: 10.1016/j.cpc.2012.02.021
+  arxiv: '1110.0573'
+
+johansson2013qutip:
+  type: article
+  title: 'QuTiP 2: A Python framework for the dynamics of open quantum systems'
+  authors:
+  - J.R. Johansson
+  - P.D. Nation
+  - Franco Nori
+  journal: Computer Physics Communications
+  volume: '184'
+  pages: 1234-1240
+  year: 2013
+  doi: 10.1016/j.cpc.2012.11.019
+  arxiv: '1211.6518'
+
+lambert2026qutip5:
+  type: article
+  title: 'QuTiP 5: The Quantum Toolbox in Python'
+  authors:
+  - Neill Lambert
+  - Eric Giguère
+  - Paul Menczel
+  - Boxi Li
+  - Patrick Hopf
+  - Gerardo Suárez
+  - Marc Gali
+  - Jake Lishman
+  - Rushiraj Gadhvi
+  - Rochisha Agarwal
+  - Asier Galicia
+  - Nathan Shammah
+  - Paul Nation
+  - J.R. Johansson
+  - Shahnawaz Ahmed
+  - Simon Cross
+  - Alexander Pitchford
+  - Franco Nori
+  journal: Physics Reports
+  volume: '1153'
+  pages: 1-62
+  year: 2026
+  doi: 10.1016/j.physrep.2025.10.001
+  arxiv: '2412.04705'
+
+teske2022qopt:
+  type: article
+  title: 'qopt: An Experiment-Oriented Software Package for Qubit Simulation and Quantum Optimal Control'
+  authors:
+  - Julian David Teske
+  - Pascal Cerfontaine
+  - Hendrik Bluhm
+  journal: Phys. Rev. Applied
+  volume: '17'
+  pages: '034036'
+  year: 2022
+  doi: 10.1103/physrevapplied.17.034036
+
+dong2010survey:
+  type: article
+  title: 'Quantum control theory and applications: a survey'
+  authors:
+  - D. Dong
+  - I.R. Petersen
+  journal: IET Control Theory Appl.
+  volume: '4'
+  pages: 2651-2671
+  year: 2010
+  doi: 10.1049/iet-cta.2009.0508
+  arxiv: '0910.2350'
+
+ansel2024introduction:
+  type: article
+  title: Introduction to theoretical and experimental aspects of quantum optimal control
+  authors:
+  - Q Ansel
+  - E Dionis
+  - F Arrouas
+  - B Peaudecerf
+  - S Guérin
+  - D Guéry-Odelin
+  - D Sugny
+  journal: 'J. Phys. B: At. Mol. Opt. Phys.'
+  volume: '57'
+  pages: '133001'
+  year: 2024
+  doi: 10.1088/1361-6455/ad46a5
+  arxiv: '2403.00532'
+
+shapiro2011book:
+  type: book
+  title: Quantum Control of Molecular Processes
+  authors:
+  - Moshe Shapiro
+  - Paul Brumer
+  publisher: Wiley
+  year: 2011
+  doi: 10.1002/9783527639700
+

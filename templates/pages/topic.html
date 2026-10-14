@@ -22,8 +22,6 @@
         {% if article %}
         <span>Updated {{ article.meta.updated }}</span>
         <span>{{ ((article.word_count / 200) | round(0, 'ceil') | int) }} min read</span>
-        {% if article.meta.status == 'draft' %}<span class="status status-building" title="Written carefully from the cited sources, but not yet reviewed by a domain expert">Draft · awaiting review</span>
-        {% else %}<span class="status status-live">Reviewed</span>{% endif %}
         {% endif %}
       </div>
       {% if topic.aliases %}
@@ -77,9 +75,8 @@
       <div class="card article-missing">
         {{ icon('info') }}
         <div>
-          <h2>This article has not been written yet</h2>
-          <p>The QOC knowledge base is being written one family at a time, with every statement sourced and
-            reviewed. Until then, the related topics below are a good place to continue.</p>
+          <h2>No article on this topic yet</h2>
+          <p>The related topics below are a good place to continue.</p>
         </div>
       </div>
       {% endif %}
@@ -149,7 +146,7 @@
           <h2><span class="fam-dot"></span>{{ family.title }}</h2>
           <ol>
             {% for t in family.topics %}
-            <li><a href="{{ url('topics/' ~ t.id ~ '/') }}"{% if t.id == topic.id %} aria-current="page"{% endif %}>{{ t.title }}{% if t.id not in articles %}<span class="soon" title="Article not written yet">·</span>{% endif %}</a></li>
+            <li><a href="{{ url('topics/' ~ t.id ~ '/') }}"{% if t.id == topic.id %} aria-current="page"{% endif %}>{{ t.title }}{% if t.id not in articles %}<span class="soon" title="No article yet">·</span>{% endif %}</a></li>
             {% endfor %}
           </ol>
         </nav>

@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% from "partials/icons.html" import icon %}
-{% from "partials/ui.html" import status_badge %}
 {% block title %}About — QOC{% endblock %}
 
 {% block main %}
@@ -72,27 +71,13 @@
     importantly, both are stable from year to year, so the <em>trend</em> is reliable.</p>
   {% endif %}
 
-  <h2 id="roadmap">Roadmap</h2>
-  <ol class="roadmap">
-    <li class="is-done">
-      <div class="roadmap-head"><span class="roadmap-phase">Phase 1</span><h3>Foundations</h3>{{ status_badge('done') }}</div>
-      <p>Design system, logo, build pipeline, site structure and a first outline of the field.</p>
-    </li>
-    {% for s in sections|sort(attribute='phase') %}
-    <li class="is-{{ s.status }}">
-      <div class="roadmap-head"><span class="roadmap-phase">Phase {{ s.phase }}</span><h3><a href="{{ url(s.id ~ '/') }}">{{ s.title }}</a></h3>{{ status_badge(s.status) }}</div>
-      <p>{{ s.summary }}</p>
-    </li>
-    {% endfor %}
-    <li class="is-planned">
-      <div class="roadmap-head"><span class="roadmap-phase">Phase 7</span><h3>Public launch</h3>{{ status_badge('planned') }}</div>
-      <p>Open the repository, publish the site, and invite the community to contribute.</p>
-    </li>
-  </ol>
-
   <h2 id="contribute">Contribute</h2>
-  <p>QOC is still in private development. Once it is public, corrections and additions — a missing group, a
-    new open problem, an error in an article — will be welcome as issues or pull requests on GitHub. Every
-    data file is plain YAML or Markdown, so no web-development knowledge is needed.</p>
+  <p>QOC is open: the content and the code live in a public
+    <a href="https://github.com/llorebaga/QOC" rel="noopener">GitHub repository</a>. Corrections and additions — a
+    missing group, a new open problem, a result we overlooked, an error in an article — are welcome as
+    <a href="https://github.com/llorebaga/QOC/issues" rel="noopener">issues</a> or pull requests. Every data file is
+    plain YAML or Markdown, so no web-development knowledge is needed.</p>
+  <p>Every statement in the articles and open problems is written from the papers cited next to it, and every
+    reference is generated from its DOI or arXiv record. If something is wrong or out of date, please tell us.</p>
 </div>
 {% endblock %}

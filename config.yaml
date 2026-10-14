@@ -31,7 +31,7 @@ sections:
     title: Field map
     icon: map
     phase: 2
-    status: building
+    status: live
     page: map
     summary: >-
       An interactive map of the field: every area and method, how they connect,
@@ -45,22 +45,22 @@ sections:
     title: Paper tracker
     icon: papers
     phase: 3
-    status: building
+    status: live
     page: papers
     summary: >-
       New quantum control papers from arXiv, collected automatically every day
       and classified into the topics of the field map.
     features:
-      - Daily automatic fetch from arXiv, filtered for relevance (running — every paper since 2000 is archived)
-      - Classification into field-map topics, with filters and search (built)
-      - Author pages — click any author to see all their tracked papers (built)
-      - Atom feeds per topic and a weekly digest (built)
+      - Daily automatic fetch from arXiv, filtered for relevance
+      - Classification into field-map topics, with filters and search
+      - Author pages — click any author to see all their tracked papers
+      - Atom feeds per topic and a weekly digest
 
   - id: groups
     title: Research groups
     icon: globe
     phase: 4
-    status: building
+    status: live
     page: groups
     summary: >-
       A world map of the groups working on quantum optimal control — who they
@@ -74,27 +74,27 @@ sections:
     title: Open problems
     icon: question
     phase: 5
-    status: building
+    status: live
     page: problems
     summary: >-
       A curated list of specific, well-posed open questions in quantum optimal
       control — with context, partial results and references.
     features:
-      - Precise problem statements, each with the paper that poses it (first problems written)
-      - Status tracking — open, partial progress, solved (built)
-      - Linked to the topics of the field map (built)
+      - Precise problem statements, each with the paper that poses it
+      - Status tracking — open, partial progress, solved
+      - Linked to the topics of the field map
 
   - id: resources
     title: Resources
     icon: book
     phase: 6
-    status: planned
-    page: placeholder
+    status: live
+    page: resources
     summary: >-
-      Everything else you need: software packages, review articles and
-      tutorials, a glossary of notation, and a timeline of the field.
+      Everything else you need: software packages, reviews, tutorials and
+      books, a glossary of the field's terms, and a timeline of its history.
     features:
-      - Software directory (QuTiP, Krotov, QuOCS, C3, Juqbox, …)
-      - Essential reading — reviews, tutorials, landmark papers
-      - Glossary of terms and notation
-      - A timeline of the history of the field
+      - Software directory
+      - Essential reading — reviews, tutorials, books, landmark papers
+      - Glossary of terms
+      - A timeline of the field

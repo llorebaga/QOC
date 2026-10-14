@@ -18,8 +18,6 @@
       <div class="topic-meta">
         {{ problem_status(pr.status) }}
         <span>Added {{ pr.added }}{% if pr.updated != pr.added %} · updated {{ pr.updated }}{% endif %}</span>
-        {% if pr.review == 'draft' %}<span class="problem-draft" title="Written carefully from the cited sources, but not yet reviewed by a domain expert">Draft · awaiting review</span>
-        {% else %}<span class="problem-draft">Reviewed</span>{% endif %}
       </div>
       <ul class="paper-topics problem-topics">
         {% for t in pr.topics %}{% set tt = taxonomy.topics[t] %}

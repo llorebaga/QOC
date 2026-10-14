@@ -11,7 +11,7 @@
 
 ---
 
-> **Live:** https://llorebaga.github.io/QOC/ — early version; Phases 2–5 (knowledge base, paper tracker, groups, open problems) in progress, articles and problems are drafts awaiting review. See [ROADMAP.md](ROADMAP.md).
+> **Live:** https://llorebaga.github.io/QOC/ — see [ROADMAP.md](ROADMAP.md) for what is planned next.
 
 ## What's here
 

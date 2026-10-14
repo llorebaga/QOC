@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% block title %}Resources — QOC{% endblock %}
+{% block description %}{{ section.summary }}{% endblock %}
+{% block head %}{% include "partials/katex.html" %}{% endblock %}
+
+{% macro topic_chips(ids) -%}
+{% if ids %}<ul class="paper-topics">
+  {% for t in ids %}{% set tt = taxonomy.topics[t] %}
+  <li><a class="topic-chip" href="{{ url('topics/' ~ t ~ '/') }}" style="--fam: var(--fam-{{ tt.family }})">{{ tt.label }}</a></li>
+  {% endfor %}
+</ul>{% endif %}
+{%- endmacro %}
+
+{% block main %}
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <h1>Resources</h1>
+    <p class="lead">Software for designing and simulating controls, what to read first, the field's vocabulary, and
+      how it came to be.</p>
+    <nav class="res-nav" aria-label="On this page">
+      <a href="#software">Software</a>
+      <a href="#reading">Reading</a>
+      <a href="#glossary">Glossary</a>
+      <a href="#timeline">Timeline</a>
+    </nav>
+  </div>
+</section>
+
+<div class="wrap resources">
+
+  <section class="res-section" aria-labelledby="software">
+    <h2 id="software">Software</h2>
+    <p class="section-note">Open-source packages unless marked otherwise. Every link was checked; where a package has a
+      paper, it is cited.</p>
+    {% for g in res.software %}
+    <h3 class="res-group">{{ g.group }}</h3>
+    <ul class="sw-list">
+      {% for s in g['items'] %}
+      <li class="sw-card card">
+        <div class="sw-head">
+          <a class="sw-name" href="{{ s.url }}" rel="noopener">{{ s.name }}</a>
+          <span class="sw-lang">{{ s.lang }}{% if s.get('commercial') %} · commercial{% endif %}</span>
+        </div>
+        <p class="sw-what">{{ s.what_html }}</p>
+        {% if s.get('refs') %}<p class="sw-refs">{% for k in s.refs %}<span class="ref">{{ fmt_ref(k) }}</span>{% endfor %}</p>{% endif %}
+        {{ topic_chips(s.get('topics')) }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </section>
+
+  <section class="res-section" aria-labelledby="reading">
+    <h2 id="reading">Reading</h2>
+    {% for g in res.reading %}
+    <h3 class="res-group">{{ g.group }}</h3>
+    {% if g.get('note') %}<p class="section-note">{{ g.note }}</p>{% endif %}
+    <ul class="key-papers">
+      {% for r in g['items'] %}
+      <li>
+        <div class="ref">{{ fmt_ref(r.key) }}</div>
+        {% if r.note_html %}<p class="kp-note">{{ r.note_html }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+    <p class="section-note">Every <a href="{{ url('map/') }}">topic article</a> ends with the key papers on that topic.</p>
+  </section>
+
+  <section class="res-section" aria-labelledby="glossary">
+    <h2 id="glossary">Glossary</h2>
+    <dl class="glossary">
+      {% for e in res.glossary %}
+      <div id="g-{{ e.id }}">
+        <dt>{{ e.term }}</dt>
+        <dd>{{ e.def_html }}
+          {% if e.get('topics') %}<span class="gl-links">→ {% for t in e.topics %}<a href="{{ url('topics/' ~ t ~ '/') }}">{{ taxonomy.topics[t].title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}
+        </dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </section>
+
+  <section class="res-section" aria-labelledby="timeline">
+    <h2 id="timeline">Timeline</h2>
+    <p class="section-note">A selection of milestones, each with the paper it refers to.</p>
+    <ol class="timeline">
+      {% for e in res.timeline %}
+      <li>
+        <span class="tl-year">{{ e.year }}</span>
+        <div class="tl-body">
+          <p>{{ e.text_html }}</p>
+          {% for k in e.get('refs', []) %}<div class="ref">{{ fmt_ref(k) }}</div>{% endfor %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+</div>
+{% endblock %}

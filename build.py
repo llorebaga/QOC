@@ -163,6 +163,52 @@ def load_problems(taxonomy: dict, references: dict, url) -> list[dict]:
     return sorted(problems, key=lambda p: (order.index(p["status"]), p["title"].lower()))
 
 
+def load_resources(path: Path, taxonomy: dict, references: dict, url) -> dict:
+    """Load data/resources.yaml: check every reference key and topic id, render the text fields."""
+    if not path.exists():
+        return {}
+    res = load_yaml(path) or {}
+    errors = []
+
+    def inline(text: str, where: str) -> Markup:
+        try:
+            out = render_article(where, text or "", references=references, topics=taxonomy["topics"], url=url).html
+        except ContentError as exc:
+            errors.append(str(exc))
+            return Markup("")
+        return Markup(re.sub(r"^<p>(.*)</p>$", r"\1", out.strip(), flags=re.S))
+
+    def check(item: dict, where: str) -> None:
+        for t in item.get("topics", []) or []:
+            if t not in taxonomy["topics"]:
+                errors.append(f"{where}: unknown topic '{t}'")
+        for k in ([item["key"]] if "key" in item else []) + (item.get("refs") or []):
+            if k not in references:
+                errors.append(f"{where}: unknown reference key '{k}'")
+
+    for g in res.get("software", []):
+        for s in g["items"]:
+            check(s, f"software '{s['name']}'")
+            if not str(s.get("url", "")).startswith("https://"):
+                errors.append(f"software '{s['name']}': url must be https")
+            s["what_html"] = inline(s.get("what", ""), "resources")
+    for g in res.get("reading", []):
+        for r in g["items"]:
+            check(r, f"reading '{r.get('key')}'")
+            r["note_html"] = inline(r.get("note", ""), "resources")
+    for e in res.get("glossary", []):
+        check(e, f"glossary '{e['term']}'")
+        e["id"] = re.sub(r"[^a-z0-9]+", "-", e["term"].lower()).strip("-")
+        e["def_html"] = inline(e["def"], "resources")
+    res["glossary"] = sorted(res.get("glossary", []), key=lambda e: e["term"].lower())
+    for e in res.get("timeline", []):
+        check(e, f"timeline {e['year']}")
+        e["text_html"] = inline(e["text"], "resources")
+    if errors:
+        raise BuildError("resources.yaml:\n  " + "\n  ".join(errors))
+    return res
+
+
 def load_groups(path: Path, taxonomy: dict) -> list[dict]:
     """Load and validate data/groups.yaml (maintained with tools/groups.py)."""
     if not path.exists():
@@ -319,6 +365,8 @@ def build(base: str | None = None, quiet: bool = False) -> None:
         template = "pages/section.html" if section["page"] == "placeholder" else f"pages/{section['page']}.html"
         extra = {"graph_json": Markup(json.dumps(map_data(taxonomy, articles, url), ensure_ascii=False)
                                       .replace("</", "<\\/"))} if section["id"] == "map" else {}
+        if section["id"] == "resources":
+            extra = {"res": load_resources(ROOT / "data" / "resources.yaml", taxonomy, references, url)}
         if section["id"] == "groups":
             extra = {"groups": groups,
                      "groups_json": Markup(json.dumps(groups_data(groups, taxonomy, url), ensure_ascii=False)
