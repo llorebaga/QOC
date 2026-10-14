@@ -72,8 +72,14 @@ understand any area; an expert can use it as a quick reference.
 - [x] World map (Leaflet with Natural Earth country outlines, no tiles; marker clustering) with filters by topic and platform,
       synchronized with the group list; one page per group with topics and recent papers
 - [x] Seed: 37 well-known groups in 12 countries
-- [ ] Grow the list (candidates still to be verified: Sugny, Vitanov, Muga, Boscain & Sigalotti, Mirrahimi,
-      Sherson, Biercuk, Petersen, Dong, Yuan, Xi Chen, Schulte-Herbrüggen, Pupillo, Pechen, Laflamme, …); contribution form at launch
+- [x] 29 groups added from the participants of AQuTe25 ("Advances in Quantum Control", MPI-PKS Dresden, July 2025):
+      every participant mapped to their PI, added when the PI's tracked papers match and a website names the PI.
+      Not added (2026-10-14): Puebla (UC3M), Napolitano (USP), Schlagheck (Liège), Misguich (IPhT) — no group page
+      found; Auffèves, Saenz — no matching papers; participants whose PI could not be identified: Candeloro, Cangemi,
+      Chakraborty, Gago Encinas, Giergiel, Gupta, Hijano Mendizabal, Iakoupov, Joseph, Kirchberg, Onah, Pagot, Usui,
+      Veroni, Zeng
+- [ ] Grow the list (candidates still to be verified: Vitanov, Mirrahimi, Sherson, Petersen, Dong,
+      Schulte-Herbrüggen, Pupillo, Pechen, Laflamme, Paternostro, …)
 
 ## 🚧 Phase 5 — Open problems (first version built)
 

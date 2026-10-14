@@ -4,7 +4,7 @@ question: >-
   A continuum of qubits whose resonance frequencies are known only up to an interval can be steered simultaneously,
   to any family of target gates, by one real-valued control field. Does the same hold for systems with more than two
   levels?
-status: open
+status: partial
 topics: [robust-optimal-control, controllability, adiabatic-passage]
 posed_by:
   - key: koch2022roadmap
@@ -76,8 +76,19 @@ which an [[adiabatic-passage|adiabatic]] path can follow for every value of the 
 and adiabatic approximations with high-order averaging; the condition $3(E + v_0) > E + v_1$ keeps characteristic
 frequencies from overlapping [@robin2022ensemble].
 
+**One control, $n$ levels: population transfer.** A different cascade of rotating-wave and adiabatic approximations
+gives ensemble control of $n$-level systems with a scalar input that is robust to dispersion in the coupling strengths,
+but not in the transition frequencies [@augier2022effective]. With dispersion in the frequencies, Liang, Boscain and
+Sigalotti prove that one real control can invert the population between any two eigenstates $e_p$ and $e_q$ for the
+whole continuum, provided the gap $\lambda_q - \lambda_p$ stays in a window $(v_0, v_1)$ that no other gap of the
+system enters, and the coupling between the two levels does not change sign. They give the control explicitly — a
+slowly chirped, slowly modulated sinusoid — and test numerically how sharp the conditions are
+[@liang2026ensemble].
+
 ## Status
 
-**Open.** The single-control result is proved for two-level systems only. The 2022 roadmap calls the extension an
-important open problem [@koch2022roadmap], and we have not found a result that settles it for $N \ge 3$. If you know
-of one, please tell us.
+**Partial progress.** For $N \ge 3$, a single control is now known to achieve robust *population transfer* between
+eigenstates, under conditions that keep the transition frequencies apart [@liang2026ensemble]. Approximate ensemble
+controllability in $C^0(K, SU(N))$ — reaching every family of target unitaries — is not established for $N \ge 3$,
+and the authors list weaker conditions and further controllability results (such as population splitting) as
+directions for future work.

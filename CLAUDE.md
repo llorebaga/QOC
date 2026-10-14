@@ -39,7 +39,9 @@ Static website about quantum optimal control. See README.md (structure) and ROAD
   not tuning) and update `summary.yaml`. Classification results are cached in `.cache/` (gitignored).
 - Author identities: `qocsite/authors.py` (merging rules in its docstring).
 - Research groups: `data/groups.yaml` via `tools/groups.py` (`find` a Wikidata id, `coords`, `check --write`). Never
-  type coordinates/cities; only add a group whose website names its PIs. Group
+  type coordinates/cities; only add a group whose website names its PIs. If a site blocks automated requests or needs
+  JavaScript, check it by hand in the browser and set `manual_check: true` with `checked: <date>`; never try to get
+  around bot challenges. Group
   topics come from the PIs' papers (add `arxiv_names` when a PI publishes under another spelling).
 - The dev server rebuilds in a subprocess, so code changes apply without restarting it.
 

@@ -42,7 +42,8 @@ HEADER = """\
 # Research groups on the QOC world map.
 #
 # Hand-written: id, name, pis, institution, wikidata (the institution's Wikidata id), website, arxiv_names (optional: other spellings
-#   of a PI's name on arXiv, to link the right author page), note (optional).
+#   of a PI's name on arXiv, to link the right author page), note (optional), manual_check (optional: true when the
+#   website blocks automated requests or needs JavaScript; it was then checked by hand in a browser on `checked`).
 # Generated — do not edit by hand: city, country, lat, lon (python tools/groups.py coords) and checked
 #   (python tools/groups.py check --write: the website loaded and named every PI on that date).
 # Topics are not stored here: the site derives them from the PIs' papers in the tracker.
@@ -202,13 +203,22 @@ def cmd_check(write: bool) -> int:
         ids.add(g.get("id"))
         if any(g.get(k) is None for k in ("lat", "lon")):
             msgs.append("no coordinates (run: tools/groups.py coords)")
+        manual = bool(g.get("manual_check"))
+        if manual:
+            # The site blocks automated requests or renders its content with JavaScript: it was checked by hand in a
+            # browser on the recorded date, and is not fetched here.
+            print(f"  (note: {g.get('id')}: website checked by hand on {g.get('checked', '?')})")
         try:
+            if manual:
+                raise StopIteration
             text = page_text(g["website"])
             missing = [p for p in g["pis"] if fold(surname(p)) not in text]
             if missing:
                 msgs.append(f"website does not mention {missing}")
             if fold(g["name"]) not in text and not g["name"].endswith(" group"):
                 print(f"  (note: {g.get('id')}: the name '{g['name']}' is not on the website)")
+        except StopIteration:
+            pass
         except Exception as exc:
             msgs.append(f"website failed: {exc}")
         try:
@@ -222,7 +232,7 @@ def cmd_check(write: bool) -> int:
             print(f"✗ {g.get('id')}: " + "; ".join(msgs))
         else:
             print(f"✓ {g['id']}")
-            if write:
+            if write and not g.get("manual_check"):
                 g["checked"] = today
         time.sleep(1)
     if write:

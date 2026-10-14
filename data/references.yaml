@@ -9817,3 +9817,30 @@ shapiro2011book:
   year: 2011
   doi: 10.1002/9783527639700
 
+liang2026ensemble:
+  type: article
+  title: Ensemble control of n-level quantum systems with a scalar control
+  authors:
+  - Ruikang Liang
+  - Ugo Boscain
+  - Mario Sigalotti
+  journal: Automatica
+  volume: '185'
+  pages: '112733'
+  year: 2026
+  doi: 10.1016/j.automatica.2025.112733
+  arxiv: '2501.12357'
+
+augier2022effective:
+  type: article
+  title: Effective adiabatic control of a decoupled Hamiltonian obtained by rotating wave approximation
+  authors:
+  - Nicolas Augier
+  - Ugo Boscain
+  - Mario Sigalotti
+  journal: Automatica
+  volume: '136'
+  pages: '110034'
+  year: 2022
+  doi: 10.1016/j.automatica.2021.110034
+
