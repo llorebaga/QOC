@@ -24,6 +24,7 @@ import time
 from pathlib import Path
 
 import json
+import re
 
 import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoescape
@@ -109,6 +110,57 @@ def load_articles(taxonomy: dict, references: dict, url) -> dict:
         except ContentError as exc:
             raise BuildError(str(exc)) from exc
     return articles
+
+
+PROBLEM_STATUS = {"open": "Open", "partial": "Partial progress", "solved": "Solved"}
+PROBLEM_ID = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+
+
+def load_problems(taxonomy: dict, references: dict, url) -> list[dict]:
+    """Render content/problems/<id>.md and validate the front matter (see README)."""
+    problems, errors = [], []
+    for f in sorted((ROOT / "content" / "problems").glob("*.md")):
+        pid = f.stem
+        try:
+            art = render_article(pid, f.read_text(encoding="utf-8"), references=references,
+                                 topics=taxonomy["topics"], url=url)
+        except ContentError as exc:
+            raise BuildError(str(exc)) from exc
+        m = art.meta
+        where = f"content/problems/{f.name}"
+        if not PROBLEM_ID.match(pid):
+            errors.append(f"{where}: bad id (use lowercase words joined by '-')")
+        for k in ("title", "question", "status", "topics", "posed_by", "added"):
+            if not m.get(k):
+                errors.append(f"{where}: missing {k}")
+        if m.get("status") not in PROBLEM_STATUS:
+            errors.append(f"{where}: status must be one of {', '.join(PROBLEM_STATUS)}")
+        if m.get("review", "draft") not in ("draft", "reviewed"):
+            errors.append(f"{where}: review must be draft or reviewed")
+        for t in m.get("topics") or []:
+            if t not in taxonomy["topics"]:
+                errors.append(f"{where}: unknown topic '{t}'")
+        for p in m.get("posed_by") or []:
+            if p.get("key") not in references:
+                errors.append(f"{where}: posed_by has unknown key '{p.get('key')}'")
+        if errors:
+            continue
+        # The question and the notes on sources are short Markdown with math, rendered without the outer <p>.
+        def inline(text: str) -> Markup:
+            out = render_article(pid, text, references=references, topics=taxonomy["topics"], url=url).html
+            return Markup(re.sub(r"^<p>(.*)</p>$", r"\1", out.strip(), flags=re.S))
+
+        posed_by = [{"key": p["key"], "where": inline(p.get("where", ""))} for p in m["posed_by"]]
+        # Every source that poses the problem is listed with the references, after the cited ones.
+        refs = art.citations + [p["key"] for p in posed_by if p["key"] not in art.citations]
+        problems.append({"id": pid, "title": m["title"], "question": inline(m["question"]), "status": m["status"],
+                         "status_label": PROBLEM_STATUS[m["status"]], "topics": m["topics"],
+                         "posed_by": posed_by, "added": m["added"], "updated": m.get("updated", m["added"]),
+                         "review": m.get("review", "draft"), "article": art, "refs": refs})
+    if errors:
+        raise BuildError("open problems:\n  " + "\n  ".join(errors))
+    order = list(PROBLEM_STATUS)
+    return sorted(problems, key=lambda p: (order.index(p["status"]), p["title"].lower()))
 
 
 def load_groups(path: Path, taxonomy: dict) -> list[dict]:
@@ -229,6 +281,11 @@ def build(base: str | None = None, quiet: bool = False) -> None:
     env = make_env(base if base is not None else config["site"]["base_url"], config, taxonomy)
     url = env.globals["url"]
     articles = load_articles(taxonomy, references, url)
+    problems = load_problems(taxonomy, references, url)
+    problems_by_topic: dict[str, list[dict]] = {}
+    for pr in problems:
+        for t in pr["topics"]:
+            problems_by_topic.setdefault(t, []).append(pr)
     papers = load_papers(ROOT / "data" / "papers")
     totals_file = ROOT / "data" / "quality" / "quantph-totals.json"
     totals = json.loads(totals_file.read_text(encoding="utf-8")) if totals_file.exists() else None
@@ -242,7 +299,8 @@ def build(base: str | None = None, quiet: bool = False) -> None:
     groups = paper_tracker.prepare_groups(load_groups(ROOT / "data" / "groups.yaml", taxonomy), tracked, taxonomy)
     quality_file = ROOT / "data" / "quality" / "summary.yaml"
     quality = load_yaml(quality_file) if quality_file.exists() else None
-    env.globals.update(articles=articles, paper_stats=stats, selection=selection, quality=quality, tracked=tracked,
+    env.globals.update(articles=articles, problems=problems, problems_by_topic=problems_by_topic,
+                       paper_stats=stats, selection=selection, quality=quality, tracked=tracked,
                        fmt_ref=lambda key: Markup(format_reference(references[key])),
                        references=references)
 
@@ -282,6 +340,10 @@ def build(base: str | None = None, quiet: bool = False) -> None:
             render(env, "feeds/atom.xml", f"topics/{topic['id']}/feed.xml", feed_title=f"QOC — {topic['title']}",
                    feed_id=f"topics/{topic['id']}/", feed_page=f"topics/{topic['id']}/", entries=topic_papers[:30])
 
+    # Open problems: one page each (the list is on the section page)
+    for pr in problems:
+        render(env, "pages/problem.html", f"open-problems/{pr['id']}/index.html", page_id="open-problems", pr=pr)
+
     # Research groups: one page each (the map and the list are on the section page)
     for g in groups:
         render(env, "pages/group.html", f"groups/{g['id']}/index.html", page_id="groups", g=g)
@@ -300,7 +362,7 @@ def build(base: str | None = None, quiet: bool = False) -> None:
     remove_stale()
     n = sum(1 for _ in OUT.rglob("*.html"))
     if not quiet:
-        print(f"built {n} pages ({len(articles)} articles, {len(references)} references, "
+        print(f"built {n} pages ({len(articles)} articles, {len(problems)} problems, {len(references)} references, "
               f"{stats['total']} papers) into {OUT.relative_to(ROOT)}/ in {time.perf_counter() - t0:.2f}s")
 
 

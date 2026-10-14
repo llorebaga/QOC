@@ -3,3 +3,8 @@
 {%- set labels = {'live': 'Live', 'building': 'In progress', 'next': 'Up next', 'planned': 'Planned', 'done': 'Done'} -%}
 <span class="status status-{{ status }}">{{ labels[status] }}</span>
 {%- endmacro %}
+
+{% macro problem_status(status) -%}
+{%- set labels = {'open': 'Open', 'partial': 'Partial progress', 'solved': 'Solved'} -%}
+<span class="status status-{{ status }}">{{ labels[status] }}</span>
+{%- endmacro %}

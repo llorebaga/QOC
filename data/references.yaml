@@ -5648,7 +5648,6 @@ puri2017kerr:
   year: 2017
   doi: 10.1038/s41534-017-0019-1
 
-
 hofheinz2008fock:
   type: article
   title: Generation of Fock states in a superconducting quantum circuit
@@ -7523,8 +7522,6 @@ mckay2017virtualz:
   year: 2017
   doi: 10.1103/physreva.96.022330
 
-
-
 silverio2022pulser:
   type: article
   title: 'Pulser: An open-source package for the design of pulse sequences in programmable neutral-atom
@@ -9158,4 +9155,440 @@ ryan2017hardware:
   pages: '104703'
   year: 2017
   doi: 10.1063/1.5006525
+
+pechen2012landauzener:
+  type: article
+  title: Trap-free manipulation in the Landau-Zener system
+  authors:
+  - Alexander Pechen
+  - Nikolay Il'in
+  journal: Phys. Rev. A
+  volume: '86'
+  pages: '052117'
+  year: 2012
+  doi: 10.1103/physreva.86.052117
+  arxiv: '1304.1357'
+
+pechen2014qubit:
+  type: article
+  title: Coherent control of a qubit is trap-free
+  authors:
+  - A. N. Pechen
+  - N. B. Il’in
+  journal: Proc. Steklov Inst. Math.
+  volume: '285'
+  pages: 233-240
+  year: 2014
+  doi: 10.1134/s0081543814040166
+  arxiv: '1407.5175'
+
+volkov2021phaseshift:
+  type: article
+  title: Quantum control landscape for ultrafast generation of single-qubit phase shift quantum gates
+  authors:
+  - Boris O Volkov
+  - Oleg V Morzhin
+  - Alexander N Pechen
+  journal: 'J. Phys. A: Math. Theor.'
+  volume: '54'
+  pages: '215303'
+  year: 2021
+  doi: 10.1088/1751-8121/abf45d
+  arxiv: '2104.12699'
+
+volkov2023detailed:
+  type: article
+  title: On the detailed structure of quantum control landscape for fast single qubit phase-shift gate
+    generation
+  authors:
+  - Boris Olegovich Volkov
+  - Alexander Nikolaevich Pechen
+  journal: Izv. Math.
+  volume: '87'
+  pages: 906-919
+  year: 2023
+  doi: 10.4213/im9364e
+
+pechen2012lambda:
+  type: article
+  title: Quantum Control Landscape for a Λ‐atom in the Vicinity of Second‐Order Traps
+  authors:
+  - Alexander N. Pechen
+  - David J. Tannor
+  journal: Israel Journal of Chemistry
+  volume: '52'
+  pages: 467-472
+  year: 2012
+  doi: 10.1002/ijch.201100165
+  arxiv: '1508.04169'
+
+rabitz2012comment:
+  type: article
+  title: Comment on “Are There Traps in Quantum Control Landscapes?”
+  authors:
+  - Herschel Rabitz
+  - Tak-San Ho
+  - Ruixing Long
+  - Rebing Wu
+  - Constantin Brif
+  journal: Phys. Rev. Lett.
+  volume: '108'
+  pages: '198901'
+  year: 2012
+  doi: 10.1103/physrevlett.108.198901
+  arxiv: '1105.2367'
+
+pechen2012reply:
+  type: article
+  title: 'Pechen and Tannor Reply:'
+  authors:
+  - Alexander N. Pechen
+  - David J. Tannor
+  journal: Phys. Rev. Lett.
+  volume: '108'
+  pages: '198902'
+  year: 2012
+  doi: 10.1103/physrevlett.108.198902
+
+volkov2023higher:
+  type: article
+  title: Higher-order traps for some strongly degenerate quantum control systems
+  authors:
+  - Boris Olegovich Volkov
+  - Alexander Nikolaevich Pechen
+  journal: Russian Math. Surveys
+  volume: '78'
+  pages: 390-392
+  year: 2023
+  doi: 10.4213/rm10069e
+  arxiv: '2304.03355'
+
+zhdanov2018comment:
+  type: article
+  title: 'Comment on ‘Control landscapes are almost always trap free: a geometric assessment’'
+  authors:
+  - Dmitry V Zhdanov
+  journal: 'J. Phys. A: Math. Theor.'
+  volume: '51'
+  pages: '508001'
+  year: 2018
+  doi: 10.1088/1751-8121/aaecf6
+  arxiv: '1811.01416'
+
+russell2018reply:
+  type: article
+  title: 'Reply to comment on ‘control landscapes are almost always trap free: a geometric assessment’'
+  authors:
+  - Benjamin Russell
+  - Rebing Wu
+  - Herschel Rabitz
+  journal: 'J. Phys. A: Math. Theor.'
+  volume: '51'
+  pages: '508002'
+  year: 2018
+  doi: 10.1088/1751-8121/aaecf2
+
+volkov2025stronger:
+  type: article
+  title: Phenomenon of a stronger trapping behavior in Λ -type quantum systems with symmetry
+  authors:
+  - Boris Volkov
+  - Anastasia Myachkova
+  - Alexander Pechen
+  journal: Phys. Rev. A
+  volume: '111'
+  pages: '022617'
+  year: 2025
+  doi: 10.1103/physreva.111.022617
+
+birtea2022constraint:
+  type: article
+  title: Constraint optimization and SU ( N ) quantum control landscapes
+  authors:
+  - Petre Birtea
+  - Ioan Caşu
+  - Dan Comănescu
+  journal: 'J. Phys. A: Math. Theor.'
+  volume: '55'
+  pages: '115301'
+  year: 2022
+  doi: 10.1088/1751-8121/ac5189
+
+beauchard2010bloch:
+  type: article
+  title: Controllability Issues for Continuous-Spectrum Systems and Ensemble Controllability of Bloch
+    Equations
+  authors:
+  - Karine Beauchard
+  - Jean-Michel Coron
+  - Pierre Rouchon
+  journal: Commun. Math. Phys.
+  volume: '296'
+  pages: 525-557
+  year: 2010
+  doi: 10.1007/s00220-010-1008-9
+
+augier2018adiabatic:
+  type: article
+  title: Adiabatic Ensemble Control of a Continuum of Quantum Systems
+  authors:
+  - Nicolas Augier
+  - Ugo Boscain
+  - Mario Sigalotti
+  journal: SIAM J. Control Optim.
+  volume: '56'
+  pages: 4045-4068
+  year: 2018
+  doi: 10.1137/17m1140327
+
+robin2022ensemble:
+  type: article
+  title: Ensemble qubit controllability with a single control via adiabatic and rotating wave approximations
+  authors:
+  - Rémi Robin
+  - Nicolas Augier
+  - Ugo Boscain
+  - Mario Sigalotti
+  journal: Journal of Differential Equations
+  volume: '318'
+  pages: 414-442
+  year: 2022
+  doi: 10.1016/j.jde.2022.02.042
+  arxiv: '2003.05831'
+
+agrachev2016ensemble:
+  type: article
+  title: Ensemble controllability by Lie algebraic methods
+  authors:
+  - Andrei Agrachev
+  - Yuliy Baryshnikov
+  - Andrey Sarychev
+  journal: 'ESAIM: COCV'
+  volume: '22'
+  pages: 921-938
+  year: 2016
+  doi: 10.1051/cocv/2016029
+
+chen2019ensemble:
+  type: article
+  title: Structure theory for ensemble controllability, observability, and duality
+  authors:
+  - Xudong Chen
+  journal: Math. Control Signals Syst.
+  volume: '31'
+  pages: 1-40
+  year: 2019
+  doi: 10.1007/s00498-019-0237-5
+
+beschastnyi2021obstruction:
+  type: article
+  title: An obstruction to small-time controllability of the bilinear Schrödinger equation
+  authors:
+  - Ivan Beschastnyi
+  - Ugo Boscain
+  - Mario Sigalotti
+  journal: Journal of Mathematical Physics
+  volume: '62'
+  pages: '032103'
+  year: 2021
+  doi: 10.1063/5.0003524
+  arxiv: '1911.12994'
+
+beauchard2014minimal:
+  type: article
+  title: Minimal time for the bilinear control of Schrödinger equations
+  authors:
+  - Karine Beauchard
+  - Jean-Michel Coron
+  - Holger Teismann
+  journal: Systems & Control Letters
+  volume: '71'
+  pages: 1-6
+  year: 2014
+  doi: 10.1016/j.sysconle.2014.06.009
+
+beauchard2018minimal:
+  type: article
+  title: Minimal time for the approximate bilinear control of Schrödinger equations
+  authors:
+  - Karine Beauchard
+  - Jean‐Michel Coron
+  - Holger Teismann
+  journal: Math Methods in App Sciences
+  volume: '41'
+  pages: 1831-1844
+  year: 2018
+  doi: 10.1002/mma.4710
+
+boussaid2012smalltime:
+  type: proceedings
+  title: Small time reachable set of bilinear quantum systems
+  authors:
+  - Nabile Boussaid
+  - Marco Caponigro
+  - Thomas Chambrion
+  booktitle: 2012 IEEE 51st IEEE Conference on Decision and Control (CDC)
+  pages: 1083-1087
+  year: 2012
+  doi: 10.1109/cdc.2012.6426208
+
+beauchard2025diffeomorphisms:
+  type: article
+  title: Small-time approximate controllability of bilinear Schrödinger equations and diffeomorphisms
+  authors:
+  - Karine Beauchard
+  - Eugenio Pozzoli
+  journal: Ann. Inst. H. Poincaré C Anal. Non Linéaire
+  year: 2025
+  doi: 10.4171/aihpc/162
+  arxiv: '2410.02383'
+
+chambrion2023smalltime:
+  type: article
+  title: Small-time bilinear control of Schrödinger equations with application to rotating linear molecules
+  authors:
+  - Thomas Chambrion
+  - Eugenio Pozzoli
+  journal: Automatica
+  volume: '153'
+  pages: '111028'
+  year: 2023
+  doi: 10.1016/j.automatica.2023.111028
+  arxiv: '2207.03818'
+
+duca2024sobolev:
+  type: article
+  title: Bilinear control and growth of Sobolev norms for the nonlinear Schrödinger equation
+  authors:
+  - Alessandro Duca
+  - Vahagn Nersesyan
+  journal: J. Eur. Math. Soc.
+  volume: '27'
+  pages: 2603-2622
+  year: 2024
+  doi: 10.4171/jems/1420
+  arxiv: '2101.12103'
+
+beauchard2026logarithmic:
+  type: article
+  title: Small-time approximate controllability of the logarithmic Schrödinger equation
+  authors:
+  - Karine Beauchard
+  - Rémi Carles
+  - Eugenio Pozzoli
+  journal: 'ESAIM: COCV'
+  volume: '32'
+  pages: '46'
+  year: 2026
+  doi: 10.1051/cocv/2026029
+  arxiv: '2510.14461'
+
+gauthier2021gap:
+  type: article
+  title: A universal gap for non-spin quantum control systems
+  authors:
+  - Jean-Paul Gauthier
+  - Francesco Rossi
+  journal: Proc. Amer. Math. Soc.
+  volume: '149'
+  pages: 1203-1214
+  year: 2021
+  doi: 10.1090/proc/15301
+  arxiv: '1812.06086'
+
+agrachev2006controllability:
+  type: article
+  title: An estimation of the controllability time for single-input systems on compact Lie Groups
+  authors:
+  - Andrei Agrachev
+  - Thomas Chambrion
+  journal: 'ESAIM: COCV'
+  volume: '12'
+  pages: 409-441
+  year: 2006
+  doi: 10.1051/cocv:2006007
+
+agrachev2017timezero:
+  type: proceedings
+  title: A note on time-zero controllability and density of orbits for quantum systems
+  authors:
+  - Andrei Agrachev
+  - Ugo Boscain
+  - Jean-Paul Gauthier
+  - Mario Sigalotti
+  booktitle: 2017 IEEE 56th Annual Conference on Decision and Control (CDC)
+  pages: 5535-5538
+  year: 2017
+  doi: 10.1109/cdc.2017.8264480
+
+beauchard2026examples:
+  type: article
+  title: Examples of Small-Time Controllable Schrödinger Equations
+  authors:
+  - Karine Beauchard
+  - Eugenio Pozzoli
+  journal: Ann. Henri Poincaré
+  volume: '27'
+  pages: 757-786
+  year: 2026
+  doi: 10.1007/s00023-025-01559-x
+  arxiv: '2407.05698'
+
+duca2025smalltime:
+  type: article
+  title: Small-Time Controllability for the Nonlinear Schrödinger Equation on \({\mathbb{R}^N}\) via Bilinear
+    Electromagnetic Fields
+  authors:
+  - Alessandro Duca
+  - Eugenio Pozzoli
+  journal: SIAM J. Control Optim.
+  volume: '63'
+  pages: S37-S52
+  year: 2025
+  doi: 10.1137/23m1590305
+  arxiv: '2307.15819'
+
+gorodski2022diameter:
+  type: article
+  title: A diameter gap for quotients of the unit sphere
+  authors:
+  - Claudio Gorodski
+  - Christian Lange
+  - Alexander Lytchak
+  - Ricardo A. E. Mendes
+  journal: J. Eur. Math. Soc.
+  volume: '25'
+  pages: 3767-3793
+  year: 2022
+  doi: 10.4171/jems/1272
+  arxiv: '1903.12619'
+
+wu2012singularities:
+  type: article
+  title: Singularities of quantum control landscapes
+  authors:
+  - Re-Bing Wu
+  - Ruixing Long
+  - Jason Dominy
+  - Tak-San Ho
+  - Herschel Rabitz
+  journal: Phys. Rev. A
+  volume: '86'
+  pages: '013405'
+  year: 2012
+  doi: 10.1103/physreva.86.013405
+  arxiv: '0907.2354'
+
+pechen2017ultrafast:
+  type: article
+  title: Control landscape for ultrafast manipulation by a qubit
+  authors:
+  - Alexander Pechen
+  - Nikolay Il’in
+  journal: 'J. Phys. A: Math. Theor.'
+  volume: '50'
+  pages: '075301'
+  year: 2017
+  doi: 10.1088/1751-8121/50/7/075301
+  arxiv: '1909.09216'
 

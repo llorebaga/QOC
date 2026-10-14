@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% from "partials/icons.html" import icon %}
 {% from "partials/paper_list.html" import paper_item %}
+{% from "partials/ui.html" import problem_status %}
 {% block title %}{{ topic.title }} — QOC{% endblock %}
 {% block description %}{{ topic.short }}{% endblock %}
 {% block head %}{% if article %}{% include "partials/katex.html" %}{% endif %}
@@ -83,6 +84,18 @@
       </div>
       {% endif %}
 
+      {% set topic_problems = problems_by_topic.get(topic.id, []) %}
+      {% if topic_problems %}
+      <section class="article-section" aria-labelledby="open-problems">
+        <h2 id="open-problems">Open problems</h2>
+        <ul class="topic-problems">
+          {% for pr in topic_problems %}
+          <li><a href="{{ url('open-problems/' ~ pr.id ~ '/') }}">{{ pr.title }}</a> {{ problem_status(pr.status) }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
       <section class="article-section" aria-labelledby="recent-papers">
         <h2 id="recent-papers">Recent papers</h2>
         {% if topic_papers %}
@@ -127,6 +140,7 @@
             {% if article.meta.key_papers %}<li><a href="#key-papers">Key papers</a></li>{% endif %}
             {% if article.meta.software %}<li><a href="#software">Software</a></li>{% endif %}
             {% if article.citations %}<li><a href="#references">References</a></li>{% endif %}
+            {% if problems_by_topic.get(topic.id) %}<li><a href="#open-problems">Open problems</a></li>{% endif %}
             <li><a href="#recent-papers">Recent papers</a></li>
           </ol>
         </nav>

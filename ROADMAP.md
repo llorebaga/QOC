@@ -69,18 +69,22 @@ understand any area; an expert can use it as a quick reference.
       city, country and coordinates generated from the institution's Wikidata entry (never typed by hand)
 - [x] Every entry checked automatically: the website loads and names every PI (`groups.py check`)
 - [x] Topics and platforms derived from the PIs' tracked papers (not self-descriptions); PIs linked to author pages
-- [x] World map (Leaflet + OpenStreetMap tiles, marker clustering) with filters by topic and platform,
+- [x] World map (Leaflet with Natural Earth country outlines, no tiles; marker clustering) with filters by topic and platform,
       synchronized with the group list; one page per group with topics and recent papers
 - [x] Seed: 37 well-known groups in 12 countries
 - [ ] Grow the list (candidates still to be verified: Sugny, Vitanov, Muga, Boscain & Sigalotti, Mirrahimi,
       Sherson, Biercuk, Petersen, Dong, Yuan, Xi Chen, Schulte-Herbrüggen, Pupillo, Pechen, Laflamme, …); contribution form at launch
 
-## Phase 5 — Open problems
+## 🚧 Phase 5 — Open problems (first version built)
 
-- [ ] `content/problems/<id>.md`: precise statement, background, why it matters, known partial
-      results, references, status (open / partial progress / solved), topics, proposer
-- [ ] Index page with status and topic filters; per-problem pages
-- [ ] Seed list of specific problems (to be curated carefully)
+- [x] `content/problems/<id>.md`: precise statement, why it matters, known results, status (open / partial
+      progress / solved) with its justification, topics, and the paper(s) that pose the problem; validated by the build
+- [x] Index page with status and topic filters; one page per problem; problems listed on their topic pages
+- [x] First four problems, each posed in a published paper — *awaiting expert review*:
+      traps in control landscapes for $N \ge 3$ (partial), single-control ensemble controllability beyond qubits
+      (open), whether a classical speed limit survives quantization (partial), Agrachev's universal minimum-time gap
+      (solved, by combining Gauthier–Rossi 2021 with Gorodski–Lange–Lytchak–Mendes)
+- [ ] More problems (candidates in the Notes below); a "propose a problem" route at launch
 
 ## Phase 6 — Resources
 
@@ -106,3 +110,8 @@ understand any area; an expert can use it as a quick reference.
 - **Why GitHub Pages is not enabled yet:** on non-Enterprise plans, a Pages site is *public* even
   when the repository is private. Deployment is switched on at launch (Phase 7).
 - **No Node toolchain:** the build is pure Python so that it runs anywhere with `pip install`.
+- **Open problems — candidates to verify next** (each needs a paper that poses it): minimal number of controls for
+  ensemble controllability with several unknown parameters (Koch et al. 2022, §2.3); simultaneous *operator*
+  controllability with adiabatic methods (ibid., §2.2.5); reachable sets of Markovian vs non-Markovian open systems
+  (ibid., §2.3); controllability criteria under thermodynamically consistent dissipation (ibid., §5); whether many-body
+  control requires cooling (ibid., §2.3, conjecture after Il'in & Lychkovskiy 2021).

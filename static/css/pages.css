@@ -453,3 +453,40 @@ a.topic-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover
 .pc-con li::before { content: "−"; color: var(--st-building); }
 .pc-more { margin-top: 14px; color: var(--ink-2); font-size: .94rem; }
 @media (max-width: 800px) { .pc-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------------------------------------------------------------- Open problems */
+.status-open { --st: var(--accent); }
+.status-partial { --st: var(--st-building); }
+.status-solved { --st: var(--st-done); }
+.problems { margin-bottom: 64px; }
+.problem-filter { display: flex; flex-wrap: wrap; gap: 4px; padding: 3px; border-radius: 12px; background: var(--bg-elev); border: 1px solid var(--line); }
+.problem-filter-btn {
+  height: 38px; padding: 0 12px; border: 0; border-radius: 9px; background: transparent; cursor: pointer;
+  font: inherit; font-size: .9rem; color: var(--ink-2); display: inline-flex; align-items: center; gap: 8px;
+}
+.problem-filter-btn > span:last-child { font-family: var(--font-mono); font-size: .76rem; color: var(--ink-3); }
+.problem-filter-btn .status { font-size: .7rem; }
+.problem-filter-btn:hover { color: var(--ink); background: var(--bg-sunken); }
+.problem-filter-btn[aria-pressed="true"] { color: var(--ink); background: var(--bg-sunken); box-shadow: inset 0 0 0 1px var(--line-strong); }
+.problem-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.problem-card { padding: 18px 20px; min-width: 0; }
+.problem-card[hidden] { display: none; }
+.problem-card-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.problem-draft { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.problem-card-title { font-size: 1.15rem; line-height: 1.35; margin: 8px 0 6px; }
+.problem-card-title a { color: var(--ink); text-decoration: none; }
+.problem-card-title a:hover { color: var(--accent); text-decoration: underline; }
+.problem-card-question { margin: 0; color: var(--ink-2); font-size: .95rem; line-height: 1.6; overflow-wrap: anywhere; }
+.problem-topics { margin-top: 16px; }
+.problem-question {
+  margin: 0 0 36px; padding: 18px 22px; border-radius: var(--radius);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
+  background: color-mix(in srgb, var(--accent) 6%, var(--bg-elev));
+}
+.problem-question h2 {
+  font-family: var(--font-mono); font-size: .72rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 8px;
+}
+.problem-question p { margin: 0; font-size: 1.08rem; line-height: 1.65; color: var(--ink); }
+.topic-problems { padding-left: 1.2em; display: grid; gap: 8px; color: var(--ink-2); }
+.topic-problems a { font-weight: 600; margin-right: 8px; }

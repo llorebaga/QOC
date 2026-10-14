@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% from "partials/ui.html" import status_badge, problem_status %}
+{% block title %}Open problems — QOC{% endblock %}
+{% block description %}{{ section.summary }}{% endblock %}
+{% block head %}{% include "partials/katex.html" %}{% endblock %}
+
+{% block main %}
+{% set counts = {} %}
+{% for s in ['open', 'partial', 'solved'] %}{% set _ = counts.update({s: problems | selectattr('status', 'equalto', s) | list | length}) %}{% endfor %}
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <p class="eyebrow">{{ problems|length }} problems {{ status_badge(section.status) }}</p>
+    <h1>Open problems</h1>
+    <p class="lead">Specific, well-posed questions in quantum optimal control. Each one is stated precisely and
+      comes with the paper that poses it, the known partial results and the references — in the spirit of the
+      <a href="https://qiqc-op.com/" rel="noopener">open problem zoo of quantum information</a>.</p>
+  </div>
+</section>
+
+<div class="wrap problems" data-problems>
+  <form class="tracker-toolbar" data-problems-form>
+    <div class="problem-filter" role="group" aria-label="Status">
+      <button type="button" class="problem-filter-btn" data-status="" aria-pressed="true">All <span>{{ problems|length }}</span></button>
+      {% for s in ['open', 'partial', 'solved'] %}
+      <button type="button" class="problem-filter-btn" data-status="{{ s }}" aria-pressed="false">{{ problem_status(s) }} <span>{{ counts[s] }}</span></button>
+      {% endfor %}
+    </div>
+    <label class="tracker-select"><span class="visually-hidden">Topic</span>
+      <select name="topic">
+        <option value="">All topics</option>
+        {% for f in taxonomy.families %}{% set opts = f.topics | selectattr('id', 'in', problems_by_topic) | list %}
+        {% if opts %}<optgroup label="{{ f.title }}">
+          {% for t in opts %}<option value="{{ t.id }}">{{ t.title }} ({{ problems_by_topic[t.id]|length }})</option>{% endfor %}
+        </optgroup>{% endif %}
+        {% endfor %}
+      </select>
+    </label>
+  </form>
+  <p class="tracker-status" role="status" aria-live="polite" data-problems-status>{{ problems|length }} problems.</p>
+
+  <ol class="problem-list" data-problems-list>
+    {% for pr in problems %}
+    <li class="problem-card card" data-status="{{ pr.status }}" data-topics="{{ pr.topics | join(' ') }}">
+      <div class="problem-card-head">
+        {{ problem_status(pr.status) }}
+        {% if pr.review == 'draft' %}<span class="problem-draft" title="Written from the cited sources, not yet reviewed by a domain expert">Draft</span>{% endif %}
+      </div>
+      <h2 class="problem-card-title"><a href="{{ url('open-problems/' ~ pr.id ~ '/') }}">{{ pr.title }}</a></h2>
+      <p class="problem-card-question">{{ pr.question }}</p>
+      <ul class="paper-topics">
+        {% for t in pr.topics %}{% set tt = taxonomy.topics[t] %}
+        <li><a class="topic-chip" href="{{ url('topics/' ~ t ~ '/') }}" style="--fam: var(--fam-{{ tt.family }})">{{ tt.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ol>
+
+  <aside class="card tracker-note">
+    {{ icon('info') }}
+    <div>
+      <h2>How problems are chosen</h2>
+      <p>A problem is listed only if it can be stated precisely and a published paper poses it — as a conjecture, an
+        explicit open question or a stated goal. Its status follows the literature: <em>partial progress</em> means
+        that special cases are proved, <em>solved</em> that the full statement is. Solved problems stay in the list
+        with the paper that solved them. Know of a result we missed, or a problem that belongs here? The repository
+        will accept suggestions once it is public.</p>
+    </div>
+  </aside>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ asset('js/problems.js') }}" defer></script>
+{% endblock %}

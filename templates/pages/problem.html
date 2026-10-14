@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% from "partials/ui.html" import problem_status %}
+{% set art = pr.article %}
+{% block title %}{{ pr.title }} — Open problems — QOC{% endblock %}
+{% block description %}{{ pr.question | striptags | truncate(240, true, '…') }}{% endblock %}
+{% block head %}{% include "partials/katex.html" %}{% endblock %}
+
+{% block main %}
+{% set first_topic = taxonomy.topics[pr.topics[0]] %}
+<div class="topic problem" style="--fam: var(--fam-{{ first_topic.family }})">
+  <header class="topic-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ url('open-problems/') }}">Open problems</a><span aria-hidden="true">/</span><span>{{ pr.status_label }}</span>
+      </nav>
+      <h1>{{ pr.title }}</h1>
+      <div class="topic-meta">
+        {{ problem_status(pr.status) }}
+        <span>Added {{ pr.added }}{% if pr.updated != pr.added %} · updated {{ pr.updated }}{% endif %}</span>
+        {% if pr.review == 'draft' %}<span class="problem-draft" title="Written carefully from the cited sources, but not yet reviewed by a domain expert">Draft · awaiting review</span>
+        {% else %}<span class="problem-draft">Reviewed</span>{% endif %}
+      </div>
+      <ul class="paper-topics problem-topics">
+        {% for t in pr.topics %}{% set tt = taxonomy.topics[t] %}
+        <li><a class="topic-chip" href="{{ url('topics/' ~ t ~ '/') }}" style="--fam: var(--fam-{{ tt.family }})">{{ tt.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </header>
+
+  <div class="wrap topic-layout">
+    <article class="topic-main">
+      <div class="problem-question">
+        <h2>The question</h2>
+        <p>{{ pr.question }}</p>
+      </div>
+
+      <div class="prose article-body">
+        {{ art.html | safe }}
+      </div>
+
+      <section class="article-section" aria-labelledby="posed-by">
+        <h2 id="posed-by">Where it is posed</h2>
+        <ul class="key-papers">
+          {% for p in pr.posed_by %}
+          <li>
+            <div class="ref">{{ fmt_ref(p.key) }}</div>
+            {% if p.where %}<p class="kp-note">{{ p.where }}</p>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section class="article-section" aria-labelledby="references">
+        <h2 id="references">References</h2>
+        <ol class="ref-list">
+          {% for key in pr.refs %}<li id="ref-{{ key }}">{{ fmt_ref(key) }}</li>{% endfor %}
+        </ol>
+      </section>
+    </article>
+
+    <aside class="topic-aside">
+      <div class="aside-sticky">
+        {% if art.toc %}
+        <nav class="aside-block toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol>
+            {% for h in art.toc %}<li><a href="#{{ h.id }}">{{ h.name }}</a></li>{% endfor %}
+            <li><a href="#posed-by">Where it is posed</a></li>
+            <li><a href="#references">References</a></li>
+          </ol>
+        </nav>
+        {% endif %}
+        <nav class="aside-block" aria-label="Other problems">
+          <h2>Other problems</h2>
+          <ol>
+            {% for o in problems if o.id != pr.id %}
+            <li><a href="{{ url('open-problems/' ~ o.id ~ '/') }}">{{ o.title }}</a></li>
+            {% endfor %}
+          </ol>
+        </nav>
+      </div>
+    </aside>
+  </div>
+</div>
+{% endblock %}

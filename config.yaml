@@ -74,15 +74,15 @@ sections:
     title: Open problems
     icon: question
     phase: 5
-    status: planned
-    page: placeholder
+    status: building
+    page: problems
     summary: >-
       A curated list of specific, well-posed open questions in quantum optimal
       control — with context, partial results and references.
     features:
-      - Precise problem statements, not general wishes
-      - Status tracking — open, partial progress, solved
-      - Linked to the topics and papers they concern
+      - Precise problem statements, each with the paper that poses it (first problems written)
+      - Status tracking — open, partial progress, solved (built)
+      - Linked to the topics of the field map (built)
 
   - id: resources
     title: Resources

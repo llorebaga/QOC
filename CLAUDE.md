@@ -18,6 +18,9 @@ Static website about quantum optimal control. See README.md (structure) and ROAD
   bibliographic fields. Keys: `firstauthorYEARword`. Run `refs.py check` after changes.
 - Articles: `content/topics/<id>.md`; `[@key]` citations, `[[topic-id]]` links, `$…$`/`$$…$$` math. New articles start as
   `status: draft`; only the user marks them `reviewed`. Verify software URLs (gh api / curl) before listing them.
+- Open problems: `content/problems/<id>.md` (format in README; ids are permanent URLs). Only problems that a published
+  paper poses (`posed_by`, with where/how). Read the sources themselves, search for later results before choosing the
+  status (open / partial / solved), and justify it in the Status section. New ones start as `review: draft`.
 - Papers: `tools/fetch_arxiv.py`. The selection rule lives in `qocsite/selection.py` (shown on the About page).
   *Widening* it (new TERMS) requires a full re-harvest (`--since 2000-01-01`); *tightening* it only needs
   `--reselect`. Any rule change must be validated: download all quant-ph papers of a few months and check the API
