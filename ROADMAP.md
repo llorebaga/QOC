@@ -84,6 +84,8 @@ understand any area; an expert can use it as a quick reference.
       traps in control landscapes for $N \ge 3$ (partial), single-control ensemble controllability beyond qubits
       (open), whether a classical speed limit survives quantization (partial), Agrachev's universal minimum-time gap
       (solved, by combining Gauthier–Rossi 2021 with Gorodski–Lange–Lytchak–Mendes)
+- [x] Two more (2026-10-14), after a literature check that they are still open: minimal pulse count of universal
+      dynamical decoupling (Θ(K) vs Θ(K²)), and Malvetti's conjecture on time-optimal cooling of two qubits — *awaiting review*
 - [ ] More problems (candidates in the Notes below); a "propose a problem" route at launch
 
 ## Phase 6 — Resources
@@ -116,3 +118,9 @@ understand any area; an expert can use it as a quick reference.
   controllability with adiabatic methods (ibid., §2.2.5); reachable sets of Markovian vs non-Markovian open systems
   (ibid., §2.3); controllability criteria under thermodynamically consistent dissipation (ibid., §5); whether many-body
   control requires cooling (ibid., §2.3, conjecture after Il'in & Lychkovskiy 2021).
+- **Open problems — checked and rejected (2026-10-14), so they are not re-researched:** O(D) vs O(D²) speed-up of
+  feedback purification of qudits (Combes et al. 2010) — solved, O(D²), Combes & Wiseman PRX 2011; linear-time GZZ
+  gates (Baßler–Heinrich–Kliesch 2024, Conjecture 16) — refuted with a counterexample, Garcia de Andoin PRR 2026;
+  error scaling of universally robust DD (Genov et al. 2017) — proved for even n, D'Alessandro et al. 2026;
+  necessity of the "infection" criterion for spin networks and global optimality of the Jandura–Pupillo Rydberg CZ
+  gate — not posed as open problems in the literature. Possible future "solved" entries: the first two.

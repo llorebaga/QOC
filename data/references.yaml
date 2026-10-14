@@ -9592,3 +9592,117 @@ pechen2017ultrafast:
   doi: 10.1088/1751-8121/50/7/075301
   arxiv: '1909.09216'
 
+west2010qdd:
+  type: article
+  title: Near-Optimal Dynamical Decoupling of a Qubit
+  authors:
+  - Jacob R. West
+  - Bryan H. Fong
+  - Daniel A. Lidar
+  journal: Phys. Rev. Lett.
+  volume: '104'
+  pages: '130501'
+  year: 2010
+  doi: 10.1103/physrevlett.104.130501
+  arxiv: '0908.4490'
+
+yang2008udd:
+  type: article
+  title: Universality of Uhrig Dynamical Decoupling for Suppressing Qubit Pure Dephasing and Relaxation
+  authors:
+  - Wen Yang
+  - Ren-Bao Liu
+  journal: Phys. Rev. Lett.
+  volume: '101'
+  pages: '180403'
+  year: 2008
+  doi: 10.1103/physrevlett.101.180403
+
+wang2011nested:
+  type: article
+  title: Protection of quantum systems by nested dynamical decoupling
+  authors:
+  - Zhen-Yu Wang
+  - Ren-Bao Liu
+  journal: Phys. Rev. A
+  volume: '83'
+  pages: '022306'
+  year: 2011
+  doi: 10.1103/physreva.83.022306
+  arxiv: '1006.1601'
+
+kuo2011qdd:
+  type: article
+  title: 'Quadratic dynamical decoupling: Universality proof and error analysis'
+  authors:
+  - Wan-Jung Kuo
+  - Daniel A. Lidar
+  journal: Phys. Rev. A
+  volume: '84'
+  pages: 042329
+  year: 2011
+  doi: 10.1103/physreva.84.042329
+  arxiv: '1106.2151'
+
+xia2011bounds:
+  type: article
+  title: Rigorous performance bounds for quadratic and nested dynamical decoupling
+  authors:
+  - Yuhou Xia
+  - Götz S. Uhrig
+  - Daniel A. Lidar
+  journal: Phys. Rev. A
+  volume: '84'
+  pages: '062332'
+  year: 2011
+  doi: 10.1103/physreva.84.062332
+  arxiv: '1111.3289'
+
+kim2026weakcoupling:
+  type: article
+  title: High-Order Dynamical Decoupling in the Weak-Coupling Regime
+  authors:
+  - Leeseok Kim
+  - Milad Marvian
+  journal: Phys. Rev. Lett.
+  volume: '137'
+  pages: '120801'
+  year: 2026
+  doi: 10.1103/bvkl-8pq2
+  arxiv: '2602.05343'
+
+malvetti2024cooling:
+  type: proceedings
+  title: Provably Time-Optimal Cooling of Markovian Quantum Systems
+  authors:
+  - Emanuel Malvetti
+  booktitle: 2024 IEEE 63rd Conference on Decision and Control (CDC)
+  pages: 761-768
+  year: 2024
+  doi: 10.1109/cdc56724.2024.10885805
+  arxiv: '2403.05285'
+
+malvetti2024qubit:
+  type: preprint
+  title: Optimal Control of a Markovian Qubit with Unitary Control
+  authors:
+  - Emanuel Malvetti
+  year: 2024
+  arxiv: '2404.09279'
+
+malvetti2025reachability:
+  type: article
+  title: Reachability, Coolability, and Stabilizability of Open Markovian Quantum Systems with Fast Unitary
+    Control
+  authors:
+  - Emanuel Malvetti
+  - Frederik vom Ende
+  - Gunther Dirr
+  - Thomas Schulte-Herbrüggen
+  journal: SIAM J. Control Optim.
+  volume: '63'
+  pages: S53-S81
+  year: 2025
+  doi: 10.1137/23m1594467
+  arxiv: '2308.00561'
+

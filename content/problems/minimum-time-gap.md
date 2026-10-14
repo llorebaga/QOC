@@ -9,6 +9,9 @@ topics: [quantum-speed-limits, controllability, geometric-control]
 posed_by:
   - key: gauthier2021gap
     where: Conjecture 1.1, attributed to Andrei Agrachev (oral communication).
+  - key: glaser2015training
+    where: Section 2.1, "Controllability and simulability". A universal estimate of the time needed to control
+      finite-dimensional quantum systems with a necessary drift is listed as an open challenge.
 added: 2026-10-14
 updated: 2026-10-14
 review: draft
@@ -37,7 +40,10 @@ some state-to-state task becomes impossible, however strong the controls. If the
 that acts transitively on the sphere, every task can be done arbitrarily fast and $T(\Sigma) = 0$. Otherwise the drift
 must be used, and the question is whether the minimal time can be arbitrarily small — for instance in large systems
 — or is bounded below in units of the drift. Estimates of the controllability time had been obtained for particular
-classes, for example single-input systems on compact Lie groups [@agrachev2006controllability].
+classes, for example single-input systems on compact Lie groups [@agrachev2006controllability], and the 2015 European
+roadmap lists a universal estimate of the control time for finite-dimensional systems with drift as an open challenge
+[@glaser2015training]. The gap answers part of it: a lower bound, in units of the drift, that holds for every system
+that cannot be controlled arbitrarily fast.
 
 ## Known results
 
