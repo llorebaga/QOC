@@ -6,7 +6,9 @@ Static website about quantum optimal control. See README.md (structure) and ROAD
 - Build in phases, one at a time, and finish each properly before moving on. Quality over speed.
 - Scientific content must be accurate and sourced. Never invent references, DOIs, arXiv ids,
   group details or coordinates. Verify them, or leave them out and flag them.
-- The repo stays **private** until Phase 7. Do not enable GitHub Pages before then (Pages sites are public).
+- The repo is **public** and the site is live at https://llorebaga.github.io/QOC/ (GitHub Pages, deployed by
+  `.github/workflows/build.yml` on every push to main and after each daily paper update). Everything pushed is public:
+  drafts are shown as drafts, so keep the draft/review labels accurate.
 
 ## Build & preview
 - `python build.py --serve` → http://localhost:8000 (auto-rebuild). `.claude/launch.json` has the `qoc-site` config.

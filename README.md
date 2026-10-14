@@ -11,7 +11,7 @@
 
 ---
 
-> **Status:** private development — Phases 2–5 (knowledge base, paper tracker, groups, open problems) in progress. See [ROADMAP.md](ROADMAP.md).
+> **Live:** https://llorebaga.github.io/QOC/ — early version; Phases 2–5 (knowledge base, paper tracker, groups, open problems) in progress, articles and problems are drafts awaiting review. See [ROADMAP.md](ROADMAP.md).
 
 ## What's here
 

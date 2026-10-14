@@ -100,15 +100,16 @@ understand any area; an expert can use it as a quick reference.
 
 - [ ] Choose licences (suggestion: CC BY 4.0 for content, MIT for code)
 - [ ] Contribution guide + issue templates ("add a group", "propose an open problem", "report an error")
-- [ ] Make repository public, enable GitHub Pages deployment (or custom domain)
+- [x] Repository public; GitHub Pages deployment at https://llorebaga.github.io/QOC/ (2026-10-14, earlier than planned)
+- [ ] Possibly a custom domain
 - [ ] SEO metadata, social cards, sitemap; accessibility audit
 
 ---
 
 ### Notes & decisions
 
-- **Why GitHub Pages is not enabled yet:** on non-Enterprise plans, a Pages site is *public* even
-  when the repository is private. Deployment is switched on at launch (Phase 7).
+- **Early publication:** the repository was made public and the site deployed on 2026-10-14, before the rest of
+  Phase 7 (licences, contribution guide, SEO, accessibility audit), which is still to do.
 - **No Node toolchain:** the build is pure Python so that it runs anywhere with `pip install`.
 - **Open problems — candidates to verify next** (each needs a paper that poses it): minimal number of controls for
   ensemble controllability with several unknown parameters (Koch et al. 2022, §2.3); simultaneous *operator*
