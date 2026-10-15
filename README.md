@@ -115,5 +115,14 @@ build.py               the static-site generator
 - **One taxonomy.** Topic ids from `data/taxonomy.yaml` link articles, papers, groups and open
   problems. The build fails if a reference points to a topic that doesn't exist.
 - **Static and dependency-light.** No Node toolchain; Python + Jinja2 at build time, vanilla JS in
-  the browser, third-party libraries (KaTeX, later Leaflet/D3) loaded only on pages that need them.
+  the browser, third-party libraries (KaTeX, Leaflet, D3) loaded only on pages that need them.
 - **Accessible and themeable.** Light and dark themes, keyboard navigation, reduced-motion support.
+
+## Licence
+
+- **Content** — the text and data written for QOC (`content/`, `data/taxonomy.yaml`, `data/resources.yaml`,
+  `data/groups.yaml`, `data/classifier.yaml`, `config.yaml`, the logo): [CC BY 4.0](LICENSE-CONTENT).
+- **Code** — `build.py`, `qocsite/`, `tools/`, `templates/`, `static/`: [MIT](LICENSE).
+- **Not covered:** arXiv paper metadata and abstracts in `data/papers/` (they belong to their authors and are used
+  under arXiv's terms), bibliographic metadata from Crossref/arXiv, and third-party libraries loaded from CDNs
+  (D3, KaTeX, Leaflet, Leaflet.markercluster) and Natural Earth outlines, which keep their own licences.

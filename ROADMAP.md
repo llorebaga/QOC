@@ -105,7 +105,7 @@ understand any area; an expert can use it as a quick reference.
 
 ## Phase 7 — Public launch
 
-- [ ] Choose licences (suggestion: CC BY 4.0 for content, MIT for code)
+- [x] Licences: CC BY 4.0 for content (`LICENSE-CONTENT`), MIT for code (`LICENSE`); arXiv metadata excluded (2026-10-15)
 - [ ] Contribution guide + issue templates ("add a group", "propose an open problem", "report an error")
 - [x] Repository public; GitHub Pages deployment at https://llorebaga.github.io/QOC/ (2026-10-14, earlier than planned)
 - [ ] Possibly a custom domain
