@@ -418,7 +418,7 @@ a.topic-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover
 .leaflet-popup-content p { margin: 0 0 4px; }
 .map-pop-title { font-family: var(--font-display); font-weight: 600; font-size: .98rem; }
 .map-pop-meta { color: #3a4466; }
-.map-pop-topics { color: #69718f; font-size: .8rem; }
+.map-pop-topics { color: #646c8a; font-size: .8rem; }
 .group-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 12px; }
 .group-card { padding: 16px 18px; }
 .group-card[hidden] { display: none; }

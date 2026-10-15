@@ -300,8 +300,23 @@ def write(target: Path, data: bytes) -> None:
     target.write_bytes(data)
 
 
+PAGES: list[str] = []           # site paths of the HTML pages of the current build (for the sitemap)
+
+
 def render(env: Environment, template: str, out_path: str, **ctx) -> None:
+    if out_path.endswith(".html"):
+        ctx.setdefault("page_path", out_path.removesuffix("index.html"))
+        if ctx.get("page_id") != "404":
+            PAGES.append(ctx["page_path"])
     write(OUT / out_path, env.get_template(template).render(**ctx).encode("utf-8"))
+
+
+def write_sitemap(env: Environment) -> None:
+    root = env.globals["site"]["url"].rstrip("/")
+    locs = [f"  <url><loc>{root}{env.globals['url'](p)}</loc></url>" for p in sorted(PAGES)]
+    lines = ['<?xml version="1.0" encoding="utf-8"?>',
+             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', *locs, "</urlset>", ""]
+    write(OUT / "sitemap.xml", "\n".join(lines).encode("utf-8"))
 
 
 def copy_static() -> None:
@@ -353,6 +368,7 @@ def build(base: str | None = None, quiet: bool = False) -> None:
     # Files are written in place (unchanged files are left alone) and stale ones are
     # removed at the end, so a running dev server never serves a half-empty folder.
     WRITTEN.clear()
+    PAGES.clear()
     OUT.mkdir(exist_ok=True)
     copy_static()
     write(OUT / ".nojekyll", b"")
@@ -407,6 +423,7 @@ def build(base: str | None = None, quiet: bool = False) -> None:
     render(env, "feeds/atom.xml", "papers/feed.xml", feed_title="QOC — new quantum control papers",
            feed_id="papers/", feed_page="papers/", entries=tracked["papers"][:50])
 
+    write_sitemap(env)
     remove_stale()
     n = sum(1 for _ in OUT.rglob("*.html"))
     if not quiet:

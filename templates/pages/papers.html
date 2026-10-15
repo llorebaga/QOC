@@ -55,6 +55,7 @@
   <noscript><p class="muted">Search and filters need JavaScript. Without it, the most recent papers are shown below;
     every paper is also listed on the <a href="{{ url('papers/weekly/') }}">weekly digest</a> and in the topic feeds.</p></noscript>
 
+  <h2 class="visually-hidden">Papers found</h2>
   <ol class="paper-list" data-tracker-list>
     {% for p in tracked.papers[:40] %}{{ paper_item(p) }}{% endfor %}
   </ol>

@@ -174,7 +174,10 @@
 
     const slug = params().get("a");
     if (!slug) return;
-    const ai = data.authors.findIndex((a) => a[1] === slug);
+    // Links made before 2026-10-15 spelled "ue/oe/ae" as "u/o/a" (dominiqu-sugny): still accept them.
+    const merged = (s) => s.replace(/ue/g, "u").replace(/oe/g, "o").replace(/ae/g, "a");
+    let ai = data.authors.findIndex((a) => a[1] === slug);
+    if (ai < 0) ai = data.authors.findIndex((a) => merged(a[1]) === merged(slug));
     const title = root.ownerDocument.querySelector("[data-author-title]");
     const lead = root.ownerDocument.querySelector("[data-author-lead]");
     if (ai < 0) {

@@ -94,14 +94,13 @@ understand any area; an expert can use it as a quick reference.
       dynamical decoupling (Θ(K) vs Θ(K²)), and Malvetti's conjecture on time-optimal cooling of two qubits — *awaiting review*
 - [ ] More problems (candidates in the Notes below); a "propose a problem" route at launch
 
-## Phase 6 — Resources
+## ✅ Phase 6 — Resources (built 2026-10-14)
 
-- [ ] Software directory (QuTiP, Krotov, QuOCS, C3, Juqbox, QuantumControl.jl, Piccolo.jl,
-      Quandary, Boulder Opal, Dynamiqs, Spinach, …; note: Qiskit Dynamics is archived and Qiskit Pulse was
-      removed in Qiskit 2.0)
-- [ ] Essential reading: reviews, tutorials, theses, textbooks, landmark papers
-- [ ] Glossary of terms and notation
-- [ ] Timeline of the field
+- [x] Software directory (`data/resources.yaml`): 30 packages, every URL verified (note: Qiskit Dynamics is archived
+      and Qiskit Pulse was removed in Qiskit 2.0)
+- [x] Essential reading: reviews, tutorials, theses, textbooks, landmark papers
+- [x] Glossary of terms and notation (33 terms)
+- [x] Timeline of the field
 - [ ] Possibly: events (conferences, schools), benchmark problems
 
 ## Phase 7 — Public launch
@@ -110,7 +109,10 @@ understand any area; an expert can use it as a quick reference.
 - [ ] Contribution guide + issue templates ("add a group", "propose an open problem", "report an error")
 - [x] Repository public; GitHub Pages deployment at https://llorebaga.github.io/QOC/ (2026-10-14, earlier than planned)
 - [ ] Possibly a custom domain
-- [ ] SEO metadata, social cards, sitemap; accessibility audit
+- [x] SEO metadata (descriptions, canonical URLs, Open Graph / Twitter cards), social card
+      (`tools/make_social_card.py`), `sitemap.xml` (2026-10-15)
+- [ ] Submit the sitemap to search engines (needs the owner's Search Console account)
+- [ ] Accessibility audit (automated checks done 2026-10-15: headings, labels, alt text, links; manual pass to do)
 
 ---
 

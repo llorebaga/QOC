@@ -17,11 +17,11 @@
 
 | Section | What it is | Status |
 |---|---|---|
-| **Field map** | Interactive map of the field + one article per topic | Phase 2 — in progress |
-| **Paper tracker** | Daily arXiv fetch, classified into topics, author pages | Phase 3 — data pipeline running |
-| **Research groups** | World map of groups working on QOC | Phase 4 |
-| **Open problems** | Specific, well-posed open questions with status tracking | Phase 5 — in progress |
-| **Resources** | Software, reviews & tutorials, glossary, timeline | Phase 6 |
+| **Field map** | Interactive map of the field + one article per topic (50) | Built; articles awaiting expert review |
+| **Paper tracker** | Daily arXiv fetch, classified into topics, author pages, feeds | Running daily |
+| **Research groups** | World map of groups working on QOC | Built; list growing |
+| **Open problems** | Specific, well-posed open questions with status tracking | Built; awaiting expert review |
+| **Resources** | Software, reading list, glossary, timeline | Built |
 
 ## Running it locally
 
@@ -38,6 +38,7 @@ Other commands:
 python build.py                  # build into _site/
 python build.py --base QOC       # build for a sub-path, i.e. served under /QOC/ (GitHub Pages)
 python tools/make_logo.py        # regenerate the logo and favicon
+python tools/make_social_card.py # regenerate the share preview image (needs Chrome or Edge)
 python tools/refs.py add KEY --doi 10.1103/...   # add a reference (metadata from Crossref/arXiv)
 python tools/refs.py check       # validate the bibliography
 python tools/fetch_arxiv.py --days 14            # fetch recent arXiv papers (what the daily job runs)

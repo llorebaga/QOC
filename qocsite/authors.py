@@ -31,6 +31,12 @@ def fold(s: str) -> str:
 
 
 def parse(name: str) -> tuple[list[str], str] | None:
+    """(given-name tokens, surname) in folded lowercase, umlaut spellings merged (comparison keys)."""
+    pr = split_name(name)
+    return pr and ([umlauts(t) for t in pr[0]], umlauts(pr[1]))
+
+
+def split_name(name: str) -> tuple[list[str], str] | None:
     """(given-name tokens, surname) in folded lowercase; None if the name cannot be parsed."""
     tokens = [t.replace("-", "") for t in re.split(r"[\s\.]+", fold(name).replace(",", " ")) if t.strip("-")]
     while tokens and tokens[-1].lower() in SUFFIXES:
@@ -40,9 +46,7 @@ def parse(name: str) -> tuple[list[str], str] | None:
     i = len(tokens) - 1
     while i > 0 and tokens[i - 1].lower() in PARTICLES and i - 1 > 0:
         i -= 1
-    surname = umlauts(" ".join(tokens[i:]).lower())
-    given = [umlauts(t.lower()) for t in tokens[:i]]
-    return given, surname
+    return [t.lower() for t in tokens[:i]], " ".join(tokens[i:]).lower()
 
 
 def umlauts(s: str) -> str:
@@ -96,8 +100,9 @@ def build_identities(papers: list[dict]) -> tuple[dict[str, str], dict[str, dict
             full = bool(pr and pr[0] and len(pr[0][0]) > 1)
             return (full, v[s], len(s))
         name = max(v, key=rank)
-        surname, _, first = key.partition("|")
-        slug = slugify(f"{first} {surname}") if first else slugify(surname)
+        # The slug is spelled like the display name (the key merges umlaut spellings: "Dominique" -> "dominiqu").
+        given, surname = split_name(name) or ([], key.partition("|")[0])
+        slug = slugify(f"{given[0]} {surname}") if given else slugify(surname)
         base, k = slug, 2
         while slug in used_slugs:
             slug, k = f"{base}-{k}", k + 1

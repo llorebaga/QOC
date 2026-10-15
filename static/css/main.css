@@ -32,7 +32,7 @@
   --bg-sunken: #eef1f8;
   --ink: #0e1530;
   --ink-2: #3a4466;
-  --ink-3: #69718f;
+  --ink-3: #646c8a;   /* ≥4.5:1 on --bg and --bg-sunken (WCAG AA) */
   --line: #e0e4ef;
   --line-strong: #c9cfe0;
   --accent: #5b3df5;
