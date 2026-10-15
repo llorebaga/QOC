@@ -18,7 +18,7 @@
   country: United Kingdom
   lat: 54.978
   lon: -1.615
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: arenz-asu
   name: Arenz group
@@ -31,7 +31,7 @@
   country: United States
   lat: 33.4169
   lon: -111.9361
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: barnes-vt
   name: Barnes group
@@ -44,7 +44,7 @@
   country: United States
   lat: 37.225
   lon: -80.425
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: biercuk-sydney
   name: Quantum Control Laboratory
@@ -57,7 +57,7 @@
   country: Australia
   lat: -33.8875
   lon: 151.19
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: bondar-tulane
   name: Bondar group
@@ -70,7 +70,7 @@
   country: United States
   lat: 29.9408
   lon: -90.1206
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: bukov-mpipks
   name: Bukov group
@@ -83,7 +83,7 @@
   country: Germany
   lat: 51.0267
   lon: 13.7169
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: burgarth-fau
   name: Burgarth group
@@ -96,7 +96,7 @@
   country: Germany
   lat: 49.6007
   lon: 11.0047
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: busch-oist
   name: Quantum Systems Unit
@@ -152,7 +152,7 @@
   country: United States
   lat: 42.3597
   lon: -71.0919
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: chen-icmm
   name: Xi Chen group
@@ -165,7 +165,7 @@
   country: Spain
   lat: 40.5435
   lon: -3.6894
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: dalessandro-iowa-state
   name: D'Alessandro group
@@ -178,7 +178,7 @@
   country: United States
   lat: 42.0262
   lon: -93.6484
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: deffner-umbc
   name: Quantum Thermodynamics group
@@ -190,7 +190,7 @@
   country: United States
   lat: 39.2556
   lon: -76.7114
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: del-campo-luxembourg
   name: del Campo group
@@ -203,7 +203,7 @@
   country: Luxembourg
   lat: 49.5042
   lon: 5.9484
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: deutsch-unm
   name: Deutsch group
@@ -216,7 +216,20 @@
   country: United States
   lat: 35.0839
   lon: -106.6186
-  checked: '2026-10-14'
+  checked: '2026-10-15'
+
+- id: dong-uts
+  name: Dong group
+  pis:
+  - Daoyi Dong
+  institution: University of Technology Sydney
+  wikidata: Q1145731
+  website: https://profiles.uts.edu.au/Daoyi.Dong
+  city: Sydney
+  country: Australia
+  lat: -33.8833
+  lon: 151.2004
+  checked: '2026-10-15'
 
 - id: economou-vt
   name: Economou group
@@ -229,7 +242,7 @@
   country: United States
   lat: 37.225
   lon: -80.425
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: fabbri-florence
   name: Fabbri group
@@ -242,7 +255,7 @@
   country: Italy
   lat: 43.7778
   lon: 11.2595
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: gefen-weizmann
   name: Gefen group
@@ -255,7 +268,7 @@
   country: Israel
   lat: 31.9075
   lon: 34.8092
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: glaser-tum
   name: Glaser group
@@ -268,7 +281,20 @@
   country: Germany
   lat: 48.1481
   lon: 11.5681
-  checked: '2026-10-14'
+  checked: '2026-10-15'
+
+- id: guerin-dijon
+  name: Guérin group
+  pis:
+  - Stéphane Guérin
+  institution: Université Bourgogne Europe (ICB)
+  wikidata: Q287072
+  website: https://icb.cnrs.fr/?p=54944
+  city: Dijon
+  country: France
+  lat: 47.3125
+  lon: 5.0708
+  checked: '2026-10-15'
 
 - id: guery-odelin-toulouse
   name: Guéry-Odelin group
@@ -281,7 +307,7 @@
   country: France
   lat: 43.5619
   lon: 1.47
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: jarzynski-umd
   name: Jarzynski group
@@ -294,7 +320,7 @@
   country: United States
   lat: 38.9881
   lon: -76.9425
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: jelezko-ulm
   name: Institute for Quantum Optics
@@ -307,7 +333,7 @@
   country: Germany
   lat: 48.4221
   lon: 9.9538
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: jessen-arizona
   name: Jessen group
@@ -320,7 +346,7 @@
   country: United States
   lat: 32.2319
   lon: -110.9525
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: kappen-radboud
   name: Kappen group
@@ -333,7 +359,7 @@
   country: Netherlands
   lat: 51.8194
   lon: 5.8653
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: koch-fu-berlin
   name: Quantum Dynamics and Control
@@ -346,7 +372,7 @@
   country: Germany
   lat: 52.4543
   lon: 13.2935
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: kosloff-huji
   name: Kosloff group
@@ -359,7 +385,7 @@
   country: Israel
   lat: 31.7942
   lon: 35.2428
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: kuprov-weizmann
   name: Kuprov Lab
@@ -372,7 +398,7 @@
   country: Israel
   lat: 31.9075
   lon: 34.8092
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: kurizki-weizmann
   name: Kurizki group
@@ -385,7 +411,7 @@
   country: Israel
   lat: 31.9075
   lon: 34.8092
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: levy-biu
   name: Levy group
@@ -398,7 +424,7 @@
   country: Israel
   lat: 32.0678
   lon: 34.8425
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: li-wustl
   name: Li group
@@ -411,7 +437,7 @@
   country: United States
   lat: 38.648
   lon: -90.305
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: lidar-usc
   name: Quantum Computation and Open Quantum Systems
@@ -424,7 +450,7 @@
   country: United States
   lat: 34.0217
   lon: -118.2853
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: lu-sustech
   name: Lu group
@@ -437,7 +463,7 @@
   country: People's Republic of China
   lat: 22.6006
   lon: 113.9947
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: lukin-harvard
   name: Lukin group
@@ -464,7 +490,7 @@
   country: Germany
   lat: 49.0996
   lon: 8.4319
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: mabuchi-stanford
   name: Mabuchi group
@@ -476,7 +502,7 @@
   country: United States
   lat: 37.4275
   lon: -122.1703
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: marecek-ctu
   name: Mareček group
@@ -489,7 +515,7 @@
   country: Czech Republic
   lat: 50.1022
   lon: 14.3885
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: miller-manchester
   name: Miller group
@@ -502,7 +528,7 @@
   country: United Kingdom
   lat: 53.4661
   lon: -2.2319
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: montangero-padova
   name: Montangero group
@@ -515,7 +541,7 @@
   country: Italy
   lat: 45.42
   lon: 11.87
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: morigi-saarland
   name: Morigi group
@@ -528,7 +554,7 @@
   country: Germany
   lat: 49.2556
   lon: 7.0417
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: muga-ehu
   name: Muga group
@@ -541,7 +567,7 @@
   country: Spain
   lat: 43.3314
   lon: -2.9706
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: palma-palermo
   name: Palma group
@@ -554,7 +580,7 @@
   country: Italy
   lat: 38.1177
   lon: 13.3701
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: paspalakis-patras
   name: Paspalakis & Stefanatos group
@@ -568,7 +594,34 @@
   country: Greece
   lat: 38.2867
   lon: 21.7864
-  checked: '2026-10-14'
+  checked: '2026-10-15'
+
+- id: paternostro-palermo
+  name: Paternostro group
+  pis:
+  - Mauro Paternostro
+  institution: University of Palermo
+  wikidata: Q1641504
+  website: https://quantum.unipa.it/author/mauro-paternostro/
+  note: Also professor at Queen's University Belfast.
+  city: Palermo
+  country: Italy
+  lat: 38.1177
+  lon: 13.3701
+  checked: '2026-10-15'
+
+- id: pechen-steklov
+  name: Department of Mathematical Methods for Quantum Technologies
+  pis:
+  - Alexander N. Pechen
+  institution: Steklov Mathematical Institute
+  wikidata: Q611420
+  website: https://www.mi-ras.ru/index.php?l=1&c=show_dep&id=51
+  city: Moscow
+  country: Russia
+  lat: 55.6947
+  lon: 37.5644
+  checked: '2026-10-15'
 
 - id: peng-ustc
   name: Peng group
@@ -581,7 +634,20 @@
   country: People's Republic of China
   lat: 31.8417
   lon: 117.2589
-  checked: '2026-10-14'
+  checked: '2026-10-15'
+
+- id: petersen-anu
+  name: Petersen group
+  pis:
+  - Ian R. Petersen
+  institution: Australian National University
+  wikidata: Q127990
+  website: https://eng.anu.edu.au/people/ian-petersen
+  city: Canberra
+  country: Australia
+  lat: -35.2778
+  lon: 149.1205
+  checked: '2026-10-15'
 
 - id: pgi-12-juelich
   name: Quantum Computing Analytics (PGI-12)
@@ -597,12 +663,13 @@
   country: Germany
   lat: 50.905
   lon: 6.4119
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: pgi-8-juelich
   name: Quantum Control (PGI-8)
   pis:
   - Tommaso Calarco
+  - Felix Motzoi
   institution: Forschungszentrum Jülich
   wikidata: Q697111
   website: https://www.fz-juelich.de/en/pgi/pgi-8
@@ -610,7 +677,7 @@
   country: Germany
   lat: 50.905
   lon: 6.4119
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: pick-huji
   name: Pick group
@@ -623,7 +690,7 @@
   country: Israel
   lat: 31.7942
   lon: 35.2428
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: plenio-ulm
   name: Controlled Quantum Dynamics
@@ -636,7 +703,7 @@
   country: Germany
   lat: 48.4221
   lon: 9.9538
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: poggi-strathclyde
   name: Poggi group
@@ -649,7 +716,41 @@
   country: United Kingdom
   lat: 55.8617
   lon: -4.2416
-  checked: '2026-10-14'
+  checked: '2026-10-15'
+
+- id: pupillo-strasbourg
+  name: Pupillo group
+  pis:
+  - Guido Pupillo
+  institution: University of Strasbourg (ISIS)
+  wikidata: Q33121387
+  website: https://isis.unistra.fr/cesq/pupillo-physique-quantique/
+  city: Strasbourg
+  country: France
+  lat: 48.5736
+  lon: 7.7587
+  checked: '2026-10-15'
+
+- id: quantic-inria
+  name: QUANTIC
+  pis:
+  - Mazyar Mirrahimi
+  - Alain Sarlette
+  - Zaki Leghtas
+  - Philippe Campagne-Ibarcq
+  - Samuel Deléglise
+  - Alexandru Petrescu
+  - Rémi Robin
+  - Antoine Tilloy
+  institution: Inria Paris, ENS – PSL and Mines Paris – PSL
+  wikidata: Q83259
+  website: https://quantic.phys.ens.fr/people.html
+  note: Pierre Rouchon, also a QUANTIC PI, has his own entry (rouchon-mines).
+  city: Paris
+  country: France
+  lat: 48.8419
+  lon: 2.3447
+  checked: '2026-10-15'
 
 - id: rabitz-princeton
   name: Rabitz group
@@ -662,7 +763,7 @@
   country: United States
   lat: 40.3453
   lon: -74.6561
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: richter-regensburg
   name: Richter group
@@ -675,7 +776,7 @@
   country: Germany
   lat: 48.9992
   lon: 12.0932
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: rouchon-mines
   name: Rouchon group
@@ -688,7 +789,7 @@
   country: France
   lat: 48.845
   lon: 2.339
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: ruschhaupt-ucc
   name: Ruschhaupt group
@@ -701,7 +802,7 @@
   country: Ireland
   lat: 51.8929
   lon: -8.4929
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: saffman-wisconsin
   name: Saffman group
@@ -714,7 +815,7 @@
   country: United States
   lat: 43.0753
   lon: -89.4042
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: schmiedmayer-tuwien
   name: Schmiedmayer group
@@ -727,7 +828,20 @@
   country: Austria
   lat: 48.1967
   lon: 16.4128
-  checked: '2026-10-14'
+  checked: '2026-10-15'
+
+- id: schulte-herbrueggen-tum
+  name: Schulte-Herbrüggen group
+  pis:
+  - Thomas Schulte-Herbrüggen
+  institution: Technical University of Munich
+  wikidata: Q157808
+  website: https://www.mcqst.de/about/members/thomas-schulte-herbrueggen.html
+  city: Munich
+  country: Germany
+  lat: 48.1481
+  lon: 11.5681
+  checked: '2026-10-15'
 
 - id: sugny-dijon
   name: Sugny group
@@ -740,7 +854,7 @@
   country: France
   lat: 47.3125
   lon: 5.0708
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: tannor-weizmann
   name: Tannor group
@@ -753,7 +867,7 @@
   country: Israel
   lat: 31.9075
   lon: 34.8092
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: ticozzi-padova
   name: Ticozzi group
@@ -766,7 +880,7 @@
   country: Italy
   lat: 45.42
   lon: 11.87
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: tomsovic-wsu
   name: Tomsovic group
@@ -779,7 +893,7 @@
   country: United States
   lat: 46.7252
   lon: -117.1596
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: viola-dartmouth
   name: Viola group
@@ -792,7 +906,20 @@
   country: United States
   lat: 43.7033
   lon: -72.2883
-  checked: '2026-10-14'
+  checked: '2026-10-15'
+
+- id: vitanov-sofia
+  name: Vitanov group
+  pis:
+  - Nikolay V. Vitanov
+  institution: Sofia University
+  wikidata: Q841581
+  website: https://www.phys.uni-sofia.bg/?page_id=47
+  city: Sofia
+  country: Bulgaria
+  lat: 42.6936
+  lon: 23.335
+  checked: '2026-10-15'
 
 - id: whaley-berkeley
   name: Whaley group
@@ -805,7 +932,7 @@
   country: United States
   lat: 37.8719
   lon: -122.2583
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: wiseman-griffith
   name: Wiseman group
@@ -817,7 +944,7 @@
   country: Australia
   lat: -27.5526
   lon: 153.0539
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: wisniewski-aau
   name: Wisniewski group
@@ -830,7 +957,7 @@
   country: Denmark
   lat: 57.015
   lon: 9.985
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: wu-tsinghua
   name: Wu group
@@ -843,7 +970,7 @@
   country: People's Republic of China
   lat: 40
   lon: 116.3267
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: yamamoto-keio
   name: Yamamoto group
@@ -856,7 +983,7 @@
   country: Japan
   lat: 35.6492
   lon: 139.7428
-  checked: '2026-10-14'
+  checked: '2026-10-15'
 
 - id: yelin-harvard
   name: Yelin group
@@ -883,4 +1010,4 @@
   country: People's Republic of China
   lat: 22.4197
   lon: 114.2068
-  checked: '2026-10-14'
+  checked: '2026-10-15'

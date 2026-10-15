@@ -78,8 +78,13 @@ understand any area; an expert can use it as a quick reference.
       found; Auffèves, Saenz — no matching papers; participants whose PI could not be identified: Candeloro, Cangemi,
       Chakraborty, Gago Encinas, Giergiel, Gupta, Hijano Mendizabal, Iakoupov, Joseph, Kirchberg, Onah, Pagot, Usui,
       Veroni, Zeng
-- [ ] Grow the list (candidates still to be verified: Vitanov, Mirrahimi, Sherson, Petersen, Dong,
-      Schulte-Herbrüggen, Pupillo, Pechen, Laflamme, Paternostro, …)
+- [x] 9 more groups (2026-10-15), each with matching tracked papers and a website naming the PI: Vitanov (Sofia),
+      QUANTIC (Mirrahimi and the other PIs on the team's people page, Inria/ENS Paris; Rouchon keeps his own entry),
+      Petersen (ANU), Dong (now at UTS, since 2025), Schulte-Herbrüggen (TUM, MCQST page), Pupillo (ISIS Strasbourg),
+      Pechen (Steklov Institute), Paternostro (Palermo, also QUB) and Guérin (ICB Dijon); Motzoi added as a PI of
+      PGI-8 (head of a PGI-8 department). Not added: Laflamme — died in June 2025; Sherson — now in Aarhus's
+      Department of Management, last tracked paper 2020; Turinici, Khaneja — no tracked papers since 2019 / 2016
+- [ ] Grow the list (candidates still to be verified: Goerz, Machnes, Shermer, …)
 
 ## 🚧 Phase 5 — Open problems (first version built)
 
