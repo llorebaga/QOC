@@ -9844,3 +9844,401 @@ augier2022effective:
   year: 2022
   doi: 10.1016/j.automatica.2021.110034
 
+cerezo2025simulability:
+  type: article
+  title: Does provable absence of barren plateaus imply classical simulability?
+  authors:
+  - M. Cerezo
+  - Martin Larocca
+  - Diego García-Martín
+  - N. L. Diaz
+  - Paolo Braccia
+  - Enrico Fontana
+  - Manuel S. Rudolph
+  - Pablo Bermejo
+  - Aroosa Ijaz
+  - Supanut Thanasilp
+  - Eric R. Anschuetz
+  - Zoë Holmes
+  journal: Nat Commun
+  volume: '16'
+  pages: '7907'
+  year: 2025
+  doi: 10.1038/s41467-025-63099-6
+  arxiv: '2312.09121'
+
+fontana2024adjoint:
+  type: article
+  title: Characterizing barren plateaus in quantum ansätze with the adjoint representation
+  authors:
+  - Enrico Fontana
+  - Dylan Herman
+  - Shouvanik Chakrabarti
+  - Niraj Kumar
+  - Romina Yalovetzky
+  - Jamie Heredge
+  - Shree Hari Sureshbabu
+  - Marco Pistoia
+  journal: Nat Commun
+  volume: '15'
+  pages: '7171'
+  year: 2024
+  doi: 10.1038/s41467-024-49910-w
+
+goh2025gsim:
+  type: article
+  title: Lie-algebraic classical simulations for quantum computing
+  authors:
+  - Matthew L. Goh
+  - Martin Larocca
+  - Lukasz Cincio
+  - M. Cerezo
+  - Frédéric Sauvage
+  journal: Phys. Rev. Research
+  volume: '7'
+  pages: '033266'
+  year: 2025
+  doi: 10.1103/3y65-f5w6
+
+bermejo2026qcnn:
+  type: article
+  title: Quantum Convolutional Neural Networks are Effectively Classically Simulable
+  authors:
+  - Pablo Bermejo
+  - Paolo Braccia
+  - Manuel S. Rudolph
+  - Zoë Holmes
+  - Lukasz Cincio
+  - M. Cerezo
+  journal: PRX Quantum
+  volume: '7'
+  pages: '020304'
+  year: 2026
+  doi: 10.1103/8qt9-72ts
+
+beauchard2005local:
+  type: article
+  title: Local controllability of a 1-D Schrödinger equation
+  authors:
+  - Karine Beauchard
+  journal: Journal de Mathématiques Pures et Appliquées
+  volume: '84'
+  pages: 851-956
+  year: 2005
+  doi: 10.1016/j.matpur.2005.02.005
+
+beauchard2010local:
+  type: article
+  title: Local controllability of 1D linear and nonlinear Schrödinger equations with bilinear control
+  authors:
+  - Karine Beauchard
+  - Camille Laurent
+  journal: Journal de Mathématiques Pures et Appliquées
+  volume: '94'
+  pages: 520-554
+  year: 2010
+  doi: 10.1016/j.matpur.2010.04.001
+
+nersesyan2010global:
+  type: article
+  title: Global approximate controllability for Schrödinger equation in higher Sobolev norms and applications
+  authors:
+  - Vahagn Nersesyan
+  journal: Ann. Inst. H. Poincaré C Anal. Non Linéaire
+  volume: '27'
+  pages: 901-915
+  year: 2010
+  doi: 10.1016/j.anihpc.2010.01.004
+
+nersesyan2012infinite:
+  type: article
+  title: Global exact controllability in infinite time of Schrödinger equation
+  authors:
+  - Vahagn Nersesyan
+  - Hayk Nersisyan
+  journal: Journal de Mathématiques Pures et Appliquées
+  volume: '97'
+  pages: 295-317
+  year: 2012
+  doi: 10.1016/j.matpur.2011.11.005
+
+beauchard2015encyclopedia:
+  type: chapter
+  title: Bilinear Control of Schrödinger PDEs
+  authors:
+  - Karine Beauchard
+  - Pierre Rouchon
+  booktitle: Encyclopedia of Systems and Control
+  publisher: Springer London
+  pages: 77-82
+  year: 2015
+  doi: 10.1007/978-1-4471-5058-9_12
+
+boussaid2025h1:
+  type: preprint
+  title: $H^1$ local exact controllability of some one-dimensional bilinear Schr{ö}dinger equations
+  authors:
+  - Nabile Boussaïd
+  - Alessandro Duca
+  year: 2025
+  arxiv: '2504.16641'
+
+dirr2009semigroup:
+  type: article
+  title: 'Lie-semigroup structures for reachability and control of open quantum systems: kossakowski-lindblad
+    generators form lie wedge to markovian channels'
+  authors:
+  - G. Dirr
+  - U. Helmke
+  - I. Kurniawan
+  - T. Schulte-Herbrüggen
+  journal: Reports on Mathematical Physics
+  volume: '64'
+  pages: 93-121
+  year: 2009
+  doi: 10.1016/s0034-4877(09)90022-2
+
+dirr2019reachable:
+  type: proceedings
+  title: Reachable Sets from Toy Models to Controlled Markovian Quantum Systems
+  authors:
+  - Gunther Dirr
+  - Frederik vom Ende
+  - Thomas Schulte-Herbruggen
+  booktitle: 2019 IEEE 58th Conference on Decision and Control (CDC)
+  pages: 2322-2329
+  year: 2019
+  doi: 10.1109/cdc40024.2019.9029452
+
+vomende2020dmajorization:
+  type: preprint
+  title: 'Exploring the Limits of Open Quantum Dynamics II: Gibbs-Preserving Maps from the Perspective
+    of Majorization'
+  authors:
+  - Frederik vom Ende
+  year: 2020
+  arxiv: '2003.04164'
+
+lostaglio2022continuous:
+  type: article
+  title: Continuous thermomajorization and a complete set of laws for Markovian thermal processes
+  authors:
+  - Matteo Lostaglio
+  - Kamil Korzekwa
+  journal: Phys. Rev. A
+  volume: '106'
+  pages: '012426'
+  year: 2022
+  doi: 10.1103/physreva.106.012426
+
+heinosaari2012extending:
+  type: article
+  title: Extending quantum operations
+  authors:
+  - Teiko Heinosaari
+  - Maria A. Jivulescu
+  - David Reeb
+  - Michael M. Wolf
+  journal: Journal of Mathematical Physics
+  volume: '53'
+  pages: '102208'
+  year: 2012
+  doi: 10.1063/1.4755845
+
+faist2015gibbs:
+  type: article
+  title: Gibbs-preserving maps outperform thermal operations in the quantum regime
+  authors:
+  - Philippe Faist
+  - Jonathan Oppenheim
+  - Renato Renner
+  journal: New J. Phys.
+  volume: '17'
+  pages: '043003'
+  year: 2015
+  doi: 10.1088/1367-2630/17/4/043003
+
+ding2021gap:
+  type: article
+  title: Exploring the gap between thermal operations and enhanced thermal operations
+  authors:
+  - Yuqiang Ding
+  - Feng Ding
+  - Xueyuan Hu
+  journal: Phys. Rev. A
+  volume: '103'
+  pages: '052214'
+  year: 2021
+  doi: 10.1103/physreva.103.052214
+
+robin2022chattering:
+  type: article
+  title: Chattering phenomenon in quantum optimal control
+  authors:
+  - R Robin
+  - U Boscain
+  - M Sigalotti
+  - D Sugny
+  journal: New J. Phys.
+  volume: '24'
+  pages: '123037'
+  year: 2022
+  doi: 10.1088/1367-2630/acab24
+  arxiv: '2206.13868'
+
+bapat2019bang:
+  type: article
+  title: Bang-bang control as a design principle for classical and quantum optimization algorithms
+  authors:
+  - Aniruddha Bapat
+  - Stephen Jordan
+  journal: QIC
+  volume: '19'
+  pages: 424-446
+  year: 2019
+  doi: 10.26421/qic19.5-6-4
+
+goll2026curved:
+  type: article
+  title: Geometric speed limit of state preparation and curved control spaces
+  authors:
+  - Maximilian Goll
+  - Robert H. Jonsson
+  journal: Quantum
+  volume: '10'
+  pages: '2160'
+  year: 2026
+  doi: 10.22331/q-2026-07-15-2160
+  arxiv: '2504.15175'
+
+funo2017universal:
+  type: article
+  title: Universal Work Fluctuations During Shortcuts to Adiabaticity by Counterdiabatic Driving
+  authors:
+  - Ken Funo
+  - Jing-Ning Zhang
+  - Cyril Chatou
+  - Kihwan Kim
+  - Masahito Ueda
+  - Adolfo del Campo
+  journal: Phys. Rev. Lett.
+  volume: '118'
+  pages: '100602'
+  year: 2017
+  doi: 10.1103/physrevlett.118.100602
+
+jacobs2003purification:
+  type: article
+  title: How to project qubits faster using quantum feedback
+  authors:
+  - Kurt Jacobs
+  journal: Phys. Rev. A
+  volume: '67'
+  pages: '030301'
+  year: 2003
+  doi: 10.1103/physreva.67.030301
+
+combes2006rapid:
+  type: article
+  title: Rapid State Reduction of Quantum Systems Using Feedback Control
+  authors:
+  - Joshua Combes
+  - Kurt Jacobs
+  journal: Phys. Rev. Lett.
+  volume: '96'
+  pages: '010504'
+  year: 2006
+  doi: 10.1103/physrevlett.96.010504
+
+wiseman2006rapid:
+  type: article
+  title: Reconsidering rapid qubit purification by feedback
+  authors:
+  - H M Wiseman
+  - J F Ralph
+  journal: New J. Phys.
+  volume: '8'
+  pages: 90-90
+  year: 2006
+  doi: 10.1088/1367-2630/8/6/090
+
+combes2010random:
+  type: article
+  title: Replacing quantum feedback with open-loop control and quantum filtering
+  authors:
+  - Joshua Combes
+  - Howard M. Wiseman
+  - A. J. Scott
+  journal: Phys. Rev. A
+  volume: '81'
+  pages: '020301'
+  year: 2010
+  doi: 10.1103/physreva.81.020301
+
+combes2010unbiased:
+  type: article
+  title: Rapid purification of quantum systems by measuring in a feedback-controlled unbiased basis
+  authors:
+  - Joshua Combes
+  - Howard M. Wiseman
+  - Kurt Jacobs
+  - Anthony J. O’Connor
+  journal: Phys. Rev. A
+  volume: '82'
+  pages: '022307'
+  year: 2010
+  doi: 10.1103/physreva.82.022307
+  arxiv: '1005.4230'
+
+combes2011maximum:
+  type: article
+  title: 'Maximum Information Gain in Weak or Continuous Measurements of Qudits: Complementarity Is Not
+    Enough'
+  authors:
+  - Joshua Combes
+  - Howard M. Wiseman
+  journal: Phys. Rev. X
+  volume: '1'
+  pages: '011012'
+  year: 2011
+  doi: 10.1103/physrevx.1.011012
+  arxiv: '1105.0961'
+
+venuti2021optimal:
+  type: article
+  title: Optimal Control for Quantum Optimization of Closed and Open Systems
+  authors:
+  - Lorenzo Campos Venuti
+  - Domenico D’Alessandro
+  - Daniel A. Lidar
+  journal: Phys. Rev. Applied
+  volume: '16'
+  pages: '054023'
+  year: 2021
+  doi: 10.1103/physrevapplied.16.054023
+
+duca2022nls:
+  type: preprint
+  title: Local exact controllability of the 1D nonlinear Schrödinger equation in the case of Dirichlet
+    boundary conditions
+  authors:
+  - Alessandro Duca
+  - Vahagn Nersesyan
+  year: 2022
+  arxiv: '2202.08723'
+
+meyer2026surrogation:
+  type: article
+  title: Gradient scalability and Taylor surrogation of quantum cost landscapes
+  authors:
+  - Sabri Meyer
+  - Francesco Scala
+  - Francesco Tacchino
+  - Aurelien Lucchi
+  journal: Phys. Rev. Research
+  volume: '8'
+  pages: '023325'
+  year: 2026
+  doi: 10.1103/l9bp-dccf
+  arxiv: '2507.06344'
+
