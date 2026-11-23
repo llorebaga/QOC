@@ -504,3 +504,94 @@ timeline:
   - year: 2025
     text: QCPOP finds globally optimal controls with polynomial optimization.
     refs: [bondar2025qcpop]
+
+benchmarks:
+  - name: Transmon single-qubit gate with leakage
+    platform: Superconducting
+    model: >-
+      Three-level anharmonic oscillator in the rotating frame,
+      $H(t) = \tfrac12\big(\Omega_x(t)\Sigma_x + \Omega_y(t)\Sigma_y\big) + \Delta|2\rangle\langle 2|$ with
+      $\Delta/2\pi \approx -200\text{ to }-330\text{ MHz}$ and ladder operators
+      $\Sigma_x = |0\rangle\langle 1| + \sqrt{2}|1\rangle\langle 2| + \mathrm{h.c.}$
+    target: >-
+      Synthesize an $X_\pi$ or $X_{\pi/2}$ gate in $t_g \approx 5\text{–}20\text{ ns}$ minimizing subspace infidelity
+      and final leakage $P_2(t_g)$ under bandwidth/amplitude limits. Standard baselines: analytic [[drag|DRAG]]
+      ($10^{-5}$ leakage) vs. GRAPE/closed-loop pulses down to $\sim 4\text{ ns}$.
+    topics: [superconducting, drag, gate-synthesis, grape]
+    refs: [motzoi2009drag, chen2016leakage, werninghaus2021leakage]
+
+  - name: Time-optimal Rydberg blockade CZ gate
+    platform: Neutral atoms
+    model: >-
+      Two three-level atoms ($|0\rangle, |1\rangle, |r\rangle$) with common laser drive
+      $H(t) = \tfrac{\Omega}{2}\sum_{j=1}^2 \big(e^{i\phi(t)}|1\rangle\langle r|_j + \mathrm{h.c.}\big) + B|rr\rangle\langle rr|$
+      in the strong blockade regime $B \gg \Omega$.
+    target: >-
+      Implement a two-qubit $\mathrm{CZ}$ gate (up to single-qubit $Z$ phases) using only global phase modulation
+      $\phi(t)$ while minimizing total Rydberg-state time and gate duration $\Omega T$. Canonical benchmark:
+      $\Omega T \approx 7.61$ time-optimal smooth phase pulse.
+    topics: [neutral-atoms, geometric-control, gate-synthesis, quantum-speed-limits]
+    refs: [jandura2022timeoptimal, jaksch2000rydberg]
+
+  - name: Two-qubit entangling gate under dissipation
+    platform: Superconducting / Open systems
+    model: >-
+      Two coupled qubits (fixed or tunable coupler) evolving under a Lindblad master equation with $T_1$ relaxation
+      and $T_\phi$ dephasing, driven by flux or microwave controls.
+    target: >-
+      Prepare a maximally entangling gate ($\mathrm{CZ}$, $\mathrm{iSWAP}$, or $\sqrt{\mathrm{iSWAP}}$) balancing
+      unitary gate error against decoherence over gate time $T$, often testing [[krotov|Krotov]], [[grape|GRAPE]] and
+      [[second-order-methods|second-order methods]] in open-system Liouville space.
+    topics: [superconducting, open-system-control, krotov, gate-synthesis]
+    refs: [goerz2014dissipative, sung2021coupler]
+
+  - name: Spin-chain state transfer at the quantum speed limit
+    platform: Many-body / Spin chains
+    model: >-
+      One-dimensional $N$-spin $XX$ or Heisenberg chain with uniform nearest-neighbour coupling $J$ and a single
+      localized or global time-dependent magnetic field $u(t)$.
+    target: >-
+      Transfer a single-spin excitation from site $1$ to site $N$ with fidelity $F \to 1$ as $T$ approaches the
+      minimum transfer time $T_{\mathrm{QSL}} \propto N/J$. Widely used to benchmark [[crab|CRAB]], [[grape|GRAPE]]
+      and [[quantum-speed-limits|quantum speed limits]] as system size scales.
+    topics: [state-preparation, quantum-speed-limits, many-body-control, crab]
+    refs: [bose2003chain, caneva2009qsl, murphy2010chain]
+
+  - name: Dispersive qubit–cavity bosonic state preparation
+    platform: Bosonic / cQED
+    model: >-
+      Transmon dispersively coupled to a high-$Q$ microwave resonator,
+      $H(t) = -\chi a^\dagger a |e\rangle\langle e| + \big(\epsilon_c(t) a^\dagger + \epsilon_q(t)\sigma_+ + \mathrm{h.c.}\big)$,
+      truncated at $N_c \sim 20\text{–}60$ Fock levels.
+    target: >-
+      Prepare Fock states $|n\rangle$, cat states $|\alpha\rangle \pm |-\alpha\rangle$, or GKP codewords and logical
+      gates in time $T \sim \text{few}\times \pi/\chi$. Benchmarks universal bosonic optimal control: continuous
+      [[grape|GRAPE]] pulses, SNAP + displacement, and echoed conditional displacements (ECD).
+    topics: [bosonic-control, state-preparation, superconducting, error-correction]
+    refs: [krastanov2015universal, heeres2017logical, eickbusch2022ecd]
+
+  - name: Three-level Λ-system population transfer
+    platform: AMO / Three-level
+    model: >-
+      Three-level $\Lambda$ system ($|1\rangle, |2\rangle, |3\rangle$) with decaying intermediate state $|2\rangle$
+      (rate $\Gamma$) driven by pump $\Omega_P(t)$ and Stokes $\Omega_S(t)$ fields.
+    target: >-
+      Transfer population from $|1\rangle$ to $|3\rangle$ while suppressing loss through $|2\rangle$ under bounded
+      pulse area/energy. Compares counter-intuitive [[adiabatic-passage|STIRAP]],
+      [[shortcuts-to-adiabaticity|counterdiabatic shortcuts]], and numerical optimal control.
+    topics: [adiabatic-passage, shortcuts-to-adiabaticity, state-preparation, open-system-control]
+    refs: [bergmann1998coherent, kumar2016scstirap, vitanov2017stirap]
+
+  - name: Broadband spin inversion in an inhomogeneous ensemble
+    platform: NMR / Ensembles
+    model: >-
+      Ensemble of non-interacting qubits with unknown Larmor detuning $\delta \in [-\delta_{\max}, \delta_{\max}]$ and
+      drive-amplitude inhomogeneity $\alpha \in [1-\epsilon, 1+\epsilon]$,
+      $H(\delta,\alpha,t) = \delta\sigma_z/2 + \alpha\big(u_x(t)\sigma_x + u_y(t)\sigma_y\big)/2$.
+    target: >-
+      Achieve uniform state inversion ($|0\rangle \to |1\rangle$) or universal rotation across the entire
+      $(\delta, \alpha)$ box with bounded Rabi amplitude $\sqrt{u_x^2+u_y^2} \le \Omega_{\max}$. Classic benchmark
+      for [[robust-optimal-control|ensemble GRAPE]] and [[composite-pulses|composite pulses]].
+    topics: [robust-optimal-control, spins, composite-pulses, grape]
+    refs: [skinner2003broadband, kobzar2004broadband, khaneja2005grape]
+

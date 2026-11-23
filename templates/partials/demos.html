@@ -1,0 +1,151 @@
+{#- Interactive physics explorers embedded on flagship topic pages (vanilla JS + SVG in static/js/demos.js). -#}
+{% macro render_demo(kind) -%}
+{% if kind == 'drag' %}
+<section class="article-section demo-section" aria-labelledby="interactive-demo">
+  <h2 id="interactive-demo">Interactive explorer: DRAG pulse &amp; leakage</h2>
+  <p class="section-note">Exact 3-level transmon simulation of a Gaussian \(X_\pi\) pulse with DRAG quadrature
+    \(\Omega_y(t) = -\beta\,\dot\Omega_x(t)/\Delta\). Notice the classic trade-off: \(\beta \approx 0.5\) minimizes
+    phase error without detuning, while \(\beta \approx 1\) suppresses leakage to \(|2\rangle\) by orders of magnitude.</p>
+  <div class="demo-card card" data-demo="drag">
+    <div class="demo-controls">
+      <label class="demo-slider">
+        <span>DRAG weight \(\beta\) <output data-out="beta">0.50</output></span>
+        <input type="range" name="beta" min="0" max="1.4" step="0.02" value="0.50">
+      </label>
+      <label class="demo-slider">
+        <span>Gate duration \(t_g\) <output data-out="tg">10 ns</output></span>
+        <input type="range" name="tg" min="6" max="24" step="0.5" value="10">
+      </label>
+      <label class="demo-slider">
+        <span>Anharmonicity \(\Delta/2\pi\) <output data-out="delta">-250 MHz</output></span>
+        <input type="range" name="delta" min="-400" max="-150" step="10" value="-250">
+      </label>
+    </div>
+    <div class="demo-presets" role="group" aria-label="Presets">
+      <button type="button" class="demo-preset" data-preset='{"beta":0,"tg":10,"delta":-250}'>No DRAG (\(\beta = 0\))</button>
+      <button type="button" class="demo-preset" data-preset='{"beta":0.5,"tg":10,"delta":-250}'>Phase-optimal (\(\beta = 0.5\))</button>
+      <button type="button" class="demo-preset" data-preset='{"beta":1.0,"tg":10,"delta":-250}'>Leakage-optimal (\(\beta = 1.0\))</button>
+      <button type="button" class="demo-preset" data-preset='{"beta":1.0,"tg":7,"delta":-250}'>Fast 7 ns pulse</button>
+    </div>
+    <div class="demo-plots">
+      <figure class="demo-plot">
+        <figcaption>Control envelopes \(\Omega_x(t)/2\pi\) &amp; \(\Omega_y(t)/2\pi\)</figcaption>
+        <svg viewBox="0 0 380 190" data-svg="wave" role="img" aria-label="DRAG in-phase and quadrature control envelopes"></svg>
+      </figure>
+      <figure class="demo-plot">
+        <figcaption>Level populations \(P_0(t)\), \(P_1(t)\), and \(10\times P_2(t)\)</figcaption>
+        <svg viewBox="0 0 380 190" data-svg="pop" role="img" aria-label="Qubit and leakage level populations during the pulse"></svg>
+      </figure>
+    </div>
+    <dl class="demo-stats">
+      <div><dt>Final \(P_1(t_g)\)</dt><dd data-stat="p1">—</dd></div>
+      <div><dt>Final leakage \(P_2(t_g)\)</dt><dd data-stat="p2">—</dd></div>
+      <div><dt>Peak transient \(P_2\)</dt><dd data-stat="p2max">—</dd></div>
+      <div><dt>State infidelity \(1 - P_1\)</dt><dd data-stat="err">—</dd></div>
+    </dl>
+  </div>
+</section>
+{% elif kind == 'filter-function' %}
+<section class="article-section demo-section" aria-labelledby="interactive-demo">
+  <h2 id="interactive-demo">Interactive explorer: dynamical decoupling filter functions</h2>
+  <p class="section-note">Exact dephasing filter function \(F(\omega T)/(\omega T)^2\) for ideal \(\pi\)-pulse sequences
+    overlaid with a noise spectrum \(S(\omega)\). Increasing the pulse count pushes the filter passband above the noise
+    cutoff \(\omega_c\), suppressing the overlap integral \(\chi(T)\).</p>
+  <div class="demo-card card" data-demo="filter-function">
+    <div class="demo-controls">
+      <label class="demo-select">
+        <span>Sequence</span>
+        <select name="seq">
+          <option value="cpmg" selected>CPMG (equidistant)</option>
+          <option value="udd">Uhrig UDD (non-equidistant)</option>
+          <option value="fid">Free induction decay (0 pulses)</option>
+        </select>
+      </label>
+      <label class="demo-slider">
+        <span>Number of \(\pi\)-pulses \(n\) <output data-out="n">4</output></span>
+        <input type="range" name="n" min="1" max="12" step="1" value="4">
+      </label>
+      <label class="demo-slider">
+        <span>Noise cutoff \(\omega_c T\) <output data-out="wc">2.0</output></span>
+        <input type="range" name="wc" min="0.4" max="12" step="0.2" value="2.0">
+      </label>
+      <label class="demo-select">
+        <span>Noise spectrum \(S(\omega)\)</span>
+        <select name="noise">
+          <option value="lorentz" selected>Lorentzian (Ornstein–Uhlenbeck)</option>
+          <option value="ohmic">1/f with sharp cutoff \(\omega_c\)</option>
+        </select>
+      </label>
+    </div>
+    <div class="demo-presets" role="group" aria-label="Presets">
+      <button type="button" class="demo-preset" data-preset='{"seq":"fid","n":1,"wc":2.0,"noise":"lorentz"}'>FID (unprotected)</button>
+      <button type="button" class="demo-preset" data-preset='{"seq":"cpmg","n":1,"wc":2.0,"noise":"lorentz"}'>Hahn echo (\(n = 1\))</button>
+      <button type="button" class="demo-preset" data-preset='{"seq":"cpmg","n":6,"wc":2.0,"noise":"lorentz"}'>CPMG-6</button>
+      <button type="button" class="demo-preset" data-preset='{"seq":"udd","n":6,"wc":2.0,"noise":"ohmic"}'>UDD-6 (sharp cutoff)</button>
+    </div>
+    <div class="demo-plots">
+      <figure class="demo-plot">
+        <figcaption>Filter \(F(\omega T)/(\omega T)^2\) vs. noise PSD \(S(\omega)\) (log frequency)</figcaption>
+        <svg viewBox="0 0 380 190" data-svg="spec" role="img" aria-label="Filter function and noise power spectral density"></svg>
+      </figure>
+      <figure class="demo-plot">
+        <figcaption>Pulse timing on \([0, T]\) &amp; coherence \(W(t)\) vs. FID</figcaption>
+        <svg viewBox="0 0 380 190" data-svg="coh" role="img" aria-label="Pulse timings and coherence decay compared with free induction decay"></svg>
+      </figure>
+    </div>
+    <dl class="demo-stats">
+      <div><dt>Coherence \(W(T)\)</dt><dd data-stat="w">—</dd></div>
+      <div><dt>FID coherence \(W_{\text{FID}}(T)\)</dt><dd data-stat="wfid">—</dd></div>
+      <div><dt>Decay exponent \(\chi(T)\)</dt><dd data-stat="chi">—</dd></div>
+      <div><dt>Error reduction vs. FID</dt><dd data-stat="gain">—</dd></div>
+    </dl>
+  </div>
+</section>
+{% elif kind == 'sta' %}
+<section class="article-section demo-section" aria-labelledby="interactive-demo">
+  <h2 id="interactive-demo">Interactive explorer: counterdiabatic Landau–Zener driving</h2>
+  <p class="section-note">Exact two-level integration of a smooth Landau–Zener sweep
+    \(H_0(t) = \tfrac12(\Delta(t)\sigma_z + \Omega_0\sigma_x)\) assisted by the scaled Berry–Demirplak–Rice
+    counterdiabatic field \(H_1(t) = \lambda_{\mathrm{CD}}\,\tfrac12\Omega_{\mathrm{CD}}(t)\sigma_y\). Shortening \(T\)
+    keeps fidelity at \(1\) when \(\lambda_{\mathrm{CD}} = 1\), at the price of a larger peak control field.</p>
+  <div class="demo-card card" data-demo="sta">
+    <div class="demo-controls">
+      <label class="demo-slider">
+        <span>Sweep duration \(\Omega_0 T\) <output data-out="T">1.5</output></span>
+        <input type="range" name="T" min="0.4" max="8.0" step="0.1" value="1.5">
+      </label>
+      <label class="demo-slider">
+        <span>CD scale \(\lambda_{\mathrm{CD}}\) <output data-out="lam">1.00</output></span>
+        <input type="range" name="lam" min="0" max="1.0" step="0.02" value="1.00">
+      </label>
+      <label class="demo-slider">
+        <span>Sweep range \(\Delta_0/\Omega_0\) <output data-out="D0">5.0</output></span>
+        <input type="range" name="D0" min="2" max="10" step="0.5" value="5.0">
+      </label>
+    </div>
+    <div class="demo-presets" role="group" aria-label="Presets">
+      <button type="button" class="demo-preset" data-preset='{"T":1.5,"lam":0,"D0":5}'>Fast bare sweep</button>
+      <button type="button" class="demo-preset" data-preset='{"T":1.5,"lam":1,"D0":5}'>Exact STA (\(\lambda = 1\))</button>
+      <button type="button" class="demo-preset" data-preset='{"T":0.6,"lam":1,"D0":5}'>Ultra-fast STA (high cost)</button>
+      <button type="button" class="demo-preset" data-preset='{"T":7.0,"lam":0,"D0":5}'>Slow adiabatic sweep</button>
+    </div>
+    <div class="demo-plots">
+      <figure class="demo-plot">
+        <figcaption>Detuning \(\Delta(t)/\Omega_0\) &amp; CD field \(\lambda_{\mathrm{CD}}\Omega_{\mathrm{CD}}(t)/\Omega_0\)</figcaption>
+        <svg viewBox="0 0 380 190" data-svg="fields" role="img" aria-label="Landau-Zener detuning and counterdiabatic control fields"></svg>
+      </figure>
+      <figure class="demo-plot">
+        <figcaption>Instantaneous ground-state fidelity \(F(t)\) (CD vs. bare sweep)</figcaption>
+        <svg viewBox="0 0 380 190" data-svg="fid" role="img" aria-label="Instantaneous ground-state fidelity with and without counterdiabatic driving"></svg>
+      </figure>
+    </div>
+    <dl class="demo-stats">
+      <div><dt>Final fidelity (with CD)</dt><dd data-stat="fcd">—</dd></div>
+      <div><dt>Final fidelity (bare sweep)</dt><dd data-stat="fbare">—</dd></div>
+      <div><dt>Peak CD field \(|\Omega_{\mathrm{CD}}|/\Omega_0\)</dt><dd data-stat="peak">—</dd></div>
+      <div><dt>CD action \(\int|\Omega_{\mathrm{CD}}|\,dt\)</dt><dd data-stat="cost">—</dd></div>
+    </dl>
+  </div>
+</section>
+{% endif %}
+{%- endmacro %}

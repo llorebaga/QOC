@@ -2,6 +2,7 @@
 {% from "partials/icons.html" import icon %}
 {% from "partials/paper_list.html" import paper_item %}
 {% from "partials/ui.html" import problem_status %}
+{% from "partials/demos.html" import render_demo %}
 {% block title %}{{ topic.title }} — QOC{% endblock %}
 {% block description %}{{ topic.short }}{% endblock %}
 {% block head %}{% if article %}{% include "partials/katex.html" %}{% endif %}
@@ -36,6 +37,8 @@
       <div class="prose article-body">
         {{ article.html | safe }}
       </div>
+
+      {% if article.meta.get('demo') %}{{ render_demo(article.meta.demo) }}{% endif %}
 
       {% if article.meta.key_papers %}
       <section class="article-section" aria-labelledby="key-papers">
@@ -155,6 +158,7 @@
           <h2>On this page</h2>
           <ol>
             {% for h in article.toc %}<li><a href="#{{ h.id }}">{{ h.name }}</a></li>{% endfor %}
+            {% if article.meta.get('demo') %}<li><a href="#interactive-demo">Interactive explorer</a></li>{% endif %}
             {% if article.meta.key_papers %}<li><a href="#key-papers">Key papers</a></li>{% endif %}
             {% if article.meta.software %}<li><a href="#software">Software</a></li>{% endif %}
             {% if article.citations %}<li><a href="#references">References</a></li>{% endif %}
@@ -176,4 +180,8 @@
     </aside>
   </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+{% if article and article.meta.get('demo') %}<script src="{{ asset('js/demos.js') }}" defer></script>{% endif %}
 {% endblock %}

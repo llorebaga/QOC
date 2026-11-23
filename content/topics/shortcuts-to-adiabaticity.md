@@ -1,6 +1,7 @@
 ---
 updated: 2026-10-11
 status: draft
+demo: sta
 key_papers:
   - key: guery2019sta
     note: The comprehensive review — concepts, methods (counterdiabatic driving, invariants, fast-forward), and applications across atomic, molecular and many-body physics.

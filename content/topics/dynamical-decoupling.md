@@ -1,6 +1,7 @@
 ---
 updated: 2026-10-11
 status: draft
+demo: filter-function
 key_papers:
   - key: hahn1950echo
     note: The spin echo. A single refocusing pulse undoes the dephasing caused by static inhomogeneities — the seed of all decoupling.

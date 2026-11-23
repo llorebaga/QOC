@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% block title %}Topic trends — Papers — QOC{% endblock %}
+{% block description %}How quantum optimal control research topics have evolved on arXiv since {{ paper_stats.first_year }} — compare platforms, methods and tasks over time.{% endblock %}
+
+{% block main %}
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ url('papers/') }}">Papers</a><span aria-hidden="true">/</span><span>Topic trends</span>
+    </nav>
+    <h1>Topic trends</h1>
+    <p class="lead">Annual arXiv paper counts across all {{ taxonomy.topics|length }} topics of the field map since
+      {{ paper_stats.first_year }}. Compare topics by raw volume or share of quantum control papers.</p>
+    <p class="tracker-links">
+      <a href="{{ url('papers/') }}">All papers</a>
+      <a href="{{ url('papers/weekly/') }}">This week</a>
+      <a href="{{ url('papers/authors/') }}">Authors</a>
+    </p>
+  </div>
+</section>
+
+<div class="wrap trends" data-trends>
+  <section class="card trends-card" aria-labelledby="trends-chart-heading">
+    <div class="trends-head">
+      <h2 id="trends-chart-heading">Compare topics over time</h2>
+      <div class="trends-controls">
+        <div class="problem-filter trends-mode" role="group" aria-label="Metric">
+          <button type="button" class="problem-filter-btn" data-mode="count" aria-pressed="true">Papers / year</button>
+          <button type="button" class="problem-filter-btn" data-mode="share" aria-pressed="false">Share of QOC (%)</button>
+        </div>
+        <label class="trends-check">
+          <input type="checkbox" data-include-partial>
+          <span>Include {{ trends_partial_year }} (YTD)</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="trends-presets" role="group" aria-label="Presets">
+      <button type="button" class="demo-preset" data-trend-preset="platforms">Platforms</button>
+      <button type="button" class="demo-preset" data-trend-preset="methods">Methods &amp; ML</button>
+      <button type="button" class="demo-preset" data-trend-preset="tasks">Tasks</button>
+      <button type="button" class="demo-preset" data-trend-preset="rising">Fastest growing</button>
+      <label class="trends-add">
+        <span class="visually-hidden">Add topic to chart</span>
+        <select data-trend-add>
+          <option value="">+ Add topic…</option>
+          {% for f in taxonomy.families %}
+          <optgroup label="{{ f.title }}">
+            {% for t in f.topics %}<option value="{{ t.id }}">{{ t.title }}</option>{% endfor %}
+          </optgroup>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
+
+    <ul class="trends-active" data-trends-active aria-label="Selected topics"></ul>
+
+    <div class="trends-chart-wrap" data-trends-wrap>
+      <svg class="trends-svg" viewBox="0 0 840 340" data-trends-svg role="img" aria-label="Annual arXiv papers per selected topic"></svg>
+      <div class="chart-tip trends-tip" hidden data-trends-tip></div>
+    </div>
+    <p class="muted trends-note">Papers may belong to more than one topic, so topic shares can sum above 100%.
+      Classification uses the transparent rule set described on the <a href="{{ url('about/#data-quality') }}">About page</a>.</p>
+  </section>
+
+  <section class="trends-table-section" aria-labelledby="all-topics-heading">
+    <div class="trends-head">
+      <h2 id="all-topics-heading">All {{ taxonomy.topics|length }} topics</h2>
+      <p class="muted">Click a column header to sort, or click “Plot” to compare a topic above.</p>
+    </div>
+    <div class="trends-table-wrap">
+      <table class="trends-table" data-trends-table>
+        <thead>
+          <tr>
+            <th><button type="button" data-sort="title">Topic</button></th>
+            <th>Family</th>
+            <th class="num"><button type="button" data-sort="total">Total</button></th>
+            <th class="num"><button type="button" data-sort="recent">{{ trends_recent_label }}</button></th>
+            <th class="num"><button type="button" data-sort="growth">5-yr growth</button></th>
+            <th>Trend</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody data-trends-tbody></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script type="application/json" id="trends-data">{{ trends_json | safe }}</script>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ asset('js/trends.js') }}" defer></script>
+{% endblock %}

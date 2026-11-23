@@ -20,6 +20,7 @@
       how it came to be.</p>
     <nav class="res-nav" aria-label="On this page">
       <a href="#software">Software</a>
+      <a href="#benchmarks">Benchmarks</a>
       <a href="#reading">Reading</a>
       <a href="#glossary">Glossary</a>
       <a href="#timeline">Timeline</a>
@@ -50,6 +51,30 @@
     </ul>
     {% endfor %}
   </section>
+
+  {% if res.get('benchmarks') %}
+  <section class="res-section" aria-labelledby="benchmarks">
+    <h2 id="benchmarks">Standard benchmarks</h2>
+    <p class="section-note">Canonical control problems used across the literature to compare algorithms, pulse
+      parametrizations and speed limits.</p>
+    <ul class="bench-list">
+      {% for b in res.benchmarks %}
+      <li class="bench-card card" id="{{ b.id }}">
+        <div class="sw-head">
+          <h3 class="bench-name">{{ b.name }}</h3>
+          <span class="sw-lang">{{ b.platform }}</span>
+        </div>
+        <dl class="bench-dl">
+          <div><dt>Model</dt><dd>{{ b.model_html }}</dd></div>
+          <div><dt>Objective</dt><dd>{{ b.target_html }}</dd></div>
+        </dl>
+        {% if b.get('refs') %}<p class="sw-refs">{% for k in b.refs %}<span class="ref">{{ fmt_ref(k) }}</span>{% endfor %}</p>{% endif %}
+        {{ topic_chips(b.get('topics')) }}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
 
   <section class="res-section" aria-labelledby="reading">
     <h2 id="reading">Reading</h2>

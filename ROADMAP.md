@@ -62,6 +62,8 @@ understand any area; an expert can use it as a quick reference.
 - [x] Papers page: newest first, filters by topic and year, full-text search (abstracts loaded on demand)
 - [x] Author pages: every author → all their tracked papers, topics and co-authors (name variants merged when unambiguous)
 - [x] Atom feeds (all papers and one per topic); weekly digest page; recent papers on every topic page
+- [x] Interactive topic trends page (`/papers/trends/`): multi-topic comparison over time (counts or share %) and
+      sortable 50-topic sparkline table (2026-11-23)
 
 ## 🚧 Phase 4 — Research groups map (first version built)
 
@@ -113,16 +115,18 @@ understand any area; an expert can use it as a quick reference.
 
 - [x] Software directory (`data/resources.yaml`): 30 packages, every URL verified (note: Qiskit Dynamics is archived
       and Qiskit Pulse was removed in Qiskit 2.0)
+- [x] Standard QOC benchmarks (7 canonical control problems with Hamiltonians, objectives and references) (2026-11-23)
 - [x] Essential reading: reviews, tutorials, theses, textbooks, landmark papers
 - [x] Glossary of terms and notation (33 terms)
 - [x] Timeline of the field
-- [ ] Possibly: events (conferences, schools), benchmark problems
+- [ ] Possibly: events (conferences, schools)
 
 ## Phase 7 — Public launch
 
 - [x] Licences: CC BY 4.0 for content (`LICENSE-CONTENT`), MIT for code (`LICENSE`); arXiv metadata excluded (2026-10-15)
 - [x] Contribution guide (`CONTRIBUTING.md`) + issue templates (`add-group`, `propose-open-problem`, `report-error`) (2026-11-23)
-- [x] Unified site-wide search palette (`/` or `⌘K`, static `search-index.json`) and Research groups cross-linked onto topic pages (2026-11-23)
+- [x] Unified site-wide search palette (`/` or `⌘K`, static `search-index.json`), Research groups cross-linked onto topic pages,
+      interactive physics explorers (DRAG, DD filter functions, counterdiabatic STA), and `tools/status.py` (2026-11-23)
 - [x] Repository public; GitHub Pages deployment at https://llorebaga.github.io/QOC/ (2026-10-14, earlier than planned)
 - [ ] Possibly a custom domain
 - [x] SEO metadata (descriptions, canonical URLs, Open Graph / Twitter cards), social card

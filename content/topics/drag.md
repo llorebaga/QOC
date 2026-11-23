@@ -1,6 +1,7 @@
 ---
 updated: 2026-10-11
 status: draft
+demo: drag
 key_papers:
   - key: motzoi2009drag
     note: Introduces DRAG — a derivative-shaped quadrature component that removes leakage and phase errors in weakly anharmonic qubits.

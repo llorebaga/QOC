@@ -214,6 +214,19 @@ def load_resources(path: Path, taxonomy: dict, references: dict, url) -> dict:
     for e in res.get("timeline", []):
         check(e, f"timeline {e['year']}")
         e["text_html"] = inline(e["text"], "resources")
+    seen_bench: set[str] = set()
+    for b in res.get("benchmarks", []):
+        check(b, f"benchmark '{b['name']}'")
+        base_id = "bench-" + re.sub(r"[^a-z0-9]+", "-", b["name"].lower()).strip("-")
+        bid = base_id
+        n = 2
+        while bid in seen_bench:
+            bid = f"{base_id}-{n}"
+            n += 1
+        seen_bench.add(bid)
+        b["id"] = bid
+        b["model_html"] = inline(b.get("model", ""), "resources")
+        b["target_html"] = inline(b.get("target", ""), "resources")
     if errors:
         raise BuildError("resources.yaml:\n  " + "\n  ".join(errors))
     return res
@@ -318,7 +331,15 @@ def search_index_data(taxonomy: dict, problems: list[dict], groups: list[dict],
             "t": e["term"],
             "s": _plain(e["def_html"], 160),
             "m": " ".join(tlabel(t) for t in (e.get("topics") or [])),
-            "u": url(f"resources/#{e['id']}"),
+            "u": url(f"resources/#g-{e['id']}"),
+        })
+    for b in resources.get("benchmarks", []):
+        items.append({
+            "k": "benchmark",
+            "t": b["name"],
+            "s": f"{b['platform']} · {_plain(b['target_html'], 140)}",
+            "m": " ".join([b["platform"], *(tlabel(t) for t in (b.get("topics") or []))]),
+            "u": url(f"resources/#{b['id']}"),
         })
     for grp in resources.get("software", []):
         for s in grp["items"]:
@@ -343,6 +364,57 @@ def search_index_data(taxonomy: dict, problems: list[dict], groups: list[dict],
                 "u": url("resources/#reading"),
             })
     return items
+
+
+def trends_data(tracked: dict, taxonomy: dict, stats: dict, url) -> dict:
+    """Annual paper counts per topic for the interactive /papers/trends/ page."""
+    first_year = stats["first_year"]
+    last_year = max((int(p["date"][:4]) for p in tracked["papers"]), default=dt.date.today().year)
+    years = list(range(first_year, last_year + 1))
+    yidx = {y: i for i, y in enumerate(years)}
+    totals = [0] * len(years)
+    by_topic_counts: dict[str, list[int]] = {tid: [0] * len(years) for tid in taxonomy["topics"]}
+    for p in tracked["papers"]:
+        yi = yidx.get(int(p["date"][:4]))
+        if yi is None:
+            continue
+        totals[yi] += 1
+        for tid in p["topics"]:
+            by_topic_counts[tid][yi] += 1
+
+    # Compare the last 5 complete years with the 5 years before them
+    complete_end = len(years) - 1  # exclude partial last_year
+    rec_slice = slice(max(0, complete_end - 5), complete_end)
+    prev_slice = slice(max(0, complete_end - 10), max(0, complete_end - 5))
+    recent_label = f"{years[rec_slice.start]}–{years[rec_slice.stop - 1]}" if complete_end > 0 else str(last_year)
+
+    fam_by_id = {f["id"]: f["title"] for f in taxonomy["families"]}
+    topics = []
+    for tid, t in taxonomy["topics"].items():
+        c = by_topic_counts[tid]
+        recent = sum(c[rec_slice])
+        prev = sum(c[prev_slice])
+        growth = (recent - prev) / prev if prev >= 5 else None
+        topics.append({
+            "id": tid,
+            "label": t["label"],
+            "title": t["title"],
+            "family": t["family"],
+            "family_title": fam_by_id[t["family"]],
+            "counts": c,
+            "total": sum(c),
+            "recent": recent,
+            "growth": round(growth, 3) if growth is not None else None,
+            "url": url(f"topics/{tid}/"),
+            "papers_url": url(f"papers/?topic={tid}"),
+        })
+    return {
+        "years": years,
+        "partial_year": last_year,
+        "recent_label": recent_label,
+        "totals": totals,
+        "topics": topics,
+    }
 
 
 # ------------------------------------------------------------------ building
@@ -533,6 +605,10 @@ def build(base: str | None = None, quiet: bool = False) -> None:
            top_authors=[a for a in tracked["authors"] if a["count"] >= 8])
     render(env, "pages/weekly.html", "papers/weekly/index.html", page_id="papers",
            weeks=paper_tracker.weeks(tracked, 4, dt.date.today()))
+    trends = trends_data(tracked, taxonomy, stats, url)
+    render(env, "pages/trends.html", "papers/trends/index.html", page_id="papers",
+           trends_partial_year=trends["partial_year"], trends_recent_label=trends["recent_label"],
+           trends_json=Markup(json.dumps(trends, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")))
     render(env, "feeds/atom.xml", "papers/feed.xml", feed_title="QOC — new quantum control papers",
            feed_id="papers/", feed_page="papers/", entries=tracked["papers"][:50])
 

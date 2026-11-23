@@ -1,6 +1,7 @@
 ---
 updated: 2026-10-11
 status: draft
+demo: filter-function
 key_papers:
   - key: kofman2001universal
     note: A universal formula for decay under modulation — the decay rate is the overlap of the bath's coupling spectrum with the spectrum of the control.
