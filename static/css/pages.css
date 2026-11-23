@@ -653,3 +653,56 @@ a.topic-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover
 .trend-toggle:hover { color: var(--ink); border-color: var(--accent); }
 .trend-toggle[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); font-weight: 600; }
 
+/* ---------------------------------------------------------------- Hardware Hamiltonians */
+.hams { margin-bottom: 64px; }
+.ham-arch-filter { margin: 10px 0 4px; width: fit-content; max-width: 100%; }
+.ham-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.ham-card { padding: 20px 22px; min-width: 0; display: grid; gap: 8px; }
+.ham-card[hidden] { display: none; }
+.ham-card-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.ham-arch {
+  font-family: var(--font-mono); font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent);
+}
+.ham-dim { font-family: var(--font-mono); font-size: .76rem; color: var(--ink-3); }
+.ham-card-title { font-size: 1.18rem; margin: 2px 0 0; }
+.ham-card-title a { color: var(--ink); text-decoration: none; }
+.ham-card-title a:hover { color: var(--accent); text-decoration: underline; }
+.ham-card-summary { margin: 0; font-size: .94rem; color: var(--ink-2); line-height: 1.55; }
+.ham-eq-preview {
+  margin: 4px 0; padding: 10px 14px; border-radius: var(--radius-s);
+  background: var(--bg-sunken); border: 1px solid var(--line);
+  overflow-x: auto; font-size: .92rem;
+}
+.ham-eq-preview .katex-display { margin: .25em 0; }
+.ham-card-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin-top: 4px; }
+.ham-open { font-size: .88rem; }
+
+.ham-model-box {
+  padding: 20px 22px; border-radius: var(--radius);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line));
+  background: color-mix(in srgb, var(--accent) 5%, var(--bg-elev));
+}
+.ham-model-box h2 { font-size: 1.25rem; margin-bottom: 10px; }
+.ham-model-box h3 { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 18px 0 6px; }
+.ham-model-box p { margin: 0; color: var(--ink-2); font-size: .95rem; line-height: 1.6; }
+.ham-eq-full { overflow-x: auto; padding: 8px 0; }
+.ham-param-table td { white-space: normal; vertical-align: top; }
+.ham-param-table code { font-family: var(--font-mono); font-size: .84rem; white-space: nowrap; }
+.ham-param-note { color: var(--ink-2); font-size: .86rem; }
+.ham-tasks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.ham-task { padding: 16px 18px; }
+.ham-task h3 { font-size: 1.02rem; margin: 0 0 6px; }
+.ham-task p { margin: 0 0 6px; font-size: .92rem; line-height: 1.55; color: var(--ink-2); }
+.ham-task p:last-child { margin-bottom: 0; }
+.ham-code-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin-bottom: 12px; }
+.ham-code-head h2 { margin: 0; }
+.ham-code-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ham-code {
+  margin: 0; padding: 16px 18px; border-radius: var(--radius);
+  border: 1px solid var(--line); background: var(--bg-sunken);
+  overflow-x: auto; font-family: var(--font-mono); font-size: .84rem; line-height: 1.58; color: var(--ink);
+}
+.ham-code[hidden] { display: none; }
+
+

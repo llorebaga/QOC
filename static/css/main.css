@@ -646,6 +646,23 @@ strong { font-weight: 600; }
 .nf-logo { width: 240px; height: auto; color: var(--ink); margin-bottom: 28px; }
 .not-found .lead { margin-inline: auto; }
 
+/* Home: compact field-areas strip (replaces dense 10-card family wall) */
+.areas-strip { padding-block: 48px 16px; }
+.areas-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; margin-bottom: 18px; }
+.areas-head h2 { margin-bottom: .2em; }
+.areas-head p { margin: 0; }
+.area-pills { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.area-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 13px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--bg-elev);
+  color: var(--ink); text-decoration: none; font-size: .9rem; font-weight: 500;
+  transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.area-pill:hover { border-color: color-mix(in srgb, var(--fam) 60%, var(--line)); transform: translateY(-1px); box-shadow: var(--shadow); text-decoration: none; }
+.area-count { font-family: var(--font-mono); font-size: .75rem; color: var(--ink-3); }
+.search-badge-hamiltonian { color: var(--brand-magenta); border-color: color-mix(in srgb, var(--brand-magenta) 35%, var(--line)); }
+
 /* ---------------------------------------------------------------- 8. Motion & responsive */
 @keyframes qoc-draw { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } }
 @keyframes qoc-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
@@ -661,7 +678,7 @@ strong { font-weight: 600; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1060px) {
   .nav-toggle { display: inline-grid; }
   .site-nav {
     position: fixed; inset: var(--header-h) 0 auto 0;
@@ -673,6 +690,9 @@ strong { font-weight: 600; }
   .nav-open .site-nav { display: block; }
   .site-nav ul { flex-direction: column; gap: 2px; }
   .site-nav a { padding: 12px 12px; font-size: 1rem; }
+}
+
+@media (max-width: 960px) {
   .intro { grid-template-columns: minmax(0, 1fr); }
   .principles { grid-template-columns: minmax(0, 1fr); gap: 24px; }
 }

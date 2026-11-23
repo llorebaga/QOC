@@ -20,7 +20,7 @@
       how it came to be.</p>
     <nav class="res-nav" aria-label="On this page">
       <a href="#software">Software</a>
-      <a href="#benchmarks">Benchmarks</a>
+      <a href="{{ url('hamiltonians/') }}">Hardware Hamiltonians ({{ hamiltonians|length }}) →</a>
       <a href="#reading">Reading</a>
       <a href="#glossary">Glossary</a>
       <a href="#timeline">Timeline</a>
@@ -33,7 +33,9 @@
   <section class="res-section" aria-labelledby="software">
     <h2 id="software">Software</h2>
     <p class="section-note">Open-source packages unless marked otherwise. Every link was checked; where a package has a
-      paper, it is cited.</p>
+      paper, it is cited. Looking for realistic testbed models to benchmark these packages? See the
+      <a href="{{ url('hamiltonians/') }}">Hardware Hamiltonians library</a> ({{ hamiltonians|length }} models with
+      parameters and QuTiP/Julia starter code).</p>
     {% for g in res.software %}
     <h3 class="res-group">{{ g.group }}</h3>
     <ul class="sw-list">
@@ -51,30 +53,6 @@
     </ul>
     {% endfor %}
   </section>
-
-  {% if res.get('benchmarks') %}
-  <section class="res-section" aria-labelledby="benchmarks">
-    <h2 id="benchmarks">Standard benchmarks</h2>
-    <p class="section-note">Canonical control problems used across the literature to compare algorithms, pulse
-      parametrizations and speed limits.</p>
-    <ul class="bench-list">
-      {% for b in res.benchmarks %}
-      <li class="bench-card card" id="{{ b.id }}">
-        <div class="sw-head">
-          <h3 class="bench-name">{{ b.name }}</h3>
-          <span class="sw-lang">{{ b.platform }}</span>
-        </div>
-        <dl class="bench-dl">
-          <div><dt>Model</dt><dd>{{ b.model_html }}</dd></div>
-          <div><dt>Objective</dt><dd>{{ b.target_html }}</dd></div>
-        </dl>
-        {% if b.get('refs') %}<p class="sw-refs">{% for k in b.refs %}<span class="ref">{{ fmt_ref(k) }}</span>{% endfor %}</p>{% endif %}
-        {{ topic_chips(b.get('topics')) }}
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% endif %}
 
   <section class="res-section" aria-labelledby="reading">
     <h2 id="reading">Reading</h2>

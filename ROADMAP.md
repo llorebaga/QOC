@@ -111,11 +111,13 @@ understand any area; an expert can use it as a quick reference.
       "propose a problem" route (2026-11-23)
 - [ ] More problems (candidates in the Notes below)
 
-## ✅ Phase 6 — Resources (built 2026-10-14)
+## ✅ Phase 6 — Resources & Hardware Hamiltonians (built 2026-10-14, extended 2026-11-23)
 
 - [x] Software directory (`data/resources.yaml`): 30 packages, every URL verified (note: Qiskit Dynamics is archived
       and Qiskit Pulse was removed in Qiskit 2.0)
-- [x] Standard QOC benchmarks (7 canonical control problems with Hamiltonians, objectives and references) (2026-11-23)
+- [x] Hardware Hamiltonians library (`data/hamiltonians.yaml`, `/hamiltonians/`): 12 realistic control models across
+      6 architectures (superconducting, trapped ions, neutral atoms, spins/defects, AMO, many-body/NMR) with parameter
+      tables, benchmark tasks, QuTiP/Julia starter code, JSON export, and topic cross-links (2026-11-23)
 - [x] Essential reading: reviews, tutorials, theses, textbooks, landmark papers
 - [x] Glossary of terms and notation (33 terms)
 - [x] Timeline of the field
@@ -125,8 +127,9 @@ understand any area; an expert can use it as a quick reference.
 
 - [x] Licences: CC BY 4.0 for content (`LICENSE-CONTENT`), MIT for code (`LICENSE`); arXiv metadata excluded (2026-10-15)
 - [x] Contribution guide (`CONTRIBUTING.md`) + issue templates (`add-group`, `propose-open-problem`, `report-error`) (2026-11-23)
-- [x] Unified site-wide search palette (`/` or `⌘K`, static `search-index.json`), Research groups cross-linked onto topic pages,
-      interactive physics explorers (DRAG, DD filter functions, counterdiabatic STA), and `tools/status.py` (2026-11-23)
+- [x] Unified site-wide search palette (`/` or `⌘K`, static `search-index.json`), Research groups & Hamiltonians cross-linked
+      onto topic pages, cleaner home page, interactive physics explorers (DRAG, DD filter functions, counterdiabatic STA),
+      and `tools/status.py` (2026-11-23)
 - [x] Repository public; GitHub Pages deployment at https://llorebaga.github.io/QOC/ (2026-10-14, earlier than planned)
 - [ ] Possibly a custom domain
 - [x] SEO metadata (descriptions, canonical URLs, Open Graph / Twitter cards), social card

@@ -35,7 +35,7 @@
       navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
-    window.addEventListener("resize", () => { if (window.innerWidth > 960) close(); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 1060) close(); });
   }
 
   /* ------------------------------------------------------------ hero waves

@@ -19,6 +19,7 @@ nav:
   - { id: papers, label: Papers }
   - { id: groups, label: Groups }
   - { id: open-problems, label: Open problems }
+  - { id: hamiltonians, label: Hamiltonians }
   - { id: resources, label: Resources }
   - { id: about, label: About }
 
@@ -54,7 +55,7 @@ sections:
       - Daily automatic fetch from arXiv, filtered for relevance
       - Classification into field-map topics, with filters and search
       - Author pages — click any author to see all their tracked papers
-      - Atom feeds per topic and a weekly digest
+      - Atom feeds per topic, weekly digest and topic trends
 
   - id: groups
     title: Research groups
@@ -84,6 +85,20 @@ sections:
       - Status tracking — open, partial progress, solved
       - Linked to the topics of the field map
 
+  - id: hamiltonians
+    title: Hardware Hamiltonians
+    icon: pulse
+    phase: 6
+    status: live
+    page: hamiltonians
+    summary: >-
+      Standardized control Hamiltonians across real quantum architectures — with
+      realistic parameters, noise models, benchmark tasks and starter code.
+    features:
+      - Superconducting, trapped-ion, neutral-atom, spin, AMO and many-body models
+      - Experimental parameter tables, constraints and literature baselines
+      - Copy-paste Python (QuTiP) and Julia starter snippets plus JSON export
+
   - id: resources
     title: Resources
     icon: book
@@ -91,8 +106,8 @@ sections:
     status: live
     page: resources
     summary: >-
-      Everything else you need: software packages, reviews, tutorials and
-      books, a glossary of the field's terms, and a timeline of its history.
+      Software packages, essential reviews, tutorials and books, a glossary of
+      the field's terms, and a timeline of its history.
     features:
       - Software directory
       - Essential reading — reviews, tutorials, books, landmark papers

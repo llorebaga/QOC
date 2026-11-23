@@ -28,6 +28,7 @@ def collect() -> dict:
     articles = site_build.load_articles(taxonomy, references, url)
     problems = site_build.load_problems(taxonomy, references, url)
     resources = site_build.load_resources(ROOT / "data" / "resources.yaml", taxonomy, references, url)
+    hamiltonians = site_build.load_hamiltonians(ROOT / "data" / "hamiltonians.yaml", taxonomy, references, url)
     papers = load_papers(ROOT / "data" / "papers")
     tracked = paper_tracker.prepare(papers, taxonomy, ROOT / "data" / "classifier.yaml", ROOT / ".cache" / "topics.json")
     groups = paper_tracker.prepare_groups(site_build.load_groups(ROOT / "data" / "groups.yaml", taxonomy), tracked, taxonomy)
@@ -41,21 +42,21 @@ def collect() -> dict:
     prob_status = Counter(pr["status"] for pr in problems)
     demos = sorted(tid for tid, a in articles.items() if a.meta.get("demo"))
 
-    # Reference usage across articles, problems, and resources
+    # Reference usage across articles, problems, hamiltonians and resources
     used_refs: set[str] = set()
     for a in articles.values():
         used_refs.update(a.citations)
         used_refs.update(kp["key"] for kp in a.meta.get("key_papers", []))
     for pr in problems:
         used_refs.update(pr["refs"])
+    for h in hamiltonians:
+        used_refs.update(h["refs"])
     for grp in resources.get("software", []):
         for s in grp["items"]:
             used_refs.update(s.get("refs") or [])
     for grp in resources.get("reading", []):
         for r in grp["items"]:
             used_refs.add(r["key"])
-    for b in resources.get("benchmarks", []):
-        used_refs.update(b.get("refs") or [])
     for e in resources.get("timeline", []):
         used_refs.update(e.get("refs") or [])
     unused_refs = sorted(set(references) - used_refs)
@@ -82,6 +83,10 @@ def collect() -> dict:
             "review": dict(prob_review),
             "topics_covered": len(problems_by_topic),
         },
+        "hamiltonians": {
+            "total": len(hamiltonians),
+            "architectures": len({h["architecture"] for h in hamiltonians}),
+        },
         "groups": {
             "total": len(groups),
             "countries": len({g["country"] for g in groups}),
@@ -90,7 +95,6 @@ def collect() -> dict:
         },
         "resources": {
             "software": sum(len(g["items"]) for g in resources.get("software", [])),
-            "benchmarks": len(resources.get("benchmarks", [])),
             "reading": sum(len(g["items"]) for g in resources.get("reading", [])),
             "glossary": len(resources.get("glossary", [])),
             "timeline": len(resources.get("timeline", [])),
@@ -115,7 +119,9 @@ def main() -> None:
         print(json.dumps(data, indent=2))
         return
 
-    a, p, g, r, refs = data["articles"], data["problems"], data["groups"], data["resources"], data["references"]
+    a, p, h, g, r, refs = (
+        data["articles"], data["problems"], data["hamiltonians"], data["groups"], data["resources"], data["references"]
+    )
     print("QOC editorial & coverage status")
     print("=" * 48)
     print(f"Articles      : {a['total']}/{a['topics_total']} topics | review={a['review']} | "
@@ -124,12 +130,13 @@ def main() -> None:
     print(f"  Shortest    : " + ", ".join(f"{x['topic']} ({x['words']}w)" for x in a["shortest"]))
     print(f"Open problems : {p['total']} | status={p['status']} | review={p['review']} | "
           f"{p['topics_covered']}/{a['topics_total']} topics covered")
+    print(f"Hamiltonians  : {h['total']} models across {h['architectures']} architectures")
     print(f"Groups        : {g['total']} in {g['countries']} countries | "
           f"{g['topics_covered']}/{a['topics_total']} topics covered")
     if g["topics_without_groups"]:
         print(f"  No groups   : {', '.join(g['topics_without_groups'])}")
-    print(f"Resources     : {r['software']} software, {r['benchmarks']} benchmarks, "
-          f"{r['reading']} reading, {r['glossary']} glossary, {r['timeline']} timeline")
+    print(f"Resources     : {r['software']} software, {r['reading']} reading, "
+          f"{r['glossary']} glossary, {r['timeline']} timeline")
     print(f"Papers        : {data['papers']['total']:,} tracked ({data['papers']['authors']:,} authors)")
     print(f"References    : {refs['total']} total ({refs['used']} cited, {refs['unused_count']} unused)")
 

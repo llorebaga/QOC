@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% block title %}{{ h.title }} — Hardware Hamiltonians — QOC{% endblock %}
+{% block description %}{{ h.summary }}{% endblock %}
+{% block head %}{% include "partials/katex.html" %}{% endblock %}
+
+{% block main %}
+{% set first_topic = taxonomy.topics[h.topics[0]] %}
+<div class="topic ham-detail" style="--fam: var(--fam-{{ first_topic.family }})">
+  <header class="topic-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ url('hamiltonians/') }}">Hardware Hamiltonians</a><span aria-hidden="true">/</span>
+        <a href="{{ url('hamiltonians/?arch=' ~ h.architecture) }}">{{ h.architecture_label }}</a>
+      </nav>
+      <h1>{{ h.title }}</h1>
+      <p class="lead">{{ h.summary }}</p>
+      <div class="topic-meta">
+        <span class="ham-arch">{{ h.architecture_label }}</span>
+        <span>Hilbert space: {{ h.dim }}</span>
+        <span>Regimes: {{ h.regimes | join(', ') }}</span>
+      </div>
+      <ul class="paper-topics problem-topics">
+        {% for t in h.topics %}{% set tt = taxonomy.topics[t] %}
+        <li><a class="topic-chip" href="{{ url('topics/' ~ t ~ '/') }}" style="--fam: var(--fam-{{ tt.family }})">{{ tt.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </header>
+
+  <div class="wrap topic-layout">
+    <article class="topic-main">
+      <section class="ham-model-box" aria-labelledby="model-hamiltonian">
+        <h2 id="model-hamiltonian">Model Hamiltonian</h2>
+        <div class="ham-eq-full">$$ {{ h.equation }} $$</div>
+        {% if h.dissipation_html %}
+        <h3>Noise &amp; dissipation</h3>
+        <p>{{ h.dissipation_html }}</p>
+        {% endif %}
+        {% if h.controls_html %}
+        <h3>Control fields &amp; hardware constraints</h3>
+        <p>{{ h.controls_html }}</p>
+        {% endif %}
+      </section>
+
+      <section class="article-section" aria-labelledby="parameters">
+        <h2 id="parameters">Typical experimental parameters</h2>
+        <div class="trends-table-wrap">
+          <table class="trends-table ham-param-table">
+            <thead>
+              <tr><th>Parameter</th><th>Symbol</th><th>Typical value</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              {% for p in h.params %}
+              <tr>
+                <td><strong>{{ p.name }}</strong></td>
+                <td>\({{ p.symbol }}\)</td>
+                <td><code>{{ p.value }}</code></td>
+                <td class="ham-param-note">{{ p.note }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="article-section" aria-labelledby="tasks">
+        <h2 id="tasks">Standard QOC benchmark tasks</h2>
+        <ul class="ham-tasks">
+          {% for tk in h.tasks %}
+          <li class="card ham-task">
+            <h3>{{ tk.name }}</h3>
+            <p><strong>Target:</strong> {{ tk.target_html }}</p>
+            <p class="muted"><strong>Baseline:</strong> {{ tk.baseline_html }}</p>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section class="article-section" aria-labelledby="starter-code" data-code-tabs>
+        <div class="ham-code-head">
+          <h2 id="starter-code">Starter code</h2>
+          <div class="ham-code-actions">
+            <div class="problem-filter" role="tablist" aria-label="Language">
+              <button type="button" class="problem-filter-btn" role="tab" data-lang="python" aria-selected="true" aria-pressed="true">Python (QuTiP)</button>
+              <button type="button" class="problem-filter-btn" role="tab" data-lang="julia" aria-selected="false" aria-pressed="false">Julia</button>
+            </div>
+            <button type="button" class="demo-preset ham-copy" data-copy-code>Copy</button>
+          </div>
+        </div>
+        <pre class="ham-code" data-code-panel="python"><code>{{ h.python_code.strip() }}</code></pre>
+        <pre class="ham-code" data-code-panel="julia" hidden><code>{{ h.julia_code.strip() }}</code></pre>
+      </section>
+
+      <section class="article-section" aria-labelledby="references">
+        <h2 id="references">References</h2>
+        <ol class="ref-list">
+          {% for key in h.refs %}<li id="ref-{{ key }}">{{ fmt_ref(key) }}</li>{% endfor %}
+        </ol>
+      </section>
+
+      <p class="muted edit-hint">Have better experimental parameters, an open-system variant, or a benchmark baseline?
+        <a href="https://github.com/llorebaga/QOC/issues/new?template=report-error.yml&amp;title={{ ('Hamiltonian update: ' ~ h.title) | urlencode }}" rel="noopener">Suggest an update on GitHub</a>.</p>
+    </article>
+
+    <aside class="topic-aside">
+      <div class="aside-sticky">
+        <nav class="aside-block toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#model-hamiltonian">Model Hamiltonian</a></li>
+            <li><a href="#parameters">Experimental parameters</a></li>
+            <li><a href="#tasks">Benchmark tasks</a></li>
+            <li><a href="#starter-code">Starter code</a></li>
+            <li><a href="#references">References</a></li>
+          </ol>
+        </nav>
+        <nav class="aside-block" aria-label="More Hamiltonians">
+          <h2>More Hamiltonians</h2>
+          <ol class="aside-problems">
+            {% for o in related_hams %}
+            <li><a href="{{ url('hamiltonians/' ~ o.id ~ '/') }}">{{ o.title }}</a></li>
+            {% endfor %}
+          </ol>
+          <p class="aside-more"><a href="{{ url('hamiltonians/') }}">All {{ hamiltonians|length }} Hamiltonians →</a></p>
+        </nav>
+      </div>
+    </aside>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ asset('js/hamiltonians.js') }}" defer></script>
+{% endblock %}

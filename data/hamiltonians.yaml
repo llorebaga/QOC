@@ -1,0 +1,732 @@
+# Hardware Hamiltonians & QOC Testbed Catalog
+#
+# Standardized, literature-grounded model Hamiltonians for testing and benchmarking
+# quantum optimal control algorithms across real physical architectures.
+# Every topic id is validated against data/taxonomy.yaml and every ref key against data/references.yaml.
+
+- id: transmon-single-qubit
+  title: Single transmon qubit with leakage
+  architecture: superconducting
+  architecture_label: Superconducting
+  regimes: [closed, open]
+  dim: 3–5 levels
+  summary: >-
+    Weakly anharmonic superconducting oscillator driven by in-phase and quadrature microwave pulses,
+    where fast gates must suppress leakage to |2⟩ and AC Stark phase errors.
+  equation: >-
+    H(t) = \Delta |2\rangle\langle 2| + \frac{\Omega_x(t)}{2}\Sigma_x + \frac{\Omega_y(t)}{2}\Sigma_y,
+    \qquad \Sigma_x = |0\rangle\langle 1| + \sqrt{2}\,|1\rangle\langle 2| + \mathrm{h.c.}
+  dissipation: >-
+    Markovian amplitude damping $L_1 = \sqrt{1/T_1}\,a$ and pure dephasing
+    $L_\phi = \sqrt{2/T_\phi}\,a^\dagger a$ (typically $T_1, T_\phi \sim 50\text{–}300\,\mu\mathrm{s}$).
+  controls: >-
+    Two real microwave quadratures $\Omega_x(t), \Omega_y(t)$ in the qubit rotating frame, bounded by
+    $\sqrt{\Omega_x^2 + \Omega_y^2}/2\pi \lesssim 100\text{–}200\text{ MHz}$ and smooth AWG filtering
+    (rise time $\sim 0.5\text{–}1\text{ ns}$, sample rate $1\text{–}2.4\text{ GS/s}$).
+  params:
+    - { name: Qubit frequency, symbol: '\omega_{01}/2\pi', value: '4.5–5.5 GHz', note: 'Eliminated in the rotating frame' }
+    - { name: Anharmonicity, symbol: '\Delta/2\pi', value: '-200 to -330 MHz', note: 'Negative Duffing shift' }
+    - { name: Gate duration, symbol: 't_g', value: '4–20 ns', note: 'DRAG standard ~10–20 ns; QOC down to ~4 ns' }
+    - { name: Relaxation / dephasing, symbol: 'T_1, T_\phi', value: '50–300 μs', note: 'Incoherent floor ~10⁻⁴ at 15 ns' }
+  tasks:
+    - name: Fast X_π / X_{π/2} gate with minimal leakage
+      target: Maximize qubit-subspace average gate fidelity while keeping leakage $P_2(t_g) < 10^{-5}$.
+      baseline: Analytic [[drag|DRAG]] reaches $10^{-5}$ leakage at $10\text{–}20\text{ ns}$; closed-loop/GRAPE reaches $99.76\%$ at $4.16\text{ ns}$.
+    - name: Bandwidth-constrained smooth pulse
+      target: Optimize $\Omega_x(t), \Omega_y(t)$ passed through a Gaussian/Butterworth AWG transfer function with zero start/end amplitude.
+      baseline: Filtered GRAPE / GOAT / direct collocation.
+  python_code: |
+    import numpy as np
+    import qutip as qt
+
+    # 3-level transmon in the qubit rotating frame (units: rad/ns, time in ns)
+    N = 3
+    Delta = 2 * np.pi * (-0.250)  # -250 MHz anharmonicity
+    a = qt.destroy(N)
+    H0 = 0.5 * Delta * (a.dag() * a.dag() * a * a)   # = Delta |2><2|
+    Hx = 0.5 * (a + a.dag())                         # I quadrature
+    Hy = 0.5 * (1j * (a.dag() - a))                  # Q quadrature
+
+    # Optional Lindblad collapse operators (T1 = 100 us, Tphi = 150 us)
+    T1, Tphi = 100e3, 150e3  # ns
+    c_ops = [np.sqrt(1 / T1) * a, np.sqrt(2 / Tphi) * (a.dag() * a)]
+  julia_code: |
+    using LinearAlgebra
+
+    # 3-level transmon in the qubit rotating frame (units: rad/ns, time in ns)
+    Delta = 2π * (-0.250)  # -250 MHz
+    a = [0.0 1.0 0.0; 0.0 0.0 sqrt(2); 0.0 0.0 0.0]
+    H0 = ComplexF64.(0.5 * Delta * (a' * a' * a * a))
+    Hx = ComplexF64.(0.5 * (a + a'))
+    Hy = 0.5im * (a' - a)
+    # Use with QuantumControl.jl: H = hamiltonian(H0, (Hx, Ωx), (Hy, Ωy))
+  topics: [superconducting, drag, gate-synthesis, grape]
+  refs: [koch2007transmon, motzoi2009drag, chen2016leakage, werninghaus2021leakage]
+
+- id: transmon-cross-resonance
+  title: Fixed-frequency cross-resonance two-transmon gate
+  architecture: superconducting
+  architecture_label: Superconducting
+  regimes: [closed, open]
+  dim: 9 levels (3 × 3)
+  summary: >-
+    Two statically coupled fixed-frequency transmons where driving the control qubit at the target
+    qubit's frequency generates an all-microwave ZX entangling interaction alongside parasitic IX, IZ and ZZ terms.
+  equation: >-
+    H(t) = \sum_{j=1}^{2}\!\left(\omega_j a_j^\dagger a_j + \frac{\Delta_j}{2} a_j^{\dagger 2} a_j^2\right)
+    + J(a_1^\dagger a_2 + a_1 a_2^\dagger) + \Omega(t)\cos(\omega_2 t + \phi(t))(a_1 + a_1^\dagger)
+  dissipation: >-
+    Independent transmon decay $L_{1,j} = \sqrt{1/T_{1,j}}\,a_j$ and dephasing
+    $L_{\phi,j} = \sqrt{2/T_{\phi,j}}\,a_j^\dagger a_j$, plus static always-on $ZZ$ crosstalk.
+  controls: >-
+    Microwave drive amplitude $\Omega(t)$ and phase $\phi(t)$ on control qubit 1 at target frequency $\omega_2$,
+    optionally paired with a cancellation tone on target qubit 2 ($\Omega_2(t)$) to suppress classical crosstalk and $IX$.
+  params:
+    - { name: Qubit detuning, symbol: '(\omega_1 - \omega_2)/2\pi', value: '50–150 MHz', note: 'Straddling regime |Δ_12| < |Δ|' }
+    - { name: Anharmonicities, symbol: '\Delta_{1,2}/2\pi', value: '-300 to -330 MHz', note: 'Must keep at least 3 levels/qubit' }
+    - { name: Static coupling, symbol: 'J/2\pi', value: '2–5 MHz', note: 'Yields ZX rate ~1–4 MHz' }
+    - { name: CR gate time, symbol: 't_g', value: '120–300 ns', note: 'Echoed CR cancels IX and ZI errors' }
+  tasks:
+    - name: Echoed or direct ZX_{π/2} (CNOT-equivalent) gate
+      target: Synthesize $U = \exp(-i\frac{\pi}{4} Z\otimes X)$ (up to local $Z$ rotations) with infidelity $< 10^{-3}$ in $< 150\text{ ns}$.
+      baseline: Echoed flat-top Gaussian CR pulses (~160–250 ns); QOC shortens gates and suppresses spectator $ZZ$ and leakage.
+  python_code: |
+    import numpy as np
+    import qutip as qt
+
+    # Two 3-level transmons in the frame rotating at target frequency w2 (rad/ns)
+    N = 3
+    a = qt.destroy(N)
+    I = qt.qeye(N)
+    a1, a2 = qt.tensor(a, I), qt.tensor(I, a)
+
+    d12 = 2 * np.pi * 0.100     # w1 - w2 = 100 MHz
+    D1  = 2 * np.pi * (-0.310)  # -310 MHz
+    D2  = 2 * np.pi * (-0.330)  # -330 MHz
+    J   = 2 * np.pi * 0.0035    # 3.5 MHz static coupling
+
+    H0 = (d12 * a1.dag() * a1
+          + 0.5 * D1 * a1.dag()**2 * a1**2
+          + 0.5 * D2 * a2.dag()**2 * a2**2
+          + J * (a1.dag() * a2 + a1 * a2.dag()))
+    H_cr_x = 0.5 * (a1 + a1.dag())          # CR I-drive on qubit 1 at w2
+    H_cr_y = 0.5 * 1j * (a1.dag() - a1)     # CR Q-drive on qubit 1 at w2
+    H_can_x = 0.5 * (a2 + a2.dag())         # Optional cancellation tone on qubit 2
+  julia_code: |
+    using LinearAlgebra
+
+    # Two 3-level transmons rotating at w2 (rad/ns)
+    a = [0.0 1.0 0.0; 0.0 0.0 sqrt(2); 0.0 0.0 0.0]
+    I3 = Matrix{Float64}(I, 3, 3)
+    a1, a2 = kron(a, I3), kron(I3, a)
+    d12, D1, D2, J = 2π * 0.100, -2π * 0.310, -2π * 0.330, 2π * 0.0035
+
+    H0 = ComplexF64.(d12*(a1'*a1) + 0.5*D1*(a1'^2*a1^2) + 0.5*D2*(a2'^2*a2^2) + J*(a1'*a2 + a1*a2'))
+    H_cr_x = ComplexF64.(0.5 * (a1 + a1'))
+    H_cr_y = 0.5im * (a1' - a1)
+  topics: [superconducting, gate-synthesis, grape, pulse-level-compilation]
+  refs: [rigetti2010crossresonance, sheldon2016crossresonance, krantz2019guide, blais2021cqed]
+
+- id: transmon-tunable-coupler
+  title: Flux-tunable coupler two-transmon processor
+  architecture: superconducting
+  architecture_label: Superconducting
+  regimes: [closed, open]
+  dim: 27 levels (3 × 3 × 3)
+  summary: >-
+    Two transmons coupled via a frequency-tunable intermediate transmon coupler, enabling high-contrast
+    CZ and ZZ-free iSWAP gates via baseband flux pulses.
+  equation: >-
+    H(t) = \sum_{j \in \{1,2,c\}}\!\left(\omega_j(t)\,a_j^\dagger a_j + \frac{\Delta_j}{2} a_j^{\dagger 2} a_j^2\right)
+    + \sum_{j=1}^2 g_{jc}(a_j^\dagger a_c + \mathrm{h.c.}) + g_{12}(a_1^\dagger a_2 + \mathrm{h.c.})
+  dissipation: >-
+    Qubit and coupler $T_1$ decay plus flux-noise dephasing $\propto |\partial\omega_c/\partial\Phi|$ when the
+    coupler is tuned away from its sweet spot.
+  controls: >-
+    Baseband flux pulse $\omega_c(t)$ (and optionally $\omega_1(t)$ or $\omega_2(t)$) constrained by flux-line
+    bandwidth ($\lesssim 300\text{–}500\text{ MHz}$) and distortion kernels; must return adiabatically to the
+    $ZZ$-off idling frequency $\omega_c^{\mathrm{idle}}$.
+  params:
+    - { name: Qubit frequencies, symbol: '\omega_1, \omega_2 / 2\pi', value: '4.16, 4.00 GHz', note: 'Typical Sung et al. (2021) values' }
+    - { name: Coupler range, symbol: '\omega_c(t)/2\pi', value: '4.4–5.45 GHz', note: 'Idle at ZZ = 0 point (~5.45 GHz)' }
+    - { name: Qubit–coupler coupling, symbol: 'g_{1c}, g_{2c}/2\pi', value: '70–100 MHz', note: 'Direct coupling g_12/2π ≈ 5–12 MHz' }
+    - { name: Two-qubit gate time, symbol: 't_g', value: '30–60 ns', note: 'CZ ~60 ns, iSWAP ~30 ns' }
+  tasks:
+    - name: Low-leakage CZ gate (|11⟩ ↔ |20⟩ avoided crossing)
+      target: Realize $\mathrm{CZ}$ (up to single-qubit $Z$ phases) with infidelity $< 10^{-3}$ and coupler/qubit leakage $< 10^{-4}$ in $35\text{–}60\text{ ns}$.
+      baseline: Slepian / net-zero flux pulses ($99.76\%$ CZ, $99.87\%$ iSWAP in Sung et al. 2021); Krotov/GRAPE/collocation under flux-line distortion.
+  python_code: |
+    import numpy as np
+    import qutip as qt
+
+    # 3-mode (Q1, Q2, Coupler) model, 3 levels each (rad/ns)
+    N = 3
+    a, I = qt.destroy(N), qt.qeye(N)
+    a1 = qt.tensor(a, I, I)
+    a2 = qt.tensor(I, a, I)
+    ac = qt.tensor(I, I, a)
+
+    # Shift all frequencies by w2 = 4.00 GHz to stay in a slow rotating frame
+    w1, w2, wc0 = 2*np.pi*0.16, 0.0, 2*np.pi*1.45
+    D1, D2, Dc  = -2*np.pi*0.22, -2*np.pi*0.21, -2*np.pi*0.09
+    g1c, g2c, g12 = 2*np.pi*0.072, 2*np.pi*0.073, 2*np.pi*0.005
+
+    H0 = (w1*a1.dag()*a1 + wc0*ac.dag()*ac
+          + 0.5*D1*a1.dag()**2*a1**2 + 0.5*D2*a2.dag()**2*a2**2 + 0.5*Dc*ac.dag()**2*ac**2
+          + g1c*(a1.dag()*ac + a1*ac.dag()) + g2c*(a2.dag()*ac + a2*ac.dag())
+          + g12*(a1.dag()*a2 + a1*a2.dag()))
+    Hc = ac.dag() * ac   # Flux-tunable coupler frequency shift u_c(t) * Hc
+    H1 = a1.dag() * a1   # Optional flux tuning of qubit 1
+  julia_code: |
+    using LinearAlgebra
+
+    a = [0.0 1.0 0.0; 0.0 0.0 sqrt(2); 0.0 0.0 0.0]
+    I3 = Matrix{Float64}(I, 3, 3)
+    a1, a2, ac = kron(a, I3, I3), kron(I3, a, I3), kron(I3, I3, a)
+    w1, wc0 = 2π*0.16, 2π*1.45
+    D1, D2, Dc = -2π*0.22, -2π*0.21, -2π*0.09
+    g1c, g2c, g12 = 2π*0.072, 2π*0.073, 2π*0.005
+
+    H0 = ComplexF64.(w1*(a1'*a1) + wc0*(ac'*ac) + 0.5*D1*(a1'^2*a1^2) + 0.5*D2*(a2'^2*a2^2)
+         + 0.5*Dc*(ac'^2*ac^2) + g1c*(a1'*ac + a1*ac') + g2c*(a2'*ac + a2*ac') + g12*(a1'*a2 + a1*a2'))
+    Hc = ComplexF64.(ac' * ac)
+  topics: [superconducting, open-system-control, krotov, gate-synthesis]
+  refs: [sung2021coupler, goerz2014dissipative, krantz2019guide]
+
+- id: fluxonium-qubit
+  title: Heavy fluxonium qubit (low-frequency flux drive)
+  architecture: superconducting
+  architecture_label: Superconducting
+  regimes: [closed, open]
+  dim: 6–10 eigenstates
+  summary: >-
+    Superconducting circuit with huge anharmonicity and millisecond coherence at the half-flux sweet spot,
+    where fast gates enter the strong-driving regime beyond the rotating-wave approximation (RWA).
+  equation: >-
+    H(t) = 4 E_C n^2 + \frac{1}{2} E_L \varphi^2 - E_J \cos\!\big(\varphi - \varphi_{\mathrm{ext}}\big)
+    + u(t)\,\varphi
+  dissipation: >-
+    Dielectric loss ($T_1 \sim 0.3\text{–}1\text{ ms}$) and $1/f$ flux noise ($T_{2E} \sim 0.1\text{–}1\text{ ms}$
+    at the sweet spot $\varphi_{\mathrm{ext}} = \pi$).
+  controls: >-
+    Direct baseband or low-frequency flux modulation $u(t)$ coupling to the phase operator $\varphi$ (or charge $n$).
+    Because $\omega_{01}/2\pi$ is only $100\text{–}500\text{ MHz}$ while $\omega_{12}/2\pi \sim 3\text{–}5\text{ GHz}$,
+    gates shorter than $10\text{ ns}$ violate the RWA and require lab-frame optimization.
+  params:
+    - { name: Charging / inductive / Josephson, symbol: 'E_C, E_L, E_J / h', value: '1.0, 0.5, 4.0 GHz', note: 'Representative Nguyen et al. (2019) regime' }
+    - { name: Qubit transition, symbol: '\omega_{01}/2\pi', value: '0.15–0.50 GHz', note: 'At sweet spot φ_ext = π' }
+    - { name: Leakage transition, symbol: '\omega_{12}/2\pi', value: '3.0–5.0 GHz', note: 'Large anharmonicity suppresses leakage' }
+    - { name: Coherence times, symbol: 'T_1, T_{2E}', value: '0.3–1.0 ms', note: 'Order of magnitude above typical transmons' }
+  tasks:
+    - name: Sub-10 ns lab-frame X_π gate beyond the RWA
+      target: Synthesize an $X_\pi$ gate in $t_g \approx 5\text{–}10\text{ ns}$ directly in the lab frame with fidelity $> 0.9999$ and leakage to $|2\rangle, |3\rangle < 10^{-5}$.
+      baseline: Standard RWA cosine pulses fail due to Bloch–Siegert shifts and counter-rotating terms; GRAPE / GOAT / smooth spline pulses excel.
+  python_code: |
+    import numpy as np
+    import qutip as qt
+
+    # Build fluxonium in harmonic-oscillator basis, then project to lowest 6 eigenstates
+    N_ho = 40
+    EC, EL, EJ = 2*np.pi*1.0, 2*np.pi*0.5, 2*np.pi*4.0   # rad/ns
+    phi_zpf = (2 * EC / EL) ** 0.25
+    n_zpf   = 0.5 / phi_zpf
+
+    a = qt.destroy(N_ho)
+    phi = phi_zpf * (a + a.dag())
+    n   = 1j * n_zpf * (a.dag() - a)
+
+    # At half-flux sweet spot (phi_ext = pi): -EJ * cos(phi - pi) = +EJ * cos(phi)
+    H_full = 4 * EC * (n * n) + 0.5 * EL * (phi * phi) + EJ * phi.cosm()
+    evals, evecs = H_full.eigenstates(eigvals=6)
+    H0 = qt.Qobj(np.diag(evals - evals[0]))
+    H_ctrl = qt.Qobj(np.array([[v1.overlap(phi * v2) for v2 in evecs] for v1 in evecs]))
+  julia_code: |
+    using LinearAlgebra
+
+    # Fluxonium in 40-level HO basis, projected to lowest 6 eigenstates (rad/ns)
+    N = 40
+    EC, EL, EJ = 2π*1.0, 2π*0.5, 2π*4.0
+    a = diagm(1 => sqrt.(1:N-1))
+    phi = (2*EC/EL)^0.25 * (a + a')
+    n = 0.5im / (2*EC/EL)^0.25 * (a' - a)
+    H_full = Hermitian(4*EC*(n*n) + 0.5*EL*(phi*phi) + EJ*cos(phi))
+    F = eigen(H_full)
+    V = F.vectors[:, 1:6]
+    H0 = ComplexF64.(diagm(F.values[1:6] .- F.values[1]))
+    H_ctrl = ComplexF64.(V' * phi * V)
+  topics: [superconducting, gate-synthesis, grape, goat, pulse-parametrization]
+  refs: [manucharyan2009fluxonium, nguyen2019fluxonium, blais2021cqed]
+
+- id: dispersive-cqed-bosonic
+  title: Dispersively coupled transmon–cavity bosonic mode
+  architecture: superconducting
+  architecture_label: Superconducting
+  regimes: [closed, open]
+  dim: 40–100 levels (2 × N_c)
+  summary: >-
+    High-Q 3D microwave resonator dispersively coupled to an ancilla transmon — the standard testbed
+    for universal bosonic state preparation (Fock, cat, GKP) and logical gates via GRAPE, SNAP, or ECD.
+  equation: >-
+    H(t) = -\chi\, a^\dagger a\, |e\rangle\langle e| - \frac{K}{2} a^{\dagger 2} a^2
+    + \big(\epsilon_c(t)\, a^\dagger + \epsilon_q(t)\, \sigma_+ + \mathrm{h.c.}\big)
+  dissipation: >-
+    Cavity single-photon loss $L_c = \sqrt{\kappa}\,a$ ($\kappa^{-1} \sim 0.5\text{–}2\text{ ms}$),
+    ancilla decay $L_q = \sqrt{1/T_1}\,\sigma_-$, and ancilla dephasing $L_\phi = \sqrt{2/T_\phi}\,|e\rangle\langle e|$.
+  controls: >-
+    Complex cavity drive $\epsilon_c(t) = \epsilon_{c,x}(t) + i\epsilon_{c,y}(t)$ and complex ancilla drive
+    $\epsilon_q(t) = \epsilon_{q,x}(t) + i\epsilon_{q,y}(t)$, typically bounded to a few tens of MHz with smooth
+    bandwidth constraints; Hilbert space must be truncated high enough ($N_c \ge 20\text{–}40$) to avoid boundary reflection.
+  params:
+    - { name: Dispersive shift, symbol: '\chi / 2\pi', value: '0.03–2.0 MHz', note: 'Strong (~1–2 MHz for GRAPE/SNAP) or weak (~30 kHz for ECD)' }
+    - { name: Cavity self-Kerr, symbol: 'K / 2\pi', value: '0.5–10 kHz', note: 'Inherited from ancilla anharmonicity' }
+    - { name: Cavity lifetime, symbol: '1/\kappa', value: '0.5–2 ms', note: 'Longer than ancilla T_1 (~50–150 μs)' }
+    - { name: Control time, symbol: 'T', value: '0.5–2 μs', note: 'Scales with ~few × π/χ (or faster via ECD)' }
+  tasks:
+    - name: Fock |1⟩ or cat-state |α⟩ + |-α⟩ preparation
+      target: Steer $|g, 0\rangle \to |g, \psi_{\mathrm{target}}\rangle$ (e.g., $\alpha = 2$) with fidelity $> 0.995$ in $T \sim 0.5\text{–}1\,\mu\mathrm{s}$.
+      baseline: Continuous GRAPE (Heeres et al. 2017) vs. SNAP + displacements (Krastanov et al. 2015) vs. ECD (Eickbusch et al. 2022).
+    - name: Logical bosonic gate synthesis
+      target: Synthesize a unitary $X_L$ or $T_L$ on the binomial/cat code subspace $\{|0_L\rangle, |1_L\rangle\} \otimes |g\rangle$.
+      baseline: Subspace GRAPE with ancilla disentangling at $t = T$.
+  python_code: |
+    import numpy as np
+    import qutip as qt
+
+    # Ancilla qubit (2 levels) x Cavity (Nc = 25 Fock levels); units: rad/us, time in us
+    Nc = 25
+    chi = 2 * np.pi * 1.5       # 1.5 MHz dispersive shift
+    K   = 2 * np.pi * 0.005     # 5 kHz Kerr nonlinearity
+    a  = qt.tensor(qt.qeye(2), qt.destroy(Nc))
+    sm = qt.tensor(qt.destroy(2), qt.qeye(Nc))
+    pe = sm.dag() * sm
+
+    H0 = -chi * (a.dag() * a) * pe - 0.5 * K * (a.dag()**2 * a**2)
+    Hc_x, Hc_y = a + a.dag(), 1j * (a.dag() - a)
+    Hq_x, Hq_y = sm + sm.dag(), 1j * (sm.dag() - sm)
+  julia_code: |
+    using LinearAlgebra
+
+    # Qubit (2) x Cavity (Nc = 25); units: rad/us
+    Nc = 25
+    chi, K = 2π * 1.5, 2π * 0.005
+    a_c = diagm(1 => sqrt.(1:Nc-1))
+    I2, Ic = Matrix{Float64}(I, 2, 2), Matrix{Float64}(I, Nc, Nc)
+    sm_q = [0.0 1.0; 0.0 0.0]
+    a, sm = kron(I2, a_c), kron(sm_q, Ic)
+    pe = sm' * sm
+
+    H0 = ComplexF64.(-chi * (a'*a) * pe - 0.5 * K * (a'^2 * a^2))
+    Hc_x, Hc_y = ComplexF64.(a + a'), 1im * (a' - a)
+    Hq_x, Hq_y = ComplexF64.(sm + sm'), 1im * (sm' - sm)
+  topics: [bosonic-control, superconducting, state-preparation, error-correction, grape]
+  refs: [krastanov2015universal, heeres2017logical, eickbusch2022ecd, blais2021cqed]
+
+- id: trapped-ion-molmer-sorensen
+  title: Two-ion Mølmer–Sørensen spin–motional gate
+  architecture: trapped-ions
+  architecture_label: Trapped ions
+  regimes: [closed, open, robust]
+  dim: 4 × N_m (spin × phonons)
+  summary: >-
+    Two trapped-ion qubits coupled to collective motional modes via a bichromatic laser field,
+    requiring simultaneous phase-space closure of all motional modes while staying robust to detuning and heating.
+  equation: >-
+    H_I(t) = \frac{\Omega(t)}{2}\sum_{m=1}^{M} \Big(\eta_{1m}\sigma_x^{(1)} + \eta_{2m}\sigma_x^{(2)}\Big)
+    \Big(a_m e^{-i\delta_m t} + a_m^\dagger e^{i\delta_m t}\Big)
+  dissipation: >-
+    Motional heating $L_{+,m} = \sqrt{\dot{\bar{n}}_m}\,a_m^\dagger$, $L_{-,m} = \sqrt{\dot{\bar{n}}_m}\,a_m$
+    ($\dot{\bar{n}} \sim 10\text{–}100\text{ phonons/s}$) plus slow mode-frequency drift $\delta_m \to \delta_m + \epsilon$.
+  controls: >-
+    Time-dependent laser Rabi amplitude $\Omega(t)$ (and optionally frequency/phase modulation $\mu(t)$)
+    bounded by laser power $\Omega_{\max}/2\pi \lesssim 100\text{–}500\text{ kHz}$; spin–motion disentanglement
+    requires $\alpha_m(T) = -i\int_0^T \frac{\eta_m \Omega(t)}{2} e^{i\delta_m t}\,dt = 0$ for all $m$.
+  params:
+    - { name: Lamb–Dicke parameters, symbol: '\eta_{1m}, \eta_{2m}', value: '0.05–0.12', note: 'Opposite signs on stretch mode' }
+    - { name: Mode detunings, symbol: '\delta_m / 2\pi', value: '10–100 kHz', note: 'Center-of-mass + breathing/stretch modes' }
+    - { name: Rabi frequency, symbol: '\Omega / 2\pi', value: '50–300 kHz', note: 'Laser power limit' }
+    - { name: Gate duration, symbol: 't_g', value: '50–250 μs', note: 'Shorter with amplitude/phase pulse shaping' }
+  tasks:
+    - name: Robust multi-mode XX_{π/2} entangling gate
+      target: Achieve entangling phase $\Theta(T) = \pi/4$ and simultaneous closure $\alpha_m(T) = 0$ across $M \ge 2$ modes, robust to $\pm 1\text{–}3\text{ kHz}$ mode-frequency drift.
+      baseline: Constant-amplitude single-loop MS gate is fragile to drift; amplitude/phase-modulated AM/PM pulses reach $> 99.9\%$ fidelity.
+  python_code: |
+    import numpy as np
+    import qutip as qt
+
+    # 2 ions + 1 collective motional mode (N_ph = 12 Fock levels); units: rad/ms, time in ms
+    N_ph = 12
+    sx, I2, Im = qt.sigmax(), qt.qeye(2), qt.qeye(N_ph)
+    a = qt.destroy(N_ph)
+    S_x = qt.tensor(sx, I2, Im) + qt.tensor(I2, sx, Im)
+    A   = qt.tensor(I2, I2, a)
+
+    eta   = 0.08
+    delta = 2 * np.pi * 20.0   # 20 kHz detuning from motional sideband
+
+    # In the interaction frame rotating at the bichromatic beatnote (drift = delta * a^\dagger a):
+    H0 = delta * (A.dag() * A)
+    H_drive_x = 0.5 * eta * S_x * (A + A.dag())        # u_x(t) = Omega(t) cos(phi(t))
+    H_drive_y = 0.5 * eta * S_x * (1j * (A.dag() - A)) # u_y(t) = Omega(t) sin(phi(t))
+  julia_code: |
+    using LinearAlgebra
+
+    # 2 ions + 1 motional mode (N_ph = 12) in laser-beatnote frame (units: rad/ms)
+    N_ph = 12
+    sx = [0.0 1.0; 1.0 0.0]; I2 = Matrix{Float64}(I, 2, 2); Im = Matrix{Float64}(I, N_ph, N_ph)
+    a = diagm(1 => sqrt.(1:N_ph-1))
+    S_x = kron(sx, I2, Im) + kron(I2, sx, Im)
+    A = kron(I2, I2, a)
+
+    eta, delta = 0.08, 2π * 20.0
+    H0 = ComplexF64.(delta * (A' * A))
+    H_drive_x = ComplexF64.(0.5 * eta * S_x * (A + A'))
+    H_drive_y = 0.5im * eta * S_x * (A' - A)
+  topics: [trapped-ions, gate-synthesis, robust-optimal-control, pulse-parametrization]
+  refs: [molmer1999entanglement, sorensen2000thermal, bruzewicz2019ions]
+
+- id: rydberg-blockade-cz
+  title: Two- and three-atom Rydberg blockade gate
+  architecture: neutral-atoms
+  architecture_label: Neutral atoms
+  regimes: [closed, open, robust]
+  dim: 9 levels (3 × 3) or 27 (3³)
+  summary: >-
+    Two or three optically trapped neutral atoms driven globally on |1⟩ ↔ |r⟩ with strong van der Waals
+    blockade B|rr⟩⟨rr| — a flagship benchmark for time-optimal global phase modulation.
+  equation: >-
+    H(t) = \frac{\Omega(t)}{2}\sum_{j=1}^{2}\!\Big(e^{i\phi(t)}|1\rangle\langle r|_j + \mathrm{h.c.}\Big)
+    - \Delta(t)\sum_{j=1}^{2}|r\rangle\langle r|_j + B\,|rr\rangle\langle rr|
+  dissipation: >-
+    Spontaneous decay from the Rydberg level $|r\rangle$ at rate $\gamma_r \sim 1/(100\text{–}400\,\mu\mathrm{s})$,
+    plus shot-to-shot Doppler detuning $\delta_{\mathrm{Doppler}}$ and laser intensity fluctuations.
+  controls: >-
+    Global laser phase $\phi(t)$ (or detuning $\Delta(t) = -\dot\phi(t)$) at constant or smoothly ramped Rabi
+    amplitude $\Omega(t) \le \Omega_{\max}$; no individual atom addressing required.
+  params:
+    - { name: Max Rabi frequency, symbol: '\Omega_{\max} / 2\pi', value: '2–10 MHz', note: 'Sets time scale 1/Ω_max' }
+    - { name: Blockade shift, symbol: 'B / \Omega_{\max}', value: '10–100 (or ∞)', note: 'Finite B requires compensating |rr⟩ phase' }
+    - { name: Rydberg lifetime, symbol: '1/\gamma_r', value: '100–400 μs', note: 'Primary fundamental error budget' }
+    - { name: Time-optimal CZ, symbol: '\Omega T', value: '7.612', note: 'Jandura & Pupillo (2022) in B → ∞ limit' }
+  tasks:
+    - name: Time-optimal global-phase CZ gate
+      target: Implement $\mathrm{CZ} = \mathrm{diag}(1, e^{i\theta}, e^{i\theta}, e^{i(2\theta+\pi)})$ on $\{|00\rangle, |01\rangle, |10\rangle, |11\rangle\}$ minimizing $\Omega T$ and integrated Rydberg population $\int P_r(t)\,dt$.
+      baseline: Smooth phase pulse reaches $\Omega T \approx 7.612$ (Jandura & Pupillo 2022), compared to $2.73\pi \approx 8.58$ for the two-pulse Levine–Pichler gate.
+    - name: Robust CZ against finite B and laser amplitude noise
+      target: Maintain infidelity $< 10^{-3}$ across $\pm 5\%$ Rabi fluctuations and finite $B/\Omega = 10\text{–}30$.
+      baseline: Robust GRAPE / Pontryagin / spline optimization.
+  python_code: |
+    import numpy as np
+    import qutip as qt
+
+    # 2 atoms with basis |0>, |1>, |r> (9 levels total); dimensionless units Omega_max = 1
+    p1r = qt.basis(3, 1) * qt.basis(3, 2).dag()   # |1><r|
+    pr  = qt.basis(3, 2) * qt.basis(3, 2).dag()   # |r><r|
+    I3  = qt.qeye(3)
+
+    B = 50.0  # Strong blockade B / Omega_max = 50
+    H0 = B * qt.tensor(pr, pr)
+    # Global drive: (Omega/2) * [cos(phi) * Hx + sin(phi) * Hy]
+    Hx = 0.5 * (qt.tensor(p1r + p1r.dag(), I3) + qt.tensor(I3, p1r + p1r.dag()))
+    Hy = 0.5 * 1j * (qt.tensor(p1r - p1r.dag(), I3) + qt.tensor(I3, p1r - p1r.dag()))
+    H_det = -(qt.tensor(pr, I3) + qt.tensor(I3, pr))
+  julia_code: |
+    using LinearAlgebra
+
+    # 2 Rydberg atoms (|0>, |1>, |r>), dimensionless Omega_max = 1
+    p1r = [0.0 0.0 0.0; 0.0 0.0 1.0; 0.0 0.0 0.0]
+    pr  = diagm([0.0, 0.0, 1.0])
+    I3  = Matrix{Float64}(I, 3, 3)
+
+    B = 50.0
+    H0 = ComplexF64.(B * kron(pr, pr))
+    Hx = ComplexF64.(0.5 * (kron(p1r + p1r', I3) + kron(I3, p1r + p1r')))
+    Hy = 0.5im * (kron(p1r - p1r', I3) + kron(I3, p1r - p1r'))
+    H_det = ComplexF64.(-(kron(pr, I3) + kron(I3, pr)))
+  topics: [neutral-atoms, geometric-control, gate-synthesis, quantum-speed-limits]
+  refs: [jaksch2000rydberg, jandura2022timeoptimal, browaeys2020rydberg]
+
+- id: rydberg-analog-array
+  title: Driven analog Rydberg atom array (many-body Ising)
+  architecture: neutral-atoms
+  architecture_label: Neutral atoms
+  regimes: [closed, open]
+  dim: 2^N (N = 6–20+)
+  summary: >-
+    1D chain or 2D array of neutral atoms interacting via 1/r⁶ van der Waals repulsion under global
+    Rabi amplitude and detuning sweeps — the workhorse testbed for many-body state preparation and QAOA/annealing.
+  equation: >-
+    H(t) = \frac{\Omega(t)}{2}\sum_{i=1}^{N}\sigma_x^{(i)} - \Delta(t)\sum_{i=1}^{N} n_i
+    + \sum_{i<j}\frac{C_6}{|r_i - r_j|^6}\, n_i n_j
+  dissipation: >-
+    Single-atom Rydberg spontaneous decay $L_i = \sqrt{\gamma_r}\,|g\rangle\langle r|_i$ and thermal
+    atomic position jitter modulating $C_6/|r_i - r_j|^6$.
+  controls: >-
+    Global Rabi amplitude $\Omega(t) \in [0, \Omega_{\max}]$ and global laser detuning
+    $\Delta(t) \in [-\Delta_{\max}, +\Delta_{\max}]$ with smooth ramp constraints; optionally local light shifts.
+  params:
+    - { name: Blockade radius, symbol: 'R_b / a', value: '1.1–1.5', note: 'Nearest-neighbour blockade (Z₂ phase)' }
+    - { name: Max Rabi frequency, symbol: '\Omega_{\max} / 2\pi', value: '2–5 MHz', note: 'Sets evolution rate' }
+    - { name: Detuning sweep, symbol: '\Delta(t) / 2\pi', value: '-10 to +10 MHz', note: 'Crosses quantum phase transition' }
+    - { name: Protocol time, symbol: 'T', value: '1–4 μs', note: 'Limited by N · γ_r decay' }
+  tasks:
+    - name: Fast GHZ or antiferromagnetic Z₂ state preparation
+      target: Steer $|g\rangle^{\otimes N}$ to the $\mathbb{Z}_2$ Néel state $|rgrg\dots\rangle$ or $N$-atom GHZ cat state in minimal time $T$.
+      baseline: Linear adiabatic ramps vs. dCRAB / GRAPE / QAOA schedules (Omran et al. 2019 prepared 20-atom GHZ states with optimal control).
+  python_code: |
+    import numpy as np
+    import qutip as qt
+
+    # 1D Rydberg chain of N atoms with spacing a = 1, Rb/a = 1.2 (C6 = Omega_max * Rb^6)
+    N = 8
+    Rb = 1.2
+    C6 = Rb ** 6
+    I2, sx = qt.qeye(2), qt.sigmax()
+    n_op = qt.basis(2, 1) * qt.basis(2, 1).dag()
+
+    def site(op, i):
+        return qt.tensor([op if k == i else I2 for k in range(N)])
+
+    H_int = sum((C6 / abs(i - j)**6) * site(n_op, i) * site(n_op, j)
+                for i in range(N) for j in range(i + 1, N))
+    H_x = 0.5 * sum(site(sx, i) for i in range(N))   # multiplied by Omega(t)
+    H_n = -sum(site(n_op, i) for i in range(N))      # multiplied by Delta(t)
+  julia_code: |
+    using LinearAlgebra
+
+    # 1D Rydberg chain of N atoms (sparse recommended for N >= 12)
+    N, Rb = 8, 1.2
+    C6 = Rb^6
+    I2 = Matrix{Float64}(I, 2, 2); sx = [0.0 1.0; 1.0 0.0]; n_op = [0.0 0.0; 0.0 1.0]
+    site(op, i) = reduce(kron, [k == i ? op : I2 for k in 1:N])
+
+    H_int = ComplexF64.(sum((C6 / abs(i - j)^6) * site(n_op, i) * site(n_op, j)
+                        for i in 1:N for j in (i+1):N))
+    H_x = ComplexF64.(0.5 * sum(site(sx, i) for i in 1:N))
+    H_n = ComplexF64.(-sum(site(n_op, i) for i in 1:N))
+  topics: [neutral-atoms, many-body-control, state-preparation, crab, variational-algorithms]
+  refs: [omran2019cat, browaeys2020rydberg, ebadi2022mis]
+
+- id: silicon-double-quantum-dot
+  title: Exchange-coupled Si/SiGe spin qubits
+  architecture: spins
+  architecture_label: Spins & defects
+  regimes: [closed, robust]
+  dim: 4 levels (2 spins)
+  summary: >-
+    Two electron spins in a semiconductor double quantum dot with voltage-controlled non-negative exchange
+    J(t) ≥ 0 and a static Zeeman gradient ΔB_z, dominated by 1/f charge noise and quasistatic magnetic noise.
+  equation: >-
+    H(t) = \frac{J(t)}{4}\,\boldsymbol{\sigma}^{(1)}\!\cdot\boldsymbol{\sigma}^{(2)}
+    + \frac{B_1}{2}\sigma_z^{(1)} + \frac{B_2}{2}\sigma_z^{(2)}
+    + \frac{\Omega_1(t)}{2}\sigma_x^{(1)} + \frac{\Omega_2(t)}{2}\sigma_x^{(2)}
+  dissipation: >-
+    Quasistatic / $1/f^\alpha$ charge noise entering exponentially through $J(\varepsilon + \delta\varepsilon) \approx
+    J(\varepsilon)\exp(\delta\varepsilon/\varepsilon_0)$, plus nuclear Overhauser / micromagnet $B_z$ fluctuations
+    ($T_2^* \sim 1\text{–}20\,\mu\mathrm{s}$ in $^{28}\text{Si}$).
+  controls: >-
+    Unipolar baseband exchange pulse $J(t) \ge 0$ ($J_{\max}/2\pi \sim 5\text{–}50\text{ MHz}$) via barrier/detuning
+    gates, plus optional EDSR microwave drives $\Omega_j(t)$. Positivity $J(t) \ge 0$ and the nonlinear sensitivity
+    $dJ/d\varepsilon \propto J$ make noise-robust pulse design genuinely nontrivial.
+  params:
+    - { name: Exchange coupling, symbol: 'J(t) / 2\pi', value: '0–30 MHz', note: 'Strictly non-negative J(t) ≥ 0' }
+    - { name: Zeeman gradient, symbol: '\Delta B_z / 2\pi', value: '20–300 MHz', note: 'Micromagnet gradient (J << ΔB_z gives CZ)' }
+    - { name: Charge-noise sensitivity, symbol: '\delta J / J', value: '0.5–3% RMS', note: '1/f charge noise dominates at large J' }
+    - { name: Two-qubit gate time, symbol: 't_g', value: '20–150 ns', note: 'Sub-100 ns CZ / SWAP gates' }
+  tasks:
+    - name: Charge-noise-robust CZ or singlet–triplet rotation
+      target: Implement $\mathrm{CZ}$ (or $S\text{–}T_0$ single-qubit gate) with fidelity $> 0.999$ while cancelling first- and second-order sensitivity to $\delta J/J$ and $\delta(\Delta B_z)$.
+      baseline: Filter-function GRAPE (`qopt`, Teske et al. 2022) and closed-loop robust pulses (Cerfontaine et al. 2020).
+  python_code: |
+    import numpy as np
+    import qutip as qt
+
+    # 2 electron spins in rotating frame of average Zeeman field (rad/ns, time in ns)
+    sx, sy, sz, I2 = qt.sigmax(), qt.sigmay(), qt.sigmaz(), qt.qeye(2)
+    dBz = 2 * np.pi * 0.100  # 100 MHz Zeeman gradient between dots 1 and 2
+
+    H0 = 0.25 * dBz * (qt.tensor(sz, I2) - qt.tensor(I2, sz))
+    H_exch = 0.25 * (qt.tensor(sx, sx) + qt.tensor(sy, sy) + qt.tensor(sz, sz))  # control J(t) >= 0
+    H_x1 = 0.5 * qt.tensor(sx, I2)  # optional EDSR drive on spin 1
+    H_x2 = 0.5 * qt.tensor(I2, sx)  # optional EDSR drive on spin 2
+  julia_code: |
+    using LinearAlgebra
+
+    # 2 electron spins in Si/SiGe double quantum dot (rad/ns)
+    sx = [0.0 1.0; 1.0 0.0]; sy = [0.0 -1im; 1im 0.0]; sz = [1.0 0.0; 0.0 -1.0]
+    I2 = Matrix{Float64}(I, 2, 2)
+    dBz = 2π * 0.100  # 100 MHz Zeeman gradient
+
+    H0 = ComplexF64.(0.25 * dBz * (kron(sz, I2) - kron(I2, sz)))
+    H_exch = ComplexF64.(0.25 * (kron(sx, sx) + kron(sy, sy) + kron(sz, sz))) # J(t) >= 0
+  topics: [spins, robust-optimal-control, filter-functions, gate-synthesis]
+  refs: [burkard2023spin, cerfontaine2020closedloop, teske2022qopt]
+
+- id: nv-center-hyperfine
+  title: NV center coupled to a ¹³C nuclear spin
+  architecture: spins
+  architecture_label: Spins & defects
+  regimes: [closed, open, robust]
+  dim: 6 levels (3 × 2) or 4 (2 × 2)
+  summary: >-
+    Room-temperature diamond NV electronic spin coupled via anisotropic hyperfine interaction to a
+    nearby ¹³C nuclear spin — a classic system for indirect nuclear control, robust gates, and quantum sensing.
+  equation: >-
+    H(t) = D S_z^2 + \gamma_e B_z S_z + \gamma_n B_z I_z + S_z\big(A_\parallel I_z + A_\perp I_x\big)
+    + \Omega_x(t) S_x + \Omega_y(t) S_y
+  dissipation: >-
+    Quasistatic / Ornstein–Uhlenbeck magnetic bath dephasing on the electron spin ($T_2^* \sim 1\text{–}50\,\mu\mathrm{s}$,
+    $T_2 \sim 0.5\text{–}2\text{ ms}$ under DD), while the nuclear spin coherence reaches seconds.
+  controls: >-
+    Microwave quadratures $\Omega_x(t), \Omega_y(t)$ driving only the electron spin ($\Omega_{\max}/2\pi \sim 5\text{–}25\text{ MHz}$);
+    the $^{13}\text{C}$ nuclear spin is steered indirectly through the anisotropic hyperfine coupling $A_\perp S_z I_x$.
+  params:
+    - { name: Zero-field splitting, symbol: 'D / 2\pi', value: '2.87 GHz', note: 'Eliminated in electron rotating frame' }
+    - { name: Nuclear Larmor freq., symbol: '\gamma_n B_z / 2\pi', value: '0.1–1.0 MHz', note: 'At B_z ≈ 100–1000 G' }
+    - { name: Hyperfine couplings, symbol: 'A_\parallel, A_\perp / 2\pi', value: '20–500 kHz', note: 'Depends on ¹³C lattice site' }
+    - { name: Electron Rabi limit, symbol: '\Omega_{\max} / 2\pi', value: '5–20 MHz', note: 'MW amplitude inhomogeneity ~5%' }
+  tasks:
+    - name: Indirect electron–nuclear CNOT / Bell state preparation
+      target: Synthesize an entangling gate between electron $\{|0\rangle, |-1\rangle\}$ and $^{13}\text{C}$ using electron-only microwave drives, robust to $\pm 100\text{ kHz}$ detuning and $\pm 5\%$ amplitude errors.
+      baseline: Dynamical-decoupling resonances vs. GRAPE / dCRAB (Dolde et al. 2014; Rembold et al. 2020; QuOCS).
+  python_code: |
+    import numpy as np
+    import qutip as qt
+
+    # Effective NV electron qubit {|0>, |-1>} x 13C nuclear spin-1/2 (units: rad/us, time in us)
+    # In electron rotating frame: Sz_eff = diag(0, -1)
+    Sz_e = qt.Qobj([[0, 0], [0, -1]])
+    Sx_e, Sy_e, I2 = 0.5 * qt.sigmax(), 0.5 * qt.sigmay(), qt.qeye(2)
+    Ix, Iz = 0.5 * qt.sigmax(), 0.5 * qt.sigmaz()
+
+    w_n = 2 * np.pi * 0.43      # 430 kHz nuclear Larmor (B_z ~ 400 G)
+    A_par = 2 * np.pi * 0.15    # 150 kHz parallel hyperfine
+    A_perp = 2 * np.pi * 0.08   # 80 kHz perpendicular hyperfine
+
+    H0 = w_n * qt.tensor(I2, Iz) + qt.tensor(Sz_e, A_par * Iz + A_perp * Ix)
+    Hx = qt.tensor(Sx_e, I2)
+    Hy = qt.tensor(Sy_e, I2)
+  julia_code: |
+    using LinearAlgebra
+
+    # Effective NV {|0>, |-1>} x 13C spin-1/2 in electron rotating frame (rad/us)
+    Sz_e = [0.0 0.0; 0.0 -1.0]; I2 = Matrix{Float64}(I, 2, 2)
+    Sx_e = 0.5 * [0.0 1.0; 1.0 0.0]; Sy_e = 0.5 * [0.0 -1im; 1im 0.0]
+    Ix, Iz = Sx_e, 0.5 * [1.0 0.0; 0.0 -1.0]
+
+    w_n, A_par, A_perp = 2π * 0.43, 2π * 0.15, 2π * 0.08
+    H0 = ComplexF64.(w_n * kron(I2, Iz) + kron(Sz_e, A_par * Iz + A_perp * Ix))
+    Hx, Hy = ComplexF64.(kron(Sx_e, I2)), kron(Sy_e, I2)
+  topics: [spins, quantum-sensing, robust-optimal-control, dynamical-decoupling, crab]
+  refs: [dolde2014entanglement, rembold2020nvsensing, rossignolo2023quocs]
+
+- id: lambda-three-level
+  title: Three-level Λ system with decaying intermediate state
+  architecture: amo
+  architecture_label: AMO & molecules
+  regimes: [closed, open]
+  dim: 3 levels
+  summary: >-
+    Canonical atomic/molecular three-level Λ system with a lossy intermediate excited state — the universal
+    benchmark comparing counter-intuitive STIRAP, counterdiabatic shortcuts, and open-system optimal control.
+  equation: >-
+    H(t) = \Delta_P |2\rangle\langle 2| + \frac{\Omega_P(t)}{2}\big(|1\rangle\langle 2| + \mathrm{h.c.}\big)
+    + \frac{\Omega_S(t)}{2}\big(|2\rangle\langle 3| + \mathrm{h.c.}\big)
+  dissipation: >-
+    Spontaneous emission from $|2\rangle$ at rate $\Gamma$ (into $|1\rangle, |3\rangle$, or to a dark loss state $|4\rangle$
+    via $L = \sqrt{\Gamma}\,|4\rangle\langle 2|$ for non-Hermitian / Lindblad benchmarking).
+  controls: >-
+    Pump $\Omega_P(t)$ and Stokes $\Omega_S(t)$ Rabi envelopes (optionally complex/chirped), bounded by total pulse
+    energy $\int_0^T (\Omega_P^2 + \Omega_S^2)\,dt \le E_{\max}$ or peak amplitude $\Omega_{\max}$.
+  params:
+    - { name: Peak Rabi frequency, symbol: '\Omega_{\max}', value: '1.0 (dimensionless)', note: 'Sets time unit 1/Ω_max' }
+    - { name: Excited decay rate, symbol: '\Gamma / \Omega_{\max}', value: '0.1–2.0', note: 'Penalizes transient population P_2(t)' }
+    - { name: One-photon detuning, symbol: '\Delta_P / \Omega_{\max}', value: '0–5', note: 'Two-photon resonance Δ_P = Δ_S' }
+    - { name: Transfer time, symbol: '\Omega_{\max} T', value: '5–30', note: 'STIRAP needs Ω_max T ≳ 10' }
+  tasks:
+    - name: Loss-free |1⟩ → |3⟩ population transfer
+      target: Maximize $P_3(T)$ while minimizing integrated excited-state loss $\Gamma \int_0^T P_2(t)\,dt$ for short $\Omega_{\max} T \sim 5\text{–}10$.
+      baseline: Counter-intuitive STIRAP vs. superadiabatic STIRAP (sa-STIRAP) vs. Krotov/GRAPE.
+  python_code: |
+    import numpy as np
+    import qutip as qt
+
+    # 3-level Lambda system (|1>, |2>, |3>) in dimensionless units Omega_max = 1
+    e1, e2, e3 = qt.basis(3, 0), qt.basis(3, 1), qt.basis(3, 2)
+    Delta_P = 0.0
+    Gamma = 0.5   # Intermediate-state decay rate
+
+    H0 = Delta_P * (e2 * e2.dag())
+    H_pump   = 0.5 * (e1 * e2.dag() + e2 * e1.dag())
+    H_stokes = 0.5 * (e2 * e3.dag() + e3 * e2.dag())
+    # Non-Hermitian effective loss or Lindblad jump into |1> / |3>:
+    c_ops = [np.sqrt(Gamma / 2) * (e1 * e2.dag()), np.sqrt(Gamma / 2) * (e3 * e2.dag())]
+  julia_code: |
+    using LinearAlgebra
+
+    # 3-level Lambda system (|1>, |2>, |3>), dimensionless Omega_max = 1
+    Delta_P = 0.0
+    H0       = ComplexF64.([0.0 0.0 0.0; 0.0 Delta_P 0.0; 0.0 0.0 0.0])
+    H_pump   = ComplexF64.(0.5 * [0.0 1.0 0.0; 1.0 0.0 0.0; 0.0 0.0 0.0])
+    H_stokes = ComplexF64.(0.5 * [0.0 0.0 0.0; 0.0 0.0 1.0; 0.0 1.0 0.0])
+  topics: [adiabatic-passage, shortcuts-to-adiabaticity, state-preparation, open-system-control]
+  refs: [bergmann1998coherent, kumar2016scstirap, vitanov2017stirap]
+
+- id: nmr-ensemble-spin-chain
+  title: Inhomogeneous NMR spin ensemble & XX spin chain
+  architecture: many-body
+  architecture_label: Many-body & NMR
+  regimes: [closed, robust]
+  dim: 2 × M (ensemble) or 2^N (chain)
+  summary: >-
+    Two classic foundational QOC testbeds: broadband robust spin control over a (detuning, amplitude) box
+    and single-excitation state transfer along an N-spin chain at the quantum speed limit.
+  equation: >-
+    H_{\mathrm{ens}}(\delta,\alpha,t) = \frac{\delta}{2}\sigma_z + \frac{\alpha}{2}\big(u_x(t)\sigma_x + u_y(t)\sigma_y\big),
+    \qquad H_{\mathrm{chain}}(t) = J\sum_{i=1}^{N-1}(\sigma_x^{(i)}\sigma_x^{(i+1)} + \sigma_y^{(i)}\sigma_y^{(i+1)}) + u(t)\sigma_z^{(1)}
+  dissipation: >-
+    Primarily coherent static inhomogeneity $(\delta, \alpha)$ across the sample (NMR / MRI) or boundary-field
+    control constraints (spin chains).
+  controls: >-
+    In the NMR ensemble: bounded transverse RF field $\sqrt{u_x^2 + u_y^2} \le \Omega_{\max}$ applied identically
+    to all $M$ ensemble members. In the spin chain: single local field $u(t)$ on site 1 (or $N$-site fields)
+    testing controllability and QSL scaling $T_{\mathrm{QSL}} \propto N/J$.
+  params:
+    - { name: Detuning bandwidth, symbol: '\delta / \Omega_{\max}', value: '[-2, +2] to [-5, +5]', note: 'Sampled on 21–101 grid points' }
+    - { name: RF amplitude spread, symbol: '\alpha', value: '[0.8, 1.2]', note: '±20% B₁ inhomogeneity' }
+    - { name: Spin chain length, symbol: 'N', value: '4–50 spins', note: 'Single-excitation sector has dim N' }
+    - { name: Transfer QSL, symbol: 'J T_{\mathrm{QSL}}', value: '≈ N / 2', note: 'Lieb–Robinson speed limit scaling' }
+  tasks:
+    - name: Broadband universal rotation (BEBOP / BURBOP)
+      target: Achieve fidelity $> 0.99$ across the entire $(\delta/\Omega_{\max}, \alpha) \in [-2, 2] \times [0.8, 1.2]$ box in minimal duration $\Omega_{\max} T$.
+      baseline: Composite pulses (BB1, CORPSE) vs. ensemble GRAPE (Skinner et al. 2003; Kobzar et al. 2004; Khaneja et al. 2005).
+    - name: Spin-chain end-to-end state transfer at QSL
+      target: Transfer $|10\dots 0\rangle \to |0\dots 01\rangle$ along an $N$-spin $XX$ chain near $T_{\mathrm{QSL}}$.
+      baseline: Caneva et al. (2009), Murphy et al. (2010), Machnes et al. (2011) DYNAMO suite.
+  python_code: |
+    import numpy as np
+    import qutip as qt
+
+    # (A) Broadband NMR ensemble: grid of (detuning, B1 scale) pairs (Omega_max = 1)
+    sx, sy, sz = qt.sigmax(), qt.sigmay(), qt.sigmaz()
+    deltas = np.linspace(-2.0, 2.0, 21)
+    alphas = np.linspace(0.8, 1.2, 5)
+    ensemble = [(0.5*d*sz, 0.5*a*sx, 0.5*a*sy) for d in deltas for a in alphas]
+
+    # (B) N-spin XX chain in the single-excitation subspace (dimension N, fast even for N = 50)
+    N, J = 10, 1.0
+    H0_chain = qt.Qobj(J * (np.diag(np.ones(N - 1), 1) + np.diag(np.ones(N - 1), -1)))
+    Hc_chain = qt.Qobj(np.diag([1.0] + [0.0] * (N - 1)))  # Local z-control on site 1
+  julia_code: |
+    using LinearAlgebra
+
+    # (A) NMR ensemble grid (Omega_max = 1)
+    sx = [0.0 1.0; 1.0 0.0]; sy = [0.0 -1im; 1im 0.0]; sz = [1.0 0.0; 0.0 -1.0]
+    ensemble = [(ComplexF64.(0.5*d*sz), ComplexF64.(0.5*a*sx), 0.5*a*sy)
+                for d in range(-2.0, 2.0, length=21), a in range(0.8, 1.2, length=5)]
+
+    # (B) N-spin XX chain in the single-excitation subspace (dim = N)
+    N, J = 10, 1.0
+    H0_chain = ComplexF64.(J * (diagm(1 => ones(N-1)) + diagm(-1 => ones(N-1))))
+    Hc_chain = ComplexF64.(diagm(vcat(1.0, zeros(N-1))))
+  topics: [robust-optimal-control, spins, composite-pulses, state-preparation, quantum-speed-limits, grape]
+  refs: [skinner2003broadband, kobzar2004broadband, khaneja2005grape, bose2003chain, caneva2009qsl, murphy2010chain, machnes2011dynamo]

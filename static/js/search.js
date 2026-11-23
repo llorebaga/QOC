@@ -15,13 +15,13 @@
   const KINDS = {
     topic: "Topic",
     problem: "Open problem",
+    hamiltonian: "Hamiltonian",
     group: "Group",
-    benchmark: "Benchmark",
     glossary: "Glossary",
     software: "Software",
     reading: "Reading",
   };
-  const KIND_PRIORITY = { topic: 7, problem: 6, group: 5, benchmark: 4, glossary: 3, software: 2, reading: 1 };
+  const KIND_PRIORITY = { topic: 7, problem: 6, hamiltonian: 5, group: 4, glossary: 3, software: 2, reading: 1 };
 
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const fold = (s) => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();

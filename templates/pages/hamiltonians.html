@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% block title %}Hardware Hamiltonians — QOC{% endblock %}
+{% block description %}{{ section.summary }}{% endblock %}
+{% block head %}{% include "partials/katex.html" %}{% endblock %}
+
+{% block main %}
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <p class="eyebrow">{{ hamiltonians|length }} models · {{ architectures|length }} architectures</p>
+    <h1>Hardware Hamiltonians</h1>
+    <p class="lead">Standardized control Hamiltonians across real quantum architectures — with realistic experimental
+      parameters, noise models, control constraints, benchmark tasks and copy-paste Python / Julia starter code.</p>
+    <p class="tracker-links">
+      <a href="{{ url('hamiltonians/data.json') }}" download>Download catalog (JSON)</a>
+      <a href="https://github.com/llorebaga/QOC/issues/new?template=report-error.yml&amp;title=Suggest%20hardware%20Hamiltonian" rel="noopener">Suggest a model</a>
+    </p>
+  </div>
+</section>
+
+<div class="wrap hams" data-hams>
+  <form class="tracker-toolbar" role="search" data-hams-form>
+    <label class="tracker-search">
+      {{ icon('search') }}
+      <span class="visually-hidden">Search Hamiltonians</span>
+      <input type="search" name="q" placeholder="Search transmon, fluxonium, Rydberg, Mølmer–Sørensen, NV…" autocomplete="off">
+    </label>
+    <label class="tracker-select"><span class="visually-hidden">Regime</span>
+      <select name="regime">
+        <option value="">All regimes</option>
+        <option value="closed">Closed / unitary</option>
+        <option value="open">Open / dissipative</option>
+        <option value="robust">Robust / ensemble</option>
+      </select>
+    </label>
+  </form>
+
+  <div class="problem-filter ham-arch-filter" role="group" aria-label="Architecture">
+    <button type="button" class="problem-filter-btn" data-arch="" aria-pressed="true">All <span>{{ hamiltonians|length }}</span></button>
+    {% for a in architectures %}
+    <button type="button" class="problem-filter-btn" data-arch="{{ a.id }}" aria-pressed="false">{{ a.label }} <span>{{ a.count }}</span></button>
+    {% endfor %}
+  </div>
+
+  <p class="tracker-status" role="status" aria-live="polite" data-hams-status>{{ hamiltonians|length }} models.</p>
+
+  <ol class="ham-list" data-hams-list>
+    {% for h in hamiltonians %}
+    <li class="ham-card card" data-arch="{{ h.architecture }}" data-regimes="{{ h.regimes | join(' ') }}">
+      <div class="ham-card-head">
+        <span class="ham-arch">{{ h.architecture_label }}</span>
+        <span class="ham-dim">{{ h.dim }}</span>
+      </div>
+      <h2 class="ham-card-title"><a href="{{ url('hamiltonians/' ~ h.id ~ '/') }}">{{ h.title }}</a></h2>
+      <p class="ham-card-summary">{{ h.summary }}</p>
+      <div class="ham-eq-preview">$$ {{ h.equation }} $$</div>
+      <div class="ham-card-foot">
+        <ul class="paper-topics">
+          {% for t in h.topics[:4] %}{% set tt = taxonomy.topics[t] %}
+          <li><a class="topic-chip" href="{{ url('topics/' ~ t ~ '/') }}" style="--fam: var(--fam-{{ tt.family }})">{{ tt.label }}</a></li>
+          {% endfor %}
+        </ul>
+        <a class="text-link ham-open" href="{{ url('hamiltonians/' ~ h.id ~ '/') }}">Specs &amp; code {{ icon('arrow') }}</a>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+
+  <aside class="card tracker-note">
+    {{ icon('info') }}
+    <div>
+      <h2>Why a hardware Hamiltonian library?</h2>
+      <p>Algorithms in quantum optimal control are often tested only on two-level or toy spin models. Each entry here
+        gives a literature-grounded model Hamiltonian with realistic scales, constraints and starter code in QuTiP and
+        Julia, so new optimizers can be benchmarked across real architectures. Missing a platform (e.g. photonics,
+        ultracold lattices, molecular rotors)? Please
+        <a href="https://github.com/llorebaga/QOC/issues/new?template=report-error.yml&amp;title=Suggest%20hardware%20Hamiltonian" rel="noopener">open an issue on GitHub</a>.</p>
+    </div>
+  </aside>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ asset('js/hamiltonians.js') }}" defer></script>
+{% endblock %}

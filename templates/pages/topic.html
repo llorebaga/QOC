@@ -96,6 +96,23 @@
       </section>
       {% endif %}
 
+      {% set topic_hams = hamiltonians_by_topic.get(topic.id, []) %}
+      {% if topic_hams %}
+      <section class="article-section" aria-labelledby="hardware-hamiltonians">
+        <h2 id="hardware-hamiltonians">Hardware Hamiltonians</h2>
+        <p class="section-note">Standardized testbed models using this topic, with realistic parameters and starter code.
+          <a href="{{ url('hamiltonians/') }}">Browse all {{ hamiltonians|length }}</a></p>
+        <ul class="topic-groups">
+          {% for h in topic_hams %}
+          <li>
+            <a class="topic-group-name" href="{{ url('hamiltonians/' ~ h.id ~ '/') }}">{{ h.title }}</a>
+            <span class="topic-group-meta">{{ h.architecture_label }} · {{ h.dim }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
       {% set topic_groups = groups_by_topic.get(topic.id, []) %}
       {% if topic_groups %}
       {% set group_filter_param = 'platform' if family.id == 'platforms' else 'topic' %}
@@ -163,6 +180,7 @@
             {% if article.meta.software %}<li><a href="#software">Software</a></li>{% endif %}
             {% if article.citations %}<li><a href="#references">References</a></li>{% endif %}
             {% if problems_by_topic.get(topic.id) %}<li><a href="#open-problems">Open problems</a></li>{% endif %}
+            {% if topic_hams %}<li><a href="#hardware-hamiltonians">Hardware Hamiltonians</a></li>{% endif %}
             {% if topic_groups %}<li><a href="#research-groups">Research groups</a></li>{% endif %}
             <li><a href="#recent-papers">Recent papers</a></li>
           </ol>

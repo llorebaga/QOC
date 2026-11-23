@@ -232,6 +232,91 @@ def load_resources(path: Path, taxonomy: dict, references: dict, url) -> dict:
     return res
 
 
+def load_hamiltonians(path: Path, taxonomy: dict, references: dict, url) -> list[dict]:
+    """Load and validate data/hamiltonians.yaml (hardware control models & benchmark specs)."""
+    if not path.exists():
+        return []
+    raw = load_yaml(path) or []
+    errors, seen = [], set()
+    out = []
+
+    def inline(text: str, where: str) -> Markup:
+        try:
+            rendered = render_article(where, text or "", references=references, topics=taxonomy["topics"], url=url).html
+        except ContentError as exc:
+            errors.append(str(exc))
+            return Markup("")
+        return Markup(re.sub(r"^<p>(.*)</p>$", r"\1", rendered.strip(), flags=re.S))
+
+    for h in raw:
+        hid = h.get("id", "?")
+        where = f"hamiltonian '{hid}'"
+        for k in ("id", "title", "architecture", "architecture_label", "regimes", "dim", "summary", "equation", "topics", "refs"):
+            if not h.get(k):
+                errors.append(f"{where}: missing {k}")
+        if hid in seen:
+            errors.append(f"duplicate hamiltonian id '{hid}'")
+        seen.add(hid)
+        for t in h.get("topics") or []:
+            if t not in taxonomy["topics"]:
+                errors.append(f"{where}: unknown topic '{t}'")
+        for k in h.get("refs") or []:
+            if k not in references:
+                errors.append(f"{where}: unknown reference key '{k}'")
+        if errors:
+            continue
+        tasks = []
+        for tk in h.get("tasks") or []:
+            tasks.append({
+                "name": tk["name"],
+                "target": tk.get("target", ""),
+                "baseline": tk.get("baseline", ""),
+                "target_html": inline(tk.get("target", ""), where),
+                "baseline_html": inline(tk.get("baseline", ""), where),
+            })
+        out.append({
+            **h,
+            "dissipation_html": inline(h.get("dissipation", ""), where) if h.get("dissipation") else Markup(""),
+            "controls_html": inline(h.get("controls", ""), where) if h.get("controls") else Markup(""),
+            "tasks": tasks,
+        })
+    if errors:
+        raise BuildError("hamiltonians.yaml:\n  " + "\n  ".join(errors))
+    return out
+
+
+def hamiltonians_export_json(hamiltonians: list[dict], references: dict) -> str:
+    """Clean machine-readable JSON export of the hardware Hamiltonian library."""
+    rows = []
+    for h in hamiltonians:
+        rows.append({
+            "id": h["id"],
+            "title": h["title"],
+            "architecture": h["architecture"],
+            "architecture_label": h["architecture_label"],
+            "regimes": h["regimes"],
+            "dim": h["dim"],
+            "summary": h["summary"],
+            "equation_latex": h["equation"],
+            "dissipation": h.get("dissipation", ""),
+            "controls": h.get("controls", ""),
+            "params": h.get("params", []),
+            "tasks": [{"name": tk["name"], "target": tk["target"], "baseline": tk["baseline"]} for tk in h["tasks"]],
+            "python_code": h.get("python_code", "").strip(),
+            "julia_code": h.get("julia_code", "").strip(),
+            "topics": h["topics"],
+            "references": [{
+                "key": k,
+                "title": references[k].get("title", ""),
+                "authors": references[k].get("authors", []),
+                "year": references[k].get("year"),
+                "doi": references[k].get("doi", ""),
+                "arxiv": references[k].get("arxiv", ""),
+            } for k in h["refs"]],
+        })
+    return json.dumps(rows, ensure_ascii=False, indent=2)
+
+
 def load_groups(path: Path, taxonomy: dict) -> list[dict]:
     """Load and validate data/groups.yaml (maintained with tools/groups.py)."""
     if not path.exists():
@@ -294,8 +379,8 @@ def related_problems_for(pr: dict, problems: list[dict], limit: int = 6) -> tupl
 
 
 def search_index_data(taxonomy: dict, problems: list[dict], groups: list[dict],
-                      resources: dict, references: dict, url) -> list[dict]:
-    """Compact site-wide search index covering topics, open problems, groups and resources."""
+                      hamiltonians: list[dict], resources: dict, references: dict, url) -> list[dict]:
+    """Compact site-wide search index covering topics, open problems, Hamiltonians, groups and resources."""
     items: list[dict] = []
     fam_by_id = {f["id"]: f["title"] for f in taxonomy["families"]}
     tlabel = lambda tid: taxonomy["topics"][tid]["label"]
@@ -316,6 +401,14 @@ def search_index_data(taxonomy: dict, problems: list[dict], groups: list[dict],
             "m": " ".join([pr["status_label"], *(tlabel(t) for t in pr["topics"])]),
             "u": url(f"open-problems/{pr['id']}/"),
         })
+    for h in hamiltonians:
+        items.append({
+            "k": "hamiltonian",
+            "t": h["title"],
+            "s": f"{h['architecture_label']} ({h['dim']}) · {h['summary']}",
+            "m": " ".join([h["architecture_label"], *h["regimes"], *(tlabel(t) for t in h["topics"])]),
+            "u": url(f"hamiltonians/{h['id']}/"),
+        })
     for g in sorted(groups, key=lambda x: x["name"].lower()):
         place = ", ".join(x for x in (g.get("city"), g["country"]) if x)
         items.append({
@@ -332,14 +425,6 @@ def search_index_data(taxonomy: dict, problems: list[dict], groups: list[dict],
             "s": _plain(e["def_html"], 160),
             "m": " ".join(tlabel(t) for t in (e.get("topics") or [])),
             "u": url(f"resources/#g-{e['id']}"),
-        })
-    for b in resources.get("benchmarks", []):
-        items.append({
-            "k": "benchmark",
-            "t": b["name"],
-            "s": f"{b['platform']} · {_plain(b['target_html'], 140)}",
-            "m": " ".join([b["platform"], *(tlabel(t) for t in (b.get("topics") or []))]),
-            "u": url(f"resources/#{b['id']}"),
         })
     for grp in resources.get("software", []):
         for s in grp["items"]:
@@ -533,10 +618,20 @@ def build(base: str | None = None, quiet: bool = False) -> None:
     for t, glist in groups_by_topic.items():
         glist.sort(key=lambda g: (-g["topic_counts"].get(t, 0), g["name"].lower()))
     resources = load_resources(ROOT / "data" / "resources.yaml", taxonomy, references, url)
+    hamiltonians = load_hamiltonians(ROOT / "data" / "hamiltonians.yaml", taxonomy, references, url)
+    hamiltonians_by_topic: dict[str, list[dict]] = {}
+    arch_map: dict[str, dict] = {}
+    for h in hamiltonians:
+        for t in h["topics"]:
+            hamiltonians_by_topic.setdefault(t, []).append(h)
+        entry = arch_map.setdefault(h["architecture"], {"id": h["architecture"], "label": h["architecture_label"], "count": 0})
+        entry["count"] += 1
+    architectures = list(arch_map.values())
     quality_file = ROOT / "data" / "quality" / "summary.yaml"
     quality = load_yaml(quality_file) if quality_file.exists() else None
     env.globals.update(articles=articles, problems=problems, problems_by_topic=problems_by_topic,
-                       groups_by_topic=groups_by_topic,
+                       groups_by_topic=groups_by_topic, hamiltonians=hamiltonians,
+                       hamiltonians_by_topic=hamiltonians_by_topic,
                        paper_stats=stats, selection=selection, quality=quality, tracked=tracked,
                        fmt_ref=lambda key: Markup(format_reference(references[key])),
                        references=references)
@@ -559,6 +654,8 @@ def build(base: str | None = None, quiet: bool = False) -> None:
                                       .replace("</", "<\\/"))} if section["id"] == "map" else {}
         if section["id"] == "resources":
             extra = {"res": resources}
+        if section["id"] == "hamiltonians":
+            extra = {"architectures": architectures}
         if section["id"] == "groups":
             extra = {"groups": groups,
                      "groups_json": Markup(json.dumps(groups_data(groups, taxonomy, url), ensure_ascii=False)
@@ -588,13 +685,24 @@ def build(base: str | None = None, quiet: bool = False) -> None:
     problem_feed_entries = sorted(problems, key=lambda p: (str(p["updated"]), str(p["added"]), p["id"]), reverse=True)
     render(env, "feeds/problems.xml", "open-problems/feed.xml", entries=problem_feed_entries)
 
+    # Hardware Hamiltonians: one page each + downloadable JSON catalog
+    for h in hamiltonians:
+        mine = set(h["topics"])
+        related_hams = sorted(
+            [o for o in hamiltonians if o["id"] != h["id"]],
+            key=lambda o: (o["architecture"] != h["architecture"], -len(mine & set(o["topics"])), o["title"].lower()),
+        )[:6]
+        render(env, "pages/hamiltonian.html", f"hamiltonians/{h['id']}/index.html", page_id="hamiltonians",
+               h=h, related_hams=related_hams)
+    write(OUT / "hamiltonians" / "data.json", hamiltonians_export_json(hamiltonians, references).encode("utf-8"))
+
     # Research groups: one page each (the map and the list are on the section page)
     for g in groups:
         render(env, "pages/group.html", f"groups/{g['id']}/index.html", page_id="groups", g=g)
 
     # Site-wide search index (loaded on demand when opening search)
     write(OUT / "search-index.json",
-          json.dumps(search_index_data(taxonomy, problems, groups, resources, references, url),
+          json.dumps(search_index_data(taxonomy, problems, groups, hamiltonians, resources, references, url),
                      ensure_ascii=False, separators=(",", ":")).encode("utf-8"))
 
     # Paper tracker: data for the client, author pages, weekly digest, feed
