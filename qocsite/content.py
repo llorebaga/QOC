@@ -138,8 +138,9 @@ def short_authors(authors: list[str], max_full: int = 6) -> str:
 
 def format_reference(e: dict) -> str:
     """HTML for one bibliography entry."""
+    title = INLINE_MATH.sub(lambda m: r"\(" + m.group(1) + r"\)", html.escape(e.get("title", "")))
     parts = [f'<span class="ref-authors">{html.escape(short_authors(e.get("authors", [])))}</span>',
-             f'<span class="ref-title">{html.escape(e.get("title", ""))}</span>']
+             f'<span class="ref-title">{title}</span>']
     venue = e.get("journal") or e.get("booktitle")
     if venue:
         v = f"<i>{html.escape(venue)}</i>"

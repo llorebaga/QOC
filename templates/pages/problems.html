@@ -3,7 +3,8 @@
 {% from "partials/ui.html" import problem_status %}
 {% block title %}Open problems — QOC{% endblock %}
 {% block description %}{{ section.summary }}{% endblock %}
-{% block head %}{% include "partials/katex.html" %}{% endblock %}
+{% block head %}{% include "partials/katex.html" %}
+<link rel="alternate" type="application/atom+xml" title="QOC — Open problems" href="{{ url('open-problems/feed.xml') }}">{% endblock %}
 
 {% block main %}
 {% set counts = {} %}
@@ -15,11 +16,20 @@
     <p class="lead">Specific, well-posed questions in quantum optimal control. Each one is stated precisely and
       comes with the paper that poses it, the known partial results and the references — in the spirit of the
       <a href="https://qiqc-op.com/" rel="noopener">open problem zoo of quantum information</a>.</p>
+    <p class="tracker-links">
+      <a href="{{ url('open-problems/feed.xml') }}">{{ icon('rss') }}Feed</a>
+      <a href="https://github.com/llorebaga/QOC/issues/new?template=propose-open-problem.yml" rel="noopener">Propose a problem</a>
+    </p>
   </div>
 </section>
 
 <div class="wrap problems" data-problems>
-  <form class="tracker-toolbar" data-problems-form>
+  <form class="tracker-toolbar" role="search" data-problems-form>
+    <label class="tracker-search">
+      {{ icon('search') }}
+      <span class="visually-hidden">Search open problems</span>
+      <input type="search" name="q" placeholder="Search problems, keywords, topics…" autocomplete="off">
+    </label>
     <div class="problem-filter" role="group" aria-label="Status">
       <button type="button" class="problem-filter-btn" data-status="" aria-pressed="true">All <span>{{ problems|length }}</span></button>
       {% for s in ['open', 'partial', 'solved'] %}
@@ -64,7 +74,7 @@
         explicit open question or a stated goal. Its status follows the literature: <em>partial progress</em> means
         that special cases are proved, <em>solved</em> that the full statement is. Solved problems stay in the list
         with the paper that solved them. Know of a result we missed, or a problem that belongs here? Please
-        <a href="https://github.com/llorebaga/QOC/issues" rel="noopener">open an issue on GitHub</a>.</p>
+        <a href="https://github.com/llorebaga/QOC/issues/new?template=propose-open-problem.yml" rel="noopener">propose a problem on GitHub</a>.</p>
     </div>
   </aside>
 </div>

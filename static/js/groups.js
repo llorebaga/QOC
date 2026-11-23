@@ -87,8 +87,18 @@
   }
 
   /* ------------------------------------------------------------ filters */
+  const params = new URLSearchParams(location.search);
+  if (params.get("q")) form.elements.q.value = params.get("q");
+  if ([...form.elements.topic.options].some((o) => o.value === params.get("topic"))) {
+    form.elements.topic.value = params.get("topic");
+  }
+  if ([...form.elements.platform.options].some((o) => o.value === params.get("platform"))) {
+    form.elements.platform.value = params.get("platform");
+  }
+
   function apply() {
-    const q = fold(form.elements.q.value.trim());
+    const rawQ = form.elements.q.value.trim();
+    const q = fold(rawQ);
     const topic = form.elements.topic.value;
     const platform = form.elements.platform.value;
     const visible = groups.filter((g) => {
@@ -105,9 +115,17 @@
     }
     status.textContent = `${visible.length} group${visible.length === 1 ? "" : "s"}` +
       (visible.length < groups.length ? ` of ${groups.length}.` : ".");
+
+    const sp = new URLSearchParams();
+    if (rawQ) sp.set("q", rawQ);
+    if (topic) sp.set("topic", topic);
+    if (platform) sp.set("platform", platform);
+    const hash = location.hash || "";
+    history.replaceState(null, "", (sp.toString() ? `?${sp}` : location.pathname) + hash);
   }
 
   form.addEventListener("input", apply);
+  form.addEventListener("change", apply);
   form.addEventListener("submit", (e) => e.preventDefault());
 
   initMap();

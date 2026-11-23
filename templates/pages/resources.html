@@ -37,7 +37,7 @@
     <h3 class="res-group">{{ g.group }}</h3>
     <ul class="sw-list">
       {% for s in g['items'] %}
-      <li class="sw-card card">
+      <li class="sw-card card" id="{{ s.id }}">
         <div class="sw-head">
           <a class="sw-name" href="{{ s.url }}" rel="noopener">{{ s.name }}</a>
           <span class="sw-lang">{{ s.lang }}{% if s.get('commercial') %} · commercial{% endif %}</span>

@@ -1,0 +1,46 @@
+name: Add or update a research group
+description: Suggest a research group working on quantum optimal control, or update an existing entry.
+title: "[Group] "
+labels: ["group"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Each group entry needs an official website that explicitly names its PI(s), and its topics are computed automatically from the PIs' tracked arXiv papers.
+  - type: input
+    id: name
+    attributes:
+      label: Group name
+      placeholder: e.g. Quantum Optimal Control Group
+    validations:
+      required: true
+  - type: input
+    id: pis
+    attributes:
+      label: Principal investigator(s)
+      description: Full name(s) as listed on the group page (and any arXiv spelling variants if different).
+      placeholder: e.g. Jane Doe, John Smith
+    validations:
+      required: true
+  - type: input
+    id: institution
+    attributes:
+      label: Institution and city/country
+      placeholder: e.g. Freie Universität Berlin, Berlin, Germany
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Group website URL
+      description: Must be https:// and name the PI(s).
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: Representative arXiv paper IDs, Wikidata Q-ID for the institution, or corrections to an existing entry.
+    validations:
+      required: false

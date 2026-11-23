@@ -1,0 +1,55 @@
+name: Propose an open problem
+description: Suggest a well-posed open problem in quantum optimal control (or report a new partial/full resolution).
+title: "[Open problem] "
+labels: ["open-problem"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A problem is listed if it can be stated precisely and a published paper poses it as a conjecture, explicit open question, or stated goal. Solved/refuted problems are also welcome if they are notable milestones.
+  - type: input
+    id: title
+    attributes:
+      label: Problem title
+      placeholder: e.g. Minimal pulse count for universal dynamical decoupling
+    validations:
+      required: true
+  - type: textarea
+    id: statement
+    attributes:
+      label: Precise statement
+      description: State the mathematical or physical question clearly (LaTeX is fine).
+    validations:
+      required: true
+  - type: textarea
+    id: posed_by
+    attributes:
+      label: Paper(s) that pose the problem
+      description: Provide DOI and/or arXiv ID and the specific section, theorem, or conjecture number.
+      placeholder: e.g. arXiv:2205.15044, Section 2.3 (or DOI 10.1140/epjqt/s40507-022-00138-x)
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Current status
+      options:
+        - Open
+        - Partial progress
+        - Solved / refuted
+    validations:
+      required: true
+  - type: textarea
+    id: progress
+    attributes:
+      label: Known results and references
+      description: List key partial results, counterexamples, or resolving papers (with DOI / arXiv ID).
+    validations:
+      required: false
+  - type: input
+    id: topics
+    attributes:
+      label: Relevant topic(s) on the field map
+      placeholder: e.g. controllability, open-system-control, quantum-speed-limits
+    validations:
+      required: false

@@ -56,6 +56,9 @@
           {% for key in pr.refs %}<li id="ref-{{ key }}">{{ fmt_ref(key) }}</li>{% endfor %}
         </ol>
       </section>
+
+      <p class="muted edit-hint">Know of a recent result or correction for this problem?
+        <a href="https://github.com/llorebaga/QOC/issues/new?template=report-error.yml&amp;title={{ ('Update for problem: ' ~ pr.title) | urlencode }}" rel="noopener">Report an update on GitHub</a>.</p>
     </article>
 
     <aside class="topic-aside">
@@ -70,13 +73,14 @@
           </ol>
         </nav>
         {% endif %}
-        <nav class="aside-block" aria-label="Other problems">
-          <h2>Other problems</h2>
-          <ol>
-            {% for o in problems if o.id != pr.id %}
+        <nav class="aside-block" aria-label="{{ 'Related problems' if has_shared_problems else 'Other problems' }}">
+          <h2>{{ 'Related problems' if has_shared_problems else 'Other problems' }}</h2>
+          <ol class="aside-problems">
+            {% for o in related_problems %}
             <li><a href="{{ url('open-problems/' ~ o.id ~ '/') }}">{{ o.title }}</a></li>
             {% endfor %}
           </ol>
+          <p class="aside-more"><a href="{{ url('open-problems/') }}">All {{ problems|length }} open problems →</a></p>
         </nav>
       </div>
     </aside>

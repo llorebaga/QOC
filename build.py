@@ -16,6 +16,7 @@ import argparse
 import datetime as dt
 import functools
 import hashlib
+import html
 import http.server
 import subprocess
 import sys
@@ -186,11 +187,20 @@ def load_resources(path: Path, taxonomy: dict, references: dict, url) -> dict:
             if k not in references:
                 errors.append(f"{where}: unknown reference key '{k}'")
 
+    seen_sw: set[str] = set()
     for g in res.get("software", []):
         for s in g["items"]:
             check(s, f"software '{s['name']}'")
             if not str(s.get("url", "")).startswith("https://"):
                 errors.append(f"software '{s['name']}': url must be https")
+            base_id = "sw-" + re.sub(r"[^a-z0-9]+", "-", s["name"].lower()).strip("-")
+            sid = base_id
+            n = 2
+            while sid in seen_sw:
+                sid = f"{base_id}-{n}"
+                n += 1
+            seen_sw.add(sid)
+            s["id"] = sid
             s["what_html"] = inline(s.get("what", ""), "resources")
     for g in res.get("reading", []):
         for r in g["items"]:
@@ -247,6 +257,92 @@ def map_data(taxonomy: dict, articles: dict, url) -> dict:
                   for t in taxonomy["topics"].values()],
         "links": [{"source": a, "target": b} for a, b in taxonomy["edges"]],
     }
+
+
+def _plain(text: str, limit: int = 180) -> str:
+    """Strip HTML tags and math delimiters for compact search snippets."""
+    s = html.unescape(re.sub(r"<[^>]+>", " ", str(text or "")))
+    s = re.sub(r"\\\(|\\\)|\$\$", "", s)
+    s = re.sub(r"\s+", " ", s).strip()
+    return (s[: limit - 1].rstrip() + "…") if len(s) > limit else s
+
+
+def related_problems_for(pr: dict, problems: list[dict], limit: int = 6) -> tuple[list[dict], bool]:
+    """Return up to `limit` other problems, prioritizing shared topics; flag indicates whether any share a topic."""
+    mine = set(pr["topics"])
+    order = list(PROBLEM_STATUS)
+    others = [o for o in problems if o["id"] != pr["id"]]
+    scored = sorted(
+        others,
+        key=lambda o: (-len(mine & set(o["topics"])), order.index(o["status"]), o["title"].lower()),
+    )
+    has_shared = bool(scored and (mine & set(scored[0]["topics"])))
+    return scored[:limit], has_shared
+
+
+def search_index_data(taxonomy: dict, problems: list[dict], groups: list[dict],
+                      resources: dict, references: dict, url) -> list[dict]:
+    """Compact site-wide search index covering topics, open problems, groups and resources."""
+    items: list[dict] = []
+    fam_by_id = {f["id"]: f["title"] for f in taxonomy["families"]}
+    tlabel = lambda tid: taxonomy["topics"][tid]["label"]
+
+    for t in taxonomy["topics"].values():
+        items.append({
+            "k": "topic",
+            "t": t["title"],
+            "s": t["short"],
+            "m": " ".join([fam_by_id[t["family"]], t["label"], *t["aliases"]]),
+            "u": url(f"topics/{t['id']}/"),
+        })
+    for pr in problems:
+        items.append({
+            "k": "problem",
+            "t": pr["title"],
+            "s": f"{pr['status_label']} · {_plain(pr['question'], 150)}",
+            "m": " ".join([pr["status_label"], *(tlabel(t) for t in pr["topics"])]),
+            "u": url(f"open-problems/{pr['id']}/"),
+        })
+    for g in sorted(groups, key=lambda x: x["name"].lower()):
+        place = ", ".join(x for x in (g.get("city"), g["country"]) if x)
+        items.append({
+            "k": "group",
+            "t": g["name"],
+            "s": f"{', '.join(g['pis'])} · {g['institution']}, {place}",
+            "m": " ".join(tlabel(t) for t in g["topics"]),
+            "u": url(f"groups/{g['id']}/"),
+        })
+    for e in resources.get("glossary", []):
+        items.append({
+            "k": "glossary",
+            "t": e["term"],
+            "s": _plain(e["def_html"], 160),
+            "m": " ".join(tlabel(t) for t in (e.get("topics") or [])),
+            "u": url(f"resources/#{e['id']}"),
+        })
+    for grp in resources.get("software", []):
+        for s in grp["items"]:
+            items.append({
+                "k": "software",
+                "t": s["name"],
+                "s": f"{s['lang']} · {_plain(s['what_html'], 140)}",
+                "m": " ".join([grp["group"], *(tlabel(t) for t in (s.get("topics") or []))]),
+                "u": url(f"resources/#{s['id']}"),
+            })
+    for grp in resources.get("reading", []):
+        for r in grp["items"]:
+            ref = references[r["key"]]
+            authors = ", ".join(ref.get("authors", [])[:3])
+            year = ref.get("year", "")
+            note = _plain(r.get("note_html", ""), 120)
+            items.append({
+                "k": "reading",
+                "t": ref.get("title", ""),
+                "s": f"{authors} ({year})" + (f" · {note}" if note else ""),
+                "m": " ".join([grp["group"], *ref.get("authors", []), *(tlabel(t) for t in (r.get("topics") or []))]),
+                "u": url("resources/#reading"),
+            })
+    return items
 
 
 # ------------------------------------------------------------------ building
@@ -358,9 +454,17 @@ def build(base: str | None = None, quiet: bool = False) -> None:
         raise BuildError(str(exc)) from exc
     tracked = paper_tracker.prepare(papers, taxonomy, rules_file, ROOT / ".cache" / "topics.json")
     groups = paper_tracker.prepare_groups(load_groups(ROOT / "data" / "groups.yaml", taxonomy), tracked, taxonomy)
+    groups_by_topic: dict[str, list[dict]] = {}
+    for g in groups:
+        for t in g["topics"]:
+            groups_by_topic.setdefault(t, []).append(g)
+    for t, glist in groups_by_topic.items():
+        glist.sort(key=lambda g: (-g["topic_counts"].get(t, 0), g["name"].lower()))
+    resources = load_resources(ROOT / "data" / "resources.yaml", taxonomy, references, url)
     quality_file = ROOT / "data" / "quality" / "summary.yaml"
     quality = load_yaml(quality_file) if quality_file.exists() else None
     env.globals.update(articles=articles, problems=problems, problems_by_topic=problems_by_topic,
+                       groups_by_topic=groups_by_topic,
                        paper_stats=stats, selection=selection, quality=quality, tracked=tracked,
                        fmt_ref=lambda key: Markup(format_reference(references[key])),
                        references=references)
@@ -382,7 +486,7 @@ def build(base: str | None = None, quiet: bool = False) -> None:
         extra = {"graph_json": Markup(json.dumps(map_data(taxonomy, articles, url), ensure_ascii=False)
                                       .replace("</", "<\\/"))} if section["id"] == "map" else {}
         if section["id"] == "resources":
-            extra = {"res": load_resources(ROOT / "data" / "resources.yaml", taxonomy, references, url)}
+            extra = {"res": resources}
         if section["id"] == "groups":
             extra = {"groups": groups,
                      "groups_json": Markup(json.dumps(groups_data(groups, taxonomy, url), ensure_ascii=False)
@@ -404,13 +508,22 @@ def build(base: str | None = None, quiet: bool = False) -> None:
             render(env, "feeds/atom.xml", f"topics/{topic['id']}/feed.xml", feed_title=f"QOC — {topic['title']}",
                    feed_id=f"topics/{topic['id']}/", feed_page=f"topics/{topic['id']}/", entries=topic_papers[:30])
 
-    # Open problems: one page each (the list is on the section page)
+    # Open problems: one page each + Atom feed (the list is on the section page)
     for pr in problems:
-        render(env, "pages/problem.html", f"open-problems/{pr['id']}/index.html", page_id="open-problems", pr=pr)
+        related_problems, has_shared_problems = related_problems_for(pr, problems)
+        render(env, "pages/problem.html", f"open-problems/{pr['id']}/index.html", page_id="open-problems", pr=pr,
+               related_problems=related_problems, has_shared_problems=has_shared_problems)
+    problem_feed_entries = sorted(problems, key=lambda p: (str(p["updated"]), str(p["added"]), p["id"]), reverse=True)
+    render(env, "feeds/problems.xml", "open-problems/feed.xml", entries=problem_feed_entries)
 
     # Research groups: one page each (the map and the list are on the section page)
     for g in groups:
         render(env, "pages/group.html", f"groups/{g['id']}/index.html", page_id="groups", g=g)
+
+    # Site-wide search index (loaded on demand when opening search)
+    write(OUT / "search-index.json",
+          json.dumps(search_index_data(taxonomy, problems, groups, resources, references, url),
+                     ensure_ascii=False, separators=(",", ":")).encode("utf-8"))
 
     # Paper tracker: data for the client, author pages, weekly digest, feed
     write(OUT / "papers" / "data" / "index.json", paper_tracker.index_json(tracked, taxonomy).encode("utf-8"))

@@ -97,7 +97,17 @@ understand any area; an expert can use it as a quick reference.
       (solved, by combining Gauthier–Rossi 2021 with Gorodski–Lange–Lytchak–Mendes)
 - [x] Two more (2026-10-14), after a literature check that they are still open: minimal pulse count of universal
       dynamical decoupling (Θ(K) vs Θ(K²)), and Malvetti's conjecture on time-optimal cooling of two qubits — *awaiting review*
-- [ ] More problems (candidates in the Notes below); a "propose a problem" route at launch
+- [x] Six more (2026-11-23), bringing the section to 12 problems across 17 topics and 8 families — *awaiting review*:
+      barren plateaus vs. classical simulability (open; Cerezo et al. 2025), exact controllability of the
+      multidimensional bilinear Schrödinger equation (open; Beauchard / Duca–Nersesyan / Koch et al. 2022),
+      reachable states of controlled Markovian systems coupled to a thermal bath (partial; vom Ende / Lostaglio–Korzekwa /
+      Koch et al. 2022), structure of time-optimal QAOA and quantum annealing schedules (partial; Brady et al. 2021 /
+      Campos Venuti et al. 2021), the Bukov–Sels–Polkovnikov geometric speed limit for accessible state preparation
+      (solved/refuted; Goll–Bukov–Ribeiro 2026), and maximum speed-up of qudit purification by measurement-based
+      feedback (solved; Combes et al. 2010 / Combes & Wiseman 2011)
+- [x] Keyword search on `/open-problems/`, related-problems sidebar, Atom feed (`/open-problems/feed.xml`), and
+      "propose a problem" route (2026-11-23)
+- [ ] More problems (candidates in the Notes below)
 
 ## ✅ Phase 6 — Resources (built 2026-10-14)
 
@@ -111,7 +121,8 @@ understand any area; an expert can use it as a quick reference.
 ## Phase 7 — Public launch
 
 - [x] Licences: CC BY 4.0 for content (`LICENSE-CONTENT`), MIT for code (`LICENSE`); arXiv metadata excluded (2026-10-15)
-- [ ] Contribution guide + issue templates ("add a group", "propose an open problem", "report an error")
+- [x] Contribution guide (`CONTRIBUTING.md`) + issue templates (`add-group`, `propose-open-problem`, `report-error`) (2026-11-23)
+- [x] Unified site-wide search palette (`/` or `⌘K`, static `search-index.json`) and Research groups cross-linked onto topic pages (2026-11-23)
 - [x] Repository public; GitHub Pages deployment at https://llorebaga.github.io/QOC/ (2026-10-14, earlier than planned)
 - [ ] Possibly a custom domain
 - [x] SEO metadata (descriptions, canonical URLs, Open Graph / Twitter cards), social card
@@ -128,12 +139,13 @@ understand any area; an expert can use it as a quick reference.
 - **No Node toolchain:** the build is pure Python so that it runs anywhere with `pip install`.
 - **Open problems — candidates to verify next** (each needs a paper that poses it): minimal number of controls for
   ensemble controllability with several unknown parameters (Koch et al. 2022, §2.3); simultaneous *operator*
-  controllability with adiabatic methods (ibid., §2.2.5); reachable sets of Markovian vs non-Markovian open systems
-  (ibid., §2.3); controllability criteria under thermodynamically consistent dissipation (ibid., §5); whether many-body
-  control requires cooling (ibid., §2.3, conjecture after Il'in & Lychkovskiy 2021).
+  controllability with adiabatic methods (ibid., §2.2.5); reachable sets of non-Markovian vs Markovian open systems
+  (ibid., §2.3); controllability criteria under thermodynamically consistent dissipation beyond the switchable-bath
+  model (ibid., §5); whether many-body control requires cooling (ibid., §2.3, conjecture after Il'in & Lychkovskiy 2021).
 - **Open problems — checked and rejected (2026-10-14), so they are not re-researched:** O(D) vs O(D²) speed-up of
-  feedback purification of qudits (Combes et al. 2010) — solved, O(D²), Combes & Wiseman PRX 2011; linear-time GZZ
-  gates (Baßler–Heinrich–Kliesch 2024, Conjecture 16) — refuted with a counterexample, Garcia de Andoin PRR 2026;
+  feedback purification of qudits (Combes et al. 2010) — solved, O(D²), Combes & Wiseman PRX 2011 *(added as a solved
+  entry on 2026-11-23)*; linear-time GZZ gates (Baßler–Heinrich–Kliesch 2024, Conjecture 16) — Garcia de Andoin & Sanz
+  (PRR 2026) prove an improved $\ell_2$ upper bound for sparse couplings, leaving dense-graph optimality subtle;
   error scaling of universally robust DD (Genov et al. 2017) — proved for even n, D'Alessandro et al. 2026;
   necessity of the "infection" criterion for spin networks and global optimality of the Jandura–Pupillo Rydberg CZ
-  gate — not posed as open problems in the literature. Possible future "solved" entries: the first two.
+  gate — not posed as open problems in the literature.

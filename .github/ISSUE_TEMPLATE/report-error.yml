@@ -1,0 +1,26 @@
+name: Report an error or suggest an edit
+description: Report a factual error, outdated result, broken link, typo, or missing reference anywhere on QOC.
+title: "[Error / Edit] "
+labels: ["content"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page URL or section
+      placeholder: e.g. https://llorebaga.github.io/QOC/topics/grape/
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What should be fixed or updated?
+      description: Describe the error, missing result, or suggested wording change.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Supporting reference(s) (DOI or arXiv ID)
+      description: If this is a factual correction or new result, please provide the DOI or arXiv ID.
+    validations:
+      required: false

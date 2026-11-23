@@ -93,6 +93,24 @@
       </section>
       {% endif %}
 
+      {% set topic_groups = groups_by_topic.get(topic.id, []) %}
+      {% if topic_groups %}
+      {% set group_filter_param = 'platform' if family.id == 'platforms' else 'topic' %}
+      <section class="article-section" aria-labelledby="research-groups">
+        <h2 id="research-groups">Research groups</h2>
+        <p class="section-note">{{ topic_groups|length }} tracked {{ 'group works' if topic_groups|length == 1 else 'groups work' }} on this topic.
+          <a href="{{ url('groups/?' ~ group_filter_param ~ '=' ~ topic.id) }}">See on the map</a></p>
+        <ul class="topic-groups">
+          {% for g in topic_groups[:12] %}
+          <li>
+            <a class="topic-group-name" href="{{ url('groups/' ~ g.id ~ '/') }}">{{ g.name }}</a>
+            <span class="topic-group-meta">{{ g.institution }}{% if g.get('city') %}, {{ g.city }}{% endif %}, {{ g.country }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
       <section class="article-section" aria-labelledby="recent-papers">
         <h2 id="recent-papers">Recent papers</h2>
         {% if topic_papers %}
@@ -121,6 +139,9 @@
       </section>
       {% endif %}
 
+      <p class="muted edit-hint">Spotted an error or a missing reference?
+        <a href="https://github.com/llorebaga/QOC/issues/new?template=report-error.yml&amp;title={{ ('Error in topic: ' ~ topic.title) | urlencode }}" rel="noopener">Report an issue on GitHub</a>.</p>
+
       <nav class="topic-pager" aria-label="More in {{ family.title }}">
         {% if prev_topic %}<a class="pager-prev" href="{{ url('topics/' ~ prev_topic.id ~ '/') }}"><span>Previous in {{ family.title }}</span>{{ prev_topic.title }}</a>{% else %}<span></span>{% endif %}
         {% if next_topic %}<a class="pager-next" href="{{ url('topics/' ~ next_topic.id ~ '/') }}"><span>Next in {{ family.title }}</span>{{ next_topic.title }}</a>{% endif %}
@@ -138,6 +159,7 @@
             {% if article.meta.software %}<li><a href="#software">Software</a></li>{% endif %}
             {% if article.citations %}<li><a href="#references">References</a></li>{% endif %}
             {% if problems_by_topic.get(topic.id) %}<li><a href="#open-problems">Open problems</a></li>{% endif %}
+            {% if topic_groups %}<li><a href="#research-groups">Research groups</a></li>{% endif %}
             <li><a href="#recent-papers">Recent papers</a></li>
           </ol>
         </nav>

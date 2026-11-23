@@ -11,6 +11,9 @@
       </ul>
     </nav>
     <div class="header-actions">
+      <button class="search-trigger" type="button" data-search-open aria-label="Search site" title="Search (press / or ⌘K)">
+        {{ icon('search') }}<span class="search-trigger-label">Search</span><kbd aria-hidden="true">/</kbd>
+      </button>
       <button class="icon-btn theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
         {{ icon('sun', 'i-sun') }}{{ icon('moon', 'i-moon') }}
       </button>
